@@ -4,7 +4,7 @@
 
 <html>
 <head runat="server">
-    <title>Speed Master!!</title>
+    <title>Speed Master</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
