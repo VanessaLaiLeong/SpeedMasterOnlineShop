@@ -1,4 +1,5 @@
 *.config
 SpeedMaster/SpeedMaster/Web.config
 *.config
-*.txt
+*.config.xml
+*.xml
