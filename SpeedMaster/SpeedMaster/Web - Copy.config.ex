@@ -5,6 +5,11 @@
     agora
   -->
 <configuration>
+	<connectionStrings>
+		<!--deem o mesmo nome-->
+		<add name="SpeedMasterConnectionString" connectionString=""
+		  providerName="System.Data.SqlClient" />
+	</connectionStrings>
   <system.web>
     <compilation debug="true" targetFramework="4.7.2" />
     <httpRuntime targetFramework="4.7.2" />
