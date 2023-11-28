@@ -11,7 +11,16 @@ namespace SpeedMaster
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Services s = new Services();            
+            Session["customer"]= s.getCustomer(1);
+            lbl_name.Text = ((Customer)Session["customer"]).firstName;
+            Customer customer = s.createCustomer("coydecerta@gufum.com", "P@ssw0rd", "Ana", "Pires", "", "", "");
+            int result;
+            string v = s.doCreateCustomer(customer, "P@ssw0rd");
+            Response.Write(v);
+            
         }
+
+        
     }
 }

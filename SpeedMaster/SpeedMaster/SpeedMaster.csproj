@@ -67,29 +67,79 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FO\Index.aspx" />
+    <Content Include="FO\Login.aspx" />
+    <Content Include="FO\Shop.aspx" />
+    <Content Include="FO\SignUpaspx.aspx" />
     <Content Include="Web.config" />
-    <Content Include="WebForm1.aspx" />
+    <Content Include="Tests.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrontOffice.Master.cs">
+    <Compile Include="BO\BackOffice.Master.cs">
+      <DependentUpon>BackOffice.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BO\BackOffice.Master.designer.cs">
+      <DependentUpon>BackOffice.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Connections.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="FO\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FO\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FO\FrontOffice.Master.cs">
       <DependentUpon>FrontOffice.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FrontOffice.Master.designer.cs">
+    <Compile Include="FO\FrontOffice.Master.designer.cs">
       <DependentUpon>FrontOffice.Master</DependentUpon>
+    </Compile>
+    <Compile Include="FO\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FO\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="Services.cs" />
+    <Compile Include="FO\Shop.aspx.cs">
+      <DependentUpon>Shop.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="FO\Shop.aspx.designer.cs">
+      <DependentUpon>Shop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FO\SignUpaspx.aspx.cs">
+      <DependentUpon>SignUpaspx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FO\SignUpaspx.aspx.designer.cs">
+      <DependentUpon>SignUpaspx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tests.aspx.cs">
+      <DependentUpon>Tests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tests.aspx.designer.cs">
+      <DependentUpon>Tests.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FrontOffice.Master" />
+    <Content Include="FO\FrontOffice.Master" />
+    <Content Include="BO\BackOffice.Master" />
     <None Include="packages.config" />
+    <None Include="Web - Copy.config.ex" />
+    <None Include="Web - Copy.config.Debug.ex">
+      <DependentUpon>Web - Copy.config.ex</DependentUpon>
+    </None>
+    <None Include="Web - Copy.config.Release.ex">
+      <DependentUpon>Web - Copy.config.ex</DependentUpon>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
