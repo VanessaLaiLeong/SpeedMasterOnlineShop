@@ -174,7 +174,8 @@ namespace SpeedMaster
                     Connections.createCustomerDB(customer);
                     string email = customer.email;
                     string subject = "Welcome to Speed Master - Your Ultimate Destination for Motorcycle Enthusiasts 🏍️🔥";
-                    /* no link pode ser capaz de cada um ter de por o seu?? idk*/
+                    // no link pode ser capaz de cada um ter de por o seu?? id
+                    // Pelo menos para mim, o meu localhost é igual ao teu, acho que o IIS usa sempre o mesmo
                     string body = "Welcome to Speed Master!<br><br>" +
                                     "We are thrilled to welcome you to our motorcycle-loving community.<br><br>" +
                                     "At Speed Master, we offer a diverse range of high-performance motorcycles and gear, curated for true enthusiasts like yourself.<br><br>" +
@@ -214,7 +215,5 @@ namespace SpeedMaster
 
             servidor.Send(mail);
         }
-
-      
     }
 }
