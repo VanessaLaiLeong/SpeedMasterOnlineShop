@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SpeedMaster.BO;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace SpeedMaster
         /*
          * Method to encrip strings
          */
-        public string EncryptString(string Message)
+        public static string EncryptString(string Message)
         {
             string Passphrase = "atec";
             byte[] Results;
@@ -79,21 +80,92 @@ namespace SpeedMaster
             enc = enc.Replace("\\", "III");
             return enc;
         }
+        /*
+         * Method to desencrip strings
+         */
+        public static string DecryptString(string Message)
+        {
+            string Passphrase = "atec";
+            byte[] Results;
+            System.Text.UTF8Encoding UTF8 = new System.Text.UTF8Encoding();
+
+
+
+            // Step 1. We hash the passphrase using MD5
+            // We use the MD5 hash generator as the result is a 128 bit byte array
+            // which is a valid length for the TripleDES encoder we use below
+
+
+
+            MD5CryptoServiceProvider HashProvider = new MD5CryptoServiceProvider();
+            byte[] TDESKey = HashProvider.ComputeHash(UTF8.GetBytes(Passphrase));
+
+
+
+            // Step 2. Create a new TripleDESCryptoServiceProvider object
+            TripleDESCryptoServiceProvider TDESAlgorithm = new TripleDESCryptoServiceProvider();
+
+
+
+            // Step 3. Setup the decoder
+            TDESAlgorithm.Key = TDESKey;
+            TDESAlgorithm.Mode = CipherMode.ECB;
+            TDESAlgorithm.Padding = PaddingMode.PKCS7;
+
+
+
+            // Step 4. Convert the input string to a byte[]
+
+
+
+            Message = Message.Replace("KKK", "+");
+            Message = Message.Replace("JJJ", "/");
+            Message = Message.Replace("III", "\\");
+
+
+
+
+            byte[] DataToDecrypt = Convert.FromBase64String(Message);
+
+
+
+            // Step 5. Attempt to decrypt the string
+            try
+            {
+                ICryptoTransform Decryptor = TDESAlgorithm.CreateDecryptor();
+                Results = Decryptor.TransformFinalBlock(DataToDecrypt, 0, DataToDecrypt.Length);
+            }
+            finally
+            {
+                // Clear the TripleDes and Hashprovider services of any sensitive information
+                TDESAlgorithm.Clear();
+                HashProvider.Clear();
+            }
+
+
+
+            // Step 6. Return the decrypted string in UTF8 format
+            return UTF8.GetString(Results);
+
+
+
+        }
+
 
         /*
-         * Method
+         * Method 
          */
-        public Customer getCustomer(int id) 
+        public static Customer getCustomer(int id) 
         {
-           Customer customer = Connections.getCustomer(id);
+           Customer customer = Connections.getCustomerById(id);
            return customer;
            
         }
 
         /*
-         * Method works
+         * Method to create the object customer
          */
-        public Customer createCustomer(string email, string password, string firstName, string lastName, string phone, string address, string nif) 
+        private static Customer createCustomer(string email, string password, string firstName, string lastName, string phone, string address, string nif) 
         {
             Customer customer = new Customer();
             customer.email = email;
@@ -107,14 +179,10 @@ namespace SpeedMaster
             return customer;
         }
 
-        public void doLogin()
-        {
-
-        }
-
-
-
-        public string checkPassword(string password)
+        /*
+         * Method to check if password is strong 
+         */
+        public static string checkPassword(string password)
         {
             Regex upper = new Regex("[A-Z]");
             Regex lower = new Regex("[a-z]");
@@ -151,28 +219,30 @@ namespace SpeedMaster
             return situation;
         }
 
-        public string doCreateCustomer(Customer customer, string otherPassowrd)
+        /*
+         * Method to create a customer and send to DB
+         */
+        public static string doCreateCustomer(string email, string password, string firstName, string lastName, string phone, string address, string nif, string otherPassowrd)
         {
-            if (customer.password != otherPassowrd)
+            Customer customer = createCustomer(email, Services.EncryptString(password),  firstName,  lastName,  phone,  address,  nif);
+
+            if (password != otherPassowrd)
             {
                 return "Password does not match";
             }
-            if (checkPassword(customer.password) == "weak")
+            if (checkPassword(password) == "weak")
             {
                 return "Please insert a stronger password";
             }
             else
             {
-                int result = Connections.createCustomerDB(customer);
+                int result = Connections.insertCustomerDB(customer);
                 if (result == 0)
                 {
                     return "Email already exists";
                 }
                 else 
-                {
-                    customer.password = EncryptString(customer.password);
-                    Connections.createCustomerDB(customer);
-                    string email = customer.email;
+                {                                                      
                     string subject = "Welcome to Speed Master - Your Ultimate Destination for Motorcycle Enthusiasts 🏍️🔥";
                     /* no link pode ser capaz de cada um ter de por o seu?? idk*/
                     string body = "Welcome to Speed Master!<br><br>" +
@@ -194,7 +264,10 @@ namespace SpeedMaster
 
         }
 
-        public void sendEmail(string email, string subject, string body)
+        /*
+         * Method to send emails
+         */
+        public static void sendEmail(string email, string subject, string body)
         {
             string smtpUtilizador = ConfigurationManager.AppSettings["SMTP_USER"];
             string smtpPassword = ConfigurationManager.AppSettings["SMTP_PASS"];
@@ -215,6 +288,35 @@ namespace SpeedMaster
             servidor.Send(mail);
         }
 
-      
+        /*
+         * Method to resetPassword
+         */
+        public static string resetPassword(string email, string password, string otherPassword)
+        {
+            
+            if (password != otherPassword)
+            {
+                return "Password does not match";
+            }
+            if (checkPassword(password) == "weak")
+            {
+                return "Please insert a stronger password";
+            }
+            else
+            {
+                Connections.resetPasswordDB(email, EncryptString(password));
+                return "Success! Password updated.";
+            }
+        }
+
+        /*
+         * Method to insertGlobalProducts
+         */
+        
+
+        
     }
+
+
+
 }

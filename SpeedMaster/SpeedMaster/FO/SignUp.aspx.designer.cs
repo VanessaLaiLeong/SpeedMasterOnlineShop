@@ -11,7 +11,7 @@ namespace SpeedMaster.FO
 {
 
 
-    public partial class Index
+    public partial class SignUp
     {
     }
 }

@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SpeedMaster
+namespace SpeedMaster.FO
 {
 
 
-    public partial class Shop
+    public partial class ResetPassword
     {
     }
 }

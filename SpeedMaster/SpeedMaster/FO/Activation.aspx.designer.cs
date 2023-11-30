@@ -11,7 +11,7 @@ namespace SpeedMaster.FO
 {
 
 
-    public partial class Login
+    public partial class Activation
     {
     }
 }

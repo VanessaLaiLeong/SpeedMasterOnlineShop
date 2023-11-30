@@ -11,7 +11,10 @@ namespace SpeedMaster
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["customer"] == null)
+            {
+                string userName =  "Login";
+            }
         }
     }
 }

@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SpeedMaster
+namespace SpeedMaster.BO
 {
 
 
-    public partial class SignUpaspx
+    public partial class InsertMotorcycle
     {
     }
 }

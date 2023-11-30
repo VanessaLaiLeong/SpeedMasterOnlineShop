@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SpeedMaster.FO
+namespace SpeedMaster.BO
 {
 
 
-    public partial class Login
+    public partial class InsertAccessory
     {
     }
 }
