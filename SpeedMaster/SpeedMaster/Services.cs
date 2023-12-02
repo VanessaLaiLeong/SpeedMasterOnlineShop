@@ -2,6 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
@@ -10,7 +13,7 @@ using System.Security.Policy;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Services.Description;
-
+using System.Web.UI.WebControls;
 
 namespace SpeedMaster
 {
@@ -310,12 +313,82 @@ namespace SpeedMaster
             }
         }
 
-        /*
-         * Method to insertGlobalProducts
-         */
-        
+        public static byte [] getImageInfo(FileUpload image)
+        {
+            Stream imgStream;
+            int imgTamanho;
+            string imgtype;
+            byte[] imgBinary;            
 
-        
+            if (image.HasFile)
+            {
+                //imgStream = ImgUpload.PostedFile.InputStream;
+                //imgTamanho = ImgUpload.PostedFile.ContentLength;
+                //imgtype = ImgUpload.PostedFile.ContentType;
+                //imgBinary = new byte[imgTamanho];
+                //imgStream.Read(imgBinary, 0, imgTamanho);
+
+                imgStream = image.PostedFile.InputStream;
+                imgTamanho = image.PostedFile.ContentLength;
+                imgtype = image.PostedFile.ContentType;
+
+                // Compress the image before storing
+                imgBinary = CompressImage(imgStream, imgTamanho);
+
+            }
+            else
+            {
+                imgtype = "";
+                imgBinary = new byte[0];
+            }
+            return imgBinary;         
+
+        }
+
+        private static byte[] CompressImage(Stream imgStream, int imgTamanho)
+        {
+            using (Bitmap original = new Bitmap(imgStream))
+            {
+                // Set the compression level (adjust as needed)
+                EncoderParameter qualityParam = new EncoderParameter(Encoder.Quality, 50L);
+
+                // Get the JPEG codec
+                ImageCodecInfo jpegCodec = GetEncoderInfo("image/jpeg");
+
+                if (jpegCodec != null)
+                {
+                    EncoderParameters encoderParams = new EncoderParameters(1);
+                    encoderParams.Param[0] = qualityParam;
+
+                    // Compress and return the image as a byte array
+                    using (MemoryStream compressedStream = new MemoryStream())
+                    {
+                        original.Save(compressedStream, jpegCodec, encoderParams);
+                        return compressedStream.ToArray();
+                    }
+                }
+            }
+
+            // Return an empty byte array if compression fails
+            return new byte[0];
+        }
+
+        private static ImageCodecInfo GetEncoderInfo(string mimeType)
+        {
+            ImageCodecInfo[] codecs = ImageCodecInfo.GetImageEncoders();
+
+            foreach (ImageCodecInfo codec in codecs)
+            {
+                if (codec.MimeType == mimeType)
+                {
+                    return codec;
+                }
+            }
+
+            return null;
+        }
+
+
     }
 
 

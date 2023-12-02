@@ -87,7 +87,7 @@ namespace SpeedMaster
             int result = Convert.ToInt32(myCommand.Parameters["@activationStatus"].Value);
             myConn.Close();
 
-            insertCartDB(customer.email);
+            InsertShoppingCartAfetrCustomerCreation(customer.email);
             return result;
         }
         public static Customer getCustomerById(int id)
@@ -232,15 +232,11 @@ namespace SpeedMaster
         }
 
 
-
-
-
-
-
-        /*From here CRUD for Accessories Table
+        /*
+         * From here CRUD for Accessories Table
          */
         public static string InsertAccessoryDB(int ID_Accessory, string AccessoryName, string Description,
-    double Price, int Stock, bool Active, int ID_Category)
+    double Price, int Stock, bool Active, int ID_Category, byte[]img)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
 
@@ -258,6 +254,7 @@ namespace SpeedMaster
                         command.Parameters.AddWithValue("@Stock", Stock);
                         command.Parameters.AddWithValue("@Active", Active);
                         command.Parameters.AddWithValue("@ID_Category", ID_Category);
+                        command.Parameters.AddWithValue("@Image", img);
 
                         connection.Open();
                         command.ExecuteNonQuery();
@@ -350,11 +347,6 @@ namespace SpeedMaster
         }
 
 
-
-
-
-
-
         /*From here CRUD for Brand Table
          */
         public static string InsertBrandIntoDB(string brandName, string countryOfOrigin)
@@ -384,7 +376,6 @@ namespace SpeedMaster
                 }
             }
         }
-
         public static string UpdateBrandInDB(int ID_Brand, string brandName, string countryOfOrigin)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
@@ -420,8 +411,6 @@ namespace SpeedMaster
                 }
             }
         }
-
-
         public static string DeleteBrandFromDB(int ID_Brand)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
@@ -481,11 +470,9 @@ namespace SpeedMaster
             }
         }
 
-
-
-
-
-        //From here CRUD for categories table
+        /*
+         *From here CRUD for categories table
+         */
         public static string InsertCategoryIntoDB(string categoryName)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
@@ -608,9 +595,6 @@ namespace SpeedMaster
         }
 
 
-
-
-
          /*
          * Method creates a product int the globalProductIds
          */
@@ -639,7 +623,9 @@ namespace SpeedMaster
             return result;
         }
 
-
+        /*
+         *from here CRUD for motorcycle
+         */  
         public static string InsertMotorcycleIntoDB(
             int ID_Motorcycle,
             int ID_Brand,
@@ -693,7 +679,6 @@ namespace SpeedMaster
                 }
             }
         }
-
         public static string UpdateMotorcycleInDB(
             int ID_Motorcycle,
             int ID_Brand,
@@ -752,8 +737,6 @@ namespace SpeedMaster
                 }
             }
         }
-
-
         public static string DeleteMotorcycleAndGlobalProductsIDsFromDB(int ID_Motorcycle)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
@@ -788,33 +771,426 @@ namespace SpeedMaster
             }
         }
 
+        /*
+         *from here CRUD for Orders
+         */
+        public static string InsertOrderIntoDB(
+        int shoppingCartId,
+        DateTime orderDate,
+        DateTime shippingDate,
+        decimal totalAmount,
+        int statusId)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
 
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("insert_order", connection))
+                {
+                    try
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@ID_ShoppingCart", shoppingCartId);
+                        command.Parameters.AddWithValue("@OrderDate", orderDate);
+                        command.Parameters.AddWithValue("@ShippingDate", shippingDate);
+                        command.Parameters.AddWithValue("@TotalAmount", totalAmount);
+                        command.Parameters.AddWithValue("@ID_Status", statusId);
 
+                        connection.Open();
+                        command.ExecuteNonQuery();
 
+                        return "Order inserted successfully.";
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle or log the exception
+                        return $"Error inserting order: {ex.Message}";
+                    }
+                }
+            }
+        }
+        public static string UpdateOrderInDB(
+        int orderId,
+        int shoppingCartId,
+        DateTime orderDate,
+        DateTime shippingDate,
+        decimal totalAmount,
+        int statusId)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("update_order", connection))
+                {
+                    try
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@ID_Order", orderId);
+                        command.Parameters.AddWithValue("@ID_ShoppingCart", shoppingCartId);
+                        command.Parameters.AddWithValue("@OrderDate", orderDate);
+                        command.Parameters.AddWithValue("@ShippingDate", shippingDate);
+                        command.Parameters.AddWithValue("@TotalAmount", totalAmount);
+                        command.Parameters.AddWithValue("@ID_Status", statusId);
+
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected == 0)
+                        {
+                            return $"No order with ID {orderId} found.";
+                        }
+                        else
+                        {
+                            return $"Order with ID {orderId} updated successfully.";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle or log the exception
+                        return $"Error updating order: {ex.Message}";
+                    }
+                }
+            }
+        }
+        public static string DeleteOrderInDB(int orderId)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("delete_order", connection))
+                {
+                    try
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@ID_Order", orderId);
+
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected == 0)
+                        {
+                            return $"No order with ID {orderId} found.";
+                        }
+                        else
+                        {
+                            return $"Order with ID {orderId} deleted successfully.";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle or log the exception
+                        return $"Error deleting order: {ex.Message}";
+                    }
+                }
+            }
+        }
+
+        /*
+         *from here CRUD for OrdersStatus
+         */
+        public static string InsertOrderStatusIntoDB(string statusName)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("insert_order_status", connection))
+                {
+                    try
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@StatusName", statusName);
+
+                        connection.Open();
+                        command.ExecuteNonQuery();
+
+                        return "Order status inserted successfully.";
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle or log the exception
+                        return $"Error inserting order status: {ex.Message}";
+                    }
+                }
+            }
+        }
+        public static string UpdateOrderStatusInDB(int orderStatusId, string statusName)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("update_order_status", connection))
+                {
+                    try
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@ID_OrderStatus", orderStatusId);
+                        command.Parameters.AddWithValue("@StatusName", statusName);
+
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected == 0)
+                        {
+                            return $"No order status with ID {orderStatusId} found.";
+                        }
+                        else
+                        {
+                            return $"Order status with ID {orderStatusId} updated successfully.";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle or log the exception
+                        return $"Error updating order status: {ex.Message}";
+                    }
+                }
+            }
+        }
+
+        /*
+         *from here CRUD for ShoppingCarts
+         */
+        //Method that is used to create the cart automatically after creating a customer
+        private static string InsertShoppingCartAfetrCustomerCreation(string email)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("insert_shopping_cart", connection))
+                {
+                    try
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@email", email);
+
+                        connection.Open();
+                        command.ExecuteNonQuery();
+
+                        return "Shopping cart inserted successfully.";
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle or log the exception
+                        return $"Error inserting shopping cart: {ex.Message}";
+                    }
+                }
+            }
+        }
+
+        public static string InsertShoppingCartIntoDB(int customerId, int cartStatus, DateTime createdDate)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("insert_shopping_cart_manager", connection))
+                {
+                    try
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@ID_Customer", customerId);
+                        command.Parameters.AddWithValue("@CartStatus", cartStatus);
+                        command.Parameters.AddWithValue("@CreatedDate", createdDate);
+
+                        connection.Open();
+                        command.ExecuteNonQuery();
+
+                        return "Shopping cart inserted successfully.";
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle or log the exception
+                        return $"Error inserting shopping cart: {ex.Message}";
+                    }
+                }
+            }
+        }
+
+        public static string UpdateShoppingCartInDB(int shoppingCartId, int customerId, int cartStatus, DateTime createdDate)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("update_shopping_cart", connection))
+                {
+                    try
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@ID_ShoppingCart", shoppingCartId);
+                        command.Parameters.AddWithValue("@ID_Customer", customerId);
+                        command.Parameters.AddWithValue("@CartStatus", cartStatus);
+                        command.Parameters.AddWithValue("@CreatedDate", createdDate);
+
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected == 0)
+                        {
+                            return $"No shopping cart with ID {shoppingCartId} found.";
+                        }
+                        else
+                        {
+                            return $"Shopping cart with ID {shoppingCartId} updated successfully.";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle or log the exception
+                        return $"Error updating shopping cart: {ex.Message}";
+                    }
+                }
+            }
+        }
+
+        public static string DeleteShoppingCartInDB(int shoppingCartId)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("delete_shopping_cart", connection))
+                {
+                    try
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@ID_ShoppingCart", shoppingCartId);
+
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected == 0)
+                        {
+                            return $"No shopping cart with ID {shoppingCartId} found.";
+                        }
+                        else
+                        {
+                            return $"Shopping cart with ID {shoppingCartId} deleted successfully.";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle or log the exception
+                        return $"Error deleting shopping cart: {ex.Message}";
+                    }
+                }
+            }
+        }
 
 
         /*
-         * Method to create cart that is used inside createCustomer()
+         *from here CRUD for Reviews
          */
-        private static void insertCartDB(string email)
+        public static string InsertReviewIntoDB(int shoppingCartId, int productId, int rating, string description)
         {
-            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings
-                           ["SpeedMasterConnectionString"].ConnectionString);
+            string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
 
-            SqlCommand myCommand = new SqlCommand();
-            myCommand.CommandType = CommandType.StoredProcedure;
-            myCommand.CommandText = "insert_cart";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("insert_review", connection))
+                {
+                    try
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@ID_ShoppingCart", shoppingCartId);
+                        command.Parameters.AddWithValue("@ID_Product", productId);
+                        command.Parameters.AddWithValue("@Rating", rating);
+                        command.Parameters.AddWithValue("@Description", description);
 
-            myCommand.Connection = myConn;
+                        connection.Open();
+                        command.ExecuteNonQuery();
 
-            myCommand.Parameters.AddWithValue("@email", email);
-
-            myConn.Open();
-            myCommand.ExecuteNonQuery();
-            myConn.Close();
+                        return "Review inserted successfully.";
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle or log the exception
+                        return $"Error inserting review: {ex.Message}";
+                    }
+                }
+            }
         }
 
-       
+        public static string UpdateReviewAllColumns(int reviewId, int shoppingCartId, int productId, int rating, string description)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("update_review", connection))
+                {
+                    try
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@ID_Review", reviewId);
+                        command.Parameters.AddWithValue("@ID_ShoppingCart", shoppingCartId);
+                        command.Parameters.AddWithValue("@ID_Product", productId);
+                        command.Parameters.AddWithValue("@Rating", rating);
+                        command.Parameters.AddWithValue("@Description", description);
+
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected == 0)
+                        {
+                            return $"No review with ID {reviewId} found.";
+                        }
+                        else
+                        {
+                            return $"Review with ID {reviewId} updated successfully.";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle or log the exception
+                        return $"Error updating review: {ex.Message}";
+                    }
+                }
+            }
+        }
+
+        public static string DeleteReview(int reviewId)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("delete_review", connection))
+                {
+                    try
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@ID_Review", reviewId);
+
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected == 0)
+                        {
+                            return $"No review with ID {reviewId} found.";
+                        }
+                        else
+                        {
+                            return $"Review with ID {reviewId} deleted successfully.";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle or log the exception
+                        return $"Error deleting review: {ex.Message}";
+                    }
+                }
+            }
+        }
+
+        /*
+         *from here CRUD for Users of the back office
+         */
         public static int loginUser(string email, string password)
         {
             SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings
@@ -844,33 +1220,133 @@ namespace SpeedMaster
             return result;
         }
 
-       
-
-
-
-        public static void insertAccessories(int ID_Accessory, string AccessoryName, string Description, string Price,
-            string Stock, string Active, string ID_Category)
+        public static string InsertUserIntoDB(string userName, int roleTypeId, string password)
         {
-            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings
-                           ["SpeedMasterConnectionString"].ConnectionString);
-            SqlCommand myCommand = new SqlCommand();
-            myCommand.CommandType = CommandType.StoredProcedure;
-            myCommand.CommandText = "inset_accessories";
-            myCommand.Connection = myConn;
+            string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
 
-            myCommand.Parameters.AddWithValue("@ID_Accessory", ID_Accessory);
-            myCommand.Parameters.AddWithValue("@AccessoryName", AccessoryName);
-            myCommand.Parameters.AddWithValue("@Description", Description);
-            myCommand.Parameters.AddWithValue("@Price", Price);
-            myCommand.Parameters.AddWithValue("@Stock", Stock);
-            myCommand.Parameters.AddWithValue("@Active", Active);
-            myCommand.Parameters.AddWithValue("@ID_Category", ID_Category);
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("insert_user", connection))
+                {
+                    try
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@UserName", userName);
+                        command.Parameters.AddWithValue("@ID_RoleType", roleTypeId);
+                        command.Parameters.AddWithValue("@Password", password);
 
-            myConn.Open();
-            myCommand.ExecuteNonQuery();
-            myConn.Close();
+                        connection.Open();
+                        command.ExecuteNonQuery();
 
-
+                        return "User inserted successfully.";
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle or log the exception
+                        return $"Error inserting user: {ex.Message}";
+                    }
+                }
+            }
         }
+
+        public static string UpdateUserInDB(int userId, string userName, int roleTypeId, string password)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("update_user", connection))
+                {
+                    try
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@ID_User", userId);
+                        command.Parameters.AddWithValue("@UserName", userName);
+                        command.Parameters.AddWithValue("@ID_RoleType", roleTypeId);
+                        command.Parameters.AddWithValue("@Password", password);
+
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected == 0)
+                        {
+                            return $"No user with ID {userId} found.";
+                        }
+                        else
+                        {
+                            return $"User with ID {userId} updated successfully.";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle or log the exception
+                        return $"Error updating user: {ex.Message}";
+                    }
+                }
+            }
+        }
+
+        public static string DeleteUser(int userId)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("delete_user", connection))
+                {
+                    try
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@ID_User", userId);
+
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected == 0)
+                        {
+                            return $"No user with ID {userId} found.";
+                        }
+                        else
+                        {
+                            return $"User with ID {userId} deleted successfully.";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle or log the exception
+                        return $"Error deleting user: {ex.Message}";
+                    }
+                }
+            }
+        }
+
+
+
+
+
+        //public static void insertAccessories(int ID_Accessory, string AccessoryName, string Description, string Price,
+        //    string Stock, string Active, string ID_Category)
+        //{
+        //    SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings
+        //                   ["SpeedMasterConnectionString"].ConnectionString);
+        //    SqlCommand myCommand = new SqlCommand();
+        //    myCommand.CommandType = CommandType.StoredProcedure;
+        //    myCommand.CommandText = "inset_accessories";
+        //    myCommand.Connection = myConn;
+
+        //    myCommand.Parameters.AddWithValue("@ID_Accessory", ID_Accessory);
+        //    myCommand.Parameters.AddWithValue("@AccessoryName", AccessoryName);
+        //    myCommand.Parameters.AddWithValue("@Description", Description);
+        //    myCommand.Parameters.AddWithValue("@Price", Price);
+        //    myCommand.Parameters.AddWithValue("@Stock", Stock);
+        //    myCommand.Parameters.AddWithValue("@Active", Active);
+        //    myCommand.Parameters.AddWithValue("@ID_Category", ID_Category);
+
+        //    myConn.Open();
+        //    myCommand.ExecuteNonQuery();
+        //    myConn.Close();
+
+
+        //}
     }
 }

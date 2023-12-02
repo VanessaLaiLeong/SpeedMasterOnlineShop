@@ -70,6 +70,7 @@
     <Content Include="BO\InsertAccessory.aspx" />
     <Content Include="BO\InsertMotorcycle.aspx" />
     <Content Include="BO\InsertProducts.aspx" />
+    <Content Include="BO\ShowAllProducts.aspx" />
     <Content Include="FO\Activation.aspx" />
     <Content Include="FO\Login.aspx" />
     <Content Include="FO\ResetPassword.aspx" />
@@ -98,6 +99,13 @@
     </Compile>
     <Compile Include="BO\InsertProducts.aspx.designer.cs">
       <DependentUpon>InsertProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BO\ShowAllProducts.aspx.cs">
+      <DependentUpon>ShowAllProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BO\ShowAllProducts.aspx.designer.cs">
+      <DependentUpon>ShowAllProducts.aspx</DependentUpon>
     </Compile>
     <Compile Include="Connections.cs" />
     <Compile Include="Customer.cs" />

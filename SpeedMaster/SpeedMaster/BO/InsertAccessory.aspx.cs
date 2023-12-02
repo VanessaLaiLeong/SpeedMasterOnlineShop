@@ -13,9 +13,17 @@ namespace SpeedMaster.BO
         {
             int id = Convert.ToInt32(Session["globalProductId"]);
             //string name = 
-            string resultMessage = Connections.InsertAccessoryDB(id, "AccessoryName2", "Description", 50.00, 10, true, 3);
+            
 
-            Response.Write(resultMessage);
+            //Response.Write(resultMessage);
+        }
+
+        protected void btn_add_Click(object sender, EventArgs e)
+        {
+            byte[] img = Services.getImageInfo(FileUpload1);
+
+            string resultMessage = Connections.InsertAccessoryDB(Convert.ToInt32(Session["globalProductId"]),
+                "AccessoryName2", "Description", 50.00, 10, true, 3, img);
         }
     }
 }

@@ -100,7 +100,21 @@ namespace SpeedMaster
             //    Active: updatedActive
             //);
 
-            string result = Connections.DeleteMotorcycleAndGlobalProductsIDsFromDB(31);
+            //string result = Connections.DeleteMotorcycleAndGlobalProductsIDsFromDB(31);
+
+            //    string result = Connections.UpdateOrderInDB(
+            //    orderId: 1,   // Replace with the actual order ID
+            //    shoppingCartId: 2,   // Replace with the actual shopping cart ID
+            //    orderDate: DateTime.Now,   // Replace with the actual order date
+            //    shippingDate: DateTime.Now.AddDays(5),   // Replace with the actual shipping date
+            //    totalAmount: 150.00m,  // Replace with the actual total amount
+            //    statusId: 2  // Replace with the actual ID from the Status table
+            //);
+
+            int userIdToDelete = 1; // Replace with an actual user ID
+
+            string result = Connections.DeleteUser(userIdToDelete);
+
             Response.Write(result);
         }
 
