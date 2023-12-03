@@ -623,9 +623,41 @@ namespace SpeedMaster
             return result;
         }
 
+        public static DataTable GetProductDetails(int productId)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("get_productDetails", connection))
+                {
+                    try
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@id", productId);
+
+                        connection.Open();
+
+                        // Use SqlDataAdapter to fill a DataTable with the results of the stored procedure
+                        SqlDataAdapter adapter = new SqlDataAdapter(command);
+                        DataTable resultTable = new DataTable();
+                        adapter.Fill(resultTable);
+                        return resultTable;
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle or log the exception
+                        Console.WriteLine($"Error executing get_productDetails: {ex.Message}");
+                        return null;
+                    }
+                }
+            }
+        }
+
+
         /*
          *from here CRUD for motorcycle
-         */  
+         */
         public static string InsertMotorcycleIntoDB(
             int ID_Motorcycle,
             int ID_Brand,
@@ -683,7 +715,7 @@ namespace SpeedMaster
             int ID_Motorcycle,
             int ID_Brand,
             string Model,
-            int ManufacturingYear,
+            int ManufactoringYear,
             string EngineType,
             int EngineCapacity,
             string Color,
@@ -706,7 +738,7 @@ namespace SpeedMaster
                         command.Parameters.AddWithValue("@ID_Motorcycle", ID_Motorcycle);
                         command.Parameters.AddWithValue("@ID_Brand", ID_Brand);
                         command.Parameters.AddWithValue("@Model", Model);
-                        command.Parameters.AddWithValue("@ManufacturingYear", ManufacturingYear);
+                        command.Parameters.AddWithValue("@ManufactoringYear", ManufactoringYear);
                         command.Parameters.AddWithValue("@EngineType", EngineType);
                         command.Parameters.AddWithValue("@EngineCapacity", EngineCapacity);
                         command.Parameters.AddWithValue("@Color", Color);

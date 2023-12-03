@@ -11,25 +11,16 @@ namespace SpeedMaster.BO
 {
 
 
-    public partial class InsertProducts
+    public partial class ShowProductDetail
     {
 
         /// <summary>
-        /// DropDownList1 control.
+        /// edit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
-
-        /// <summary>
-        /// btn_next control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_next;
+        protected global::System.Web.UI.WebControls.Button edit;
     }
 }

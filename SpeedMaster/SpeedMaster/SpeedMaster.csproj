@@ -71,6 +71,8 @@
     <Content Include="BO\InsertMotorcycle.aspx" />
     <Content Include="BO\InsertProducts.aspx" />
     <Content Include="BO\ShowAllProducts.aspx" />
+    <Content Include="BO\ShowProductDetail.aspx" />
+    <Content Include="BO\UpdateProductDetails.aspx" />
     <Content Include="FO\Activation.aspx" />
     <Content Include="FO\Login.aspx" />
     <Content Include="FO\ResetPassword.aspx" />
@@ -106,6 +108,20 @@
     </Compile>
     <Compile Include="BO\ShowAllProducts.aspx.designer.cs">
       <DependentUpon>ShowAllProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BO\ShowProductDetail.aspx.cs">
+      <DependentUpon>ShowProductDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BO\ShowProductDetail.aspx.designer.cs">
+      <DependentUpon>ShowProductDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BO\UpdateProductDetails.aspx.cs">
+      <DependentUpon>UpdateProductDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BO\UpdateProductDetails.aspx.designer.cs">
+      <DependentUpon>UpdateProductDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Connections.cs" />
     <Compile Include="Customer.cs" />

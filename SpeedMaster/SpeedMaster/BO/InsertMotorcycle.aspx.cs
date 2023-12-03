@@ -44,6 +44,7 @@ namespace SpeedMaster.BO
                 Active: 1
 
             );
+            Response.Redirect("InsertProducts.aspx");
         }
     }
 }

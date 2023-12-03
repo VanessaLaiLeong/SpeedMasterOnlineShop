@@ -11,22 +11,23 @@ namespace SpeedMaster.BO
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            insertGlobalProduct("motorcycle");
+            
             
         }
-        private void insertGlobalProduct(string type)
+        
+        protected void btn_next_Click(object sender, EventArgs e)
         {
-            Session["globalProductId"] = Connections.insertGlobalProductsDB(type);
-
-            if (type == "motorcycle")
-            {
+            if (DropDownList1.SelectedValue == "Motorcycle")            {
+                
+                Session["globalProductId"] = Connections.insertGlobalProductsDB("motorcycle");
                 Response.Redirect("InsertMotorcycle.aspx");
             }
-            else if (type == "accessory")
+            else if (DropDownList1.SelectedValue == "Accessories")
             {
+                Session["globalProductId"] = Connections.insertGlobalProductsDB("accessories");               
                 Response.Redirect("InsertAccessory.aspx");
             }
-
-}
+            
+        }
     }
 }
