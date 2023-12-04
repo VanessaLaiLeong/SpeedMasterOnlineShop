@@ -100,22 +100,38 @@ namespace SpeedMaster
             //    Active: updatedActive
             //);
 
-            //string result = Connections.DeleteMotorcycleAndGlobalProductsIDsFromDB(31);
+            ////string result = Connections.DeleteMotorcycleAndGlobalProductsIDsFromDB(31);
 
-            //    string result = Connections.UpdateOrderInDB(
-            //    orderId: 1,   // Replace with the actual order ID
-            //    shoppingCartId: 2,   // Replace with the actual shopping cart ID
-            //    orderDate: DateTime.Now,   // Replace with the actual order date
-            //    shippingDate: DateTime.Now.AddDays(5),   // Replace with the actual shipping date
-            //    totalAmount: 150.00m,  // Replace with the actual total amount
-            //    statusId: 2  // Replace with the actual ID from the Status table
-            //);
+            ////    string result = Connections.UpdateOrderInDB(
+            ////    orderId: 1,   // Replace with the actual order ID
+            ////    shoppingCartId: 2,   // Replace with the actual shopping cart ID
+            ////    orderDate: DateTime.Now,   // Replace with the actual order date
+            ////    shippingDate: DateTime.Now.AddDays(5),   // Replace with the actual shipping date
+            ////    totalAmount: 150.00m,  // Replace with the actual total amount
+            ////    statusId: 2  // Replace with the actual ID from the Status table
+            ////);
 
-            int userIdToDelete = 1; // Replace with an actual user ID
+            int ID_Motorcycle = 8;
+            int ID_Brand = 1;
+            string Model = "SampleModel";
+            int ManufactoringYear = 2022;
+            string EngineType = "V-Twin";
+            int EngineCapacity = 1500;
+            string Color = "azuuuuuuuuul";
+            decimal Price = 20000.00m;
+            string Condition = "New";
+            string Description = "Powerful motorcycle with great features";
+            byte[] MotorcycleImage = new byte[] { 0x01, 0x02, 0x03 }; // Sample image bytes
+            string MotorcycleImageType = "jpg";
+            bool Active = true;
 
-            string result = Connections.DeleteUser(userIdToDelete);
+            // Call the UpdateMotorcycleInDB method with the sample data
+            string result = Connections.UpdateMotorcycleInDB(
+                ID_Motorcycle, ID_Brand, Model, ManufactoringYear, EngineType,
+                EngineCapacity, Color, Price, Condition, Description,
+                MotorcycleImage, MotorcycleImageType, Active);
 
-            Response.Write(result);
+            //Response.Write(result);
         }
 
         

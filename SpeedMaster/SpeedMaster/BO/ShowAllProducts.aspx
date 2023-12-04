@@ -164,11 +164,8 @@
                                     </td>
                                     <td>
                                         <%--este butao o icon esta um pouco desalinhado da um pouco de ocd, ja tentei alinhar mas nao estou a conseguir--%>
-                                        <asp:LinkButton ID="LinkButton1" runat="server" class="btn btn-primary p-1 pb-2" Width="30px" Height="30px" CommandArgument='<%# Eval("ID_Accessory") %>'><i class="fa-solid fa-eye"></i></asp:LinkButton>
-                                        <%--<asp:ImageButton ID="btn_viewDetail" runat="server" class="btn btn-primary p-1 me-2" ImageUrl="~/BO/img/eye-solid.svg"
-                        Width="30px" Height="30px" CommandArgument='<%# Eval("ProductID") %>' OnClick="btn_viewDetail_Click" />
-                    <asp:ImageButton ID="btn_delete" runat="server" ImageUrl="~/BO/img/trash-can-solid.svg" class="btn btn-danger p-1"
-                        Width="30px" Height="30px" OnClick="btn_delete_Click" />--%>
+                                          <asp:LinkButton ID="accessoryDeatils" runat="server" class="btn btn-primary p-1 me-2" Width="30px" Height="30px" CommandArgument='<%# Eval("ID_Accessory") %>' OnClick="accessoryDeatils_Click"><i class="fa-solid fa-eye"></i></asp:LinkButton>
+                                       <asp:LinkButton ID="acessoryDelete" runat="server" class="btn btn-warning p-1 pb-2" Width="30px" Height="30px" CommandArgument='<%# Eval("ID_Accessory") %>' OnClick="acessoryDelete_Click"><i class="fa-solid fa-trash"></i></asp:LinkButton>
 
                                     </td>
                                 </tr>

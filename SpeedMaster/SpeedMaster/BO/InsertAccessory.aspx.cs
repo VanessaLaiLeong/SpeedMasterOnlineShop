@@ -24,6 +24,7 @@ namespace SpeedMaster.BO
 
             string resultMessage = Connections.InsertAccessoryDB(Convert.ToInt32(Session["globalProductId"]),
                 "AccessoryName2", "Description", 50.00, 10, true, 3, img);
+            Response.Redirect("InsertProducts.aspx");
         }
     }
 }

@@ -72,7 +72,8 @@
     <Content Include="BO\InsertProducts.aspx" />
     <Content Include="BO\ShowAllProducts.aspx" />
     <Content Include="BO\ShowProductDetail.aspx" />
-    <Content Include="BO\UpdateProductDetails.aspx" />
+    <Content Include="BO\UpdateProductDetailsAccessory.aspx" />
+    <Content Include="BO\UpdateProductDetailsMotorcycle.aspx" />
     <Content Include="FO\Activation.aspx" />
     <Content Include="FO\Login.aspx" />
     <Content Include="FO\ResetPassword.aspx" />
@@ -116,12 +117,19 @@
     <Compile Include="BO\ShowProductDetail.aspx.designer.cs">
       <DependentUpon>ShowProductDetail.aspx</DependentUpon>
     </Compile>
-    <Compile Include="BO\UpdateProductDetails.aspx.cs">
-      <DependentUpon>UpdateProductDetails.aspx</DependentUpon>
+    <Compile Include="BO\UpdateProductDetailsAccessory.aspx.cs">
+      <DependentUpon>UpdateProductDetailsAccessory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="BO\UpdateProductDetails.aspx.designer.cs">
-      <DependentUpon>UpdateProductDetails.aspx</DependentUpon>
+    <Compile Include="BO\UpdateProductDetailsAccessory.aspx.designer.cs">
+      <DependentUpon>UpdateProductDetailsAccessory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BO\UpdateProductDetailsMotorcycle.aspx.cs">
+      <DependentUpon>UpdateProductDetailsMotorcycle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BO\UpdateProductDetailsMotorcycle.aspx.designer.cs">
+      <DependentUpon>UpdateProductDetailsMotorcycle.aspx</DependentUpon>
     </Compile>
     <Compile Include="Connections.cs" />
     <Compile Include="Customer.cs" />

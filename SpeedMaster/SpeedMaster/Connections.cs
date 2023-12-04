@@ -306,7 +306,7 @@ namespace SpeedMaster
             }
         }
 
-        public static string UpdateAccessoryInDB(int ID_Accessory, string AccessoryName, string Description, double Price, int Stock, bool Active, int ID_Category)
+        public static string UpdateAccessoryInDB(int ID_Accessory, string AccessoryName, string Description, double Price, int Stock, bool Active, int ID_Category, byte[] img)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
 
@@ -324,6 +324,7 @@ namespace SpeedMaster
                         command.Parameters.AddWithValue("@Stock", Stock);
                         command.Parameters.AddWithValue("@Active", Active);
                         command.Parameters.AddWithValue("@ID_Category", ID_Category);
+                        command.Parameters.AddWithValue("@Image", img);
 
                         connection.Open();
                         int rowsAffected = command.ExecuteNonQuery();

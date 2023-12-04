@@ -15,7 +15,8 @@ namespace SpeedMaster.BO
             //Response.Write(Request.QueryString["productId"]);
             DataTable productDetails = Connections.GetProductDetails(Convert.ToInt32(Request.QueryString["productId"]));
             PrintProductDetails(productDetails);
-            Response.Write(Session["AccessoryName"]);
+            Response.Write(Session["productType"]);
+            //Response.Write(Session["ID_Accessory"]);
         }
 
         private void PrintProductDetails(DataTable productDetails)
@@ -56,8 +57,18 @@ namespace SpeedMaster.BO
 
         protected void edit_Click(object sender, EventArgs e)
         {
-            Session["productType"] = "Motorcycle";
-            Response.Redirect($"UpdateProductDetails.aspx?productId={Session["ID_Motorcycle"]}");
+            if (Convert.ToString(Session["productType"]) == "Motorcycle")
+            {
+                Response.Write("mota");
+                Response.Redirect($"UpdateProductDetailsMotorcycle.aspx?productId={Session["ID_Motorcycle"]}");
+            }
+            else if (Convert.ToString(Session["productType"]) == "Accessory")
+            {
+                Response.Write("acessorio");
+                Response.Redirect($"UpdateProductDetailsAccessory.aspx?productId={Session["ID_Accessory"]}");
+            }
+            
+            
         }
     }
 }

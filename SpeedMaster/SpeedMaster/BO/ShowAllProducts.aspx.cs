@@ -215,5 +215,10 @@ namespace SpeedMaster.BO
             Session["productType"] = "Accessory";
             Response.Redirect($"ShowProductDetail.aspx?productId={productId}");
         }
+
+        protected void acessoryDelete_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
