@@ -80,9 +80,10 @@
     <Content Include="BO\UpdateProductDetailsMotorcycle.aspx" />
     <Content Include="FO\Activation.aspx" />
     <Content Include="FO\Login.aspx" />
+    <Content Include="FO\new_logo_SM-removebg-preview-e1672148031220.png" />
     <Content Include="FO\ResetPassword.aspx" />
     <Content Include="FO\SignUp.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Images\logoSpeedMaster.png" />
     <Content Include="Tests.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -172,6 +173,13 @@
     <Compile Include="FO\Activation.aspx.designer.cs">
       <DependentUpon>Activation.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FO\FO_MasterPage.Master.cs">
+      <DependentUpon>FO_MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FO\FO_MasterPage.Master.designer.cs">
+      <DependentUpon>FO_MasterPage.Master</DependentUpon>
+    </Compile>
     <Compile Include="FO\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -212,14 +220,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Master.Master" />
+    <Content Include="FO\FO_MasterPage.Master" />
     <None Include="packages.config" />
-    <None Include="Web - Copy.config.ex" />
-    <None Include="Web - Copy.config.Debug.ex">
-      <DependentUpon>Web - Copy.config.ex</DependentUpon>
-    </None>
-    <None Include="Web - Copy.config.Release.ex">
-      <DependentUpon>Web - Copy.config.ex</DependentUpon>
-    </None>
+    <None Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
