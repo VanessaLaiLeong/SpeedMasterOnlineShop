@@ -62,6 +62,14 @@
 * [ ] Live Chat
 
 
+#### Front end 
+
+- [ ] Navbar
+- [ ] Signup
+- [ ] Reset Password
+- [ ] Activation
+- [ ] Login
+
 ### Back Office
 
 #### Gestao de encomendas
