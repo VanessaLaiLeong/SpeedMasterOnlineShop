@@ -17,7 +17,8 @@ namespace SpeedMaster.BO
         
         protected void btn_next_Click(object sender, EventArgs e)
         {
-            if (DropDownList1.SelectedValue == "Motorcycle")            {
+            if (DropDownList1.SelectedValue == "Motorcycle")
+            {
                 
                 Session["globalProductId"] = Connections.insertGlobalProductsDB("motorcycle");
                 Response.Redirect("InsertMotorcycle.aspx");
