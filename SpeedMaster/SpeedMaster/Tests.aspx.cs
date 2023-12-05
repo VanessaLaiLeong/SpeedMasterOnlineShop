@@ -111,19 +111,25 @@ namespace SpeedMaster
             ////    statusId: 2  // Replace with the actual ID from the Status table
             ////);
 
-            int customerIDToUpdate = 3;
-            string newEmail = "teste@teste.com";
-            string newFirstName = "NewFirstName123";
-            string newLastName = "NewLastName";
-            string newPassword = "NewPassword";
-            string newAddress = "NewAddress";
-            string newPhone = "NewPhone";
-            bool isActive = true;
-            string newNIF = "NewNIF";
+            //int customerIDToUpdate = 3;
+            //string newEmail = "teste@teste.com";
+            //string newFirstName = "NewFirstName123";
+            //string newLastName = "NewLastName";
+            //string newPassword = "NewPassword";
+            //string newAddress = "NewAddress";
+            //string newPhone = "NewPhone";
+            //bool isActive = true;
+            //string newNIF = "NewNIF";
 
 
-            string result = Connections.UpdateCustomerDB(customerIDToUpdate, newEmail, newFirstName, newLastName,
-                    newPassword, newAddress, newPhone, isActive, newNIF);
+            //string result = Connections.UpdateCustomerDB(customerIDToUpdate, newEmail, newFirstName, newLastName,
+            //        newPassword, newAddress, newPhone, isActive, newNIF);
+
+
+            string email = "teste12@teste.com";
+            int productId = 8;
+
+            string result = Connections.AddToCart(email, productId);
             Response.Write(result);
 
         }
