@@ -1359,6 +1359,41 @@ namespace SpeedMaster
         }
 
 
+        //add to cart method
+        public static string AddToCart(string email, int productId)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("add_to_cart", connection))
+                {
+                    try
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@email", email);
+                        command.Parameters.AddWithValue("@ID_product", productId);
+
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected == 0)
+                        {
+                            return $"No cart or product found for email {email} and product ID {productId}.";
+                        }
+                        else
+                        {
+                            return $"Product with ID {productId} added to the cart successfully.";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle or log the exception
+                        return $"Error adding product to cart: {ex.Message}";
+                    }
+                }
+            }
+        }
 
 
 

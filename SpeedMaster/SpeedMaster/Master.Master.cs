@@ -15,6 +15,10 @@ namespace SpeedMaster
             {
                 string userName =  "Login";
             }
+            else
+            {
+                string userName = Session["customer"].ToString();
+            }
         }
     }
 }

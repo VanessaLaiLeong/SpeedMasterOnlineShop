@@ -12,8 +12,8 @@ namespace SpeedMaster.FO
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string res = doLogin("jerdebastu@gufum.com", "P@ssw0rd123");
-            Response.Write(res);
+            //string res = doLogin("jerdebastu@gufum.com", "P@ssw0rd123");
+            //Response.Write(res);
             //Response.Write(((Customer)Session["customer"]).email);
             //a logica funciona
         }

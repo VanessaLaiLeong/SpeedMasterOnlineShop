@@ -68,7 +68,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BO\InsertAccessory.aspx" />
-    <Content Include="BO\InsertBrand.aspx" />
     <Content Include="BO\InsertMotorcycle.aspx" />
     <Content Include="BO\InsertProducts.aspx" />
     <Content Include="BO\ShowAllCustomers.aspx" />
@@ -81,6 +80,8 @@
     <Content Include="FO\Activation.aspx" />
     <Content Include="FO\Login.aspx" />
     <Content Include="FO\ResetPassword.aspx" />
+    <Content Include="FO\ShopMotorcycle.aspx" />
+    <Content Include="FO\ShopMotorcycleDetails.aspx" />
     <Content Include="FO\SignUp.aspx" />
     <Content Include="Web.config" />
     <Content Include="Tests.aspx" />
@@ -92,13 +93,6 @@
     </Compile>
     <Compile Include="BO\InsertAccessory.aspx.designer.cs">
       <DependentUpon>InsertAccessory.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="BO\InsertBrand.aspx.cs">
-      <DependentUpon>InsertBrand.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="BO\InsertBrand.aspx.designer.cs">
-      <DependentUpon>InsertBrand.aspx</DependentUpon>
     </Compile>
     <Compile Include="BO\InsertMotorcycle.aspx.cs">
       <DependentUpon>InsertMotorcycle.aspx</DependentUpon>
@@ -185,6 +179,20 @@
     </Compile>
     <Compile Include="FO\ResetPassword.aspx.designer.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FO\ShopMotorcycle.aspx.cs">
+      <DependentUpon>ShopMotorcycle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FO\ShopMotorcycle.aspx.designer.cs">
+      <DependentUpon>ShopMotorcycle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FO\ShopMotorcycleDetails.aspx.cs">
+      <DependentUpon>ShopMotorcycleDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FO\ShopMotorcycleDetails.aspx.designer.cs">
+      <DependentUpon>ShopMotorcycleDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="FO\SignUp.aspx.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
