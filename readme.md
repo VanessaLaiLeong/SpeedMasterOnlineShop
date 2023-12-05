@@ -58,8 +58,8 @@
 - [ ] opcao para remover produtos da lista
 - [ ] opcao para continuar para o pagamento dos produtos na lista
 
-#### Simulador de pagamentos
-#### Live Chat
+* [ ] Simulador de pagamentos
+* [ ] Live Chat
 
 
 ### Back Office
