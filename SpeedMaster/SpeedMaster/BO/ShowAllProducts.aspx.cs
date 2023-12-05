@@ -105,7 +105,7 @@ namespace SpeedMaster.BO
 
             //Control page size from here 
             pgitems.PageSize = 8;
-            pgitems.CurrentPageIndex = PageNumber;
+            pgitems.CurrentPageIndex = PageNumber2;
             if (pgitems.PageCount > 1)
             {
                 Repeater4.Visible = true;
@@ -144,6 +144,22 @@ namespace SpeedMaster.BO
             set { ViewState["PageNumber"] = value; }
         }
 
+        private int PageNumber2
+        {
+            get
+            {
+                if (ViewState["PageNumber"] != null)
+                {
+                    return Convert.ToInt32(ViewState["PageNumber"]);
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            set { ViewState["PageNumber"] = value; }
+        }
+
         //paging repeater of repeater1 for motorcycle
         protected void Repeater2_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
@@ -154,7 +170,7 @@ namespace SpeedMaster.BO
         //paging repeater of repeater3 for accessories
         protected void Repeater4_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
-            PageNumber = Convert.ToInt32(e.CommandArgument) - 1;
+            PageNumber2 = Convert.ToInt32(e.CommandArgument) - 1;
             BindRepeater2("select * from accessories");
         }
 

@@ -59,6 +59,11 @@ namespace SpeedMaster.BO
                 Response.Write("sucess!");
             }
         }
+
+        protected void btn_update_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
     

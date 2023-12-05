@@ -101,20 +101,25 @@ namespace SpeedMaster
             SqlDataReader dataReader = myCommand.ExecuteReader();
 
             Customer customer = new Customer();
-            while (dataReader.Read())
+            if (dataReader.HasRows)
             {
-                customer.email = dataReader.GetString(1);
-                customer.firstName = dataReader.GetString(2);
-                customer.lastName = dataReader.GetString(3);
-                customer.password = dataReader.GetString(4);
-                customer.address = dataReader.GetString(5);
-                customer.phone = dataReader.GetString(6);
-                customer.active = dataReader.GetBoolean(7).ToString();
-                customer.nif = dataReader.GetString(8);
+                while (dataReader.Read())
+                {
+                    customer.email = dataReader.GetString(1);
+                    customer.firstName = dataReader.GetString(2);
+                    customer.lastName = dataReader.GetString(3);
+                    customer.password = dataReader.GetString(4);
+                    customer.address = dataReader.GetString(5);
+                    customer.phone = dataReader.GetString(6);
+                    customer.active = dataReader.GetBoolean(7).ToString();
+                    customer.nif = dataReader.GetString(8);
+                }
+                return customer;
             }
-            myConn.Close();
-
-            return customer;
+            else
+            {
+                return null;
+            }          
         }
         
         public static void activateCustomerAccount(string email)

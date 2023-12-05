@@ -12,14 +12,11 @@ namespace SpeedMaster.BO
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["ID_Accessory"] = Convert.ToInt32(Request.QueryString["productId"]);
-            //Session["ID_Accessory"] = ;
-            //Session["AccessoryName"] = ;
-            //Session["AccessoryDescription"] = ;
-            //Session["AccessoryPrice"] = ;
-            //Session["AccessoryStock"] = ;
-            //Session["AccessoryActive"] = ;
-            //Session["ID_AccessoryCategory"] ;
-            //Session["AccessoryImage"] = ;
+
+            if (!IsPostBack)
+            {
+                //tbox = Session["AccessoryName"].ToString()
+            }
         }
 
         protected void update_Click(object sender, EventArgs e)
@@ -28,6 +25,7 @@ namespace SpeedMaster.BO
             {
 
                 Connections.UpdateAccessoryInDB(
+                    //aqui alterar tudo para tbox
                         ID_Accessory: Convert.ToInt32(Session["ID_Accessory"]),
                         AccessoryName: Session["AccessoryName"].ToString(),
                         Description: Session["AccessoryDescription"].ToString(),

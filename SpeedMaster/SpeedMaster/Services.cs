@@ -268,6 +268,23 @@ namespace SpeedMaster
 
         }
 
+        public static string doUpdateCustomer(int ID_Customer, string email, string password, string firstName, string lastName, string phone, string address,bool active, string nif, string otherPassowrd)
+        {
+            if (password != otherPassowrd)
+            {
+                return "Password does not match";
+            }
+            if (checkPassword(password) == "weak")
+            {
+                return "Please insert a stronger password";
+            }
+            else
+            {
+                string result = Connections.UpdateCustomerDB(ID_Customer, email, EncryptString(password), firstName, lastName, phone, address, active, nif);
+                return result;
+            }
+        }
+
         /*
          * Method to send emails
          */

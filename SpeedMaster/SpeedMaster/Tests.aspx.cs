@@ -111,28 +111,23 @@ namespace SpeedMaster
             ////    statusId: 2  // Replace with the actual ID from the Status table
             ////);
 
-            int ID_Motorcycle = 8;
-            int ID_Brand = 1;
-            string Model = "SampleModel";
-            int ManufactoringYear = 2022;
-            string EngineType = "V-Twin";
-            int EngineCapacity = 1500;
-            string Color = "azuuuuuuuuul";
-            decimal Price = 20000.00m;
-            string Condition = "New";
-            string Description = "Powerful motorcycle with great features";
-            byte[] MotorcycleImage = new byte[] { 0x01, 0x02, 0x03 }; // Sample image bytes
-            string MotorcycleImageType = "jpg";
-            bool Active = true;
+            int customerIDToUpdate = 3;
+            string newEmail = "teste@teste.com";
+            string newFirstName = "NewFirstName123";
+            string newLastName = "NewLastName";
+            string newPassword = "NewPassword";
+            string newAddress = "NewAddress";
+            string newPhone = "NewPhone";
+            bool isActive = true;
+            string newNIF = "NewNIF";
 
-            // Call the UpdateMotorcycleInDB method with the sample data
-            string result = Connections.UpdateMotorcycleInDB(
-                ID_Motorcycle, ID_Brand, Model, ManufactoringYear, EngineType,
-                EngineCapacity, Color, Price, Condition, Description,
-                MotorcycleImage, MotorcycleImageType, Active);
 
-            //Response.Write(result);
+            string result = Connections.UpdateCustomerDB(customerIDToUpdate, newEmail, newFirstName, newLastName,
+                    newPassword, newAddress, newPhone, isActive, newNIF);
+            Response.Write(result);
+
         }
+            
 
         
     }

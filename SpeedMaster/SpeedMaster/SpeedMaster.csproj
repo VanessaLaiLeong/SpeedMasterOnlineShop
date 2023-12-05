@@ -68,10 +68,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BO\InsertAccessory.aspx" />
+    <Content Include="BO\InsertBrand.aspx" />
     <Content Include="BO\InsertMotorcycle.aspx" />
     <Content Include="BO\InsertProducts.aspx" />
+    <Content Include="BO\ShowAllCustomers.aspx" />
     <Content Include="BO\ShowAllProducts.aspx" />
+    <Content Include="BO\ShowCustomerDetails.aspx" />
     <Content Include="BO\ShowProductDetail.aspx" />
+    <Content Include="BO\UpdateCustomerDetails.aspx" />
     <Content Include="BO\UpdateProductDetailsAccessory.aspx" />
     <Content Include="BO\UpdateProductDetailsMotorcycle.aspx" />
     <Content Include="FO\Activation.aspx" />
@@ -89,6 +93,13 @@
     <Compile Include="BO\InsertAccessory.aspx.designer.cs">
       <DependentUpon>InsertAccessory.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BO\InsertBrand.aspx.cs">
+      <DependentUpon>InsertBrand.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BO\InsertBrand.aspx.designer.cs">
+      <DependentUpon>InsertBrand.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BO\InsertMotorcycle.aspx.cs">
       <DependentUpon>InsertMotorcycle.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -103,6 +114,13 @@
     <Compile Include="BO\InsertProducts.aspx.designer.cs">
       <DependentUpon>InsertProducts.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BO\ShowAllCustomers.aspx.cs">
+      <DependentUpon>ShowAllCustomers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BO\ShowAllCustomers.aspx.designer.cs">
+      <DependentUpon>ShowAllCustomers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BO\ShowAllProducts.aspx.cs">
       <DependentUpon>ShowAllProducts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -110,12 +128,26 @@
     <Compile Include="BO\ShowAllProducts.aspx.designer.cs">
       <DependentUpon>ShowAllProducts.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BO\ShowCustomerDetails.aspx.cs">
+      <DependentUpon>ShowCustomerDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BO\ShowCustomerDetails.aspx.designer.cs">
+      <DependentUpon>ShowCustomerDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BO\ShowProductDetail.aspx.cs">
       <DependentUpon>ShowProductDetail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="BO\ShowProductDetail.aspx.designer.cs">
       <DependentUpon>ShowProductDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BO\UpdateCustomerDetails.aspx.cs">
+      <DependentUpon>UpdateCustomerDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BO\UpdateCustomerDetails.aspx.designer.cs">
+      <DependentUpon>UpdateCustomerDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="BO\UpdateProductDetailsAccessory.aspx.cs">
       <DependentUpon>UpdateProductDetailsAccessory.aspx</DependentUpon>
