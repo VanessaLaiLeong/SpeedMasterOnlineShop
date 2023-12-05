@@ -18,24 +18,24 @@ namespace SpeedMaster.FO
             //a logica funciona
         }
 
-        private string doLogin(string email, string password)
-        {
+        //private string doLogin(string email, string password)
+        //{
             
 
-            int result = Connections.LoginCustomer(email, Services.EncryptString(password));
-            if (result == -1)
-            {
-                return "Account not active. Please check email to activate";
-            }
-            if (result == 0)
-            {
-                return "Wrong credentials!";
-            }
-            else
-            {
-                Session["customer"]=Services.getCustomer(result);
-                return result.ToString();
-            }
-        }
+        //    int result = Connections.LoginCustomer(email, Services.EncryptString(password));
+        //    if (result == -1) 
+        //    {
+        //        return "Account not active. Please check email to activate";
+        //    }
+        //    if (result == 0)
+        //    {
+        //        return "Wrong credentials!";
+        //    }
+        //    else
+        //    {
+        //        Session["customer"]=Services.getCustomer(result);
+        //        return result.ToString();
+        //    }
+        //}
     }
 }

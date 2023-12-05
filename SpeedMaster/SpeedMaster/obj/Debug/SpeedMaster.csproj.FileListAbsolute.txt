@@ -57,3 +57,7 @@ D:\AulasATEC\SpeedMaster\SpeedMasterOnlineShop\SpeedMaster\SpeedMaster\obj\Debug
 D:\AulasATEC\SpeedMaster\SpeedMasterOnlineShop\SpeedMaster\SpeedMaster\obj\Debug\SpeedMaster.csproj.CopyComplete
 D:\AulasATEC\SpeedMaster\SpeedMasterOnlineShop\SpeedMaster\SpeedMaster\obj\Debug\SpeedMaster.dll
 D:\AulasATEC\SpeedMaster\SpeedMasterOnlineShop\SpeedMaster\SpeedMaster\obj\Debug\SpeedMaster.pdb
+C:\Users\tomas\Documents\GitHub\SpeedMasterOnlineShop\SpeedMaster\SpeedMaster\obj\Debug\SpeedMaster.csproj.AssemblyReference.cache
+C:\Users\tomas\Documents\GitHub\SpeedMasterOnlineShop\SpeedMaster\SpeedMaster\obj\Debug\SpeedMaster.csproj.CoreCompileInputs.cache
+C:\Users\tomas\Documents\GitHub\SpeedMasterOnlineShop\SpeedMaster\SpeedMaster\obj\Debug\SpeedMaster.dll
+C:\Users\tomas\Documents\GitHub\SpeedMasterOnlineShop\SpeedMaster\SpeedMaster\obj\Debug\SpeedMaster.pdb
