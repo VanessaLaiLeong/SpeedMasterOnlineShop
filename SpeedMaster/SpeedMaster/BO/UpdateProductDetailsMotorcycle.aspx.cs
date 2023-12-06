@@ -14,9 +14,9 @@ namespace SpeedMaster.BO
             Session["ID_Motorcycle"] = Convert.ToInt32(Request.QueryString["productId"]);
             //Session["ID_Brand"] = ;
             //Session["Model"] = "Novo modelo12";
-            Response.Write(Convert.ToString(Request.QueryString["productId"]));
-            Response.Write(Session["ID_Motorcycle"]);
-            Response.Write(Session["ManufactoringYear"]);
+            //Response.Write(Convert.ToString(Request.QueryString["productId"]));
+            //Response.Write(Session["ID_Motorcycle"]);
+            //Response.Write(Session["ManufactoringYear"]);
             //Session["ManufactoringYear"] = ;
             //Session["EngineType"] = ;
             //Session["EngineCapacity"] = ;
@@ -35,11 +35,12 @@ namespace SpeedMaster.BO
         
         protected void Button1_Click(object sender, EventArgs e)
         {
+            byte[] img = Services.getImageInfo(FileUpload1);  
             if (Convert.ToString(Session["productType"]) == "Motorcycle")
             {
-                int ID_Motorcycle = Convert.ToInt32(Session["ID_Motorcycle"]);
+                int ID_Motorcycle = 16;
                 int ID_Brand = 1;
-                string Model = "SampleModel";
+                string Model = "SampleModel2";
                 int ManufactoringYear = 2022;
                 string EngineType = "V-Twin";
                 int EngineCapacity = 1500;
