@@ -5,6 +5,8 @@
 <html>
 <head runat="server">
     <title></title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -27,12 +29,11 @@
                             <a class="nav-link" href="#">Pricing</a>
                         </li>
                         <li class="nav-item">
-                            <asp:DropDownList ID="DropDownList1" runat="server" CssClass="nav-link" Style="width: 100%;" AutoPostBack="True">
+                            <asp:DropDownList ID="DropDownList1" runat="server" CssClass="nav-link" Style="width: 100%;" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
                                 <asp:ListItem>Motas</asp:ListItem>
                                 <asp:ListItem>Acessorios</asp:ListItem>
                             </asp:DropDownList>
-                            <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
-                            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                      
 
                             <%--<asp:DropDownList ID="ddl_shop" runat="server" CssClass="nav-link" Style="width: 100%;" AutoPostBack="True">
                                 <asp:ListItem Text="Motas" Value="motorcycle"></asp:ListItem>
@@ -62,6 +63,8 @@
             </nav>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
+
+
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="..." crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="..." crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="..." crossorigin="anonymous"></script>

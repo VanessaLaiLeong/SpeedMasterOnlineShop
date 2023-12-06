@@ -116,13 +116,6 @@ namespace SpeedMaster.FO
                 }
 
 
-                //((Label)e.Item.FindControl("lbl_quantity")).Text = dr["Quantity"].ToString();
-                //((Label)e.Item.FindControl("lbl_price")).Text = dr["Price"].ToString();
-                //if (dr["Active"].ToString() == "True")
-                //{
-                //    ((Label)e.Item.FindControl("lbl_status")).Text = "Active";
-                //}
-                //else ((Label)e.Item.FindControl("lbl_status")).Text = "Inactive";
             }
         }
 

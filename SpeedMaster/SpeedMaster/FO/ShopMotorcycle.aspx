@@ -103,15 +103,15 @@
     <%--CARD PARA USAR NO FINAL--%>
 
 
-    <%--    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
             <div class="card h-100">
                 <div class="show-image">
                     <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top hover-overlay" alt="Skyscrapers" />
                     <div class="d-grid gap-2 col-6 mx-auto">
-                        <asp:LinkButton runat="server" CssClass="update" OnClientClick=""><i class="fa-solid fa-cart-shopping"></i></asp:LinkButton>--%>
+                        <asp:LinkButton runat="server" CssClass="update" OnClientClick=""><i class="fa-solid fa-cart-shopping"></i></asp:LinkButton>
     <%--<asp:LinkButton runat="server" CssClass="delete" OnClientClick="">Delete</asp:LinkButton>--%>
-    <%--                    </div>
+                        </div>
                 </div>
                 <div class="card-body">
                     <a href="details.aspx" style="color: #000000; text-decoration: none; text-decoration: underline;">
@@ -134,7 +134,7 @@
                 </div>
             </div>
         </div>
-    </div>--%>
+    </div>
     <br />
     <br />
 </asp:Content>
