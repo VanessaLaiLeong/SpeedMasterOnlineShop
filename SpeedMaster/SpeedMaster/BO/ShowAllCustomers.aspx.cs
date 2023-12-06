@@ -41,7 +41,9 @@ namespace SpeedMaster.BO
 
         protected void delete_Click(object sender, EventArgs e)
         {
-
+            LinkButton button = (LinkButton)sender;
+            int customerId = Convert.ToInt32(button.CommandArgument);
+            Connections.DeleteCustomerDB(customerId);
         }
 
         

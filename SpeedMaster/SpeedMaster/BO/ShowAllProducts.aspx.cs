@@ -221,7 +221,9 @@ namespace SpeedMaster.BO
 
         protected void delete_Click(object sender, EventArgs e)
         {
-
+            LinkButton button = (LinkButton)sender;
+            int customerId = Convert.ToInt32(button.CommandArgument);
+            Connections.DeleteMotorcycleAndGlobalProductsIDsFromDB(customerId);
         }     
 
         protected void accessoryDeatils_Click(object sender, EventArgs e)
@@ -234,7 +236,9 @@ namespace SpeedMaster.BO
 
         protected void acessoryDelete_Click(object sender, EventArgs e)
         {
-
+            LinkButton button = (LinkButton)sender;
+            int customerId = Convert.ToInt32(button.CommandArgument);
+            Connections.DeleteAccessoryAndGlobalProductsIdsDB(customerId);
         }
     }
 }

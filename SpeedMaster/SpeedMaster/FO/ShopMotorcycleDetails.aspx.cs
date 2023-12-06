@@ -13,6 +13,8 @@ namespace SpeedMaster.FO
         protected void Page_Load(object sender, EventArgs e)
         {
             DataTable productDetails = Connections.GetProductDetails(Convert.ToInt32(Request.QueryString["productId"]));
+            PrintProductDetails(productDetails);
+            Response.Write(Session["Model"]);
         }
         private void PrintProductDetails(DataTable productDetails)
         {

@@ -1399,29 +1399,67 @@ namespace SpeedMaster
             }
         }
 
-        //public static void insertAccessories(int ID_Accessory, string AccessoryName, string Description, string Price,
-        //    string Stock, string Active, string ID_Category)
-        //{
-        //    SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings
-        //                   ["SpeedMasterConnectionString"].ConnectionString);
-        //    SqlCommand myCommand = new SqlCommand();
-        //    myCommand.CommandType = CommandType.StoredProcedure;
-        //    myCommand.CommandText = "inset_accessories";
-        //    myCommand.Connection = myConn;
-
-        //    myCommand.Parameters.AddWithValue("@ID_Accessory", ID_Accessory);
-        //    myCommand.Parameters.AddWithValue("@AccessoryName", AccessoryName);
-        //    myCommand.Parameters.AddWithValue("@Description", Description);
-        //    myCommand.Parameters.AddWithValue("@Price", Price);
-        //    myCommand.Parameters.AddWithValue("@Stock", Stock);
-        //    myCommand.Parameters.AddWithValue("@Active", Active);
-        //    myCommand.Parameters.AddWithValue("@ID_Category", ID_Category);
-
-        //    myConn.Open();
-        //    myCommand.ExecuteNonQuery();
-        //    myConn.Close();
 
 
-        //}
-    }
+        public DataTable GetShoppingCartItems(string email)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("get_shoppingCart_items", connection))
+                {
+                    try
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@email", email);
+
+                        connection.Open();
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                        {
+                            DataTable dataTable = new DataTable();
+                            adapter.Fill(dataTable);
+
+                            return dataTable;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle or log the exception
+                        Console.WriteLine($"Error getting shopping cart items: {ex.Message}");
+                        return null;
+                    }
+                }
+            }
+        }
+    
+
+
+
+    //public static void insertAccessories(int ID_Accessory, string AccessoryName, string Description, string Price,
+    //    string Stock, string Active, string ID_Category)
+    //{
+    //    SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings
+    //                   ["SpeedMasterConnectionString"].ConnectionString);
+    //    SqlCommand myCommand = new SqlCommand();
+    //    myCommand.CommandType = CommandType.StoredProcedure;
+    //    myCommand.CommandText = "inset_accessories";
+    //    myCommand.Connection = myConn;
+
+    //    myCommand.Parameters.AddWithValue("@ID_Accessory", ID_Accessory);
+    //    myCommand.Parameters.AddWithValue("@AccessoryName", AccessoryName);
+    //    myCommand.Parameters.AddWithValue("@Description", Description);
+    //    myCommand.Parameters.AddWithValue("@Price", Price);
+    //    myCommand.Parameters.AddWithValue("@Stock", Stock);
+    //    myCommand.Parameters.AddWithValue("@Active", Active);
+    //    myCommand.Parameters.AddWithValue("@ID_Category", ID_Category);
+
+    //    myConn.Open();
+    //    myCommand.ExecuteNonQuery();
+    //    myConn.Close();
+
+
+    //}
+}
 }
