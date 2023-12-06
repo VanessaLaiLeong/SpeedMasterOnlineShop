@@ -1433,33 +1433,59 @@ namespace SpeedMaster
                 }
             }
         }
-    
+
+        public static string getBrandById(int id)
+        {
+            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString);
+            SqlCommand myCommand = new SqlCommand();
+            myCommand.CommandType = CommandType.Text; // Change to CommandType.Text for a query
+            myCommand.CommandText = $"select b.BrandName from Brands b  where b.ID_Brand = {id}"; // Replace with your query
+            myCommand.Connection = myConn;
+            myConn.Open();
+            SqlDataReader dataReader = myCommand.ExecuteReader();
+
+            string brand = "";
+            if (dataReader.HasRows)
+            {
+                while (dataReader.Read())
+                {
+                    brand = dataReader.GetString(0);
+
+                }
+                return brand;
+            }
+            else
+            {
+                return null;
+            }
+        }
 
 
 
-    //public static void insertAccessories(int ID_Accessory, string AccessoryName, string Description, string Price,
-    //    string Stock, string Active, string ID_Category)
-    //{
-    //    SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings
-    //                   ["SpeedMasterConnectionString"].ConnectionString);
-    //    SqlCommand myCommand = new SqlCommand();
-    //    myCommand.CommandType = CommandType.StoredProcedure;
-    //    myCommand.CommandText = "inset_accessories";
-    //    myCommand.Connection = myConn;
 
-    //    myCommand.Parameters.AddWithValue("@ID_Accessory", ID_Accessory);
-    //    myCommand.Parameters.AddWithValue("@AccessoryName", AccessoryName);
-    //    myCommand.Parameters.AddWithValue("@Description", Description);
-    //    myCommand.Parameters.AddWithValue("@Price", Price);
-    //    myCommand.Parameters.AddWithValue("@Stock", Stock);
-    //    myCommand.Parameters.AddWithValue("@Active", Active);
-    //    myCommand.Parameters.AddWithValue("@ID_Category", ID_Category);
+        //public static void insertAccessories(int ID_Accessory, string AccessoryName, string Description, string Price,
+        //    string Stock, string Active, string ID_Category)
+        //{
+        //    SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings
+        //                   ["SpeedMasterConnectionString"].ConnectionString);
+        //    SqlCommand myCommand = new SqlCommand();
+        //    myCommand.CommandType = CommandType.StoredProcedure;
+        //    myCommand.CommandText = "inset_accessories";
+        //    myCommand.Connection = myConn;
 
-    //    myConn.Open();
-    //    myCommand.ExecuteNonQuery();
-    //    myConn.Close();
+        //    myCommand.Parameters.AddWithValue("@ID_Accessory", ID_Accessory);
+        //    myCommand.Parameters.AddWithValue("@AccessoryName", AccessoryName);
+        //    myCommand.Parameters.AddWithValue("@Description", Description);
+        //    myCommand.Parameters.AddWithValue("@Price", Price);
+        //    myCommand.Parameters.AddWithValue("@Stock", Stock);
+        //    myCommand.Parameters.AddWithValue("@Active", Active);
+        //    myCommand.Parameters.AddWithValue("@ID_Category", ID_Category);
+
+        //    myConn.Open();
+        //    myCommand.ExecuteNonQuery();
+        //    myConn.Close();
 
 
-    //}
-}
+        //}
+    }
 }

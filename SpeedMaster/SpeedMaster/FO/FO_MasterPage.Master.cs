@@ -11,30 +11,10 @@ namespace SpeedMaster.FO
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
-        //protected void DropDownList_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    DropDownList ddl = (DropDownList)sender;
-        //    string selectedValue = ddl.SelectedValue;
-
-        //    // Redirect based on the selected value
-        //    switch (selectedValue)
-        //    { 
-        //        case "Redirect_motas":
-        //            Response.Redirect(".aspx");
-        //            break;
-
-        //        case "Redirect_acessorios":
-        //            Response.Redirect(".aspx");
-        //            break;
-
-        //        default:
-
-        //            break;
-        //    }
-        //}
+      
 
 
         protected void lkbtn_user_Click(object sender, EventArgs e)
@@ -45,6 +25,11 @@ namespace SpeedMaster.FO
         protected void shoppingcartnav_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -169,6 +169,13 @@
     <Compile Include="FO\Activation.aspx.designer.cs">
       <DependentUpon>Activation.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FO\FOMaster.Master.cs">
+      <DependentUpon>FOMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FO\FOMaster.Master.designer.cs">
+      <DependentUpon>FOMaster.Master</DependentUpon>
+    </Compile>
     <Compile Include="FO\FO_MasterPage.Master.cs">
       <DependentUpon>FO_MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -238,6 +245,7 @@
   <ItemGroup>
     <Content Include="Master.Master" />
     <Content Include="FO\FO_MasterPage.Master" />
+    <Content Include="FO\FOMaster.Master" />
     <None Include="packages.config" />
     <None Include="Web - Copy.config.ex" />
     <None Include="Web - Copy.config.Debug.ex">
