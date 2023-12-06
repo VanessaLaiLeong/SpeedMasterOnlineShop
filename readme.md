@@ -86,8 +86,8 @@ apenas as seguintes funcionalidades:
 - [ ] Atualizacao no cliente do estado da encomenda.
 
 #### Gestao de stock
-- [ ] Stock disponivel, por modelo preco, ano status (disponivel, reservado, vendido)
-- [ ] Criar, modificar, apagar produtos
+- [x] Stock disponivel, por modelo preco, ano status (disponivel, reservado, vendido)
+- [x] Criar, modificar, apagar produtos
 
 #### Operações e agendamentos
 * [ ] Agendamento de test drives
