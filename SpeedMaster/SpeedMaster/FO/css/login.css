@@ -1,11 +1,13 @@
 ﻿.LoginDiv {
     background-color: #f1f1f1;
     border-radius: 10px;
+    
 }
 
 .centerDiv {
-    position: absolute;
+    position: relative;
     top: 25%;
     left: 36%;
     margin-top: -80px;
 }
+

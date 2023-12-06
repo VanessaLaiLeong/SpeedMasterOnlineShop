@@ -9,8 +9,8 @@
 
     <!-- Pills navs -->
     <br />
-
-    <div style="height: 200px; width: 25%;" class="LoginDiv centerDiv">
+    <div class="container">
+    <div style="height: 70%; width: 35%; margin-top: 20px; margin-bottom: 40px;" class="LoginDiv centerDiv">
         <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
             <li style="padding: 15px;" class="nav-item" role="presentation">
                 <a style="background-color: rgb(207,32,47);" class="nav-link active" id="tab-login" data-mdb-toggle="pill" href="#pills-login" role="tab"
@@ -147,7 +147,8 @@
             </div>
         </div>
     </div>
+    </div>
     <!-- Pills content -->
 
-    <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
+    <%--<asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />--%>
 </asp:Content>
