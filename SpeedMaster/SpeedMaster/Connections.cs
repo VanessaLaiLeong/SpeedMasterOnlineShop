@@ -15,6 +15,7 @@ namespace SpeedMaster
 {
     public class Connections
     {
+
         /*
          * Method to confirm credentials in database using SP login
          * password must be already encrpit
@@ -50,6 +51,7 @@ namespace SpeedMaster
             myConn.Close();
             return result;
         }
+
         /*
          * Method do create a customer in DB using SP create_customer
          * if user dont insert address, phone, nif, lastName send empty string = ""
@@ -75,7 +77,6 @@ namespace SpeedMaster
             myCommand.Parameters.AddWithValue("@address", customer.address);
             myCommand.Parameters.AddWithValue("@nif", customer.nif);
 
-
             SqlParameter valor = new SqlParameter();
             valor.ParameterName = "@activationStatus";
             valor.Direction = ParameterDirection.Output;
@@ -90,6 +91,7 @@ namespace SpeedMaster
             InsertShoppingCartAfetrCustomerCreation(customer.email);
             return result;
         }
+
         public static Customer getCustomerById(int id)
         {
             SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString);
@@ -121,7 +123,7 @@ namespace SpeedMaster
                 return null;
             }          
         }
-        
+
         public static void activateCustomerAccount(string email)
         {
             SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings
@@ -139,7 +141,7 @@ namespace SpeedMaster
             myCommand.ExecuteNonQuery();
             myConn.Close();
         }
-        
+
         public static void resetPasswordDB(string email, string password)
         {
             SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings
@@ -194,7 +196,7 @@ namespace SpeedMaster
         }
 
         public static string UpdateCustomerDB(int ID_Customer, string Email, string FirstName, string LastName,
-    string Password, string Address, string Phone, bool Active, string NIF)
+                string Password, string Address, string Phone, bool Active, string NIF)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
 
@@ -236,12 +238,11 @@ namespace SpeedMaster
             }
         }
 
-
         /*
          * From here CRUD for Accessories Table
          */
         public static string InsertAccessoryDB(int ID_Accessory, string AccessoryName, string Description,
-    double Price, int Stock, bool Active, int ID_Category, byte[]img)
+                double Price, int Stock, bool Active, int ID_Category, byte[]img)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
 
@@ -274,6 +275,7 @@ namespace SpeedMaster
                 }
             }
         }
+
         /*
          * Deletes in the table accessory as well in table of the global products ids
          */
@@ -352,7 +354,6 @@ namespace SpeedMaster
             }
         }
 
-
         /*From here CRUD for Brand Table
          */
         public static string InsertBrandIntoDB(string brandName, string countryOfOrigin)
@@ -382,6 +383,7 @@ namespace SpeedMaster
                 }
             }
         }
+
         public static string UpdateBrandInDB(int ID_Brand, string brandName, string countryOfOrigin)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
@@ -417,6 +419,7 @@ namespace SpeedMaster
                 }
             }
         }
+
         public static string DeleteBrandFromDB(int ID_Brand)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
@@ -600,10 +603,9 @@ namespace SpeedMaster
             }
         }
 
-
-         /*
-         * Method creates a product int the globalProductIds
-         */
+        /*
+        * Method creates a product int the globalProductIds
+        */
         public static int insertGlobalProductsDB(string type)
         {
             SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings
@@ -659,7 +661,6 @@ namespace SpeedMaster
                 }
             }
         }
-
 
         /*
          *from here CRUD for motorcycle
@@ -717,6 +718,7 @@ namespace SpeedMaster
                 }
             }
         }
+
         public static string UpdateMotorcycleInDB(
             int ID_Motorcycle,
             int ID_Brand,
@@ -775,6 +777,7 @@ namespace SpeedMaster
                 }
             }
         }
+
         public static string DeleteMotorcycleAndGlobalProductsIDsFromDB(int ID_Motorcycle)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
@@ -847,6 +850,7 @@ namespace SpeedMaster
                 }
             }
         }
+
         public static string UpdateOrderInDB(
         int orderId,
         int shoppingCartId,
@@ -891,6 +895,7 @@ namespace SpeedMaster
                 }
             }
         }
+
         public static string DeleteOrderInDB(int orderId)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
@@ -954,6 +959,7 @@ namespace SpeedMaster
                 }
             }
         }
+
         public static string UpdateOrderStatusInDB(int orderStatusId, string statusName)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
@@ -1119,7 +1125,6 @@ namespace SpeedMaster
                 }
             }
         }
-
 
         /*
          *from here CRUD for Reviews
@@ -1357,7 +1362,6 @@ namespace SpeedMaster
                 }
             }
         }
-
 
         //add to cart method
         public static string AddToCart(string email, int productId)
