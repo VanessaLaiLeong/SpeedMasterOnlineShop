@@ -247,7 +247,7 @@
     <None Include="Web - Copy.config.Release.ex">
       <DependentUpon>Web - Copy.config.ex</DependentUpon>
     </None>
-    <None Include="Web.config" />
+    <Content Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
