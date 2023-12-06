@@ -14,7 +14,7 @@
                 <div class="col">
                     <div class="card h-100">
                         <div class="show-image">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top hover-overlay" alt="Skyscrapers" />
+                            <asp:ImageButton ID="motorcycleImage" runat="server" class="card-img-top hover-overlay" ImageUrl="~/Images/logoSpeedMaster.png" />    
                             <div class="d-grid gap-2 col-6 mx-auto">
                                 <asp:LinkButton runat="server" CssClass="update" CommandArgument='<%# Eval("ID_Motorcycle") %>' OnClick="btn_addCart_Click"><i class="fa-solid fa-cart-shopping"></i></asp:LinkButton>
                                 <%--<asp:LinkButton runat="server" CssClass="delete" OnClientClick="">Delete</asp:LinkButton>--%>
