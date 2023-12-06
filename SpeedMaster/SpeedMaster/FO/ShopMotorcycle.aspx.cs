@@ -20,7 +20,8 @@ namespace SpeedMaster.FO
                 BindRepeater("select * from motorcycles");
                
             }
-            Response.Write(((Customer)Session["customer"]).email);
+            //Response.Write(((Customer)Session["customer"]).email);
+            
 
         }
 
@@ -89,6 +90,7 @@ namespace SpeedMaster.FO
         {
             PageNumber = Convert.ToInt32(e.CommandArgument) - 1;
             BindRepeater("select * from motorcycles");
+            
         }
 
       
@@ -98,7 +100,22 @@ namespace SpeedMaster.FO
             if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
             {
                 DataRowView dr = (DataRowView)e.Item.DataItem;
-                ((Label)e.Item.FindControl("lbl_productName")).Text = dr["Model"].ToString();
+
+                if (dr["Active"].ToString() == "True")
+                {
+                    int id_brand = Convert.ToInt32(dr["ID_Brand"]);
+                    string model = dr["Model"].ToString();
+                    string brandName = Connections.getBrandById(id_brand);
+
+                    ((LinkButton)e.Item.FindControl("lk_motorcycleName")).Text = $"{brandName} {model}";
+                }
+                else
+                {
+                    // If the item is not active, hide the entire item template
+                    e.Item.Visible = false;
+                }
+
+
                 //((Label)e.Item.FindControl("lbl_quantity")).Text = dr["Quantity"].ToString();
                 //((Label)e.Item.FindControl("lbl_price")).Text = dr["Price"].ToString();
                 //if (dr["Active"].ToString() == "True")
@@ -123,6 +140,11 @@ namespace SpeedMaster.FO
             int productId = Convert.ToInt32(btn.CommandArgument);           
             Connections.AddToCart(((Customer)Session["customer"]).email, productId);
            
+
+        }
+
+        protected void lbl_productName_Click(object sender, EventArgs e)
+        {
 
         }
     }
