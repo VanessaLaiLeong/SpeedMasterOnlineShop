@@ -7,10 +7,12 @@
     <title></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body>
+<body style="">
     <form id="form1" runat="server">
         <div>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -126,6 +128,24 @@
     <a class="text-dark" href="https://www.speedmaster.pt/">Speedmaster.pt</a>
                 </div>
                 <!-- Copyright -->
+                <script>
+                    $(document).ready(function () {
+                        function updateFooterPosition() {
+                            var bodyHeight = $('body').height();
+                            var contentThreshold = 300; // Adjust this threshold as needed
+
+                            if (bodyHeight < contentThreshold) {
+                                $('footer').addClass('fixed-footer');
+                            } else {
+                                $('footer').removeClass('fixed-footer');
+                            }
+                        }
+
+                        // Call the function on document ready and window resize
+                        updateFooterPosition();
+                        $(window).resize(updateFooterPosition);
+                    });
+                </script>
             </footer>
             <style>
                 body {
@@ -143,12 +163,10 @@
                     margin-top: auto;
                 }
 
-                @media screen and (min-height: 100vh) {
-                    footer {
-                        position: fixed;
-                        width: 100%;
-                        bottom: 0;
-                    }
+                .fixed-footer {
+                    position: fixed;
+                    width: 100%;
+                    bottom: 0;
                 }
             </style>
         </div>
