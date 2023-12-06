@@ -108,6 +108,15 @@ namespace SpeedMaster.FO
                     string brandName = Connections.getBrandById(id_brand);
 
                     ((LinkButton)e.Item.FindControl("lk_motorcycleName")).Text = $"{brandName} {model}";
+
+                    byte[] imageData = dr["MotorcycleImage"] as byte[];
+                    if (imageData != null && imageData.Length > 0)
+                    {
+                        string imageUrl = "data:image/jpeg;base64," + Convert.ToBase64String(imageData);
+                        // Set the image URL to the Image control
+                        ((Image)e.Item.FindControl("motorcycleImage")).ImageUrl = imageUrl;
+                    }
+
                 }
                 else
                 {
