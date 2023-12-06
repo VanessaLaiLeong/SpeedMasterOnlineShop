@@ -138,10 +138,12 @@
         form {
             flex: 1;
         }
-
-        footer {
-            margin-top: auto;
-        }
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 1000; /* Adjust the value as needed */
+}
     </style>
         </div>
     </form>
