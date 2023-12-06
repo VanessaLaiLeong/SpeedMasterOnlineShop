@@ -20,6 +20,8 @@ namespace SpeedMaster.FO
                 BindRepeater("select * from motorcycles");
                
             }
+            Response.Write(((Customer)Session["customer"]).email);
+
         }
 
         private void BindRepeater(string query)
@@ -89,10 +91,7 @@ namespace SpeedMaster.FO
             BindRepeater("select * from motorcycles");
         }
 
-        protected void Repeater2_ItemDataBound(object sender, RepeaterItemEventArgs e)
-        {
-
-        }
+      
 
         protected void Repeater1_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
@@ -121,9 +120,8 @@ namespace SpeedMaster.FO
         protected void btn_addCart_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            int productId = Convert.ToInt32(btn.CommandArgument);
-            Customer customer = (Customer)Session["customer"];
-            Connections.AddToCart(Convert.ToString(customer.email), productId);
+            int productId = Convert.ToInt32(btn.CommandArgument);           
+            Connections.AddToCart(((Customer)Session["customer"]).email, productId);
            
 
         }

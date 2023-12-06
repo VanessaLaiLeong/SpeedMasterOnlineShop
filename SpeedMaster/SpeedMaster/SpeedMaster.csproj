@@ -83,6 +83,7 @@
     <Content Include="FO\ResetPassword.aspx" />
     <Content Include="FO\ShopMotorcycle.aspx" />
     <Content Include="FO\ShopMotorcycleDetails.aspx" />
+    <Content Include="FO\ShoppingCart.aspx" />
     <Content Include="FO\SignUp.aspx" />
     <Content Include="Images\logoSpeedMaster.png" />
     <Content Include="Tests.aspx" />
@@ -202,6 +203,13 @@
     <Compile Include="FO\ShopMotorcycleDetails.aspx.designer.cs">
       <DependentUpon>ShopMotorcycleDetails.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FO\ShoppingCart.aspx.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FO\ShoppingCart.aspx.designer.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+    </Compile>
     <Compile Include="FO\SignUp.aspx.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -230,6 +238,13 @@
     <Content Include="Master.Master" />
     <Content Include="FO\FO_MasterPage.Master" />
     <None Include="packages.config" />
+    <None Include="Web - Copy.config.ex" />
+    <None Include="Web - Copy.config.Debug.ex">
+      <DependentUpon>Web - Copy.config.ex</DependentUpon>
+    </None>
+    <None Include="Web - Copy.config.Release.ex">
+      <DependentUpon>Web - Copy.config.ex</DependentUpon>
+    </None>
     <None Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
