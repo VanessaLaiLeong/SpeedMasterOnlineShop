@@ -1,0 +1,102 @@
+﻿/*----------------------------styles for rating stars----------------------------*/
+body {
+    background-color: #eef3f4;
+}
+
+.height-100 {
+    height: 100vh;
+}
+
+.card {
+    width: 380px;
+    border: none;
+    height: 280px;
+}
+
+.ratings {
+    margin-right: 10px;
+}
+
+    .ratings i {
+        color: #cecece;
+        font-size: 32px;
+    }
+
+.rating-color {
+    color: #fbc634 !important;
+}
+
+.review-count {
+    font-weight: 400;
+    margin-bottom: 2px;
+    font-size: 24px !important;
+}
+
+.small-ratings i {
+    color: #cecece;
+}
+
+.review-stat {
+    font-weight: 300;
+    font-size: 18px;
+    margin-bottom: 2px;
+}
+
+/*----------------------------styles for hover images----------------------------*/
+div.show-image {
+    position: relative;
+    float: left;
+    margin: 5px;
+    overflow: hidden;
+    text-align: center; /* Center the content horizontally */
+}
+
+    div.show-image img {
+        transition: opacity 0.3s ease, transform 0.3s ease; /* Add transition for smooth fade and zoom effect */
+    }
+
+    div.show-image:hover img {
+        opacity: 0.7; /* Reduce opacity to make it darker */
+        transform: scale(1.1); /* Zoom in by 10% on hover */
+    }
+
+    div.show-image:hover::before {
+        content: ''; /* Create an overlay pseudo-element */
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha channel for a darker color */
+        pointer-events: none; /* Allow interaction with the underlying elements */
+        transition: opacity 0.3s ease; /* Add transition for smooth fade effect */
+    }
+
+    div.show-image:hover .update,
+    div.show-image:hover .delete {
+        display: inline-block; /* Display link buttons on hover */
+    }
+
+    div.show-image .update,
+    div.show-image .delete {
+        position: absolute;
+        display: none;
+        color: white; /* Set text color for link buttons */
+        text-decoration: none; /* Remove underline for link buttons */
+        padding: 10px; /* Add padding for link buttons */
+        background-color: rgba(0, 0, 0, 0.7); /* Set background color for link buttons */
+        border-radius: 8px; /* Remove border for link buttons */
+        transition: opacity 0.3s ease; /* Add transition for smooth fade effect */
+    }
+
+    div.show-image .update {
+        top: 50%; /* Position the top button at 50% from the top */
+        left: 45%;
+        transform: translate(0, -50%); /* Center the button vertically */
+    }
+
+        div.show-image .update:hover,
+        div.show-image .delete:hover {
+            background-color: rgba(0, 0, 0, 0.9); /* Adjust the alpha channel for a darker color on hover */
+            opacity: 1; /* Restore full opacity on hover */
+        }
