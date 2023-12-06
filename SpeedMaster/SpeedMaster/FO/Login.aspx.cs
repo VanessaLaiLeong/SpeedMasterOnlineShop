@@ -14,7 +14,7 @@ namespace SpeedMaster.FO
         {
             string pass = Services.DecryptString("mL4uefDJyC2Yb1LvMOw9vA==");
             string res = doLogin("jerdebastu@gufum.com", pass);
-
+            
             Response.Write(res);
             //Response.Write(((Customer)Session["customer"]).email);
             //a logica funciona
@@ -22,6 +22,8 @@ namespace SpeedMaster.FO
 
         private string doLogin(string email, string password)
         {
+
+
             int result = Connections.LoginCustomer(email, Services.EncryptString(password));
             if (result == -1)
             {
