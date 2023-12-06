@@ -5,7 +5,7 @@
 <html>
 <head runat="server">
     <title></title>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -33,7 +33,7 @@
                                 <asp:ListItem>Motas</asp:ListItem>
                                 <asp:ListItem>Acessorios</asp:ListItem>
                             </asp:DropDownList>
-                      
+
 
                             <%--<asp:DropDownList ID="ddl_shop" runat="server" CssClass="nav-link" Style="width: 100%;" AutoPostBack="True">
                                 <asp:ListItem Text="Motas" Value="motorcycle"></asp:ListItem>
@@ -66,85 +66,91 @@
 
 
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="..." crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="..." crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="..." crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="..." crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="..." crossorigin="anonymous"></script>
 
 
-    <footer class="text-center text-white mt-auto" style="background-color: #f1f1f1;">
-        <!-- Grid container -->
-        <div class="container pt-4">
-            <!-- Section: Social media -->
-            <section class="mb-4">
-                <!-- Facebook -->
-                <a
-                    class="btn btn-link btn-floating btn-lg text-dark m-1"
-                    href="#!"
-                    role="button"
-                    data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
+            <footer class="text-center text-white mt-auto" style="background-color: #f1f1f1;">
+                <!-- Grid container -->
+                <div class="container pt-4">
+                    <!-- Section: Social media -->
+                    <section class="mb-4">
+                        <!-- Facebook -->
+                        <a
+                            class="btn btn-link btn-floating btn-lg text-dark m-1"
+                            href="#!"
+                            role="button"
+                            data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
 
-                <!-- Twitter -->
-                <a
-                    class="btn btn-link btn-floating btn-lg text-dark m-1"
-                    href="#!"
-                    role="button"
-                    data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i></a>
+                        <!-- Twitter -->
+                        <a
+                            class="btn btn-link btn-floating btn-lg text-dark m-1"
+                            href="#!"
+                            role="button"
+                            data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i></a>
 
-                <!-- Google -->
-                <a
-                    class="btn btn-link btn-floating btn-lg text-dark m-1"
-                    href="#!"
-                    role="button"
-                    data-mdb-ripple-color="dark"><i class="fab fa-google"></i></a>
+                        <!-- Google -->
+                        <a
+                            class="btn btn-link btn-floating btn-lg text-dark m-1"
+                            href="#!"
+                            role="button"
+                            data-mdb-ripple-color="dark"><i class="fab fa-google"></i></a>
 
-                <!-- Instagram -->
-                <a
-                    class="btn btn-link btn-floating btn-lg text-dark m-1"
-                    href="#!"
-                    role="button"
-                    data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
+                        <!-- Instagram -->
+                        <a
+                            class="btn btn-link btn-floating btn-lg text-dark m-1"
+                            href="#!"
+                            role="button"
+                            data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
 
-                <!-- Linkedin -->
-                <a
-                    class="btn btn-link btn-floating btn-lg text-dark m-1"
-                    href="#!"
-                    role="button"
-                    data-mdb-ripple-color="dark"><i class="fab fa-linkedin"></i></a>
-                <!-- Github -->
-                <a
-                    class="btn btn-link btn-floating btn-lg text-dark m-1"
-                    href="#!"
-                    role="button"
-                    data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a>
-            </section>
-            <!-- Section: Social media -->
-        </div>
-        <!-- Grid container -->
+                        <!-- Linkedin -->
+                        <a
+                            class="btn btn-link btn-floating btn-lg text-dark m-1"
+                            href="#!"
+                            role="button"
+                            data-mdb-ripple-color="dark"><i class="fab fa-linkedin"></i></a>
+                        <!-- Github -->
+                        <a
+                            class="btn btn-link btn-floating btn-lg text-dark m-1"
+                            href="#!"
+                            role="button"
+                            data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a>
+                    </section>
+                    <!-- Section: Social media -->
+                </div>
+                <!-- Grid container -->
 
-        <!-- Copyright -->
-        <div class="text-center text-dark p-3" style="background-color: rgb(220 220 220);">
-            SpeedMaster© 2023 - TSPI CAS 1022
+                <!-- Copyright -->
+                <div class="text-center text-dark p-3" style="background-color: rgb(220 220 220);">
+                    SpeedMaster© 2023 - TSPI CAS 1022
     <a class="text-dark" href="https://www.speedmaster.pt/">Speedmaster.pt</a>
-        </div>
-        <!-- Copyright -->
-    </footer>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-        }
+                </div>
+                <!-- Copyright -->
+            </footer>
+            <style>
+                body {
+                    display: flex;
+                    flex-direction: column;
+                    min-height: 100vh;
+                    margin: 0;
+                }
 
-        form {
-            flex: 1;
-        }
-footer {
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    z-index: 1000; /* Adjust the value as needed */
-}
-    </style>
+                form {
+                    flex: 1;
+                }
+
+                footer {
+                    margin-top: auto;
+                }
+
+                @media screen and (min-height: 100vh) {
+                    footer {
+                        position: fixed;
+                        width: 100%;
+                        bottom: 0;
+                    }
+                }
+            </style>
         </div>
     </form>
 </body>
