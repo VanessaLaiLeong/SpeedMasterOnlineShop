@@ -33,37 +33,85 @@ namespace SpeedMaster.BO
         }
 
         
-        protected void Button1_Click(object sender, EventArgs e)
+        //protected void Button1_Click(object sender, EventArgs e)
+        //{
+        //    byte[] img = Services.getImageInfo(FileUpload1);  
+
+        //    if (Convert.ToString(Session["productType"]) == "Motorcycle")
+        //    {
+        //        int ID_Motorcycle = 16;
+        //        int ID_Brand = 1;
+        //        string Model = "SampleModel2";
+        //        int ManufactoringYear = 2022;
+        //        string EngineType = "V-Twin";
+        //        int EngineCapacity = 1500;
+        //        string Color = "amarelo";
+        //        decimal Price = 20000.00m;
+        //        string Condition = "New";
+        //        string Description = "Powerful motorcycle with great features";
+        //        byte[] MotorcycleImage = img; // Sample image bytes
+        //        string MotorcycleImageType = "jpg";
+        //        bool Active = true;
+
+        //        // Call the UpdateMotorcycleInDB method with the sample data
+        //        Connections.UpdateMotorcycleInDB(
+        //            ID_Motorcycle, ID_Brand, Model, ManufactoringYear, EngineType,
+        //            EngineCapacity, Color, Price, Condition, Description,
+        //            MotorcycleImage, MotorcycleImageType, Active);
+        //        Response.Write("sucess!");
+        //    }
+        //}
+
+     
+
+        protected void bnt_update_Click(object sender, EventArgs e)
         {
-            byte[] img = Services.getImageInfo(FileUpload1);  
-            if (Convert.ToString(Session["productType"]) == "Motorcycle")
-            {
-                int ID_Motorcycle = 16;
-                int ID_Brand = 1;
-                string Model = "SampleModel2";
-                int ManufactoringYear = 2022;
-                string EngineType = "V-Twin";
-                int EngineCapacity = 1500;
-                string Color = "amarelo";
-                decimal Price = 20000.00m;
-                string Condition = "New";
-                string Description = "Powerful motorcycle with great features";
-                byte[] MotorcycleImage = new byte[] { 0x01, 0x02, 0x03 }; // Sample image bytes
-                string MotorcycleImageType = "jpg";
-                bool Active = true;
+            byte[] img = Services.getImageInfo(FileUpload1);
 
-                // Call the UpdateMotorcycleInDB method with the sample data
-                Connections.UpdateMotorcycleInDB(
-                    ID_Motorcycle, ID_Brand, Model, ManufactoringYear, EngineType,
-                    EngineCapacity, Color, Price, Condition, Description,
-                    MotorcycleImage, MotorcycleImageType, Active);
-                Response.Write("sucess!");
-            }
-        }
+            int ID_Motorcycle = 16;
+            int ID_Brand = 1;
+            string Model = "SampleModel2";
+            int ManufactoringYear = 2022;
+            string EngineType = "V-Twin";
+            int EngineCapacity = 1500;
+            string Color = "amarelo";
+            decimal Price = 20000.00m;
+            string Condition = "New";
+            string Description = "Powerful motorcycle with great features";
+            byte[] MotorcycleImage = img; // Sample image bytes
+            string MotorcycleImageType = "jpg";
+            bool Active = true;
 
-        protected void btn_update_Click(object sender, EventArgs e)
-        {
+            // Call the UpdateMotorcycleInDB method with the sample data
+            Connections.UpdateMotorcycleInDB(
+                ID_Motorcycle, ID_Brand, Model, ManufactoringYear, EngineType,
+                EngineCapacity, Color, Price, Condition, Description,
+                MotorcycleImage, MotorcycleImageType, Active);
+            Response.Write("sucess!");
 
+            //if (Convert.ToString(Session["productType"]) == "Motorcycle")
+            //{
+            //    int ID_Motorcycle = 16;
+            //    int ID_Brand = 1;
+            //    string Model = "SampleModel2";
+            //    int ManufactoringYear = 2022;
+            //    string EngineType = "V-Twin";
+            //    int EngineCapacity = 1500;
+            //    string Color = "amarelo";
+            //    decimal Price = 20000.00m;
+            //    string Condition = "New";
+            //    string Description = "Powerful motorcycle with great features";
+            //    byte[] MotorcycleImage = img; // Sample image bytes
+            //    string MotorcycleImageType = "jpg";
+            //    bool Active = true;
+
+            //    // Call the UpdateMotorcycleInDB method with the sample data
+            //    Connections.UpdateMotorcycleInDB(
+            //        ID_Motorcycle, ID_Brand, Model, ManufactoringYear, EngineType,
+            //        EngineCapacity, Color, Price, Condition, Description,
+            //        MotorcycleImage, MotorcycleImageType, Active);
+            //    Response.Write("sucess!");
+            //}
         }
     }
 

@@ -29,7 +29,7 @@
                             <h5 class="card-title text-center">
                                 <asp:Label ID="lbl_price" runat="server" Text="Label"></asp:Label>€</h5>
                             <p class="card-text text-center">
-                                <asp:Label ID="lbl_motorcycleDescription" runat="server" Text="Label"></asp:Label>
+                                <asp:Label ID="lbl_description" runat="server" Text="Label"></asp:Label>
                             </p>
                         </div>
                         <div class="card-footer text-center">
@@ -49,7 +49,7 @@
                 <div class="col">
                     <div class="card h-100">
                         <div class="show-image">
-                            <asp:ImageButton ID="motorcycleImage" runat="server" class="card-img-top hover-overlay" ImageUrl="~/Images/logoSpeedMaster.png" />                            
+                            <asp:ImageButton ID="motorcycleImage" runat="server" class="card-img-top hover-overlay" ImageUrl="~/Images/logoSpeedMaster.png" />    
                             <div class="d-grid gap-2 col-6 mx-auto">
                                 <asp:LinkButton runat="server" CssClass="update" CommandArgument='<%# Eval("ID_Motorcycle") %>' OnClick="btn_addCart_Click"><i class="fa-solid fa-cart-shopping"></i></asp:LinkButton>
                                 <%--<asp:LinkButton runat="server" CssClass="delete" OnClientClick="">Delete</asp:LinkButton>--%>
@@ -64,7 +64,7 @@
                             <h5 class="card-title text-center">
                                 <asp:Label ID="lbl_price" runat="server" Text="Label"></asp:Label>€</h5>
                             <p class="card-text text-center">
-                                <asp:Label ID="lbl_motorcycleDescription" runat="server" Text="Label"></asp:Label>
+                                <asp:Label ID="lbl_description" runat="server" Text="Label"></asp:Label>
                             </p>
                         </div>
                         <div class="card-footer text-center">
@@ -95,6 +95,14 @@
 
         </ItemTemplate>
     </asp:Repeater>
+    <br />
+    <br />
+    <br />
+    <asp:LinkButton ID="removeFilter" runat="server" OnClick="removeFilter_Click">Remover Filtros</asp:LinkButton>
+
+    <asp:DropDownList ID="brands" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="BrandName" DataValueField="ID_Brand" OnSelectedIndexChanged="brands_SelectedIndexChanged"></asp:DropDownList>
+
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SpeedMasterConnectionString %>" SelectCommand="SELECT [ID_Brand], [BrandName] FROM [Brands]"></asp:SqlDataSource>
 
     <br />
     <br />

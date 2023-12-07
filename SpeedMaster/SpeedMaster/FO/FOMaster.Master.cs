@@ -11,15 +11,29 @@ namespace SpeedMaster.FO
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (Session["customer"] != null)
+            {
+                string name = ((Customer)Session["customer"]).firstName;
+                lbl_customer.Text = $"Bem vindo, {name}";
+            }
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (DropDownList1.SelectedIndex == 0)
+            if (DropDownList1.SelectedIndex == 1)
             {
                 Response.Redirect("ShopMotorcycle.aspx");
             }
+        }
+
+        protected void lkbtn_user_Click(object sender, EventArgs e)
+        {
+            if (Session["customer"] != null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            //else tem de ir para a pagina do user
+            
         }
     }
 }

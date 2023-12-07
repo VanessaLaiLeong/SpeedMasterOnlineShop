@@ -12,18 +12,16 @@ namespace SpeedMaster.FO
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string pass = Services.DecryptString("mL4uefDJyC2Yb1LvMOw9vA==");
-            string res = doLogin("jerdebastu@gufum.com", pass);
+            //string pass = Services.DecryptString("mL4uefDJyC2Yb1LvMOw9vA==");
+            //string res = doLogin("jerdebastu@gufum.com", pass);
             
-            Response.Write(res);
+            //Response.Write(res);
             //Response.Write(((Customer)Session["customer"]).email);
             //a logica funciona
         }
 
         private string doLogin(string email, string password)
         {
-
-
             int result = Connections.LoginCustomer(email, Services.EncryptString(password));
             if (result == -1)
             {
@@ -42,7 +40,7 @@ namespace SpeedMaster.FO
         //para teste
         protected void Button1_Click(object sender, EventArgs e)
         {
-            //Session["customer"]
+            doLogin(tb_email.Text,tb_password.Text);            
             Response.Redirect("ShopMotorcycle.aspx");
         }
     }

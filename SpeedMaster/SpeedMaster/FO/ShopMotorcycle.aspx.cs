@@ -20,7 +20,7 @@ namespace SpeedMaster.FO
                 BindRepeater("select * from motorcycles");
                
             }
-            //Response.Write(((Customer)Session["customer"]).email);
+            Response.Write(brands.SelectedValue);
             
 
         }
@@ -108,6 +108,8 @@ namespace SpeedMaster.FO
                     string brandName = Connections.getBrandById(id_brand);
 
                     ((LinkButton)e.Item.FindControl("lk_motorcycleName")).Text = $"{brandName} {model}";
+                    ((Label)e.Item.FindControl("lbl_price")).Text = dr["Price"].ToString();
+                    ((Label)e.Item.FindControl("lbl_description")).Text = dr["Description"].ToString();
 
                     byte[] imageData = dr["MotorcycleImage"] as byte[];
                     if (imageData != null && imageData.Length > 0)
@@ -138,6 +140,7 @@ namespace SpeedMaster.FO
 
         protected void btn_addCart_Click(object sender, EventArgs e)
         {
+            //if ()
             Button btn = (Button)sender;
             int productId = Convert.ToInt32(btn.CommandArgument);           
             Connections.AddToCart(((Customer)Session["customer"]).email, productId);
@@ -148,6 +151,17 @@ namespace SpeedMaster.FO
         protected void lbl_productName_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void brands_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Session["brand"] = brands.SelectedValue;
+            BindRepeater($"select * from motorcycles where ID_Brand = { Session["brand"] } ");
+        }
+
+        protected void removeFilter_Click(object sender, EventArgs e)
+        {
+            BindRepeater("select * from motorcycles");
         }
     }
 }

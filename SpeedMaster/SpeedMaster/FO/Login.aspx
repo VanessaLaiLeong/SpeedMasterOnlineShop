@@ -39,13 +39,13 @@
 
                     <!-- Email input -->
                     <div class="form-outline mb-4">
-                        <input type="email" id="loginName" class="form-control" />
+                        <asp:TextBox ID="tb_email" runat="server" class="form-control"></asp:TextBox>                        
                         <label class="form-label" for="loginName">Email or username</label>
                     </div>
 
                     <!-- Password input -->
                     <div class="form-outline mb-4">
-                        <input type="password" id="loginPassword" class="form-control" />
+                        <asp:TextBox ID="tb_password" runat="server" class="form-control"></asp:TextBox>                 
                         <label class="form-label" for="loginPassword">Password</label>
                     </div>
 
