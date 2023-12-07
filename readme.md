@@ -9,11 +9,11 @@
 - [ ] Contactos da loja/stand
 
 ### Loja online (motas, pecas e acessorios)
-- [ ] Montra de motas a venda
+- [x] Montra de motas a venda
 - [ ] Montra de acessorios
 
 #### Filtros de pesquisa para a montra de motas:
-- [ ] marca,
+- [x] marca,
 - [ ] modelo,
 - [ ] preco (range),
 - [ ] cilindrada,
@@ -64,11 +64,11 @@
 
 #### Front end 
 
-- [ ] Navbar
+- [x] Navbar
 - [ ] Signup
 - [ ] Reset Password
 - [ ] Activation
-- [ ] Login
+- [x] Login
 
 ### Back Office
 
