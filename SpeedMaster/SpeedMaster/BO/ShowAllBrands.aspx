@@ -8,10 +8,11 @@
             <br />
             CountryOfOrigin: <asp:Label ID="lbl_countryOfOrigin" runat="server" Text=""></asp:Label>
             <br />
+            <asp:Button ID="btn_brand" runat="server" CommandArgument='<%# Eval("ID_Brand") %>' Text="Details" OnClick="btn_brand_Click"/>
             <br />
         </ItemTemplate>
     </asp:Repeater>
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SpeedMasterConnectionString %>" SelectCommand="SELECT [BrandName], [CountryOfOrigin] FROM [Brands]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SpeedMasterConnectionString %>" SelectCommand="SELECT * FROM [Brands]"></asp:SqlDataSource>
 
 </asp:Content>

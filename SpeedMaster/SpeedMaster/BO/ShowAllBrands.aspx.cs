@@ -21,5 +21,12 @@ namespace SpeedMaster.BO
             ((Label)e.Item.FindControl("lbl_brandName")).Text = dr["BrandName"].ToString();
             ((Label)e.Item.FindControl("lbl_countryOfOrigin")).Text = dr["CountryOfOrigin"].ToString();
         }
+
+        protected void btn_brand_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            string brand_id = button.CommandArgument.ToString();
+            Response.Redirect($"UpdateBrand.aspx?brand_id={brand_id}");
+        }
     }
 }
