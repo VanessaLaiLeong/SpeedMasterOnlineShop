@@ -11,17 +11,26 @@ namespace SpeedMaster.BO
 {
 
 
-    public partial class ShowAllBrands
+    public partial class AddBrand
     {
 
         /// <summary>
-        /// rp_showBrands control.
+        /// tb_brand_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rp_showBrands;
+        protected global::System.Web.UI.WebControls.TextBox tb_brand_name;
+
+        /// <summary>
+        /// tb_brand_origin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_brand_origin;
 
         /// <summary>
         /// btn_add_brand control.
@@ -33,12 +42,12 @@ namespace SpeedMaster.BO
         protected global::System.Web.UI.WebControls.Button btn_add_brand;
 
         /// <summary>
-        /// SqlDataSource1 control.
+        /// btn_discard control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.Button btn_discard;
     }
 }

@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BO\AddBrand.aspx" />
     <Content Include="BO\InsertAccessory.aspx" />
     <Content Include="BO\InsertMotorcycle.aspx" />
     <Content Include="BO\InsertProducts.aspx" />
@@ -93,6 +94,13 @@
     <Content Include="Tests.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BO\AddBrand.aspx.cs">
+      <DependentUpon>AddBrand.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BO\AddBrand.aspx.designer.cs">
+      <DependentUpon>AddBrand.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BO\InsertAccessory.aspx.cs">
       <DependentUpon>InsertAccessory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

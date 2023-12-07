@@ -28,5 +28,10 @@ namespace SpeedMaster.BO
             string brand_id = button.CommandArgument.ToString();
             Response.Redirect($"UpdateBrand.aspx?brand_id={brand_id}");
         }
+
+        protected void btn_add_brand_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AddBrand.aspx");
+        }
     }
 }
