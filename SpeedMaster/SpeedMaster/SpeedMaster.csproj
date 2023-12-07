@@ -67,13 +67,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BO\AddBrand.aspx" />
     <Content Include="BO\InsertAccessory.aspx" />
     <Content Include="BO\InsertMotorcycle.aspx" />
     <Content Include="BO\InsertProducts.aspx" />
+    <Content Include="BO\ShowAllBrands.aspx" />
     <Content Include="BO\ShowAllCustomers.aspx" />
     <Content Include="BO\ShowAllProducts.aspx" />
     <Content Include="BO\ShowCustomerDetails.aspx" />
     <Content Include="BO\ShowProductDetail.aspx" />
+    <Content Include="BO\UpdateBrand.aspx" />
     <Content Include="BO\UpdateCustomerDetails.aspx" />
     <Content Include="BO\UpdateProductDetailsAccessory.aspx" />
     <Content Include="BO\UpdateProductDetailsMotorcycle.aspx" />
@@ -91,6 +94,13 @@
     <Content Include="Tests.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BO\AddBrand.aspx.cs">
+      <DependentUpon>AddBrand.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BO\AddBrand.aspx.designer.cs">
+      <DependentUpon>AddBrand.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BO\InsertAccessory.aspx.cs">
       <DependentUpon>InsertAccessory.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -111,6 +121,13 @@
     </Compile>
     <Compile Include="BO\InsertProducts.aspx.designer.cs">
       <DependentUpon>InsertProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BO\ShowAllBrands.aspx.cs">
+      <DependentUpon>ShowAllBrands.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BO\ShowAllBrands.aspx.designer.cs">
+      <DependentUpon>ShowAllBrands.aspx</DependentUpon>
     </Compile>
     <Compile Include="BO\ShowAllCustomers.aspx.cs">
       <DependentUpon>ShowAllCustomers.aspx</DependentUpon>
@@ -139,6 +156,13 @@
     </Compile>
     <Compile Include="BO\ShowProductDetail.aspx.designer.cs">
       <DependentUpon>ShowProductDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BO\UpdateBrand.aspx.cs">
+      <DependentUpon>UpdateBrand.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BO\UpdateBrand.aspx.designer.cs">
+      <DependentUpon>UpdateBrand.aspx</DependentUpon>
     </Compile>
     <Compile Include="BO\UpdateCustomerDetails.aspx.cs">
       <DependentUpon>UpdateCustomerDetails.aspx</DependentUpon>

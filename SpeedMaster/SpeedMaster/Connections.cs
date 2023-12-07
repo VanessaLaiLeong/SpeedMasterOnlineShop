@@ -1434,6 +1434,32 @@ namespace SpeedMaster
             }
         }
 
+        public static string getBrandCountryOriginById(int id)
+        {
+            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString);
+            SqlCommand myCommand = new SqlCommand();
+            myCommand.CommandType = CommandType.Text; // Change to CommandType.Text for a query
+            myCommand.CommandText = $"select b.CountryOfOrigin from Brands b  where b.ID_Brand = {id}"; // Replace with your query
+            myCommand.Connection = myConn;
+            myConn.Open();
+            SqlDataReader dataReader = myCommand.ExecuteReader();
+
+            string brand = "";
+            if (dataReader.HasRows)
+            {
+                while (dataReader.Read())
+                {
+                    brand = dataReader.GetString(0);
+
+                }
+                return brand;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public static string getBrandById(int id)
         {
             SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString);

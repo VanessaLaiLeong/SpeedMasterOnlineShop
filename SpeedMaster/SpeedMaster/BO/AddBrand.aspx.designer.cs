@@ -11,7 +11,7 @@ namespace SpeedMaster.BO
 {
 
 
-    public partial class UpdateBrand
+    public partial class AddBrand
     {
 
         /// <summary>
@@ -33,21 +33,21 @@ namespace SpeedMaster.BO
         protected global::System.Web.UI.WebControls.TextBox tb_brand_origin;
 
         /// <summary>
-        /// btn_submit control.
+        /// btn_add_brand control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_submit;
+        protected global::System.Web.UI.WebControls.Button btn_add_brand;
 
         /// <summary>
-        /// btn_delete control.
+        /// btn_discard control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_delete;
+        protected global::System.Web.UI.WebControls.Button btn_discard;
     }
 }
