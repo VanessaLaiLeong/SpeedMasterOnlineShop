@@ -8,16 +8,15 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <!-- Pills navs -->
-    <br />
     <div class="container">
-    <div style="height: 70%; width: 35%; margin-top: 20px; margin-bottom: 40px;" class="LoginDiv centerDiv">
+    <div style="height: 70%; width: 35%; margin-top: 20px; margin-bottom: 50px;" class="LoginDiv centerDiv">
         <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
             <li style="padding: 15px;" class="nav-item" role="presentation">
                 <a style="background-color: rgb(207,32,47);" class="nav-link active" id="tab-login" data-mdb-toggle="pill" href="#pills-login" role="tab"
                     aria-controls="pills-login" aria-selected="true">Login</a>
             </li>
             <li style="padding: 15px;" class="nav-item" role="presentation">
-                <a class="nav-link" id="tab-register" data-mdb-toggle="pill" href="#pills-register" role="tab"
+                <a class="nav-link" id="tab-register" data-mdb-toggle="pill" href="SignUp.aspx" role="tab"
                     aria-controls="pills-register" aria-selected="false">Register</a>
             </li>
         </ul>
