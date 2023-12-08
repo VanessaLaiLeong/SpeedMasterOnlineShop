@@ -38,9 +38,9 @@
                                         <td>
                                             <asp:Label ID="lbl_productPriceSingle" runat="server" Text="Label"></asp:Label></td>
                                         <td>
-                                            <asp:LinkButton ID="addCart" runat="server" CommandArgument='<%# Eval("ProductID") %>'><i class="fa-solid fa-plus"></i></asp:LinkButton>
+                                            <asp:LinkButton ID="addCart" runat="server" CommandArgument='<%# Eval("ProductId") %>' OnClick="addCart_Click" ><i class="fa-solid fa-plus"></i></asp:LinkButton>
                                             <asp:Label ID="lbl_productQuantity" runat="server" Text="Label" class="border"></asp:Label>
-                                            <asp:LinkButton ID="delete_from_cart" runat="server" CommandArgument='<%# Eval("ProductID") %>' ><i class="fa-solid fa-minus"></i></asp:LinkButton>
+                                            <asp:LinkButton ID="delete_from_cart" runat="server" CommandArgument='<%# Eval("ProductId") %>' OnClick="delete_from_cart_Click" ><i class="fa-solid fa-minus"></i></asp:LinkButton>
                                         </td>
                                         <td>&euro;<asp:Label ID="lbl_productPrice" runat="server" Text="Label"></asp:Label>
                                         </td>

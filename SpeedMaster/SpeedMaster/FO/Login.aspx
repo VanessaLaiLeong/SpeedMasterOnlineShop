@@ -69,7 +69,7 @@
                         class="container">
                         <div style="margin: 0; position: absolute; top: 25%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"
                             class="center">
-                            <asp:Button ID="btn_signin" runat="server" Text="Sign in" class="btn btn-primary" OnClick="btn_signin_Click"/>
+                            <asp:Button ID="btn_signin" runat="server" Text="Sign in" class="btn btn-primary" OnClick="btn_signin_Click1"/>
                            
                         </div>
                     </div>

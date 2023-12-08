@@ -40,7 +40,9 @@ namespace SpeedMaster.FO
         //para teste
         
 
-        protected void btn_signin_Click(object sender, EventArgs e)
+      
+
+        protected void btn_signin_Click1(object sender, EventArgs e)
         {
             doLogin(tb_email.Text, tb_password.Text);
             Response.Redirect("ShopMotorcycle.aspx");

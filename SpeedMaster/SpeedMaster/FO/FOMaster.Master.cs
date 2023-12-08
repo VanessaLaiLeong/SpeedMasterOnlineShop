@@ -15,6 +15,7 @@ namespace SpeedMaster.FO
             {
                 string name = ((Customer)Session["customer"]).firstName;
                 lbl_customer.Text = $"Bem vindo, {name}";
+                shoppingcartnav.Visible = true;
             }
         }
 
@@ -30,7 +31,7 @@ namespace SpeedMaster.FO
 
         protected void shoppingcartnav_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("ShoppingCart.aspx");
         }
 
         protected void lkbtn_user_Click1(object sender, EventArgs e)

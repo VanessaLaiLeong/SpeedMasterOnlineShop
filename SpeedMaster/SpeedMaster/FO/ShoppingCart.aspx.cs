@@ -12,6 +12,8 @@ namespace SpeedMaster.FO
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Response.Write(((Customer)Session["customer"]).email);
+
             if (Session["customer"] == null)
             {
                 Response.Redirect("Login.apsx");
@@ -46,6 +48,16 @@ namespace SpeedMaster.FO
                     ((System.Web.UI.WebControls.Image)e.Item.FindControl("productImg")).ImageUrl = imageUrl;
                 }
             }
+        }
+
+        protected void addCart_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void delete_from_cart_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
