@@ -15,15 +15,20 @@ namespace SpeedMaster.BO
 
             if (!IsPostBack)
             {
-                TextBox1.Text = Session["customerEmail"].ToString();
-                //fazer as restantes
+                tb_email.Text     = Session["customerEmail"].ToString();
+                tb_firstname.Text = Session["customerFirstName"].ToString();
+                tb_lastname.Text  = Session["customerLastname"].ToString();
+                tb_password.Text  = Session["customerPassword"].ToString();
+                tb_adress.Text    = Session["customerAdress"].ToString();
+                tb_phone.Text     = Session["customerPhone"].ToString();
+                tb_nif.Text       = Session["customerNIF"].ToString();
             }
            
         }
 
         private void btn()
         {
-            int customerIDToUpdate = 3;
+            int customerIDToUpdate = Convert.ToInt32(Request.QueryString["customerId"]);
             string newEmail = "teste@teste.com";
             string newFirstName = "NewFirstName123";
             string newLastName = "NewLastName";
@@ -44,14 +49,14 @@ namespace SpeedMaster.BO
 
             //todos mudar tbox
             int customerIDToUpdate = Convert.ToInt32(Session["ID_Customer"]);
-            string newEmail = TextBox1.Text;
-            string newFirstName = Convert.ToString(Session["customerFirstName"]);
-            string newLastName = Convert.ToString(Session["customerLastName"]);
-            string newPassword = Convert.ToString(Session["customerPassword"]);
-            string newAddress = Convert.ToString(Session["customerAddress"]);
-            string newPhone = Convert.ToString(Session["customerPhone"]);
+            string newEmail = tb_email.Text;
+            string newFirstName = tb_firstname.Text;
+            string newLastName = tb_lastname.Text;
+            string newPassword = tb_password.Text;
+            string newAddress = tb_adress.Text;
+            string newPhone = tb_phone.Text;
             bool isActive = Convert.ToBoolean(Session["customerActive"]);
-            string newNIF = Convert.ToString(Session["customerNIF"]);
+            string newNIF = tb_nif.Text;
 
 
 
