@@ -102,7 +102,7 @@
 
     <asp:TextBox ID="minPrice" runat="server"></asp:TextBox>
     <asp:TextBox ID="maxPrice" runat="server"></asp:TextBox>
-    <asp:Button ID="filterPrice" runat="server" Text="Button" OnClick="filterPrice_Click" />
+    <asp:Button ID="filterPrice" runat="server" Text="Ir" OnClick="filterPrice_Click" />
 
     <asp:DropDownList ID="filterColor" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource2" DataTextField="Color" DataValueField="Color" OnSelectedIndexChanged="filterColor_SelectedIndexChanged"></asp:DropDownList>
 
@@ -114,6 +114,10 @@
 
     <asp:DropDownList ID="filterEngineCapacity" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource3" DataTextField="EngineCapacity" DataValueField="EngineCapacity" OnSelectedIndexChanged="filterEngineCapacity_SelectedIndexChanged" ></asp:DropDownList>
     <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:SpeedMasterConnectionString %>" SelectCommand="SELECT DISTINCT [EngineCapacity] FROM [Motorcycles]"></asp:SqlDataSource>
+
+    <asp:TextBox ID="searchKeyWord" runat="server"></asp:TextBox>
+    <asp:Button ID="btn_keyWord" runat="server" Text="Go" OnClick="btn_keyWord_Click" />
+
     <br />
     <br />
     <br />

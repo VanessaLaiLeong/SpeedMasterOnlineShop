@@ -12,7 +12,7 @@ namespace SpeedMaster.FO
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //string pass = Services.DecryptString("mL4uefDJyC2Yb1LvMOw9vA==");
+            Response.Write(Services.DecryptString("mL4uefDJyC2Yb1LvMOw9vA=="));
             //string res = doLogin("jerdebastu@gufum.com", pass);
             
             //Response.Write(res);
@@ -38,9 +38,11 @@ namespace SpeedMaster.FO
             }
         }
         //para teste
-        protected void Button1_Click(object sender, EventArgs e)
+        
+
+        protected void btn_signin_Click(object sender, EventArgs e)
         {
-            doLogin(tb_email.Text,tb_password.Text);            
+            doLogin(tb_email.Text, tb_password.Text);
             Response.Redirect("ShopMotorcycle.aspx");
         }
     }

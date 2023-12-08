@@ -26,14 +26,19 @@ namespace SpeedMaster.FO
             }
         }
 
-        protected void lkbtn_user_Click(object sender, EventArgs e)
+        
+
+        protected void shoppingcartnav_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void lkbtn_user_Click1(object sender, EventArgs e)
         {
             if (Session["customer"] != null)
             {
                 Response.Redirect("Login.aspx");
             }
-            //else tem de ir para a pagina do user
-            
         }
     }
 }

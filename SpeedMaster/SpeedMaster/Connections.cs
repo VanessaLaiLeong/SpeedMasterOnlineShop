@@ -1401,7 +1401,7 @@ namespace SpeedMaster
 
 
 
-        public DataTable GetShoppingCartItems(string email)
+        public static DataTable GetShoppingCartItems(string email)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
 

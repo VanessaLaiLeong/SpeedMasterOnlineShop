@@ -1,0 +1,177 @@
+﻿#shoppingCart {
+    
+    min-height: 100vh;
+    vertical-align: middle;
+    display: flex;
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+    #shoppingCart .title {
+        margin-bottom: 5vh;
+    }
+
+    #shoppingCart .card {
+        margin: auto;
+        max-width: 950px;
+        width: 90%;
+        box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 1rem;
+        border: transparent;
+    }
+
+@media (max-width: 767px) {
+    #shoppingCart .card {
+        margin: 3vh auto;
+    }
+}
+
+#shoppingCart .cart {
+    background-color: #fff;
+    padding: 4vh 5vh;
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem;
+}
+
+@media (max-width: 767px) {
+    #shoppingCart .cart {
+        padding: 4vh;
+        border-bottom-left-radius: unset;
+        border-top-right-radius: 1rem;
+    }
+}
+
+#shoppingCart .summary {
+    background-color: #ddd;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding: 4vh;
+    color: rgb(65, 65, 65);
+}
+
+@media (max-width: 767px) {
+    #shoppingCart .summary {
+        border-top-right-radius: unset;
+        border-bottom-left-radius: 1rem;
+    }
+}
+
+#shoppingCart .summary .col-2 {
+    padding: 0;
+}
+
+#shoppingCart .summary .col-10 {
+    padding: 0;
+}
+
+#shoppingCart .row {
+    margin: 0;
+}
+
+#shoppingCart .title b {
+    font-size: 1.5rem;
+}
+
+#shoppingCart .main {
+    margin: 0;
+    padding: 2vh 0;
+    width: 100%;
+}
+
+#shoppingCart .col-2,
+#shoppingCart .col {
+    padding: 0 1vh;
+}
+
+#shoppingCart a {
+    padding: 0 1vh;
+}
+
+#shoppingCart .close {
+    margin-left: auto;
+    font-size: 0.7rem;
+}
+
+#shoppingCart img {
+    width: 3.5rem;
+}
+
+#shoppingCart .back-to-shop {
+    margin-top: 4.5rem;
+}
+
+#shoppingCart h5 {
+    margin-top: 4vh;
+}
+
+#shoppingCart hr {
+    margin-top: 1.25rem;
+}
+
+#shoppingCart form {
+    padding: 2vh 0;
+}
+
+#shoppingCart select {
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    padding: 1.5vh 1vh;
+    margin-bottom: 4vh;
+    outline: none;
+    width: 100%;
+    background-color: rgb(247, 247, 247);
+}
+
+#shoppingCart input {
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    padding: 1vh;
+    margin-bottom: 4vh;
+    outline: none;
+    width: 100%;
+    background-color: rgb(247, 247, 247);
+}
+
+    #shoppingCart input:focus::-webkit-input-placeholder {
+        color: transparent;
+    }
+
+#shoppingCart .btn {
+    background-color: #000;
+    border-color: #000;
+    color: white;
+    width: 100%;
+    font-size: 0.7rem;
+    margin-top: 4vh;
+    padding: 1vh;
+    border-radius: 0;
+}
+
+    #shoppingCart .btn:focus {
+        box-shadow: none;
+        outline: none;
+        box-shadow: none;
+        color: white;
+        -webkit-box-shadow: none;
+        -webkit-user-select: none;
+        transition: none;
+    }
+
+    #shoppingCart .btn:hover {
+        color: white;
+    }
+
+#shoppingCart a {
+    color: black;
+}
+
+    #shoppingCart a:hover {
+        color: black;
+        text-decoration: none;
+    }
+
+#shoppingCart #code {
+    background-image: linear-gradient( to left, rgba(255, 255, 255, 0.253), rgba(255, 255, 255, 0.185) ), url("https://img.icons8.com/small/16/000000/long-arrow-right.png");
+    background-repeat: no-repeat;
+    background-position-x: 95%;
+    background-position-y: center;
+}

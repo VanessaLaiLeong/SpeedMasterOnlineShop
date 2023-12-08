@@ -82,10 +82,12 @@
     <Content Include="BO\UpdateProductDetailsMotorcycle.aspx" />
     <Content Include="FO\Activation.aspx" />
     <Content Include="FO\css\login.css" />
+    <Content Include="FO\css\shoppingCart.css" />
     <Content Include="FO\Login.aspx" />
     <Content Include="FO\new_logo_SM-removebg-preview-e1672148031220.png" />
     <Content Include="FO\ResetPassword.aspx" />
     <Content Include="FO\css\shop.css" />
+    <Content Include="FO\ShopAccessories.aspx" />
     <Content Include="FO\ShopMotorcycle.aspx" />
     <Content Include="FO\ShopMotorcycleDetails.aspx" />
     <Content Include="FO\ShoppingCart.aspx" />
@@ -214,6 +216,13 @@
     </Compile>
     <Compile Include="FO\ResetPassword.aspx.designer.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FO\ShopAccessories.aspx.cs">
+      <DependentUpon>ShopAccessories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FO\ShopAccessories.aspx.designer.cs">
+      <DependentUpon>ShopAccessories.aspx</DependentUpon>
     </Compile>
     <Compile Include="FO\ShopMotorcycle.aspx.cs">
       <DependentUpon>ShopMotorcycle.aspx</DependentUpon>

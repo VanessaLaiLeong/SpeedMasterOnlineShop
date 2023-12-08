@@ -11,18 +11,14 @@ using System.Web.UI.WebControls;
 
 namespace SpeedMaster.FO
 {
-    public partial class Shop : System.Web.UI.Page
+    public partial class ShopAccessories : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                BindRepeater("");
-               
-            }
-            //Response.Write(brands.SelectedValue);
-            
-
+                BindRepeater("");               
+            }            
         }
 
         private void BindRepeater(string query)
@@ -33,7 +29,7 @@ namespace SpeedMaster.FO
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = cn;
             SqlDataAdapter ad = new SqlDataAdapter(cmd);
-            cmd.CommandText = "select * from motorcycles" + query;
+            cmd.CommandText = "select * from accessories" + query;
 
             //save the result in data table
             DataTable dt = new DataTable();
@@ -86,14 +82,29 @@ namespace SpeedMaster.FO
             set { ViewState["PageNumber"] = value; }
         }
 
-        protected void Repeater2_ItemCommand(object source, RepeaterCommandEventArgs e)
+        
+
+        protected void addShoppingCart_Click(object sender, EventArgs e)
         {
-            PageNumber = Convert.ToInt32(e.CommandArgument) - 1;
-            BindRepeater("");
             
+            if (Session["customer"] != null)
+            {
+                Button btn = (Button)sender;
+                int productId = Convert.ToInt32(btn.CommandArgument);
+                Connections.AddToCart(((Customer)Session["customer"]).email, productId);
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
         }
 
-      
+        protected void lk_accessoryName_Click(object sender, EventArgs e)
+        {
+            LinkButton btn = (LinkButton)sender;
+            int productId = Convert.ToInt32(btn.CommandArgument);
+            Response.Redirect($"ShopAccessoryDetails.aspx?productId={productId}");
+        }
 
         protected void Repeater1_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
@@ -103,70 +114,52 @@ namespace SpeedMaster.FO
 
                 if (dr["Active"].ToString() == "True")
                 {
-                    int id_brand = Convert.ToInt32(dr["ID_Brand"]);
-                    string model = dr["Model"].ToString();
-                    string brandName = Connections.getBrandById(id_brand);
-
-                    ((LinkButton)e.Item.FindControl("lk_motorcycleName")).Text = $"{brandName} {model}";
+                    
+                    ((LinkButton)e.Item.FindControl("lk_accessoryName")).Text = dr["AccessoryName"].ToString();
                     ((Label)e.Item.FindControl("lbl_price")).Text = dr["Price"].ToString();
                     ((Label)e.Item.FindControl("lbl_description")).Text = dr["Description"].ToString();
 
-                    byte[] imageData = dr["MotorcycleImage"] as byte[];
+                    byte[] imageData = dr["Image"] as byte[];
                     if (imageData != null && imageData.Length > 0)
                     {
                         string imageUrl = "data:image/jpeg;base64," + Convert.ToBase64String(imageData);
                         // Set the image URL to the Image control
-                        ((Image)e.Item.FindControl("motorcycleImage")).ImageUrl = imageUrl;
+                        ((Image)e.Item.FindControl("Image")).ImageUrl = imageUrl;
                     }
+                    Session["stock"] = Convert.ToInt32(dr["Stock"]);
+                    
 
+                    if ((int)Session["stock"] <= 0)
+                    {
+                        ((Label)e.Item.FindControl("lbl_stock")).Text = "Fora de Stock";
+                        ((LinkButton)e.Item.FindControl("addShoppingCart")).Enabled = false;
+                    }
                 }
                 else
                 {
                     // If the item is not active, hide the entire item template
                     e.Item.Visible = false;
                 }
-
-
             }
         }
 
-        protected void btn_viewDeatils_Click(object sender, EventArgs e)
+        protected void Repeater2_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
-            LinkButton btn =  (LinkButton)sender;
-            int productId = Convert.ToInt32(btn.CommandArgument);
-            Response.Redirect($"ShopMotorcycleDetails.aspx?productId={productId}");
-
+            PageNumber = Convert.ToInt32(e.CommandArgument) - 1;
+            BindRepeater("");
         }
 
-        protected void btn_addCart_Click(object sender, EventArgs e)
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Session["customer"] != null)
-            {
-                LinkButton btn = (LinkButton)sender;
-                int productId = Convert.ToInt32(btn.CommandArgument);
-                Connections.AddToCart(((Customer)Session["customer"]).email, productId);
-            }
-            else
-            {
-                Response.Redirect("Login.aspx");
-            }            
+            BindRepeater($" where ID_category = {DropDownList1.SelectedValue} ");
         }
 
-
-
-
-        protected void brands_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Session["brand"] = brands.SelectedValue;
-            BindRepeater($" where ID_Brand = { Session["brand"] } ");
-        }
-
-        protected void removeFilter_Click(object sender, EventArgs e)
+        protected void btn_removeFilter_Click(object sender, EventArgs e)
         {
             BindRepeater("");
-        }      
+        }
 
-        protected void filterPrice_Click(object sender, EventArgs e)
+        protected void btn_filterPrice_Click(object sender, EventArgs e)
         {
             if (minPrice.Text != "" && maxPrice.Text != "")
             {
@@ -175,23 +168,6 @@ namespace SpeedMaster.FO
                     BindRepeater($" where Price between {minPrice.Text} and {maxPrice.Text}");
                 }
             }
-        }
-
-        protected void filterColor_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            BindRepeater($" where Color = '{filterColor.SelectedValue}' ");
-        }
-
-        
-
-        protected void filterEngineCapacity_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            BindRepeater($" where EngineCapacity = '{filterEngineCapacity.SelectedValue}' ");
-        }
-
-        protected void btn_keyWord_Click(object sender, EventArgs e)
-        {
-            BindRepeater($" where Model = '{searchKeyWord.Text}' ");
         }
     }
 }
