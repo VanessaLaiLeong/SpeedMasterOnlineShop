@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FO/FOMaster.Master" AutoEventWireup="true" CodeBehind="ShopAccessories.aspx.cs" Inherits="SpeedMaster.FO.ShopAccessories" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FO/FOMaster.Master" AutoEventWireup="true" CodeBehind="ShopAccessories.aspx.cs" Inherits="SpeedMaster.FO.ShopAccessories1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -6,7 +6,6 @@
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <asp:Repeater ID="Repeater1" runat="server" OnItemDataBound="Repeater1_ItemDataBound">
             <ItemTemplate>
-
                 <div class="col">
                     <div class="card h-100">
                         <div class="show-image">
@@ -95,13 +94,13 @@
             </asp:LinkButton>
         </ItemTemplate>
     </asp:Repeater>
-
-    <asp:LinkButton ID="btn_removeFilter" runat="server" OnClick="btn_removeFilter_Click">Remove Filters</asp:LinkButton>
+     <asp:LinkButton ID="btn_removeFilter" runat="server" OnClick="btn_removeFilter_Click">Remove Filters</asp:LinkButton>
 
     <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="CategoryName" DataValueField="ID_Category" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"></asp:DropDownList>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SpeedMasterConnectionString %>" SelectCommand="SELECT * FROM [Categories]"></asp:SqlDataSource>
 
     <asp:TextBox ID="minPrice" runat="server"></asp:TextBox>
     <asp:TextBox ID="maxPrice" runat="server"></asp:TextBox>
-    <asp:Button ID="btn_filterPrice" runat="server" Text="Button" OnClick="btn_filterPrice_Click" />
+    <asp:Button ID="btn_filterPrice" runat="server" Text="Button" OnClick="btn_removeFilter_Click" />
+
 </asp:Content>

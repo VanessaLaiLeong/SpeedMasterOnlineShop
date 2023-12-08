@@ -11,14 +11,14 @@ using System.Web.UI.WebControls;
 
 namespace SpeedMaster.FO
 {
-    public partial class ShopAccessories : System.Web.UI.Page
+    public partial class ShopAccessories1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                BindRepeater("");               
-            }            
+                BindRepeater("");
+            }
         }
 
         private void BindRepeater(string query)
@@ -82,11 +82,9 @@ namespace SpeedMaster.FO
             set { ViewState["PageNumber"] = value; }
         }
 
-        
-
         protected void addShoppingCart_Click(object sender, EventArgs e)
         {
-            
+
             if (Session["customer"] != null)
             {
                 Button btn = (Button)sender;
@@ -114,7 +112,7 @@ namespace SpeedMaster.FO
 
                 if (dr["Active"].ToString() == "True")
                 {
-                    
+
                     ((LinkButton)e.Item.FindControl("lk_accessoryName")).Text = dr["AccessoryName"].ToString();
                     ((Label)e.Item.FindControl("lbl_price")).Text = dr["Price"].ToString();
                     ((Label)e.Item.FindControl("lbl_description")).Text = dr["Description"].ToString();
@@ -127,7 +125,7 @@ namespace SpeedMaster.FO
                         ((Image)e.Item.FindControl("Image")).ImageUrl = imageUrl;
                     }
                     Session["stock"] = Convert.ToInt32(dr["Stock"]);
-                    
+
 
                     if ((int)Session["stock"] <= 0)
                     {
