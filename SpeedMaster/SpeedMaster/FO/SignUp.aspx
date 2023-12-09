@@ -7,7 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <div class="container">
-<div style="height: 70%; width: 35%; margin-top: 20px; margin-bottom: 50px;" class="LoginDiv centerDiv">
+<div style="height: 60%; width: 35%; margin-top: 20px; /*margin-bottom: 50px;*/" class="LoginDiv centerDiv">
     <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
         <li style="padding: 15px;" class="nav-item" role="presentation">
             <a style="" class="nav-link " id="tab-login" data-mdb-toggle="pill" href="login.aspx" role="tab"
@@ -50,15 +50,6 @@
                 <div class="row mb-4">
                     <div class="col-md-6 d-flex justify-content-center">
                         <!-- Checkbox -->
-                        <div class="form-check mb-3 mb-md-0">
-                            <input class="form-check-input" type="checkbox" value="" id="loginCheck" checked />
-                            <label class="form-check-label" for="loginCheck">Remember me </label>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 d-flex justify-content-center">
-                        <!-- Simple link -->
-                        <a href="#!">Forgot password?</a>
                     </div>
                 </div>
 
@@ -67,13 +58,10 @@
                     class="container">
                     <div style="margin: 0; position: absolute; top: 25%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"
                         class="center">
-                        <button type="submit" class="btn btn-primary">Sign in</button>
+                        <button type="submit" class="btn btn-primary">Register</button>
                     </div>
                 </div>
                 <!-- Register buttons -->
-                <div class="text-center">
-                    <p>Not a member? <a href="#!">Register</a></p>
-                </div>
             </div>
         </div>
         <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="tab-register">

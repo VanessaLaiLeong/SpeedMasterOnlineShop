@@ -1525,6 +1525,44 @@ namespace SpeedMaster
         public static string InsertCustomerReviewInDB(int orderId, int productId, int rating, string description)
         {
             string resultMessage = "";
+        // Method for making queries to a database with sorting
+        // returns a DataTable with the information retrieved from the database;
+        public static DataTable getSortedTable(string tableName, string orderTarget,string orderType)
+        {
+            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString);
+            SqlCommand myCommand = new SqlCommand();
+            myCommand.CommandType = CommandType.Text;
+            myCommand.CommandText = $"SELECT * FROM {tableName} ORDER BY {orderTarget} {orderType}"; // Adjusted SQL query
+            myCommand.Connection = myConn;
+
+            DataTable table = new DataTable();
+
+            try
+            {
+                myConn.Open();
+                SqlDataReader dataReader = myCommand.ExecuteReader();
+
+                if (dataReader.HasRows)
+                {
+                    table.Load(dataReader); // Load data into DataTable directly from SqlDataReader
+                }
+
+                return table;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+            finally
+            {
+
+                if (myConn.State == ConnectionState.Open)
+                {
+                    myConn.Close();
+                }
+            }
+    }
 
             string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
 

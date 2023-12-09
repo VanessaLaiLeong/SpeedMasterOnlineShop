@@ -73,6 +73,7 @@
     <Content Include="BO\InsertProducts.aspx" />
     <Content Include="BO\ShowAllBrands.aspx" />
     <Content Include="BO\ShowAllCustomers.aspx" />
+    <Content Include="BO\ShowAllOrders.aspx" />
     <Content Include="BO\ShowAllProducts.aspx" />
     <Content Include="BO\ShowCustomerDetails.aspx" />
     <Content Include="BO\ShowProductDetail.aspx" />
@@ -137,6 +138,13 @@
     </Compile>
     <Compile Include="BO\ShowAllCustomers.aspx.designer.cs">
       <DependentUpon>ShowAllCustomers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BO\ShowAllOrders.aspx.cs">
+      <DependentUpon>ShowAllOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BO\ShowAllOrders.aspx.designer.cs">
+      <DependentUpon>ShowAllOrders.aspx</DependentUpon>
     </Compile>
     <Compile Include="BO\ShowAllProducts.aspx.cs">
       <DependentUpon>ShowAllProducts.aspx</DependentUpon>
