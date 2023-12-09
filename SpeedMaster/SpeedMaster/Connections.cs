@@ -1399,6 +1399,42 @@ namespace SpeedMaster
             }
         }
 
+        public static string DeleteFromCart(string email, int productId)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("delete_from_cart", connection))
+                {
+                    try
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@email", email);
+                        command.Parameters.AddWithValue("@productID", productId);
+
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected == 0)
+                        {
+                            return $"No cart item found for email {email} and product ID {productId}.";
+                        }
+                        else
+                        {
+                            return $"Product with ID {productId} removed from the cart successfully.";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle or log the exception
+                        return $"Error removing product from cart: {ex.Message}";
+                    }
+                }
+            }
+        }
+
+
 
 
         public static DataTable GetShoppingCartItems(string email)
