@@ -9,11 +9,11 @@
 - [ ] Contactos da loja/stand
 
 ### Loja online (motas, pecas e acessorios)
-- [x] Montra de motas a venda
+- [X] Montra de motas a venda
 - [ ] Montra de acessorios
 
 #### Filtros de pesquisa para a montra de motas:
-- [x] marca,
+- [X] marca,
 - [ ] modelo,
 - [ ] preco (range),
 - [ ] cilindrada,
@@ -64,11 +64,11 @@
 
 #### Front end 
 
-- [x] Navbar
+- [X] Navbar
 - [ ] Signup
 - [ ] Reset Password
 - [ ] Activation
-- [x] Login
+- [X] Login
 
 ### Back Office
 
@@ -86,8 +86,8 @@ apenas as seguintes funcionalidades:
 - [ ] Atualizacao no cliente do estado da encomenda.
 
 #### Gestao de stock
-- [x] Stock disponivel, por modelo preco, ano status (disponivel, reservado, vendido)
-- [x] Criar, modificar, apagar produtos
+- [X] Stock disponivel, por modelo preco, ano status (disponivel, reservado, vendido)
+- [X] Criar, modificar, apagar produtos
 
 #### Operações e agendamentos
 * [ ] Agendamento de test drives
