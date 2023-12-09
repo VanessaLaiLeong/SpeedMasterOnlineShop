@@ -1399,6 +1399,42 @@ namespace SpeedMaster
             }
         }
 
+        public static string DeleteFromCart(string email, int productId)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("delete_from_cart", connection))
+                {
+                    try
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@email", email);
+                        command.Parameters.AddWithValue("@productID", productId);
+
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected == 0)
+                        {
+                            return $"No cart item found for email {email} and product ID {productId}.";
+                        }
+                        else
+                        {
+                            return $"Product with ID {productId} removed from the cart successfully.";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle or log the exception
+                        return $"Error removing product from cart: {ex.Message}";
+                    }
+                }
+            }
+        }
+
+
 
 
         public static DataTable GetShoppingCartItems(string email)
@@ -1486,6 +1522,44 @@ namespace SpeedMaster
             }
         }
 
+        // Method for making queries to a database with sorting
+        // returns a DataTable with the information retrieved from the database;
+        public static DataTable getSortedTable(string tableName, string orderTarget,string orderType)
+        {
+            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString);
+            SqlCommand myCommand = new SqlCommand();
+            myCommand.CommandType = CommandType.Text;
+            myCommand.CommandText = $"SELECT * FROM {tableName} ORDER BY {orderTarget} {orderType}"; // Adjusted SQL query
+            myCommand.Connection = myConn;
+
+            DataTable table = new DataTable();
+
+            try
+            {
+                myConn.Open();
+                SqlDataReader dataReader = myCommand.ExecuteReader();
+
+                if (dataReader.HasRows)
+                {
+                    table.Load(dataReader); // Load data into DataTable directly from SqlDataReader
+                }
+
+                return table;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+            finally
+            {
+
+                if (myConn.State == ConnectionState.Open)
+                {
+                    myConn.Close();
+                }
+            }
+    }
 
 
 

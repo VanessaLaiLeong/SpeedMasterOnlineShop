@@ -52,12 +52,18 @@ namespace SpeedMaster.FO
 
         protected void addCart_Click(object sender, EventArgs e)
         {
-
+            LinkButton btn = (LinkButton)sender;
+            int prodcutID = Convert.ToInt32(btn.CommandArgument);
+            string result = Connections.AddToCart(((Customer)Session["customer"]).email, prodcutID);
+            Response.Redirect("shoppingCart.aspx");
         }
 
         protected void delete_from_cart_Click(object sender, EventArgs e)
         {
-
+            LinkButton btn = (LinkButton)sender;
+            int prodcutID = Convert.ToInt32(btn.CommandArgument);
+            string result = Connections.DeleteFromCart(((Customer)Session["customer"]).email, prodcutID);
+            Response.Redirect("shoppingCart.aspx");
         }
     }
 }
