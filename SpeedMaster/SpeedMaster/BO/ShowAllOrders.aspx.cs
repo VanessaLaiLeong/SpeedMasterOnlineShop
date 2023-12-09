@@ -12,7 +12,10 @@ namespace SpeedMaster.BO
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                return;
+            }
         }
 
         protected void rp_orders_ItemDataBound(object sender, RepeaterItemEventArgs e)
