@@ -121,7 +121,7 @@ namespace SpeedMaster
             else
             {
                 return null;
-            }          
+            }
         }
 
         public static void activateCustomerAccount(string email)
@@ -242,7 +242,7 @@ namespace SpeedMaster
          * From here CRUD for Accessories Table
          */
         public static string InsertAccessoryDB(int ID_Accessory, string AccessoryName, string Description,
-                double Price, int Stock, bool Active, int ID_Category, byte[]img)
+                double Price, int Stock, bool Active, int ID_Category, byte[] img)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
 
@@ -1522,12 +1522,10 @@ namespace SpeedMaster
             }
         }
 
-        public static string InsertCustomerReviewInDB(int orderId, int productId, int rating, string description)
-        {
-            string resultMessage = "";
+
         // Method for making queries to a database with sorting
         // returns a DataTable with the information retrieved from the database;
-        public static DataTable getSortedTable(string tableName, string orderTarget,string orderType)
+        public static DataTable getSortedTable(string tableName, string orderTarget, string orderType)
         {
             SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString);
             SqlCommand myCommand = new SqlCommand();
@@ -1562,7 +1560,11 @@ namespace SpeedMaster
                     myConn.Close();
                 }
             }
-    }
+        }
+
+        public static string InsertCustomerReviewInDB(int orderId, int productId, int rating, string description)
+        {
+            string resultMessage = "";
 
             string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
 
@@ -1607,7 +1609,7 @@ namespace SpeedMaster
             {
                 using (SqlCommand command = new SqlCommand($"UPDATE Orders SET ID_OrderStatus = {orderStatusId} WHERE ID_Order = {orderId}", connection))
                 {
-                  
+
                     try
                     {
                         connection.Open();
@@ -1631,32 +1633,34 @@ namespace SpeedMaster
 
             return resultMessage;
         }
+
+
     }
 
 
-        //public static void insertAccessories(int ID_Accessory, string AccessoryName, string Description, string Price,
-        //    string Stock, string Active, string ID_Category)
-        //{
-        //    SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings
-        //                   ["SpeedMasterConnectionString"].ConnectionString);
-        //    SqlCommand myCommand = new SqlCommand();
-        //    myCommand.CommandType = CommandType.StoredProcedure;
-        //    myCommand.CommandText = "inset_accessories";
-        //    myCommand.Connection = myConn;
+    //public static void insertAccessories(int ID_Accessory, string AccessoryName, string Description, string Price,
+    //    string Stock, string Active, string ID_Category)
+    //{
+    //    SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings
+    //                   ["SpeedMasterConnectionString"].ConnectionString);
+    //    SqlCommand myCommand = new SqlCommand();
+    //    myCommand.CommandType = CommandType.StoredProcedure;
+    //    myCommand.CommandText = "inset_accessories";
+    //    myCommand.Connection = myConn;
 
-        //    myCommand.Parameters.AddWithValue("@ID_Accessory", ID_Accessory);
-        //    myCommand.Parameters.AddWithValue("@AccessoryName", AccessoryName);
-        //    myCommand.Parameters.AddWithValue("@Description", Description);
-        //    myCommand.Parameters.AddWithValue("@Price", Price);
-        //    myCommand.Parameters.AddWithValue("@Stock", Stock);
-        //    myCommand.Parameters.AddWithValue("@Active", Active);
-        //    myCommand.Parameters.AddWithValue("@ID_Category", ID_Category);
+    //    myCommand.Parameters.AddWithValue("@ID_Accessory", ID_Accessory);
+    //    myCommand.Parameters.AddWithValue("@AccessoryName", AccessoryName);
+    //    myCommand.Parameters.AddWithValue("@Description", Description);
+    //    myCommand.Parameters.AddWithValue("@Price", Price);
+    //    myCommand.Parameters.AddWithValue("@Stock", Stock);
+    //    myCommand.Parameters.AddWithValue("@Active", Active);
+    //    myCommand.Parameters.AddWithValue("@ID_Category", ID_Category);
 
-        //    myConn.Open();
-        //    myCommand.ExecuteNonQuery();
-        //    myConn.Close();
+    //    myConn.Open();
+    //    myCommand.ExecuteNonQuery();
+    //    myConn.Close();
 
 
-        //}
-    }
+    //}
+}
 }

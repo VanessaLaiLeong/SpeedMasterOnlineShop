@@ -381,24 +381,25 @@ namespace SpeedMaster
             if (orderStatus == 4)
             {
                 Connections.UpdateStatusInOrder(orderId, orderStatus);
+
                 //send mail
 
                 string subject = "Welcome to Speed Master - Your Ultimate Destination for Motorcycle Enthusiasts 🏍️🔥";
-                // no link pode ser capaz de cada um ter de por o seu?? id
-                // Pelo menos para mim, o meu localhost é igual ao teu, acho que o IIS usa sempre o mesmo
                 string body = "Welcome to Speed Master!<br><br>" +
-                                "We are thrilled to welcome you to our motorcycle-loving community.<br><br>" +
-                                "At Speed Master, we offer a diverse range of high-performance motorcycles and gear, curated for true enthusiasts like yourself.<br><br>" +
-                                "Start your thrilling journey with us by exploring our website and discovering the latest in motorcycle technology and style.<br><br>" +
-                                "Should you have any inquiries or require assistance, feel free to reply to this email. We're here to ensure your motorcycle experience is extraordinary.<br><br>" +
-                                "Rev up your engines and embrace the spirit of Speed Master!<br><br>" +
-                                "<br>" +
-                                "Account created. Click <a href='https://localhost:44389/FO/Activation.aspx?email=" + EncryptString(email) + "'>here</a> to activate your account.<br><br>" +
-                                "<br>" +
-                                "Best Regards,<br>" +
-                                "The Speed Master Team";
+                              "We are thrilled to welcome you to our motorcycle-loving community.<br><br>" +
+                              "At Speed Master, we offer a diverse range of high-performance motorcycles and gear, curated for true enthusiasts like yourself.<br><br>" +
+                              "Start your thrilling journey with us by exploring our website and discovering the latest in motorcycle technology and style.<br><br>" +
+                              "Should you have any inquiries or require assistance, feel free to reply to this email. We're here to ensure your motorcycle experience is extraordinary.<br><br>" +
+                              "Rev up your engines and embrace the spirit of Speed Master!<br><br>" +
+                              "<br>" +
+                              "Thank you for choosing Speed Master! We value your feedback and would love to hear about your experience with our products. Share your thoughts by writing a review.<br><br>" +
+                              "Click <a href='https://localhost:44389/FO/ReviewPage.aspx?email=" + EncryptString(email) + "'>here</a> to write a review.<br><br>" +
+                              "<br>" +
+                              "Best Regards,<br>" +
+                              "The Speed Master Team";
+
             }
-            
+
         }
 
     }
