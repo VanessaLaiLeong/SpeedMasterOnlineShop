@@ -27,5 +27,12 @@ namespace SpeedMaster.BO
             ((Label)e.Item.FindControl("lbl_totalAmount")).Text = dr["TotalAmount"].ToString();
             ((Label)e.Item.FindControl("lbl_statusName")).Text = dr["StatusName"].ToString();
         }
+
+        protected void btn_edit_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            string id_order = button.CommandArgument.ToString();
+            Response.Redirect($"UpdateOrder.aspx?id_order={id_order}");
+        }
     }
 }

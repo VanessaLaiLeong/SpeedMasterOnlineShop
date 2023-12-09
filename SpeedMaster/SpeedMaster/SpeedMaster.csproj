@@ -84,6 +84,7 @@
     <Content Include="BO\ShowProductDetail.aspx" />
     <Content Include="BO\UpdateBrand.aspx" />
     <Content Include="BO\UpdateCustomerDetails.aspx" />
+    <Content Include="BO\UpdateOrder.aspx" />
     <Content Include="BO\UpdateProductDetailsAccessory.aspx" />
     <Content Include="BO\UpdateProductDetailsMotorcycle.aspx" />
     <Content Include="FO\Activation.aspx" />
@@ -199,6 +200,13 @@
     </Compile>
     <Compile Include="BO\UpdateCustomerDetails.aspx.designer.cs">
       <DependentUpon>UpdateCustomerDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BO\UpdateOrder.aspx.cs">
+      <DependentUpon>UpdateOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BO\UpdateOrder.aspx.designer.cs">
+      <DependentUpon>UpdateOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="BO\UpdateProductDetailsAccessory.aspx.cs">
       <DependentUpon>UpdateProductDetailsAccessory.aspx</DependentUpon>
