@@ -49,7 +49,7 @@
                             </asp:Repeater>
                         </tbody>
                     </table>
-                    <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
+                    <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted"><asp:LinkButton ID="back" runat="server" OnClick="back_Click">Back to shop</asp:LinkButton></span></div>
                 </div>
                 <div class="col-md-4 summary">
                     <div>

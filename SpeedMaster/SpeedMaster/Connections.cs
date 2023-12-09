@@ -1522,7 +1522,78 @@ namespace SpeedMaster
             }
         }
 
+        public static string InsertCustomerReviewInDB(int orderId, int productId, int rating, string description)
+        {
+            string resultMessage = "";
 
+            string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("create_customer_review", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@ID_Order", orderId);
+                    command.Parameters.AddWithValue("@ID_Product", productId);
+                    command.Parameters.AddWithValue("@rating", rating);
+                    command.Parameters.AddWithValue("@description", description);
+
+                    try
+                    {
+                        connection.Open();
+                        var outputParameter = command.Parameters.Add("@outputMessage", SqlDbType.VarChar, 1000);
+                        outputParameter.Direction = ParameterDirection.Output;
+
+                        command.ExecuteNonQuery();
+
+                        resultMessage = outputParameter.Value.ToString();
+                    }
+                    catch (Exception ex)
+                    {
+                        resultMessage = $"Error creating customer review: {ex.Message}";
+                    }
+                }
+            }
+
+            return resultMessage;
+        }
+
+        //changes the orderstatus in the table orders
+        public static string UpdateStatusInOrder(int orderId, int orderStatusId)
+        {
+            string resultMessage = "";
+            string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand($"UPDATE Orders SET ID_OrderStatus = {orderStatusId} WHERE ID_Order = {orderId}", connection))
+                {
+                  
+                    try
+                    {
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            resultMessage = "Order status updated successfully.";
+                        }
+                        else
+                        {
+                            resultMessage = "No order found for the specified order ID.";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        resultMessage = $"Error updating order status: {ex.Message}";
+                    }
+                }
+            }
+
+            return resultMessage;
+        }
+    }
 
 
         //public static void insertAccessories(int ID_Accessory, string AccessoryName, string Description, string Price,

@@ -26,9 +26,17 @@ namespace SpeedMaster.FO
 
         private void BindRepeater()
         {
+
             DataTable dt = Connections.GetShoppingCartItems(((Customer)Session["customer"]).email);
-            Repeater1.DataSource = dt;
-            Repeater1.DataBind();
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                DataRow firstRow = dt.Rows[0];
+                lbl_totalItems.Text = Convert.ToString(firstRow["totalItems"]);
+                lbl_totalPriceNoShipping.Text = Convert.ToString(firstRow["totalPrice"]);
+
+                Repeater1.DataSource = dt;
+                Repeater1.DataBind();
+            }
         }
 
         protected void Repeater1_ItemDataBound(object sender, RepeaterItemEventArgs e)
@@ -38,6 +46,9 @@ namespace SpeedMaster.FO
                 DataRowView dr = (DataRowView)e.Item.DataItem;
                 ((Label)e.Item.FindControl("lbl_productName")).Text = dr["name"].ToString();
                 ((Label)e.Item.FindControl("lbl_productQuantity")).Text = dr["quantity"].ToString();
+                ((Label)e.Item.FindControl("lbl_productPriceSingle")).Text = dr["price"].ToString();
+                ((Label)e.Item.FindControl("lbl_productPrice")).Text = dr["ItemTotalPrice"].ToString();
+
 
 
                 byte[] imageData = dr["Image"] as byte[];
@@ -47,6 +58,8 @@ namespace SpeedMaster.FO
                     // Set the image URL to the Image control
                     ((System.Web.UI.WebControls.Image)e.Item.FindControl("productImg")).ImageUrl = imageUrl;
                 }
+
+              
             }
         }
 
@@ -64,6 +77,11 @@ namespace SpeedMaster.FO
             int prodcutID = Convert.ToInt32(btn.CommandArgument);
             string result = Connections.DeleteFromCart(((Customer)Session["customer"]).email, prodcutID);
             Response.Redirect("shoppingCart.aspx");
+        }
+
+        protected void back_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ShopMotorcycle.aspx");
         }
     }
 }
