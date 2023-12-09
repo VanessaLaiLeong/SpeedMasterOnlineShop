@@ -9,7 +9,7 @@
 
     <!-- Pills navs -->
     <div class="container">
-    <div style="height: 70%; width: 35%; margin-top: 20px; margin-bottom: 50px;" class="LoginDiv centerDiv">
+    <div style="height: 60%; width: 35%; margin-top: 20px;" class="LoginDiv centerDiv">
         <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
             <li style="padding: 15px;" class="nav-item" role="presentation">
                 <a style="background-color: rgb(207,32,47);" class="nav-link active" id="tab-login" data-mdb-toggle="pill" href="#pills-login" role="tab"
@@ -60,7 +60,7 @@
 
                         <div class="col-md-6 d-flex justify-content-center">
                             <!-- Simple link -->
-                            <a href="#!">Forgot password?</a>
+                            <a href="ResetPassword.aspx">Forgot password?</a>
                         </div>
                     </div>
 
@@ -74,9 +74,6 @@
                         </div>
                     </div>
                     <!-- Register buttons -->
-                    <div class="text-center">
-                        <p>Not a member? <a href="#!">Register</a></p>
-                    </div>
                 </div>
             </div>
             <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="tab-register">

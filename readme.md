@@ -65,8 +65,8 @@
 #### Front end 
 
 - [X] Navbar
-- [ ] Signup
-- [ ] Reset Password
+- [X] Signup
+- [X] Reset Password
 - [ ] Activation
 - [X] Login
 
