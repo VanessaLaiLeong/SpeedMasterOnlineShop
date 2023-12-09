@@ -384,6 +384,7 @@ namespace SpeedMaster
 
                 //send mail
 
+                string email = "";
                 string subject = "Welcome to Speed Master - Your Ultimate Destination for Motorcycle Enthusiasts 🏍️🔥";
                 string body = "Welcome to Speed Master!<br><br>" +
                               "We are thrilled to welcome you to our motorcycle-loving community.<br><br>" +
