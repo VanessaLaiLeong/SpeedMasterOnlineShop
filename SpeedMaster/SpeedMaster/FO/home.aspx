@@ -10,7 +10,7 @@
                 <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
 
 
-                    <div class="carousel-inner">
+                    <div class="carousel-inner" style="border-radius: 30px;">
 
                         <div id="carouselExampleIndicators" class="carousel slide">
                             <div class="carousel-indicators">
@@ -20,15 +20,15 @@
                             </div>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <asp:Image ID="Image1" runat="server" ImageUrl="~/img/banner.png" class="d-block w-100" />
+                                    <asp:Image ID="Image1" runat="server" ImageUrl="~/images/banner-1.jpg" class="d-block w-100" />
 
 
                                 </div>
                                 <div class="carousel-item">
-                                    <asp:Image ID="Image2" runat="server" ImageUrl="~/img/banner2.jpg" class="d-block w-100" />
+                                    <asp:Image ID="Image2" runat="server" ImageUrl="~/images/banner-2.jpg" class="d-block w-100" />
                                 </div>
                                 <div class="carousel-item">
-                                    <asp:Image ID="Image6" runat="server" class="d-block w-100" ImageUrl="~/img/banner3.jpg" />
+                                    <asp:Image ID="Image6" runat="server" class="d-block w-100" ImageUrl="~/images/banner-3.jpg" />
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -51,9 +51,9 @@
                     <div class="container py-5">
                         <div class="row text-center py-3">
                             <div class="col-lg-6 m-auto">
-                                <h1 class="h1">Featured Products</h1>
+                                <h1 class="h1">Welcome To SpeedMaster</h1>
                                 <p>
-                                    Enjoy your stay at PcParts
+                                    Enjoy Your Stay
                                 </p>
                             </div>
                         </div>
