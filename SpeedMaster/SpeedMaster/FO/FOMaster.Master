@@ -16,46 +16,37 @@
 <body style="">
     <form id="form1" runat="server">
         <div>
-            <nav style="margin-bottom: 40px;" class="navbar navbar-expand-lg navbar-light bg-light">
-                <a href="home.aspx">
-                    <img src="../Images/logoSpeedMaster.png" class="navbar-brand pb-1" style="width: auto; height: 40px;" />
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="home.aspx">
+                    <img src="../Images/logoSpeedMaster.png" alt="SpeedMaster" width="200">
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav mr-auto">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <!-- 'mx-auto' centraliza os itens -->
                         <li class="nav-item">
-                            <a class="nav-link" href="about.aspx">About</a>
+                            <a class="nav-link" href="ShopMotorcycle.aspx">Motas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
+                            <a class="nav-link" href="ShopAccessories.aspx">Acessórios</a>
                         </li>
                         <li class="nav-item">
-                            <asp:DropDownList ID="DropDownList1" runat="server" CssClass="nav-link" Style="width: 100%;" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" >
-                                
-                                <asp:ListItem>Shop</asp:ListItem>
-                                
-                                <asp:ListItem>Motas</asp:ListItem>
-                                <asp:ListItem>Acessorios</asp:ListItem>
-                            </asp:DropDownList>
-
-
-                            <%--<asp:DropDownList ID="ddl_shop" runat="server" CssClass="nav-link" Style="width: 100%;" AutoPostBack="True">
-                                <asp:ListItem Text="Motas" Value="motorcycle"></asp:ListItem>
-                                <asp:ListItem Text="Acessórios" Value="accessories"></asp:ListItem>
-                            </asp:DropDownList>--%>
+                            <a class="nav-link" href="about.aspx">Sobre</a>
                         </li>
                     </ul>
 
                     <!-- Apply ml-auto to the ul element -->
 
 
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav">
                         <asp:Label ID="lbl_customer" runat="server" Text="Bem vindo, !"></asp:Label>
                         <li class="nav-item">
                             <asp:LinkButton ID="shoppingcartnav" runat="server" Visible="False" OnClick="shoppingcartnav_Click">
-            <i class="fa-solid fa-cart-shopping px-3"></i>
+                    <a class="nav-link" href="Login.aspx">
+                        <i class="fas fa-user"></i> Login
+                    </a>
                             </asp:LinkButton>
                         </li>
                         <li class="nav-item">
