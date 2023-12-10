@@ -1,5 +1,5 @@
 *.config
 SpeedMaster/SpeedMaster/Web.config
-SpeedMaster/SpeedMaster/.vs/*
-SpeedMaster/.vs/*
-SpeedMaster/SpeedMaster/obj/Debug/*
+# SpeedMaster/SpeedMaster/.vs/*
+# SpeedMaster/.vs/*
+# SpeedMaster/SpeedMaster/obj/Debug/*
