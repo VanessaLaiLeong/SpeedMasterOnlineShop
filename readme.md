@@ -72,6 +72,8 @@
 - [ ] Home page
 - [ ] Profile Page
 - [ ] Product details
+- [ ] Fix transitions
+
 
 
 ### Back Office

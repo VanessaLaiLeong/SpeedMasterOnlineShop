@@ -100,6 +100,7 @@
     <Content Include="FO\ShopMotorcycleDetails.aspx" />
     <Content Include="FO\ShoppingCart.aspx" />
     <Content Include="FO\SignUp.aspx" />
+    <Content Include="Images\banner-1.jpg" />
     <Content Include="Images\logoSpeedMaster.png" />
     <Content Include="Tests.aspx" />
   </ItemGroup>
