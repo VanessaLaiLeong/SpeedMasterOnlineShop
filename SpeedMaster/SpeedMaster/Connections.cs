@@ -10,6 +10,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Reflection;
 using System.Collections;
+using System.Security.Cryptography.X509Certificates;
 
 namespace SpeedMaster
 {
@@ -1118,7 +1119,7 @@ namespace SpeedMaster
         /*
          *from here CRUD for Reviews
          */
-        public static string InsertReviewIntoDB(int shoppingCartId, int productId, int rating, string description)
+        public static string InsertReviewIntoDB(int shoppingCartId, int productId, int rating, string description, int orderId, int customerId)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
 
@@ -1133,6 +1134,8 @@ namespace SpeedMaster
                         command.Parameters.AddWithValue("@ID_Product", productId);
                         command.Parameters.AddWithValue("@Rating", rating);
                         command.Parameters.AddWithValue("@Description", description);
+                        command.Parameters.AddWithValue("@ID_Order", orderId);
+                        command.Parameters.AddWithValue("@ID_Customer", customerId);
 
                         connection.Open();
                         command.ExecuteNonQuery();
@@ -1147,6 +1150,7 @@ namespace SpeedMaster
                 }
             }
         }
+
 
         public static string UpdateReviewAllColumns(int reviewId, int shoppingCartId, int productId, int rating, string description)
         {
@@ -1736,6 +1740,38 @@ namespace SpeedMaster
                         // Handle or log the exception
                         Console.WriteLine($"Error getting shopping cart items: {ex.Message}");
                         return null;
+                    }
+                }
+            }
+
+          
+        }
+
+        public static string CreateCustomerReview(int orderId, int productId, int rating, string description)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("create_customer_review", connection))
+                {
+                    try
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@ID_Order", orderId);
+                        command.Parameters.AddWithValue("@ID_Product", productId);
+                        command.Parameters.AddWithValue("@rating", rating);
+                        command.Parameters.AddWithValue("@description", description);
+
+                        connection.Open();
+                        command.ExecuteNonQuery();
+
+                        return "Customer review created successfully.";
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle or log the exception
+                        return $"Error creating customer review: {ex.Message}";
                     }
                 }
             }

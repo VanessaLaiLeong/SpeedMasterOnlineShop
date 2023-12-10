@@ -14,8 +14,13 @@ namespace SpeedMaster.FO
             if (Session["customer"] != null)
             {
                 string name = ((Customer)Session["customer"]).firstName;
+                lbl_customer.Visible = true;
                 lbl_customer.Text = $"Bem vindo, {name}";
                 shoppingcartnav.Visible = true;
+            }
+            else
+            {
+                lbl_customer.Visible = false;
             }
         }
 
@@ -39,6 +44,10 @@ namespace SpeedMaster.FO
             if (Session["customer"] != null)
             {
                 Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                Response.Redirect("userProfile.aspx");
             }
         }
     }

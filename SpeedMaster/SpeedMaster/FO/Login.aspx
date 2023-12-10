@@ -60,7 +60,7 @@
 
                         <div class="col-md-6 d-flex justify-content-center">
                             <!-- Simple link -->
-                            <a href="ResetPassword.aspx">Forgot password?</a>
+                            <a href="SendEmailResetPassword.aspx">Forgot password?</a>
                         </div>
                     </div>
 
