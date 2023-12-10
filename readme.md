@@ -70,10 +70,13 @@
 - [X] Activation
 - [X] Login
 - [X] Home page
-- [ ] Profile Page
+- [X] Profile Page
 - [X] Product details
 - [ ] Fix transitions
 - [X] about page
+- [ ] SendEmailresetPassoword
+- [ ] add reviews to shopMotorcycleDetails and  shopAccessoriesDetails
+
 
 
 
