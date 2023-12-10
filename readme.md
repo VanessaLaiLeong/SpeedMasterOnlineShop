@@ -69,7 +69,7 @@
 - [X] Reset Password
 - [ ] Activation
 - [X] Login
-- [ ] Home page
+- [X] Home page
 - [ ] Profile Page
 - [ ] Product details
 - [ ] Fix transitions
