@@ -1,4 +1,5 @@
 *.config
+<<<<<<< HEAD
 SpeedMaster/SpeedMaster/Web.config
 # SpeedMaster/SpeedMaster/.vs/*
 # SpeedMaster/.vs/*
@@ -19,3 +20,9 @@ SpeedMaster/SpeedMaster/Web.config
 /SpeedMaster/SpeedMaster/Web - Copy.config - Copy.Release.ex
 /SpeedMaster/SpeedMaster/Web - Copy.config.Debug.ex
 /SpeedMaster/SpeedMaster/Web - Copy.config.ex
+=======
+SpeedMaster/SpeedMaster/Web.config
+>>>>>>> 465a8d172b675a4b6b4067655a88a6002fa74f04
+/SpeedMaster/.vs/SpeedMaster/v17/.suo
+/.gitignore
+/.gitignore
