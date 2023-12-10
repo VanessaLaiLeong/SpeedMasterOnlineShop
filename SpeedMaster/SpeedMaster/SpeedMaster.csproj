@@ -88,6 +88,7 @@
     <Content Include="BO\UpdateOrder.aspx" />
     <Content Include="BO\UpdateProductDetailsAccessory.aspx" />
     <Content Include="BO\UpdateProductDetailsMotorcycle.aspx" />
+    <Content Include="FO\about.aspx" />
     <Content Include="FO\Activation.aspx" />
     <Content Include="FO\css\login.css" />
     <Content Include="FO\css\shoppingCart.css" />
@@ -230,6 +231,13 @@
     </Compile>
     <Compile Include="Connections.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="FO\about.aspx.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FO\about.aspx.designer.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+    </Compile>
     <Compile Include="FO\Activation.aspx.cs">
       <DependentUpon>Activation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
