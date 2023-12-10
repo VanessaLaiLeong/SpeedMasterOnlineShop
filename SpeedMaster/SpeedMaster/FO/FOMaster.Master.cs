@@ -45,6 +45,10 @@ namespace SpeedMaster.FO
             {
                 Response.Redirect("Login.aspx");
             }
+            else
+            {
+                Response.Redirect("userProfile.aspx");
+            }
         }
     }
 }
