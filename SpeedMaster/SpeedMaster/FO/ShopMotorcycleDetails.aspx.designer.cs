@@ -11,7 +11,7 @@ namespace SpeedMaster.FO
 {
 
 
-    public partial class ShopMotorcycleDetails
+    public partial class ShopMotorcycleDetails1
     {
 
         /// <summary>

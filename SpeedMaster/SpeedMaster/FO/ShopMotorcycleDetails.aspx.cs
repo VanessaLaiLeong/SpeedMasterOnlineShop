@@ -8,14 +8,13 @@ using System.Web.UI.WebControls;
 
 namespace SpeedMaster.FO
 {
-    public partial class ShopMotorcycleDetails : System.Web.UI.Page
+    public partial class ShopMotorcycleDetails1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //DataTable productDetails = Connections.GetProductDetails(Convert.ToInt32(Request.QueryString["productId"]));
-            //PrintProductDetails(productDetails);
-            //Response.Write(Session["Model"]);
+
         }
+
         private void PrintProductDetails(DataTable productDetails)
         {
             foreach (DataRow row in productDetails.Rows)
@@ -34,10 +33,6 @@ namespace SpeedMaster.FO
                 Session["MotorcycleImage"] = row["MotorcycleImage"];
                 Session["MotorcycleImageType"] = row["MotorcycleImageType"];
                 Session["Active"] = row["Active"];
-
-
-
-
             }
         }
 

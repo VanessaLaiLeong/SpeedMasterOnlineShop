@@ -1,9 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FO/FOMaster.Master" AutoEventWireup="true" CodeBehind="ShopMotorcycleDetails.aspx.cs" Inherits="SpeedMaster.FO.ShopMotorcycleDetails" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FO/FOMaster.Master" AutoEventWireup="true" CodeBehind="ShopMotorcycleDetails.aspx.cs" Inherits="SpeedMaster.FO.ShopMotorcycleDetails1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     <!-- Start Content -->
     <div style="height: 72.5vh;" class="ps-5 pe-5 d-flex justify-content-center">
         <div class="ps-5 pe-5">
@@ -76,11 +74,9 @@
         </div>
     </div>
 
-
     <style>
         .ImagemProduto {
             border-radius: 30px;
         }
     </style>
-
 </asp:Content>
