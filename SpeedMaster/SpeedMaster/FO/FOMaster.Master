@@ -49,7 +49,7 @@
 
 
                     <ul class="navbar-nav ms-auto">
-                        <asp:Label ID="lbl_customer" runat="server" Text="Bem vindo, !"></asp:Label>
+                        <asp:Label ID="lbl_customer" runat="server" Text="Welcome, !"></asp:Label>
                         <li class="nav-item">
                             <asp:LinkButton ID="shoppingcartnav" runat="server" Visible="False" OnClick="shoppingcartnav_Click">
             <i class="fa-solid fa-cart-shopping px-3"></i>

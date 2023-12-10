@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\speedmaster\\fo\\fomaster.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|solutionrelative:speedmaster\\fo\\fomaster.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|c:\\users\\tomas\\documents\\github\\speedmasteronlineshop\\speedmaster\\speedmaster\\fo\\shopmotorcycledetails.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|solutionrelative:speedmaster\\fo\\shopmotorcycledetails.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\speedmaster\\fo\\shopaccessoriesdetails.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|solutionrelative:speedmaster\\fo\\shopaccessoriesdetails.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\speedmaster\\fo\\shopaccessories.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|solutionrelative:speedmaster\\fo\\shopaccessories.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|c:\\users\\tomas\\documents\\github\\speedmasteronlineshop\\speedmaster\\speedmaster\\fo\\shopmotorcycledetails.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|solutionrelative:speedmaster\\fo\\shopmotorcycledetails.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\speedmaster\\fo\\activation.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
@@ -23,7 +27,7 @@
       "RelativeMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|solutionrelative:speedmaster\\fo\\userprofile.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|c:\\users\\tomas\\documents\\github\\speedmasteronlineshop\\speedmaster\\speedmaster\\fo\\sendemailresetpassword.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\speedmaster\\fo\\sendemailresetpassword.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|solutionrelative:speedmaster\\fo\\sendemailresetpassword.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
@@ -33,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\speedmaster\\fo\\home.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|solutionrelative:speedmaster\\fo\\home.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\speedmaster\\fo\\fomaster.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
-      "RelativeMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|solutionrelative:speedmaster\\fo\\fomaster.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\speedmaster\\fo\\about.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
@@ -50,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,7 +58,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "ShopMotorcycleDetails.aspx",
               "DocumentMoniker": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\SpeedMaster\\FO\\ShopMotorcycleDetails.aspx",
               "RelativeDocumentMoniker": "SpeedMaster\\FO\\ShopMotorcycleDetails.aspx",
@@ -71,7 +71,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "ShopAccessories.aspx",
               "DocumentMoniker": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\SpeedMaster\\FO\\ShopAccessories.aspx",
               "RelativeDocumentMoniker": "SpeedMaster\\FO\\ShopAccessories.aspx",
@@ -79,12 +79,11 @@
               "RelativeToolTip": "SpeedMaster\\FO\\ShopAccessories.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2023-12-10T20:57:02.668Z",
-              "EditorCaption": ""
+              "WhenOpened": "2023-12-10T20:57:02.668Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ShopAccessoriesDetails.aspx",
               "DocumentMoniker": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\SpeedMaster\\FO\\ShopAccessoriesDetails.aspx",
               "RelativeDocumentMoniker": "SpeedMaster\\FO\\ShopAccessoriesDetails.aspx",
@@ -92,12 +91,11 @@
               "RelativeToolTip": "SpeedMaster\\FO\\ShopAccessoriesDetails.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2023-12-10T20:45:23.108Z",
-              "EditorCaption": ""
+              "WhenOpened": "2023-12-10T20:45:23.108Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Activation.aspx",
               "DocumentMoniker": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\SpeedMaster\\FO\\Activation.aspx",
               "RelativeDocumentMoniker": "SpeedMaster\\FO\\Activation.aspx",
@@ -105,12 +103,11 @@
               "RelativeToolTip": "SpeedMaster\\FO\\Activation.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2023-12-10T20:45:19.898Z",
-              "EditorCaption": ""
+              "WhenOpened": "2023-12-10T20:45:19.898Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
               "Title": "FOMaster.Master",
               "DocumentMoniker": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\SpeedMaster\\FO\\FOMaster.Master",
               "RelativeDocumentMoniker": "SpeedMaster\\FO\\FOMaster.Master",
@@ -135,7 +132,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "home.aspx",
               "DocumentMoniker": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\SpeedMaster\\FO\\home.aspx",
               "RelativeDocumentMoniker": "SpeedMaster\\FO\\home.aspx",
@@ -143,12 +140,11 @@
               "RelativeToolTip": "SpeedMaster\\FO\\home.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2023-12-10T19:14:27.122Z",
-              "EditorCaption": ""
+              "WhenOpened": "2023-12-10T19:14:27.122Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "SendEmailResetPassword.aspx.cs",
               "DocumentMoniker": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\SpeedMaster\\FO\\SendEmailResetPassword.aspx.cs",
               "RelativeDocumentMoniker": "SpeedMaster\\FO\\SendEmailResetPassword.aspx.cs",
@@ -156,12 +152,11 @@
               "RelativeToolTip": "SpeedMaster\\FO\\SendEmailResetPassword.aspx.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAQwCkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2023-12-10T21:09:45.714Z",
-              "EditorCaption": ""
+              "WhenOpened": "2023-12-10T21:09:45.714Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "userProfile.aspx",
               "DocumentMoniker": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\SpeedMaster\\FO\\userProfile.aspx",
               "RelativeDocumentMoniker": "SpeedMaster\\FO\\userProfile.aspx",
@@ -169,12 +164,11 @@
               "RelativeToolTip": "SpeedMaster\\FO\\userProfile.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2023-12-10T19:14:12.929Z",
-              "EditorCaption": ""
+              "WhenOpened": "2023-12-10T19:14:12.929Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "SendEmailResetPassword.aspx",
               "DocumentMoniker": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\SpeedMaster\\FO\\SendEmailResetPassword.aspx",
               "RelativeDocumentMoniker": "SpeedMaster\\FO\\SendEmailResetPassword.aspx",
@@ -182,8 +176,7 @@
               "RelativeToolTip": "SpeedMaster\\FO\\SendEmailResetPassword.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2023-12-10T20:45:11.921Z",
-              "EditorCaption": ""
+              "WhenOpened": "2023-12-10T20:45:11.921Z"
             }
           ]
         }

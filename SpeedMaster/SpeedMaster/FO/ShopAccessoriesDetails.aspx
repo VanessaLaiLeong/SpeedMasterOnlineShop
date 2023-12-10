@@ -67,7 +67,7 @@
 
     <%-- Reviews --%>
 
-    <div class="d-flex align-items-center justify-content-center pb-5">
+    <div class="d-flex align-items-center justify-content-center pb-5 pt-5">
         <h3 style="text-align: center;">Reviews</h3>
     </div>
 
