@@ -88,6 +88,7 @@
     <Content Include="BO\UpdateOrder.aspx" />
     <Content Include="BO\UpdateProductDetailsAccessory.aspx" />
     <Content Include="BO\UpdateProductDetailsMotorcycle.aspx" />
+    <Content Include="FO\about.aspx" />
     <Content Include="FO\Activation.aspx" />
     <Content Include="FO\css\login.css" />
     <Content Include="FO\css\shoppingCart.css" />
@@ -99,9 +100,11 @@
     <Content Include="FO\SendEmailResetPassword.aspx" />
     <Content Include="FO\ShopAccessories.aspx" />
     <Content Include="FO\ShopMotorcycle.aspx" />
+    <Content Include="FO\ShopAccessoriesDetails.aspx" />
     <Content Include="FO\ShopMotorcycleDetails.aspx" />
     <Content Include="FO\ShoppingCart.aspx" />
     <Content Include="FO\SignUp.aspx" />
+    <Content Include="Images\banner-1.jpg" />
     <Content Include="Images\logoSpeedMaster.png" />
     <Content Include="Tests.aspx" />
   </ItemGroup>
@@ -227,6 +230,13 @@
     </Compile>
     <Compile Include="Connections.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="FO\about.aspx.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FO\about.aspx.designer.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+    </Compile>
     <Compile Include="FO\Activation.aspx.cs">
       <DependentUpon>Activation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -282,6 +292,13 @@
     </Compile>
     <Compile Include="FO\ShopMotorcycle.aspx.designer.cs">
       <DependentUpon>ShopMotorcycle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FO\ShopAccessoriesDetails.aspx.cs">
+      <DependentUpon>ShopAccessoriesDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FO\ShopAccessoriesDetails.aspx.designer.cs">
+      <DependentUpon>ShopAccessoriesDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="FO\ShopMotorcycleDetails.aspx.cs">
       <DependentUpon>ShopMotorcycleDetails.aspx</DependentUpon>

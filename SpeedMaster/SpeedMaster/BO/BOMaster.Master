@@ -18,7 +18,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="sb-nav-fixed">
+        <div class="sb-nav">
             <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
                 <a href="index.aspx">
                     <img class="navbar-brand ps-3" src="assets/img/logo.png" /></a>
@@ -55,7 +55,7 @@
                                 Dashboard
                             </a>
                             <div class="sb-sidenav-menu-heading">Stock</div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseMotas" aria-expanded="false" aria-controls="collapseMotas">
+                            <a class="nav-link collapsed" href="ShowAllProducts.aspx" data-bs-toggle="collapse" data-bs-target="#collapseMotas" aria-expanded="false" aria-controls="collapseMotas">
                                 <div class="sb-nav-link-icon"><i class="fas fa-motorcycle"></i></div>
                                 Motas
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -118,10 +118,10 @@
                     </div>
                 </nav>
             </div>
-        </div>
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
+            <div class="container pt-5">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
         </div>
     </form>
 </body>

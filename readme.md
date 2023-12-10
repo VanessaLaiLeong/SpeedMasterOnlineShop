@@ -67,11 +67,14 @@
 - [X] Navbar
 - [X] Signup
 - [X] Reset Password
-- [ ] Activation
+- [X] Activation
 - [X] Login
-- [ ] Home page
+- [X] Home page
 - [ ] Profile Page
-- [ ] Product details
+- [X] Product details
+- [ ] Fix transitions
+- [X] about page
+
 
 
 ### Back Office
