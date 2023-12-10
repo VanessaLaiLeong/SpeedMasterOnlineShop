@@ -19,21 +19,17 @@
                             <p style="font-size: 30px;">Reset Password</p>
                         </div>
                         <br />
-                        <!-- Email input -->
-                        <div class="form-outline mb-4">                            
-                            <asp:TextBox ID="lbl_email" runat="server" class="form-control" type="email"></asp:TextBox>
-                            <label class="form-label" for="loginName">Email</label>
-                        </div>
+                     
 
                         <!-- new Password input -->
                         <div class="form-outline mb-4">                           
-                            <asp:TextBox ID="lbl_password" runat="server" class="form-control" type="password"></asp:TextBox>
+                            <asp:TextBox ID="tb_password" runat="server" class="form-control" type="password"></asp:TextBox>
                             <label class="form-label" for="loginPassword">New Password</label>
                         </div>
 
                         <!-- new Password confirmation input -->
                         <div class="form-outline mb-4">
-                            <asp:TextBox ID="lbl_otherPassword" runat="server" class="form-control" type="password"></asp:TextBox>                        
+                            <asp:TextBox ID="tb_otherPassword" runat="server" class="form-control" type="password"></asp:TextBox>                        
                             <label class="form-label" for="loginPassword">Confirm New Password</label>
                         </div>
 

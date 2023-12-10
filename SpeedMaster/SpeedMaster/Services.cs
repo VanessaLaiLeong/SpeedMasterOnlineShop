@@ -1,21 +1,15 @@
-﻿using SpeedMaster.BO;
-using SpeedMaster.FO;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Security.Cryptography;
-using System.Security.Policy;
 using System.Text.RegularExpressions;
-using System.Web;
-using System.Web.Services.Description;
 using System.Web.UI.WebControls;
+using System.Transactions;
 
 namespace SpeedMaster
 {
@@ -380,25 +374,36 @@ namespace SpeedMaster
 
         public static void createOrder(Customer customer, decimal totalAmount)
         {
-            int shoppingCartId;
-            DateTime dateTime = DateTime.Now;
-
-            if (customer != null)
-            {
-                DataTable shoppingCartData = Connections.GetShoppingCart(customer);
-
-                // Check if the DataTable has data
-                if (shoppingCartData != null && shoppingCartData.Rows.Count > 0)
+            using (TransactionScope scope = new TransactionScope())
+            { 
+                try
                 {
-                    DataRow row = shoppingCartData.Rows[0];                    
-                    shoppingCartId = Convert.ToInt32(row["ID_ShoppingCart"]);
+                    int shoppingCartId;
+                    DateTime dateTime = DateTime.Now;
 
-                    Connections.InsertOrderIntoDB(shoppingCartId, dateTime, "A confirmar", totalAmount, 1);
-                    Connections.UpdateShoppingCartStatus(shoppingCartId, 0);//inactivate cart                   
+                    if (customer != null)
+                    {
+                        DataTable shoppingCartData = Connections.GetShoppingCart(customer);
+
+                        // Check if the DataTable has data
+                        if (shoppingCartData != null && shoppingCartData.Rows.Count > 0)
+                        {
+                            DataRow row = shoppingCartData.Rows[0];
+                            shoppingCartId = Convert.ToInt32(row["ID_ShoppingCart"]);
+
+                            Connections.InsertOrderIntoDB(shoppingCartId, dateTime, "A confirmar", totalAmount, 1);
+                            Connections.UpdateShoppingCartStatus(shoppingCartId, 0);//inactivate cart                   
+                        }
+
+                        Connections.InsertShoppingCartIntoDB(customer.ID, 1, dateTime);//new shopping cart
+
+                    }
+                    scope.Complete();
                 }
-
-                Connections.InsertShoppingCartIntoDB(customer.ID, 1, dateTime);//new shopping cart
-                
+                catch (Exception e) {
+                    scope.Dispose();
+                    throw e;
+                }
             }
             
         }
