@@ -11,9 +11,14 @@ namespace SpeedMaster.FO
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string res = Services.resetPassword("jerdebastu@gufum.com", "P@ssw0rd123", "P@ssw0rd123");
-            Response.Write(res);
+            //string res = Services.resetPassword("jerdebastu@gufum.com", "P@ssw0rd123", "P@ssw0rd123");
+            //Response.Write(res);
             //logica funciona
+        }
+
+        protected void btn_submit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

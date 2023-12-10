@@ -95,6 +95,7 @@
     <Content Include="FO\new_logo_SM-removebg-preview-e1672148031220.png" />
     <Content Include="FO\ResetPassword.aspx" />
     <Content Include="FO\css\shop.css" />
+    <Content Include="FO\SendEmailResetPassword.aspx" />
     <Content Include="FO\ShopAccessories.aspx" />
     <Content Include="FO\ShopMotorcycle.aspx" />
     <Content Include="FO\ShopMotorcycleDetails.aspx" />
@@ -260,6 +261,13 @@
     </Compile>
     <Compile Include="FO\ResetPassword.aspx.designer.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FO\SendEmailResetPassword.aspx.cs">
+      <DependentUpon>SendEmailResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FO\SendEmailResetPassword.aspx.designer.cs">
+      <DependentUpon>SendEmailResetPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="FO\ShopAccessories.aspx.cs">
       <DependentUpon>ShopAccessories.aspx</DependentUpon>
