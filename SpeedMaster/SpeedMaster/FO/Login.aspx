@@ -39,7 +39,7 @@
                     <!-- Email input -->
                     <div class="form-outline mb-4">
                         <asp:TextBox ID="tb_email" runat="server" class="form-control"></asp:TextBox>                        
-                        <label class="form-label" for="loginName">Email or username</label>
+                        <label class="form-label" for="loginName">Email</label>
                     </div>
 
                     <!-- Password input -->
