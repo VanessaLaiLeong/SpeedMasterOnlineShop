@@ -10,6 +10,8 @@
     <asp:LinkButton ID="star4" runat="server" ForeColor="#FF9933" OnClick="star4_Click" CssClass="fa-regular fa-star no-decoration" CommandArgument="4" style="text-decoration: none;"></asp:LinkButton>
     <asp:LinkButton ID="star5" runat="server" ForeColor="#FF9933" OnClick="star5_Click1" CssClass="fa-regular fa-star no-decoration" CommandArgument="5" style="text-decoration: none;"></asp:LinkButton>
 
+    <asp:TextBox ID="tb_review" runat="server"></asp:TextBox>
+    <asp:Button ID="btn_submit" runat="server" Text="Button" OnClick="btn_submit_Click" />
 
 
 
