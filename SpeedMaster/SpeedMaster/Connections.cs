@@ -379,7 +379,7 @@ namespace SpeedMaster
                     catch (Exception ex)
                     {
                         // Handle or log the exception
-                        return $"Error inserting brand: {ex.Message}";
+                        return $"Error inserting result: {ex.Message}";
                     }
                 }
             }
@@ -405,7 +405,7 @@ namespace SpeedMaster
 
                         if (rowsAffected == 0)
                         {
-                            return $"No brand with ID {ID_Brand} found.";
+                            return $"No result with ID {ID_Brand} found.";
                         }
                         else
                         {
@@ -415,7 +415,7 @@ namespace SpeedMaster
                     catch (Exception ex)
                     {
                         // Handle or log the exception
-                        return $"Error updating brand: {ex.Message}";
+                        return $"Error updating result: {ex.Message}";
                     }
                 }
             }
@@ -425,10 +425,10 @@ namespace SpeedMaster
         {
             string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
 
-            // Check if there are motorcycles associated with the brand
+            // Check if there are motorcycles associated with the result
             if (HasMotorcyclesForBrand(ID_Brand))
             {
-                return $"Cannot delete brand with ID {ID_Brand} because there are associated motorcycles.";
+                return $"Cannot delete result with ID {ID_Brand} because there are associated motorcycles.";
             }
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -445,7 +445,7 @@ namespace SpeedMaster
 
                         if (rowsAffected == 0)
                         {
-                            return $"No brand with ID {ID_Brand} found.";
+                            return $"No result with ID {ID_Brand} found.";
                         }
                         else
                         {
@@ -455,13 +455,13 @@ namespace SpeedMaster
                     catch (Exception ex)
                     {
                         // Handle or log the exception
-                        return $"Error deleting brand: {ex.Message}";
+                        return $"Error deleting result: {ex.Message}";
                     }
                 }
             }
         }
 
-        // Helper method to check if there are motorcycles associated with the brand
+        // Helper method to check if there are motorcycles associated with the result
         private static bool HasMotorcyclesForBrand(int ID_Brand)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
@@ -1680,6 +1680,65 @@ namespace SpeedMaster
             }
 
             return resultMessage;
+        }
+
+        public static string getEmailFromOrder(int orderId)
+        {
+            SqlConnection myConn = new SqlConnection(ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString);
+            SqlCommand myCommand = new SqlCommand();
+            myCommand.CommandType = CommandType.Text; // Change to CommandType.Text for a query
+            myCommand.CommandText = $"select c.Email from Orders o inner join ShoppingCarts sp on sp.ID_ShoppingCart = o.ID_ShoppingCart inner join Customers c on c.ID_Customer = sp.ID_Customer where o.ID_Order = {orderId}"; // Replace with your query
+            myCommand.Connection = myConn;
+            myConn.Open();
+            SqlDataReader dataReader = myCommand.ExecuteReader();
+
+            string result = "";
+            if (dataReader.HasRows)
+            {
+                while (dataReader.Read())
+                {
+                    result = dataReader.GetString(0);
+
+                }
+                return result;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static DataTable GetShoppingCartItemsForReview(int orderId)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("get_items_For_Review", connection))
+                {
+                    try
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@orderId", orderId);
+
+                        connection.Open();
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                        {
+                            DataTable dataTable = new DataTable();
+                            adapter.Fill(dataTable);
+
+                            return dataTable;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle or log the exception
+                        Console.WriteLine($"Error getting shopping cart items: {ex.Message}");
+                        return null;
+                    }
+                }
+            }
         }
 
 

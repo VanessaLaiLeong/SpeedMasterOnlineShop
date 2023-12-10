@@ -10,6 +10,7 @@ using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 using System.Web.UI.WebControls;
 using System.Transactions;
+using System.Threading;
 
 namespace SpeedMaster
 {
@@ -115,17 +116,17 @@ namespace SpeedMaster
         /*
          * Method 
          */
-        public static Customer getCustomer(int id) 
+        public static Customer getCustomer(int id)
         {
-           Customer customer = Connections.getCustomerById(id);
-           return customer;
-           
+            Customer customer = Connections.getCustomerById(id);
+            return customer;
+
         }
 
         /*
          * Method to create the object customer
          */
-        private static Customer createCustomer(string email, string password, string firstName, string lastName, string phone, string address, string nif) 
+        private static Customer createCustomer(string email, string password, string firstName, string lastName, string phone, string address, string nif)
         {
             Customer customer = new Customer();
             customer.email = email;
@@ -183,7 +184,7 @@ namespace SpeedMaster
          */
         public static string doCreateCustomer(string email, string password, string firstName, string lastName, string phone, string address, string nif, string otherPassowrd)
         {
-            Customer customer = createCustomer(email, Services.EncryptString(password),  firstName,  lastName,  phone,  address,  nif);
+            Customer customer = createCustomer(email, Services.EncryptString(password), firstName, lastName, phone, address, nif);
 
             if (password != otherPassowrd)
             {
@@ -200,8 +201,8 @@ namespace SpeedMaster
                 {
                     return "Email already exists";
                 }
-                else 
-                {                                                      
+                else
+                {
                     string subject = "Welcome to Speed Master - Your Ultimate Destination for Motorcycle Enthusiasts 🏍️🔥";
                     // no link pode ser capaz de cada um ter de por o seu?? id
                     // Pelo menos para mim, o meu localhost é igual ao teu, acho que o IIS usa sempre o mesmo
@@ -215,16 +216,16 @@ namespace SpeedMaster
                                     "Account created. Click <a href='https://localhost:44389/FO/Activation.aspx?email=" + EncryptString(email) + "'>here</a> to activate your account.<br><br>" +
                                     "<br>" +
                                     "Best Regards,<br>" +
-                                    "The Speed Master Team";                
+                                    "The Speed Master Team";
                     sendEmail(customer.email, subject, body);
                     return "Account created with sucess! Check your email to activate the account.";
-                }              
+                }
 
             }
 
         }
 
-        public static string doUpdateCustomer(int ID_Customer, string email, string password, string firstName, string lastName, string phone, string address,bool active, string nif, string otherPassowrd)
+        public static string doUpdateCustomer(int ID_Customer, string email, string password, string firstName, string lastName, string phone, string address, bool active, string nif, string otherPassowrd)
         {
             if (password != otherPassowrd)
             {
@@ -270,7 +271,7 @@ namespace SpeedMaster
          */
         public static string resetPassword(string email, string password, string otherPassword)
         {
-            
+
             if (password != otherPassword)
             {
                 return "Password does not match";
@@ -286,12 +287,12 @@ namespace SpeedMaster
             }
         }
 
-        public static byte [] getImageInfo(FileUpload image)
+        public static byte[] getImageInfo(FileUpload image)
         {
             Stream imgStream;
             int imgTamanho;
             string imgtype;
-            byte[] imgBinary;            
+            byte[] imgBinary;
 
             if (image.HasFile)
             {
@@ -314,7 +315,7 @@ namespace SpeedMaster
                 imgtype = "";
                 imgBinary = new byte[0];
             }
-            return imgBinary;         
+            return imgBinary;
 
         }
 
@@ -361,7 +362,7 @@ namespace SpeedMaster
             return null;
         }
 
-        
+
         public static string addCustomerReview(int orderId, int productId, int rating, string description)
         {
             if (rating > 0 && rating < 5)
@@ -369,13 +370,13 @@ namespace SpeedMaster
                 Connections.InsertCustomerReviewInDB(orderId, productId, rating, description);
                 return "Thank you for the review!";
             }
-            else return "Insert a valid rating";            
+            else return "Insert a valid rating";
         }
 
         public static void createOrder(Customer customer, decimal totalAmount)
         {
             using (TransactionScope scope = new TransactionScope())
-            { 
+            {
                 try
                 {
                     int shoppingCartId;
@@ -400,39 +401,68 @@ namespace SpeedMaster
                     }
                     scope.Complete();
                 }
-                catch (Exception e) {
+                catch (Exception e)
+                {
                     scope.Dispose();
                     throw e;
                 }
             }
-            
+
         }
 
-        public static void setOrderStatusDelivered(int orderId, int orderStatus)
+        public static void sendReviewEmail(int orderId, int orderStatus, int productId)
         {
             if (orderStatus == 4)
             {
                 Connections.UpdateStatusInOrder(orderId, orderStatus);
 
-                //send mail
+                
+                string email ="vanessalaileong@gmail.com";
+                string subject = "Speed Master -  🏍️🔥";            
+                string body = "<html>" +
+                 "<head>" +
+                 "<meta charset='UTF-8'>" +
+                 "<meta http-equiv='X-UA-Compatible' content='IE=edge'>" +
+                 "<meta name='viewport' content='width=device-width, initial-scale=1.0'>" +
+                 "<title>Reset Your Speed Master Account Password</title>" +
+                 "</head>" +
+                 "<body style='font-family: Arial, sans-serif;'>" +
+                 "<p>Dear [Customer's Name],</p>" +
+                 "<p>We trust that you're having an exhilarating day! It seems that you've requested to reset your password for your Speed Master account. No worries, we're here to assist you in revving up your motorcycle journey!</p>" +
+                 "<p>To reset your password, simply click on the link below:</p>" +
+                 "<p><a href='https://localhost:44389/FO/ReviewPage.aspx?email=" + Services.EncryptString(Convert.ToString(orderId)) + "&productId=" + Services.EncryptString(Convert.ToString(productId)) + "'>here</a><br><br>" +
+                 "<p>Please be aware that this link is valid for the next 24 hours. If you did not initiate this password reset, or if you've changed your mind, you can ignore this email.</p>" +
+                 "<p>If you encounter any difficulties or have inquiries, feel free to respond to this email, and our team will assist you promptly.</p>" +
+                 "<p>Thank you for being a part of Speed Master. We're dedicated to ensuring your motorcycle experience is as thrilling as it can be!</p>" +
+                 "<p>Ride on,</p>" +
+                 "<p>The Speed Master Team</p>" +
+                 "</body>" +
+                 "</html>";
 
-                string subject = "Welcome to Speed Master - Your Ultimate Destination for Motorcycle Enthusiasts 🏍️🔥";
-                string body = "Welcome to Speed Master!<br><br>" +
-                              "We are thrilled to welcome you to our motorcycle-loving community.<br><br>" +
-                              "At Speed Master, we offer a diverse range of high-performance motorcycles and gear, curated for true enthusiasts like yourself.<br><br>" +
-                              "Start your thrilling journey with us by exploring our website and discovering the latest in motorcycle technology and style.<br><br>" +
-                              "Should you have any inquiries or require assistance, feel free to reply to this email. We're here to ensure your motorcycle experience is extraordinary.<br><br>" +
-                              "Rev up your engines and embrace the spirit of Speed Master!<br><br>" +
-                              "<br>" +
-                              "Thank you for choosing Speed Master! We value your feedback and would love to hear about your experience with our products. Share your thoughts by writing a review.<br><br>" +
-                              "Click <a href='https://localhost:44389/FO/ReviewPage.aspx?email=" + EncryptString(email) + "'>here</a> to write a review.<br><br>" +
-                              "<br>" +
-                              "Best Regards,<br>" +
-                              "The Speed Master Team";
+                Services.sendEmail(email, subject, body);
 
             }
 
         }
+
+        public static void getProductsForReview(int orderId, int orderstatus)
+        {
+            
+            DataTable dt = Connections.GetShoppingCartItemsForReview(orderId);
+
+            if(dt != null && dt.Rows.Count > 0)
+            {
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    DataRow row = dt.Rows[i];
+                    int productId = Convert.ToInt32(row["ID_GlobalProductID"]);
+                    Services.sendReviewEmail(orderId, orderstatus, productId);
+                    //Thread.Sleep(2000);
+                }
+            }
+        }
+
+
 
     }
 
