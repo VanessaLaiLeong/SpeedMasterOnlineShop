@@ -71,9 +71,9 @@
 - [X] Login
 - [X] Home page
 - [ ] Profile Page
-- [ ] Product details
+- [X] Product details
 - [ ] Fix transitions
-- [ ] about page
+- [X] about page
 
 
 
