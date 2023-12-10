@@ -22,7 +22,6 @@
                         <%-- <button class="sort-button">...</button></th>--%>
                             <th>Status
                         <%-- <button class="sort-button">...</button></th>--%>
-
                             <th>Sales
                          <%-- <button class="sort-button">...</button></th>--%>
                             <th>Quantity
