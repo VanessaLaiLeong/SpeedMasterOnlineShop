@@ -11,13 +11,15 @@ namespace SpeedMaster.FO
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //string res = Services.resetPassword("jerdebastu@gufum.com", "P@ssw0rd123", "P@ssw0rd123");
-            //Response.Write(res);
-            //logica funciona
+            
         }
 
         protected void btn_submit_Click(object sender, EventArgs e)
         {
+            string email = Services.DecryptString(Request.QueryString["email"]);
+            string resul = Services.resetPassword(email, tb_password.Text, tb_otherPassword.Text);
+            lbl_message.Text = resul;
+            lbl_message.Visible = true;
 
         }
     }

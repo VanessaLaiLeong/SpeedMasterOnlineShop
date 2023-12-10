@@ -91,7 +91,7 @@ namespace SpeedMaster.FO
             decimal totalprice = Convert.ToDecimal(lbl_totalPriceFinish.Text);
             Customer customer = (Customer)Session["customer"];
             Services.createOrder(customer, totalprice);
-            Response.Redirect("biling.aspx");
+            //Response.Redirect("biling.aspx");
         }
     }
 }

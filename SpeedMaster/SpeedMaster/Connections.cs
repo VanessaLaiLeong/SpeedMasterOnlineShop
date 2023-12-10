@@ -829,8 +829,7 @@ namespace SpeedMaster
             {
                 using (SqlCommand command = new SqlCommand("insert_order", connection))
                 {
-                    try
-                    {
+                   
                         command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@ID_ShoppingCart", shoppingCartId);
                         command.Parameters.AddWithValue("@OrderDate", orderDate);
@@ -842,12 +841,7 @@ namespace SpeedMaster
                         command.ExecuteNonQuery();
 
                         return "Order inserted successfully.";
-                    }
-                    catch (Exception ex)
-                    {
-                        // Handle or log the exception
-                        return $"Error inserting order: {ex.Message}";
-                    }
+                   
                 }
             }
         }
@@ -1035,8 +1029,6 @@ namespace SpeedMaster
             {
                 using (SqlCommand command = new SqlCommand("insert_shopping_cart_manager", connection))
                 {
-                    try
-                    {
                         command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@ID_Customer", customerId);
                         command.Parameters.AddWithValue("@CartStatus", cartStatus);
@@ -1047,14 +1039,10 @@ namespace SpeedMaster
 
                         return "Shopping cart inserted successfully.";
                     }
-                    catch (Exception ex)
-                    {
-                        // Handle or log the exception
-                        return $"Error inserting shopping cart: {ex.Message}";
-                    }
+   
                 }
-            }
         }
+        
 
         public static string UpdateShoppingCartInDB(int shoppingCartId, int customerId, int cartStatus, DateTime createdDate)
         {
@@ -1675,8 +1663,7 @@ namespace SpeedMaster
                 using (SqlCommand command = new SqlCommand($"update ShoppingCarts set Cartstatus = {status} where ID_ShoppingCart = {idShoppingCart}", connection))
                 {
 
-                    try
-                    {
+                    
                         connection.Open();
                         int rowsAffected = command.ExecuteNonQuery();
 
@@ -1688,11 +1675,7 @@ namespace SpeedMaster
                         {
                             resultMessage = "No ShoppingCarts found for the specified ShoppingCarts ID.";
                         }
-                    }
-                    catch (Exception ex)
-                    {
-                        resultMessage = $"Error updating ShoppingCarts status: {ex.Message}";
-                    }
+                    
                 }
             }
 

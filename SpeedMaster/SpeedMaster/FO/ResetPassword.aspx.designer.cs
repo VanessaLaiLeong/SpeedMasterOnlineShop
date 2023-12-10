@@ -15,31 +15,22 @@ namespace SpeedMaster.FO
     {
 
         /// <summary>
-        /// lbl_email control.
+        /// tb_password control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox lbl_email;
+        protected global::System.Web.UI.WebControls.TextBox tb_password;
 
         /// <summary>
-        /// lbl_password control.
+        /// tb_otherPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox lbl_password;
-
-        /// <summary>
-        /// lbl_otherPassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox lbl_otherPassword;
+        protected global::System.Web.UI.WebControls.TextBox tb_otherPassword;
 
         /// <summary>
         /// btn_submit control.
