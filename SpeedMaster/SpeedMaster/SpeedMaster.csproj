@@ -110,6 +110,7 @@
     <Content Include="Images\logoSpeedMaster.png" />
     <Content Include="Images\user.jpg" />
     <Content Include="Tests.aspx" />
+    <Content Include="WebForm2.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BO\AddBrand.aspx.cs">
@@ -346,6 +347,13 @@
     </Compile>
     <Compile Include="Tests.aspx.designer.cs">
       <DependentUpon>Tests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

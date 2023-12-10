@@ -126,11 +126,10 @@ namespace SpeedMaster
             //        newPassword, newAddress, newPhone, isActive, newNIF);
 
 
-            string email = "teste12@teste.com";
-            int productId = 8;
 
-            string result = Connections.AddToCart(email, productId);
-            Response.Write(result);
+
+            Services.getProductsForReview(6,4);
+            //Response.Write(result);
 
         }
             
