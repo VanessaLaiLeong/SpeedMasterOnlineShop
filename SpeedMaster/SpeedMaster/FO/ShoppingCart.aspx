@@ -86,7 +86,7 @@
 
 
 
-                    <asp:Button ID="btn_checkOut" runat="server" Text="Check Out" class="btn btn-dark"  />
+                    <asp:Button ID="btn_checkOut" runat="server" Text="Check Out" class="btn btn-dark" OnClick="btn_checkOut_Click"  />
                 </div>
             </div>
 
