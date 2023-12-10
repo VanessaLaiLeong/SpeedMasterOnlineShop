@@ -67,12 +67,13 @@
 - [X] Navbar
 - [X] Signup
 - [X] Reset Password
-- [ ] Activation
+- [X] Activation
 - [X] Login
 - [X] Home page
 - [ ] Profile Page
 - [ ] Product details
 - [ ] Fix transitions
+- [ ] about page
 
 
 

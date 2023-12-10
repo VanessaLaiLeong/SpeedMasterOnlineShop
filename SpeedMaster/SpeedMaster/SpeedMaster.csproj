@@ -98,6 +98,7 @@
     <Content Include="FO\SendEmailResetPassword.aspx" />
     <Content Include="FO\ShopAccessories.aspx" />
     <Content Include="FO\ShopMotorcycle.aspx" />
+    <Content Include="FO\ShopAccessoriesDetails.aspx" />
     <Content Include="FO\ShopMotorcycleDetails.aspx" />
     <Content Include="FO\ShoppingCart.aspx" />
     <Content Include="FO\SignUp.aspx" />
@@ -282,6 +283,13 @@
     </Compile>
     <Compile Include="FO\ShopMotorcycle.aspx.designer.cs">
       <DependentUpon>ShopMotorcycle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FO\ShopAccessoriesDetails.aspx.cs">
+      <DependentUpon>ShopAccessoriesDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FO\ShopAccessoriesDetails.aspx.designer.cs">
+      <DependentUpon>ShopAccessoriesDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="FO\ShopMotorcycleDetails.aspx.cs">
       <DependentUpon>ShopMotorcycleDetails.aspx</DependentUpon>

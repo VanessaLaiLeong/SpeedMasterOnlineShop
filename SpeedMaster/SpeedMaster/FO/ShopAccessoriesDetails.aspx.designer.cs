@@ -33,67 +33,13 @@ namespace SpeedMaster.FO
         protected global::System.Web.UI.WebControls.Label lbl_marca;
 
         /// <summary>
-        /// lbl_modelo control.
+        /// lbl_nome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_modelo;
-
-        /// <summary>
-        /// lbl_ano control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_ano;
-
-        /// <summary>
-        /// lbl_TipoMotor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_TipoMotor;
-
-        /// <summary>
-        /// lbl_Capacity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_Capacity;
-
-        /// <summary>
-        /// lbl_cor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_cor;
-
-        /// <summary>
-        /// lbl_condicao control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_condicao;
-
-        /// <summary>
-        /// lbl_productDescription control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_productDescription;
+        protected global::System.Web.UI.WebControls.Label lbl_nome;
 
         /// <summary>
         /// lbl_preco control.
@@ -103,6 +49,15 @@ namespace SpeedMaster.FO
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_preco;
+
+        /// <summary>
+        /// lbl_productDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_productDescription;
 
         /// <summary>
         /// btn_minus control.

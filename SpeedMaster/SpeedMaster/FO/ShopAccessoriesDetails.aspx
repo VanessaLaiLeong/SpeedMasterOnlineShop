@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FO/FOMaster.Master" AutoEventWireup="true" CodeBehind="ShopMotorcycleDetails.aspx.cs" Inherits="SpeedMaster.FO.ShopMotorcycleDetails" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/FO/FOMaster.Master" AutoEventWireup="true" CodeBehind="ShopAccessoriesDetails.aspx.cs" Inherits="SpeedMaster.FO.ShopMotorcycleDetails" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -21,36 +21,21 @@
                                     <asp:Label ID="lbl_marca" runat="server" Text="Marca do produto" class="lead"></asp:Label>
                                 </p>
                                 <p>
-                                    <asp:Label ID="lbl_modelo" runat="server" Text="Modelo do produto" class="lead"></asp:Label>
+                                    <asp:Label ID="lbl_nome" runat="server" Text="Nome do produto" class="lead"></asp:Label>
                                 </p>
                                 <p>
-                                    <asp:Label ID="lbl_ano" runat="server" Text="Ano do produto"></asp:Label>
-                                </p>
-                                <p>
-                                    <asp:Label ID="lbl_TipoMotor" runat="server" Text="tipo de motor do produto"></asp:Label>
-                                </p>
-                                <p>
-                                    <asp:Label ID="lbl_Capacity" runat="server" Text="cc do motor do produto"></asp:Label>
-                                </p>
-                                <p>
-                                    <asp:Label ID="lbl_cor" runat="server" Text="cor do produto"></asp:Label>
-                                </p>
-                                <p>
-                                    <asp:Label ID="lbl_condicao" runat="server" Text="condicao do produto"></asp:Label>
+                                    <asp:Label ID="lbl_preco" runat="server" Text="Preco do produto"></asp:Label>
                                 </p>
                                 <div class="pb-3">
-                                    <p>
-                                        <asp:Label ID="lbl_productDescription" runat="server" Text="Desc do produto"></asp:Label>
-                                    </p>
-                                    <p>
-                                        <asp:Label ID="lbl_preco" runat="server" Text="preco do produto"></asp:Label>
-                                    </p>
-                                </div>
+                                <p>
+                                    <asp:Label ID="lbl_productDescription" runat="server" Text="Desc do produto"></asp:Label>
+                                </p>
+                                    </div>
 
 
                                 <!-- Product Quantity and Add to Cart Form -->
-                                <div>
-                                    <div class="form-group">
+                                <div id="QuantityBox" class="form-group align-bottom">
+                                    <div class="form-group align-bottom">
                                         <label for="quantity">Quantity:</label>
                                         <div class="input-group pb-3 pt-2">
                                             <div class="input-group-prepend">
@@ -65,8 +50,7 @@
                                         </div>
                                     </div>
                                     <asp:Label ID="lbl_message" runat="server" Text="Stock unavailable for this amount!" ForeColor="Red" Visible="false"></asp:Label>
-                                    <asp:LinkButton ID="btn_addToCart" runat="server" class="fa-solid fa-cart-shopping pt-1" CommandArgument='<%# Eval("ProductID") %>' OnClick="btn_addToCart_Click"> Add To Cart</asp:LinkButton>
-
+                                    <asp:LinkButton ID="btn_addToCart" runat="server" class="fa-solid fa-cart-shopping" CommandArgument='<%# Eval("ProductID") %>' OnClick="btn_addToCart_Click"> Add To Cart</asp:LinkButton>
                                 </div>
                             </div>
                         </div>
@@ -81,6 +65,12 @@
         .ImagemProduto {
             border-radius: 30px;
         }
+
+        #QuantityBox{
+            padding-top: 22vh;
+            /*background-color:black;*/
+        }
     </style>
+
 
 </asp:Content>

@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="ps-5 pe-5">
+    <div class="ps-5 pe-5" style="height: 72.5vh;">
         <div class="ps-5 pe-5">
             <div class="ps-5 pe-5">
                 <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
