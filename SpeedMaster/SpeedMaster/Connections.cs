@@ -107,6 +107,7 @@ namespace SpeedMaster
             {
                 while (dataReader.Read())
                 {
+                    customer.ID = dataReader.GetInt32(0);
                     customer.email = dataReader.GetString(1);
                     customer.firstName = dataReader.GetString(2);
                     customer.lastName = dataReader.GetString(3);
@@ -818,7 +819,7 @@ namespace SpeedMaster
         public static string InsertOrderIntoDB(
         int shoppingCartId,
         DateTime orderDate,
-        DateTime shippingDate,
+        string shippingDate,
         decimal totalAmount,
         int statusId)
         {
@@ -1635,6 +1636,71 @@ namespace SpeedMaster
         }
 
 
+        public static DataTable GetShoppingCart(Customer customer)
+        {
+            DataTable shoppingCartData = new DataTable();
+            string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand selectCommand = new SqlCommand($"SELECT * FROM ShoppingCarts WHERE ID_Customer = {customer.ID}", connection))
+                {
+                    try
+                    {
+                        connection.Open();
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(selectCommand))
+                        {
+                            adapter.Fill(shoppingCartData);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle or log the exception if necessary
+                        Console.WriteLine($"Error fetching shopping cart: {ex.Message}");
+                    }
+                }
+            }
+
+            return shoppingCartData;
+        }
+
+        public static string UpdateShoppingCartStatus(int idShoppingCart, int status)
+        {
+            string resultMessage = "";
+            string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand($"update ShoppingCarts set Cartstatus = {status} where ID_ShoppingCart = {idShoppingCart}", connection))
+                {
+
+                    try
+                    {
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            resultMessage = "ShoppingCarts status updated successfully.";
+                        }
+                        else
+                        {
+                            resultMessage = "No ShoppingCarts found for the specified ShoppingCarts ID.";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        resultMessage = $"Error updating ShoppingCarts status: {ex.Message}";
+                    }
+                }
+            }
+
+            return resultMessage;
+        }
+
+
+
     }
 
 
@@ -1662,4 +1728,5 @@ namespace SpeedMaster
 
 
     //}
+
 }

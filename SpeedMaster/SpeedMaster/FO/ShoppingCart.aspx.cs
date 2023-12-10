@@ -33,6 +33,8 @@ namespace SpeedMaster.FO
                 DataRow firstRow = dt.Rows[0];
                 lbl_totalItems.Text = Convert.ToString(firstRow["totalItems"]);
                 lbl_totalPriceNoShipping.Text = Convert.ToString(firstRow["totalPrice"]);
+                double price = Convert.ToDouble(firstRow["totalPrice"]);
+                lbl_totalPriceFinish.Text = (price + 2.99).ToString();
 
                 Repeater1.DataSource = dt;
                 Repeater1.DataBind();
@@ -82,6 +84,14 @@ namespace SpeedMaster.FO
         protected void back_Click(object sender, EventArgs e)
         {
             Response.Redirect("ShopMotorcycle.aspx");
+        }
+
+        protected void btn_checkOut_Click(object sender, EventArgs e)
+        {
+            decimal totalprice = Convert.ToDecimal(lbl_totalPriceFinish.Text);
+            Customer customer = (Customer)Session["customer"];
+            Services.createOrder(customer, totalprice);
+            Response.Redirect("biling.aspx");
         }
     }
 }
