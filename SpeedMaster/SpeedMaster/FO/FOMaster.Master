@@ -29,9 +29,6 @@
                             <a class="nav-link" href="about.aspx">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
-                        </li>
-                        <li class="nav-item">
                             <asp:DropDownList ID="DropDownList1" runat="server" CssClass="nav-link" Style="width: 100%;" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" >
                                 
                                 <asp:ListItem>Shop</asp:ListItem>

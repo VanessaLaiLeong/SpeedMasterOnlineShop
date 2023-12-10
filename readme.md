@@ -74,7 +74,7 @@
 - [X] Product details
 - [ ] Fix transitions
 - [X] about page
-- [ ] SendEmailresetPassoword
+- [X] SendEmailresetPassoword
 - [ ] add reviews to shopMotorcycleDetails and  shopAccessoriesDetails
 
 
