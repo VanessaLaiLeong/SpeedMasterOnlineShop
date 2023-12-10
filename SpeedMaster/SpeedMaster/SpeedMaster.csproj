@@ -104,9 +104,11 @@
     <Content Include="FO\ShopMotorcycleDetails.aspx" />
     <Content Include="FO\ShoppingCart.aspx" />
     <Content Include="FO\SignUp.aspx" />
+    <Content Include="FO\userProfile.aspx" />
     <Content Include="Images\aboutImage.jpg" />
     <Content Include="Images\banner-1.jpg" />
     <Content Include="Images\logoSpeedMaster.png" />
+    <Content Include="Images\user.jpg" />
     <Content Include="Tests.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -321,6 +323,13 @@
     </Compile>
     <Compile Include="FO\SignUp.aspx.designer.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FO\userProfile.aspx.cs">
+      <DependentUpon>userProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FO\userProfile.aspx.designer.cs">
+      <DependentUpon>userProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Master.Master.cs">
       <DependentUpon>Master.Master</DependentUpon>
