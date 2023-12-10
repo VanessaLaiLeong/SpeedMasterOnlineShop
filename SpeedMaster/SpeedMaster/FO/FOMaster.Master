@@ -10,6 +10,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link rel="stylesheet" href="css/shoppingCart.css">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/6576420307843602b80051f1/1hhav3nin';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -29,10 +44,10 @@
                             <a class="nav-link" href="about.aspx">About</a>
                         </li>
                         <li class="nav-item">
-                            <asp:DropDownList ID="DropDownList1" runat="server" CssClass="nav-link" Style="width: 100%;" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" >
-                                
+                            <asp:DropDownList ID="DropDownList1" runat="server" CssClass="nav-link" Style="width: 100%;" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+
                                 <asp:ListItem>Shop</asp:ListItem>
-                                
+
                                 <asp:ListItem>Motas</asp:ListItem>
                                 <asp:ListItem>Acessorios</asp:ListItem>
                             </asp:DropDownList>
