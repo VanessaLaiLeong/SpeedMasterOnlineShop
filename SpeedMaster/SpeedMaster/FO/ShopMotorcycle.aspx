@@ -7,14 +7,69 @@
 
 
 </asp:Content>
+
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+    <%--old filter--%>
+
+<%--        <div>
+        <asp:LinkButton ID="removeFilter" runat="server" OnClick="removeFilter_Click">Remover Filtros</asp:LinkButton>
+
+
+
+        <asp:TextBox ID="minPrice" runat="server"></asp:TextBox>
+        <asp:TextBox ID="maxPrice" runat="server"></asp:TextBox>
+        <asp:Button ID="filterPrice" runat="server" Text="Ir" OnClick="filterPrice_Click" />
+
+        <asp:DropDownList ID="filterColor" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource2" DataTextField="Color" DataValueField="Color" OnSelectedIndexChanged="filterColor_SelectedIndexChanged"></asp:DropDownList>
+
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:SpeedMasterConnectionString %>" SelectCommand="SELECT DISTINCT [Color] FROM [Motorcycles]"></asp:SqlDataSource>
+
+        <asp:DropDownList ID="brands" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="BrandName" DataValueField="ID_Brand" OnSelectedIndexChanged="brands_SelectedIndexChanged"></asp:DropDownList>
+
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SpeedMasterConnectionString %>" SelectCommand="SELECT [ID_Brand], [BrandName] FROM [Brands]"></asp:SqlDataSource>
+
+        <asp:DropDownList ID="filterEngineCapacity" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource3" DataTextField="EngineCapacity" DataValueField="EngineCapacity" OnSelectedIndexChanged="filterEngineCapacity_SelectedIndexChanged"></asp:DropDownList>
+        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:SpeedMasterConnectionString %>" SelectCommand="SELECT DISTINCT [EngineCapacity] FROM [Motorcycles]"></asp:SqlDataSource>
+
+        <asp:TextBox ID="searchKeyWord" runat="server"></asp:TextBox>
+        <asp:Button ID="btn_keyWord" runat="server" Text="Go" OnClick="btn_keyWord_Click" />
+
+    </div>--%>
+
+    <div class="filter-container">
+            <asp:LinkButton ID="removeFilter" runat="server" OnClick="removeFilter_Click" CssClass="filter-input">Remove Filters</asp:LinkButton>
+
+            <asp:TextBox ID="minPrice" runat="server" CssClass="filter-input" placeholder="Min Price"></asp:TextBox>
+            <asp:TextBox ID="maxPrice" runat="server" CssClass="filter-input" placeholder="Max Price"></asp:TextBox>
+            <asp:Button ID="filterPrice" runat="server" Text="Ir" OnClick="filterPrice_Click" CssClass="filter-input" />
+
+            <asp:DropDownList ID="filterColor" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource2" DataTextField="Color" DataValueField="Color" OnSelectedIndexChanged="filterColor_SelectedIndexChanged" CssClass="filter-dropdown"></asp:DropDownList>
+
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:SpeedMasterConnectionString %>" SelectCommand="SELECT DISTINCT [Color] FROM [Motorcycles]"></asp:SqlDataSource>
+
+            <asp:DropDownList ID="brands" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="BrandName" DataValueField="ID_Brand" OnSelectedIndexChanged="brands_SelectedIndexChanged" CssClass="filter-dropdown"></asp:DropDownList>
+
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SpeedMasterConnectionString %>" SelectCommand="SELECT [ID_Brand], [BrandName] FROM [Brands]"></asp:SqlDataSource>
+
+            <asp:DropDownList ID="filterEngineCapacity" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource3" DataTextField="EngineCapacity" DataValueField="EngineCapacity" OnSelectedIndexChanged="filterEngineCapacity_SelectedIndexChanged" CssClass="filter-dropdown"></asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:SpeedMasterConnectionString %>" SelectCommand="SELECT DISTINCT [EngineCapacity] FROM [Motorcycles]"></asp:SqlDataSource>
+
+            <asp:TextBox ID="searchKeyWord" runat="server" CssClass="filter-input" placeholder="Search"></asp:TextBox>
+            <asp:Button ID="btn_keyWord" runat="server" Text="Go" OnClick="btn_keyWord_Click" CssClass="filter-input" />
+        </div>
+
+
+
+
+    <div id="GridCardShop" class="row row-cols-1 row-cols-md-3 g-4">
         <asp:Repeater ID="Repeater1" runat="server" OnItemDataBound="Repeater1_ItemDataBound">
             <ItemTemplate>
                 <div class="col">
                     <div class="card h-100">
                         <div class="show-image">
-                            <asp:ImageButton ID="motorcycleImage" runat="server" class="card-img-top hover-overlay" ImageUrl="~/Images/logoSpeedMaster.png" />    
+                            <asp:ImageButton ID="motorcycleImage" runat="server" class="card-img-top hover-overlay" ImageUrl="~/Images/logoSpeedMaster.png" />
                             <div class="d-grid gap-2 col-6 mx-auto">
                                 <asp:LinkButton runat="server" CssClass="update" CommandArgument='<%# Eval("ID_Motorcycle") %>' OnClick="btn_addCart_Click"><i class="fa-solid fa-cart-shopping"></i></asp:LinkButton>
                                 <%--<asp:LinkButton runat="server" CssClass="delete" OnClientClick="">Delete</asp:LinkButton>--%>
@@ -49,7 +104,7 @@
                 <div class="col">
                     <div class="card h-100">
                         <div class="show-image">
-                            <asp:ImageButton ID="motorcycleImage" runat="server" class="card-img-top hover-overlay" ImageUrl="~/Images/logoSpeedMaster.png" />    
+                            <asp:ImageButton ID="motorcycleImage" runat="server" class="card-img-top hover-overlay" ImageUrl="~/Images/logoSpeedMaster.png" />
                             <div class="d-grid gap-2 col-6 mx-auto">
                                 <asp:LinkButton runat="server" CssClass="update" CommandArgument='<%# Eval("ID_Motorcycle") %>' OnClick="btn_addCart_Click"><i class="fa-solid fa-cart-shopping"></i></asp:LinkButton>
                                 <%--<asp:LinkButton runat="server" CssClass="delete" OnClientClick="">Delete</asp:LinkButton>--%>
@@ -98,25 +153,8 @@
     <br />
     <br />
     <br />
-    <asp:LinkButton ID="removeFilter" runat="server" OnClick="removeFilter_Click">Remover Filtros</asp:LinkButton>
 
-    <asp:TextBox ID="minPrice" runat="server"></asp:TextBox>
-    <asp:TextBox ID="maxPrice" runat="server"></asp:TextBox>
-    <asp:Button ID="filterPrice" runat="server" Text="Ir" OnClick="filterPrice_Click" />
 
-    <asp:DropDownList ID="filterColor" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource2" DataTextField="Color" DataValueField="Color" OnSelectedIndexChanged="filterColor_SelectedIndexChanged"></asp:DropDownList>
-
-    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:SpeedMasterConnectionString %>" SelectCommand="SELECT DISTINCT [Color] FROM [Motorcycles]"></asp:SqlDataSource>
-
-    <asp:DropDownList ID="brands" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="BrandName" DataValueField="ID_Brand" OnSelectedIndexChanged="brands_SelectedIndexChanged"></asp:DropDownList>
-
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SpeedMasterConnectionString %>" SelectCommand="SELECT [ID_Brand], [BrandName] FROM [Brands]"></asp:SqlDataSource>
-
-    <asp:DropDownList ID="filterEngineCapacity" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource3" DataTextField="EngineCapacity" DataValueField="EngineCapacity" OnSelectedIndexChanged="filterEngineCapacity_SelectedIndexChanged" ></asp:DropDownList>
-    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:SpeedMasterConnectionString %>" SelectCommand="SELECT DISTINCT [EngineCapacity] FROM [Motorcycles]"></asp:SqlDataSource>
-
-    <asp:TextBox ID="searchKeyWord" runat="server"></asp:TextBox>
-    <asp:Button ID="btn_keyWord" runat="server" Text="Go" OnClick="btn_keyWord_Click" />
 
     <br />
     <br />
@@ -125,7 +163,7 @@
     <%--CARD PARA USAR NO FINAL--%>
 
 
-        <%--<div class="row row-cols-1 row-cols-md-3 g-4">
+    <%--<div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
             <div class="card h-100">
                 <div class="show-image">

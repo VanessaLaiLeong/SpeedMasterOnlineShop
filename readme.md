@@ -69,6 +69,9 @@
 - [X] Reset Password
 - [ ] Activation
 - [X] Login
+- [ ] Home page
+- [ ] Profile Page
+
 
 ### Back Office
 
