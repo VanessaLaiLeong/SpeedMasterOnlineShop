@@ -13,9 +13,9 @@ namespace SpeedMaster.FO
         {
             
             
-            string res = Services.doCreateCustomer("jerdebastu@gufum.com", "P@ssw0rd", "Nome1", "", "", "", "", "P@ssw0rd");
+            //string res = Services.doCreateCustomer("jerdebastu@gufum.com", "P@ssw0rd", "Nome1", "", "", "", "", "P@ssw0rd");
            
-            Response.Write(res);
+            //Response.Write(res);
 
             //logica funciona
         }

@@ -12,9 +12,9 @@ namespace SpeedMaster.FO
         protected void Page_Load(object sender, EventArgs e)
         {
          
-            string email = Services.DecryptString(Request.QueryString["email"]);
-            Connections.activateCustomerAccount(email);
-            Response.Write("Success!");
+            //string email = Services.DecryptString(Request.QueryString["email"]);
+            //Connections.activateCustomerAccount(email);
+            //Response.Write("Success!");
             //funciona
         }
     }
