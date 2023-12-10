@@ -42,6 +42,11 @@ body {
     margin-bottom: 2px;
 }
 
+/*styles for gridCardShop*/
+#GridCardShop {
+    padding-top: 2%;
+    padding-bottom: 5%
+}
 /*----------------------------styles for hover images----------------------------*/
 div.show-image {
     position: relative;
@@ -100,3 +105,72 @@ div.show-image {
             background-color: rgba(0, 0, 0, 0.9); /* Adjust the alpha channel for a darker color on hover */
             opacity: 1; /* Restore full opacity on hover */
         }
+
+/*Styles for filter*/
+
+.filter-container {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+}
+
+/* Style for the "Remover Filtros" LinkButton */
+#removeFilter {
+    margin-bottom: 10px;
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #d9534f;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+/* Style for textboxes and buttons */
+.filter-input {
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+}
+
+/* Style for dropdown lists */
+.filter-dropdown {
+    margin-right: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Style for the "Ir" button */
+#filterPrice,
+#btn_keyWord {
+    padding: 5px 10px;
+    background-color: #5bc0de;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Style for selected items in dropdown lists */
+.filter-dropdown option:checked {
+    background-color: #5bc0de;
+    color: #fff;
+}
+
+.ContentPlaceHolder1_removeFilter{
+    margin-right: 3px;
+}
+
+
+
