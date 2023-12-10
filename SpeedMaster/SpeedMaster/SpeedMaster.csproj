@@ -68,9 +68,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BO\AddBrand.aspx" />
+    <Content Include="BO\assets\img\logo.png" />
+    <Content Include="BO\css\styles.css" />
+    <Content Include="BO\Dashboard.aspx" />
     <Content Include="BO\InsertAccessory.aspx" />
     <Content Include="BO\InsertMotorcycle.aspx" />
     <Content Include="BO\InsertProducts.aspx" />
+    <Content Include="BO\js\datatables-simple-demo.js" />
+    <Content Include="BO\js\scripts.js" />
     <Content Include="BO\ShowAllBrands.aspx" />
     <Content Include="BO\ShowAllCustomers.aspx" />
     <Content Include="BO\ShowAllOrders.aspx" />
@@ -79,6 +84,7 @@
     <Content Include="BO\ShowProductDetail.aspx" />
     <Content Include="BO\UpdateBrand.aspx" />
     <Content Include="BO\UpdateCustomerDetails.aspx" />
+    <Content Include="BO\UpdateOrder.aspx" />
     <Content Include="BO\UpdateProductDetailsAccessory.aspx" />
     <Content Include="BO\UpdateProductDetailsMotorcycle.aspx" />
     <Content Include="FO\Activation.aspx" />
@@ -103,6 +109,20 @@
     </Compile>
     <Compile Include="BO\AddBrand.aspx.designer.cs">
       <DependentUpon>AddBrand.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BO\BOMaster.Master.cs">
+      <DependentUpon>BOMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BO\BOMaster.Master.designer.cs">
+      <DependentUpon>BOMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="BO\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BO\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="BO\InsertAccessory.aspx.cs">
       <DependentUpon>InsertAccessory.aspx</DependentUpon>
@@ -180,6 +200,13 @@
     </Compile>
     <Compile Include="BO\UpdateCustomerDetails.aspx.designer.cs">
       <DependentUpon>UpdateCustomerDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BO\UpdateOrder.aspx.cs">
+      <DependentUpon>UpdateOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BO\UpdateOrder.aspx.designer.cs">
+      <DependentUpon>UpdateOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="BO\UpdateProductDetailsAccessory.aspx.cs">
       <DependentUpon>UpdateProductDetailsAccessory.aspx</DependentUpon>
@@ -280,6 +307,7 @@
   <ItemGroup>
     <Content Include="Master.Master" />
     <Content Include="FO\FOMaster.Master" />
+    <Content Include="BO\BOMaster.Master" />
     <None Include="packages.config" />
     <None Include="Web - Copy.config.ex" />
     <None Include="Web - Copy.config.Debug.ex">

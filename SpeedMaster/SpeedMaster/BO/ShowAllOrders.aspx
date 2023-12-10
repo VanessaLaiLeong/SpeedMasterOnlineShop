@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master.Master" AutoEventWireup="true" CodeBehind="ShowAllOrders.aspx.cs" Inherits="SpeedMaster.BO.ShowAllOrders" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="BOMaster.Master" AutoEventWireup="true" CodeBehind="ShowAllOrders.aspx.cs" Inherits="SpeedMaster.BO.ShowAllOrders" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -21,6 +21,9 @@
                         </td>
                         <td>
                             <asp:Label ID="lbl_statusName" runat="server" Text=""></asp:Label>
+                        </td>
+                        <td>
+                            <asp:Button ID="btn_edit" runat="server" OnClick="btn_edit_Click" Text="submit" CommandArgument='<%# Eval("ID_Order") %>' />
                         </td>
                     </tr>
                 </ItemTemplate>
