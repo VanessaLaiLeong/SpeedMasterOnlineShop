@@ -93,6 +93,7 @@
     <Content Include="FO\css\login.css" />
     <Content Include="FO\css\shoppingCart.css" />
     <Content Include="FO\home.aspx" />
+    <Content Include="FO\InsertReviewCustomer.aspx" />
     <Content Include="FO\Login.aspx" />
     <Content Include="FO\new_logo_SM-removebg-preview-e1672148031220.png" />
     <Content Include="FO\ResetPassword.aspx" />
@@ -261,6 +262,13 @@
     </Compile>
     <Compile Include="FO\home.aspx.designer.cs">
       <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FO\InsertReviewCustomer.aspx.cs">
+      <DependentUpon>InsertReviewCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FO\InsertReviewCustomer.aspx.designer.cs">
+      <DependentUpon>InsertReviewCustomer.aspx</DependentUpon>
     </Compile>
     <Compile Include="FO\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
