@@ -11,26 +11,36 @@ namespace SpeedMaster.BO
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["globalProductId"] = Connections.insertGlobalProductsDB("accessories");
-            int id = Convert.ToInt32(Session["globalProductId"].ToString());
-            Response.Write(id);
+            int id = Convert.ToInt32(Session["globalProductId"]);
         }
 
         protected void btn_add_Click(object sender, EventArgs e)
         {
-
-
             byte[] img = Services.getImageInfo(FileUpload1);
+
+
+            int active = 0;
+
+            if (rd_active.SelectedValue == "yes")
+            {
+                active = 1;
+            }
+            else
+            {
+                active = 0;
+            }
 
             string resultMessage = Connections.InsertAccessoryDB(
                 Convert.ToInt32(Session["globalProductId"]),
-                tb_name.Text,
-                tb_description.Text,
-                Convert.ToDouble(tb_price.Text),
-                Convert.ToInt32(tb_stock.Text),
-                true,
-                Convert.ToInt32(dp_category.SelectedIndex),
+                Name.Text,
+                Description.Text,
+                Convert.ToDouble(Price.Text),
+                Convert.ToInt32(Stock.Text),
+                active,
+                Convert.ToInt32(ddl_category.SelectedValue),
                 img);
-            Response.Write(resultMessage);
+
+            Response.Redirect("InsertProducts.aspx");
         }
     }
+}

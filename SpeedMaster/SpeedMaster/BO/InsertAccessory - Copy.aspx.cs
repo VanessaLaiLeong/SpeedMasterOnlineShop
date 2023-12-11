@@ -13,15 +13,13 @@ namespace SpeedMaster.BO
         {
             int id = Convert.ToInt32(Session["globalProductId"]);
             //string name = 
-            
+
 
             //Response.Write(resultMessage);
         }
 
         protected void btn_add_Click(object sender, EventArgs e)
         {
-
-
             byte[] img = Services.getImageInfo(FileUpload1);
 
 

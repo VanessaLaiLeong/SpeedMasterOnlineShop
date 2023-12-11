@@ -15,49 +15,58 @@ namespace SpeedMaster.BO
     {
 
         /// <summary>
-        /// tb_name control.
+        /// Name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_name;
+        protected global::System.Web.UI.WebControls.TextBox Name;
 
         /// <summary>
-        /// tb_description control.
+        /// Description control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_description;
+        protected global::System.Web.UI.WebControls.TextBox Description;
 
         /// <summary>
-        /// tb_price control.
+        /// Price control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_price;
+        protected global::System.Web.UI.WebControls.TextBox Price;
 
         /// <summary>
-        /// tb_stock control.
+        /// Stock control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_stock;
+        protected global::System.Web.UI.WebControls.TextBox Stock;
 
         /// <summary>
-        /// dp_category control.
+        /// rd_active control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dp_category;
+        protected global::System.Web.UI.WebControls.RadioButtonList rd_active;
+
+        /// <summary>
+        /// ddl_category control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddl_category;
 
         /// <summary>
         /// SqlDataSource1 control.
@@ -85,15 +94,6 @@ namespace SpeedMaster.BO
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_add;
-
-        /// <summary>
-        /// btn_submit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_submit;
 
         /// <summary>
         /// View1 control.
