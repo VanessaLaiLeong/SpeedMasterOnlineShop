@@ -96,11 +96,12 @@
                         </div>
                         <div class="card-footer text-center">
                             <div class="small-ratings">
-                                <i class="fa fa-star rating-color"></i>
-                                <i class="fa fa-star rating-color"></i>
-                                <i class="fa fa-star rating-color"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
+                                <asp:LinkButton ID="star1" runat="server" ForeColor="#FF9933" OnClick="star1_Click" CssClass="fa-regular fa-star no-decoration" CommandArgument="1" Style="text-decoration: none;"></asp:LinkButton>
+                                <asp:LinkButton ID="star2" runat="server" ForeColor="#FF9933" OnClick="star2_Click" CssClass="fa-regular fa-star no-decoration" CommandArgument="2" Style="text-decoration: none;"></asp:LinkButton>
+                                <asp:LinkButton ID="star3" runat="server" ForeColor="#FF9933" OnClick="star3_Click" CssClass="fa-regular fa-star no-decoration" CommandArgument="3" Style="text-decoration: none;"></asp:LinkButton>
+                                <asp:LinkButton ID="star4" runat="server" ForeColor="#FF9933" OnClick="star4_Click" CssClass="fa-regular fa-star no-decoration" CommandArgument="4" Style="text-decoration: none;"></asp:LinkButton>
+                                <asp:LinkButton ID="star5" runat="server" ForeColor="#FF9933" OnClick="star5_Click" CssClass="fa-regular fa-star no-decoration" CommandArgument="5" Style="text-decoration: none;"></asp:LinkButton>
+
                             </div>
                         </div>
                     </div>

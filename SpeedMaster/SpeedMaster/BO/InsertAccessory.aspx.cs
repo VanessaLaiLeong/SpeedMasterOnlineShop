@@ -18,6 +18,8 @@ namespace SpeedMaster.BO
 
         protected void btn_add_Click(object sender, EventArgs e)
         {
+
+
             byte[] img = Services.getImageInfo(FileUpload1);
 
             string resultMessage = Connections.InsertAccessoryDB(
@@ -32,4 +34,3 @@ namespace SpeedMaster.BO
             Response.Write(resultMessage);
         }
     }
-}

@@ -6,9 +6,11 @@
     <div>
         <div class="form-group pb-2">
             <asp:Label ID="lbl_Brand" runat="server">Motorcycle Brand</asp:Label>
-            <asp:TextBox ID="tb_brand" runat="server" class="form-control" placeholder="ex. Kawasaki"/>
+            <asp:DropDownList ID="ddl_brnad" runat="server" DataSourceID="SqlDataSource1" DataTextField="BrandName" DataValueField="ID_Brand"></asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SpeedMasterConnectionString %>" SelectCommand="SELECT * FROM [Brands]"></asp:SqlDataSource>
         </div>
         <div class="form-group pb-2">
+            
             <asp:label ID="lbl_model" runat="server">Motorcycle Model</asp:label>
             <asp:TextBox ID="tb_model" runat="server" class="form-control" placeholder="ex. Ninja H2" />
         </div>
@@ -43,6 +45,14 @@
         <div class="form-group pb-2">
             <asp:Label ID="lbl_Description" runat="server">Motorcycle Description</asp:Label>
             <asp:TextBox ID="tb_description" runat="server" class="form-control" placeholder="ex. Taking the exclusive Ninja H2 ownership experience to a new level..."/>
+        </div>
+        <div class="form-group pb-2">
+            <asp:Label ID="Label1" runat="server">Active</asp:Label>
+            <asp:RadioButtonList ID="rd_active" runat="server">
+                <asp:ListItem>yes</asp:ListItem>
+                <asp:ListItem>no</asp:ListItem>
+            </asp:RadioButtonList>
+            <asp:TextBox ID="tb_active" runat="server" class="form-control" placeholder="1"/>
         </div>
 
         <asp:FileUpload ID="FileUpload1" runat="server" />
