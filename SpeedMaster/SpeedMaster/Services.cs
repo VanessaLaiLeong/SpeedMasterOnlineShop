@@ -445,7 +445,7 @@ namespace SpeedMaster
 
         }
 
-        public static void getProductsForReview(int orderId, int orderstatus)
+        public static void askReview(int orderId, int orderstatus)
         {
             
             DataTable dt = Connections.GetShoppingCartItemsForReview(orderId);

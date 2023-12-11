@@ -64,5 +64,10 @@ namespace SpeedMaster.BO
             );
             lbl_debug.Text = debug_con;
         }
+
+        protected void btn_enviarMail_Click(object sender, EventArgs e)
+        {
+            Services.askReview(Convert.ToInt32(Request.QueryString["id_order"]), 4);
+        }
     }
 }
