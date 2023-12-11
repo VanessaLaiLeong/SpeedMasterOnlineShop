@@ -8,8 +8,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <!-- Pills navs -->
-    <div class="container">
-    <div style="height: 60%; width: 35%; margin-top: 20px;" class="LoginDiv centerDiv">
+    <div class="container" style="height: 60vh; margin-bottom:6%;">
+    <div style="height: 50%; width: 35%; margin-top: 20px;" class="LoginDiv centerDiv">
         <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
             <li style="padding: 15px;" class="nav-item" role="presentation">
                 <a style="background-color: rgb(207,32,47);" class="nav-link active" id="tab-login" data-mdb-toggle="pill" href="#pills-login" role="tab"
@@ -26,9 +26,6 @@
         <div style="" class="tab-content LoginDiv">
             <div style="padding: 15px;" class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
                 <div>
-
-                    <p class="text-center">or:</p>
-
                     <!-- Email input -->
                     <div class="form-outline mb-4">
                         <asp:TextBox ID="tb_email" runat="server" class="form-control"></asp:TextBox>                        
