@@ -234,6 +234,8 @@ C:\Users\Gustavo Meireles\projects\SpeedMasterOnlineShop\SpeedMaster\SpeedMaster
 C:\Users\Gustavo Meireles\projects\SpeedMasterOnlineShop\SpeedMaster\SpeedMaster\obj\Debug\SpeedMaster.csproj.CopyComplete
 C:\Users\Gustavo Meireles\projects\SpeedMasterOnlineShop\SpeedMaster\SpeedMaster\obj\Debug\SpeedMaster.dll
 C:\Users\Gustavo Meireles\projects\SpeedMasterOnlineShop\SpeedMaster\SpeedMaster\obj\Debug\SpeedMaster.pdb
+<<<<<<< Updated upstream
+=======
 C:\Users\Gustavo Meireles\Desktop\git_issues_speedMaster\SpeedMasterOnlineShop\SpeedMaster\SpeedMaster\obj\Debug\SpeedMaster.csproj.AssemblyReference.cache
 C:\Users\Gustavo Meireles\Desktop\git_issues_speedMaster\SpeedMasterOnlineShop\SpeedMaster\SpeedMaster\obj\Debug\SpeedMaster.csproj.CoreCompileInputs.cache
 C:\Users\Gustavo Meireles\Desktop\git_issues_speedMaster\SpeedMasterOnlineShop\SpeedMaster\SpeedMaster\obj\Debug\SpeedMaster.dll
@@ -293,3 +295,7 @@ C:\Users\Gustavo Meireles\Desktop\git_issues_speedMaster\SpeedMasterOnlineShop\S
 C:\Users\Gustavo Meireles\Desktop\git_issues_speedMaster\SpeedMasterOnlineShop\SpeedMaster\SpeedMaster\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Gustavo Meireles\Desktop\git_issues_speedMaster\SpeedMasterOnlineShop\SpeedMaster\SpeedMaster\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Gustavo Meireles\Desktop\git_issues_speedMaster\SpeedMasterOnlineShop\SpeedMaster\SpeedMaster\obj\Debug\SpeedMaster.csproj.CopyComplete
+D:\AulasATEC\SpeedMaster\SpeedMasterOnlineShop\SpeedMaster\SpeedMaster\bin\BouncyCastle.Crypto.dll
+D:\AulasATEC\SpeedMaster\SpeedMasterOnlineShop\SpeedMaster\SpeedMaster\bin\itextsharp.dll
+D:\AulasATEC\SpeedMaster\SpeedMasterOnlineShop\SpeedMaster\SpeedMaster\bin\itextsharp.xml
+>>>>>>> Stashed changes

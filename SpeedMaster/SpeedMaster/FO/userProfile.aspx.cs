@@ -13,5 +13,10 @@ namespace SpeedMaster.FO
         {
 
         }
+
+        protected void Change_Password_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

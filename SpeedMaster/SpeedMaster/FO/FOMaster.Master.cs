@@ -26,10 +26,10 @@ namespace SpeedMaster.FO
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (DropDownList1.SelectedIndex == 1)
-            {
-                Response.Redirect("ShopMotorcycle.aspx");
-            }
+            //if (DropDownList1.SelectedIndex == 1)
+            //{
+            //    Response.Redirect("ShopMotorcycle.aspx");
+            //}
         }
 
         
@@ -41,9 +41,13 @@ namespace SpeedMaster.FO
 
         protected void lkbtn_user_Click1(object sender, EventArgs e)
         {
-            if (Session["customer"] != null)
+            if (Session["customer"] == null)
             {
                 Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                Response.Redirect("userProfile.aspx");
             }
         }
     }

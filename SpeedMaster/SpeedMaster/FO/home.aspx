@@ -12,7 +12,7 @@
 
                     <div class="carousel-inner" style="border-radius: 30px;">
 
-                        <div id="carouselExampleIndicators" class="carousel slide">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                             <div class="carousel-indicators">
                                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -51,9 +51,9 @@
                     <div class="container py-5">
                         <div class="row text-center py-3">
                             <div class="col-lg-6 m-auto">
-                                <h1 class="h1">Welcome To SpeedMaster</h1>
+                                <h1 class="h1">Welcome to SpeedMaster</h1>
                                 <p>
-                                    Enjoy Your Stay
+                                    Enjoy your stay!
                                 </p>
                             </div>
                         </div>
