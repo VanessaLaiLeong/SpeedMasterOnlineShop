@@ -299,3 +299,6 @@ D:\AulasATEC\SpeedMaster\SpeedMasterOnlineShop\SpeedMaster\SpeedMaster\bin\Bounc
 D:\AulasATEC\SpeedMaster\SpeedMasterOnlineShop\SpeedMaster\SpeedMaster\bin\itextsharp.dll
 D:\AulasATEC\SpeedMaster\SpeedMasterOnlineShop\SpeedMaster\SpeedMaster\bin\itextsharp.xml
 >>>>>>> Stashed changes
+C:\Users\tomas\Documents\GitHub\SpeedMasterOnlineShop\SpeedMaster\SpeedMaster\bin\BouncyCastle.Crypto.dll
+C:\Users\tomas\Documents\GitHub\SpeedMasterOnlineShop\SpeedMaster\SpeedMaster\bin\itextsharp.dll
+C:\Users\tomas\Documents\GitHub\SpeedMasterOnlineShop\SpeedMaster\SpeedMaster\bin\itextsharp.xml

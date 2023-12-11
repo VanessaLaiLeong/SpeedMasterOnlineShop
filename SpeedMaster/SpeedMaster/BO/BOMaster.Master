@@ -44,9 +44,9 @@
                 </ul>
             </nav>
         </div>
-        <div id="layoutSidenav">
+        <div id="layoutSidenav" style="height: 94vh;">
             <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <nav style="height:100%;" class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Dashboard</div>
