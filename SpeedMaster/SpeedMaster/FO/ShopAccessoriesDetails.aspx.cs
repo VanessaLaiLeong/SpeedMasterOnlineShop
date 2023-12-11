@@ -133,7 +133,7 @@ namespace SpeedMaster.FO
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = cn;
             SqlDataAdapter ad = new SqlDataAdapter(cmd);
-            cmd.CommandText = $"select * from Reviews r inner join Customers c on r.ID_Customer = c.ID_Customer where ID_Product = {Session["ID_Motorcycle"]}";
+            cmd.CommandText = $"select * from Reviews r inner join Customers c on r.ID_Customer = c.ID_Customer where ID_Product = {Session["ID_Accessory"]}";
 
             //save the result in data table
             DataTable dt = new DataTable();
