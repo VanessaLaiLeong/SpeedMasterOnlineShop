@@ -27,10 +27,6 @@
             <asp:TextBox ID="tb_engine_capacity" runat="server" class="form-control" placeholder="ex. V-Twin"/>
         </div>
         <div class="form-group pb-2">
-            <asp:Label ID="lbl_CC" runat="server">Motorcycle CC</asp:Label>
-            <asp:TextBox ID="tb_CC" runat="server" class="form-control" placeholder="ex. 1500"/>
-        </div>
-        <div class="form-group pb-2">
             <asp:Label ID="lbl_Color" runat="server">Motorcycle Color</asp:Label>
             <asp:TextBox ID="tb_color" runat="server" class="form-control" placeholder="ex. Green"/>
         </div>
@@ -52,7 +48,6 @@
                 <asp:ListItem>yes</asp:ListItem>
                 <asp:ListItem>no</asp:ListItem>
             </asp:RadioButtonList>
-            <asp:TextBox ID="tb_active" runat="server" class="form-control" placeholder="1"/>
         </div>
 
         <asp:FileUpload ID="FileUpload1" runat="server" />
