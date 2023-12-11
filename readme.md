@@ -10,15 +10,15 @@
 
 ### Loja online (motas, pecas e acessorios)
 - [X] Montra de motas a venda
-- [ ] Montra de acessorios
+- [X] Montra de acessorios
 
 #### Filtros de pesquisa para a montra de motas:
 - [X] marca,
-- [ ] modelo,
-- [ ] preco (range),
-- [ ] cilindrada,
-- [ ] cor,
-- [ ] categoria.
+- [X] modelo,
+- [X] preco (range),
+- [X] cilindrada,
+- [X] cor,
+- [X] categoria.
 
 #### Filtros de pesquisa para a montra de acessorios:
 - [ ] tipo de acessorio,
@@ -85,10 +85,10 @@
 #### Gestao de encomendas
 Esta pagina tera uma lista com todas as encomendas. A lista sera usada e visualizada com
 apenas as seguintes funcionalidades:
-- [ ] Pedidos com diferenciacao no estado da encomenda.
+- [X] Pedidos com diferenciacao no estado da encomenda.
 - [ ] Notificacao de pedidos de encomendas novas.
 - [ ] Filtrar pedidos (id, cliente, marca, estado).
-- [ ] Capacidade de cancelar encomendas.
+- [X] Capacidade de cancelar encomendas.
 
 #### Numero de pedido / encomenda
 - [ ] Envio do pedido para o armazem (interno)/fornecedor (email)
@@ -100,13 +100,12 @@ apenas as seguintes funcionalidades:
 - [X] Criar, modificar, apagar produtos
 
 #### Operações e agendamentos
-* [ ] Agendamento de test drives
-* [ ] Suporte ao cliente
-* [ ] Agendamento de consultas
-* [ ] Gestão de clientes:
-    - [ ] Informacoes do cliente
-    - [ ] Historico de compras
-    - [ ] Contactos do cliente
+* [X] Suporte ao cliente
+* [X] Agendamento de consultas
+* [X] Gestão de clientes:
+    - [X] Informacoes do cliente
+    - [X] Historico de compras
+    - [X] Contactos do cliente
 * [ ] Registo de venda
     - [ ] Gestao de faturas
     - [ ] Gestao de pagamentos

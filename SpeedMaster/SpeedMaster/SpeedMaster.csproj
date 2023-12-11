@@ -83,6 +83,7 @@
     <Content Include="BO\InsertProducts.aspx" />
     <Content Include="BO\js\datatables-simple-demo.js" />
     <Content Include="BO\js\scripts.js" />
+    <Content Include="BO\pagamentos.aspx" />
     <Content Include="BO\ShowAllBrands.aspx" />
     <Content Include="BO\ShowAllCustomers.aspx" />
     <Content Include="BO\ShowAllOrders.aspx" />
@@ -94,6 +95,7 @@
     <Content Include="BO\UpdateOrder.aspx" />
     <Content Include="BO\UpdateProductDetailsAccessory.aspx" />
     <Content Include="BO\UpdateProductDetailsMotorcycle.aspx" />
+    <Content Include="faturas.aspx" />
     <Content Include="FO\about.aspx" />
     <Content Include="FO\Activation.aspx" />
     <Content Include="FO\Billing.aspx" />
@@ -163,6 +165,13 @@
     </Compile>
     <Compile Include="BO\InsertProducts.aspx.designer.cs">
       <DependentUpon>InsertProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BO\pagamentos.aspx.cs">
+      <DependentUpon>pagamentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BO\pagamentos.aspx.designer.cs">
+      <DependentUpon>pagamentos.aspx</DependentUpon>
     </Compile>
     <Compile Include="BO\ShowAllBrands.aspx.cs">
       <DependentUpon>ShowAllBrands.aspx</DependentUpon>
@@ -243,6 +252,13 @@
     </Compile>
     <Compile Include="Connections.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="faturas.aspx.cs">
+      <DependentUpon>faturas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="faturas.aspx.designer.cs">
+      <DependentUpon>faturas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="FO\about.aspx.cs">
       <DependentUpon>about.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

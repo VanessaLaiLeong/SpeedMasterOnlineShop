@@ -11,7 +11,9 @@
         <br />
         <asp:DropDownList ID="dp_orderStatus" runat="server" DataSourceID="SqlDataSource1" DataTextField="StatusName" DataValueField="StatusName"></asp:DropDownList>
         <br />
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SpeedMasterConnectionString %>" SelectCommand="SELECT DISTINCT [StatusName] FROM [OrderStatus]"></asp:SqlDataSource>
         <asp:Button ID="btn_submit" runat="server" OnClick="btn_submit_Click" Text="submit" />
+        <br />
+        <asp:Label ID="lbl_debug" runat="server" Text="debug"></asp:Label>
     </div>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SpeedMasterConnectionString %>" SelectCommand="SELECT DISTINCT [StatusName] FROM [OrderStatus]"></asp:SqlDataSource>
 </asp:Content>

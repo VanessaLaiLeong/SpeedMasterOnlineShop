@@ -22,7 +22,7 @@ namespace SpeedMaster.BO
             DataTable dt = Connections.GetDataTableFromQuery(query);
 
             int shopping_cart_id = (int)dt.Rows[0]["ID_ShoppingCart"];
-            DateTime order_date = DateTime.Parse(dt.Rows[0]["ShippingDate"].ToString());
+            DateTime order_date = DateTime.Parse(dt.Rows[0]["OrderDate"].ToString());
             decimal totalAmount = (decimal)dt.Rows[0]["TotalAmount"];
             string shipping_date = dt.Rows[0]["ShippingDate"].ToString();
             int id_orderStatus = dp_orderStatus.SelectedIndex;
@@ -44,7 +44,7 @@ namespace SpeedMaster.BO
             DataTable dt = Connections.GetDataTableFromQuery(query);
 
             int shopping_cart_id = (int)dt.Rows[0]["ID_ShoppingCart"];
-            DateTime order_date = DateTime.Parse(dt.Rows[0]["ShippingDate"].ToString());
+            DateTime order_date = DateTime.Parse(dt.Rows[0]["OrderDate"].ToString());
             decimal totalAmount = (decimal)dt.Rows[0]["TotalAmount"];
             string shipping_date = dt.Rows[0]["ShippingDate"].ToString();
             int id_orderStatus = dp_orderStatus.SelectedIndex;
@@ -53,7 +53,7 @@ namespace SpeedMaster.BO
             tb_ShippingDate.Text = shipping_date.ToString();
             tb_totalAmount.Text = totalAmount.ToString();
 
-            Connections.UpdateOrderInDB(
+            string debug_con = Connections.UpdateOrderInDB(
                 id_order,
                 shopping_cart_id,
                 DateTime.Parse(tb_orderDate.Text),
@@ -61,6 +61,7 @@ namespace SpeedMaster.BO
                 Convert.ToDecimal(tb_totalAmount.Text),
                 id_orderStatus
             );
+            lbl_debug.Text = debug_con;
         }
     }
 }
