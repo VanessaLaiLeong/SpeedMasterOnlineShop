@@ -101,7 +101,7 @@ namespace SpeedMaster.FO
         {
             LinkButton btn = (LinkButton)sender;
             int productId = Convert.ToInt32(btn.CommandArgument);
-            Response.Redirect($"ShopAccessoryDetails.aspx?productId={productId}");
+            Response.Redirect($"ShopAccessoriesDetails.aspx?productId={productId}");
         }
 
         protected void Repeater1_ItemDataBound(object sender, RepeaterItemEventArgs e)

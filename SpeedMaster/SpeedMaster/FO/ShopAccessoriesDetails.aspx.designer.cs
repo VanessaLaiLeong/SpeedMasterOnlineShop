@@ -24,13 +24,13 @@ namespace SpeedMaster.FO
         protected global::System.Web.UI.WebControls.Image ImagemProduto;
 
         /// <summary>
-        /// lbl_marca control.
+        /// lbl_categoria control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_marca;
+        protected global::System.Web.UI.WebControls.Label lbl_categoria;
 
         /// <summary>
         /// lbl_nome control.
