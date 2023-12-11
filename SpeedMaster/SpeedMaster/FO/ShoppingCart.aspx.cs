@@ -89,9 +89,8 @@ namespace SpeedMaster.FO
         protected void btn_checkOut_Click(object sender, EventArgs e)
         {
             decimal totalprice = Convert.ToDecimal(lbl_totalPriceFinish.Text);
-            Customer customer = (Customer)Session["customer"];
-            Services.createOrder(customer, totalprice);
-            //Response.Redirect("biling.aspx");
+            Session["totalprice"] = totalprice;
+            Response.Redirect("biling.aspx");
         }
     }
 }
