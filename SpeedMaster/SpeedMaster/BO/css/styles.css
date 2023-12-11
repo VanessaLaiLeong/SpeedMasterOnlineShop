@@ -11016,6 +11016,7 @@ body {
 .sb-sidenav .sb-sidenav-footer {
   padding: 0.75rem;
   flex-shrink: 0;
+
 }
 
 .sb-sidenav-dark {
@@ -11242,3 +11243,18 @@ body {
   border-radius: 0.375rem !important;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.sb-nav-fixed #layoutSidenav #layoutSidenav_nav {
+    width: 225px;
+    height: 100vh; /* Isso garante que a barra lateral ocupe a altura total da janela */
+    z-index: 1038;
+}
+
+    .sb-nav-fixed #layoutSidenav #layoutSidenav_nav .sb-sidenav {
+        padding-top: 56px;
+        height: 100%; /* Isso também pode ser necessário */
+    }

@@ -853,7 +853,7 @@ namespace SpeedMaster
         int orderId,
         int shoppingCartId,
         DateTime orderDate,
-        DateTime shippingDate,
+        string shippingDate,
         decimal totalAmount,
         int statusId)
         {
@@ -1779,8 +1779,34 @@ namespace SpeedMaster
             }
         }
 
+        public static DataTable GetDataTableFromQuery(string query)
+        {
+            DataTable dt = new DataTable();
+            string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
 
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand selectCommand = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
 
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(selectCommand))
+                        {
+                            adapter.Fill(dt);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle or log the exception if necessary
+                        Console.WriteLine($"Error fetching table: {ex.Message}");
+                    }
+                }
+            }
+
+            return dt;
+        }
     }
 
 

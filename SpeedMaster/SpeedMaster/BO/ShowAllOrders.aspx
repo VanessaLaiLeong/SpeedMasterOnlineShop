@@ -2,6 +2,20 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <asp:DropDownList ID="ddl_productType" class="form-select" runat="server">
+                <asp:ListItem>Select a Filter</asp:ListItem>
+                <asp:ListItem>Name</asp:ListItem>
+                <asp:ListItem>Filter_2</asp:ListItem>
+            </asp:DropDownList>
+        </div>
+        <div class="col-md-6 d-flex justify-content-start">
+            <asp:Button ID="btn_createProduct" class="btn btn-success me-2" runat="server" Text="Create" />
+            <asp:Button ID="btn_modifyProduct" class="btn btn-primary me-2" runat="server" Text="Modify" />
+            <asp:Button ID="btn_deleteProduct" class="btn btn-danger me-2" runat="server" Text="Erase" />
+        </div>
+    </div>
     <div class="container">
         <table class="table">
             <asp:Repeater ID="rp_orders" runat="server" OnItemDataBound="rp_orders_ItemDataBound" DataSourceID="SqlDataSource1">
