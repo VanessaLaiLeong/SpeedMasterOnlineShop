@@ -20,11 +20,44 @@ namespace SpeedMaster.BO
 
         protected void btn_add_Click(object sender, EventArgs e)
         {
+
+
             byte[] img = Services.getImageInfo(FileUpload1);
 
-            string resultMessage = Connections.InsertAccessoryDB(Convert.ToInt32(Session["globalProductId"]),
-                "AccessoryName2", "Description", 50.00, 10, true, 3, img);
+
+            int active = 0;
+
+            if (rd_active.SelectedValue == "yes")
+            {
+                active = 1;
+            }
+            else
+            {
+                active = 0;
+            }
+
+
+
+            string resultMessage = Connections.InsertAccessoryDB(
+                Convert.ToInt32(Session["globalProductId"]),
+                Name.Text,
+                Description.Text,
+                Convert.ToDouble(Price.Text),
+                Convert.ToInt32(Stock.Text),
+                active,
+                Convert.ToInt32(ddl_category.SelectedValue),
+                img);
+
+
+
+
+
+
+
+
+
             Response.Redirect("InsertProducts.aspx");
+
         }
     }
 }

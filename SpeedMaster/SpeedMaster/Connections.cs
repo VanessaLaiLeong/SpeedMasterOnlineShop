@@ -244,7 +244,7 @@ namespace SpeedMaster
          * From here CRUD for Accessories Table
          */
         public static string InsertAccessoryDB(int ID_Accessory, string AccessoryName, string Description,
-                double Price, int Stock, bool Active, int ID_Category, byte[] img)
+                double Price, int Stock, int Active, int ID_Category, byte[] img)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
 

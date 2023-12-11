@@ -39,6 +39,20 @@ namespace SpeedMaster.BO
             string description = tb_description.Text;
 
 
+            int active = 0;
+
+            if (rd_active.SelectedValue == "yes")
+            {
+                active = 1;
+            }
+            else
+            {
+                active = 0;
+            }
+
+            
+
+
             string result = Connections.InsertMotorcycleIntoDB(
                 Convert.ToInt32(Session["globalProductId"]),
                 id_brand,
@@ -52,7 +66,7 @@ namespace SpeedMaster.BO
                 description,
                 img,
                 "jpg",
-                1
+                active
             );
             Response.Redirect("InsertProducts.aspx");
         }
