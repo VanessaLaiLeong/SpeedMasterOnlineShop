@@ -3,27 +3,51 @@
   "WorkspaceRootPath": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|c:\\users\\tomas\\documents\\github\\speedmasteronlineshop\\speedmaster\\speedmaster\\fo\\signup.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|solutionrelative:speedmaster\\fo\\signup.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|c:\\users\\tomas\\documents\\github\\speedmasteronlineshop\\speedmaster\\speedmaster\\fo\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|solutionrelative:speedmaster\\fo\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|c:\\users\\tomas\\documents\\github\\speedmasteronlineshop\\speedmaster\\speedmaster\\fo\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|solutionrelative:speedmaster\\fo\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|c:\\users\\tomas\\documents\\github\\speedmasteronlineshop\\speedmaster\\speedmaster\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|solutionrelative:speedmaster\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|c:\\users\\tomas\\documents\\github\\speedmasteronlineshop\\speedmaster\\speedmaster\\fo\\insertreviewcustomer.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|solutionrelative:speedmaster\\fo\\insertreviewcustomer.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|c:\\users\\tomas\\documents\\github\\speedmasteronlineshop\\speedmaster\\speedmaster\\fo\\insertreviewcustomer.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|solutionrelative:speedmaster\\fo\\insertreviewcustomer.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|c:\\users\\tomas\\documents\\github\\speedmasteronlineshop\\speedmaster\\speedmaster\\fo\\shopaccessories.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|solutionrelative:speedmaster\\fo\\shopaccessories.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|c:\\users\\tomas\\documents\\github\\speedmasteronlineshop\\speedmaster\\speedmaster\\fo\\shopaccessoriesdetails.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\speedmaster\\fo\\shopaccessoriesdetails.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|solutionrelative:speedmaster\\fo\\shopaccessoriesdetails.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|c:\\users\\tomas\\documents\\github\\speedmasteronlineshop\\speedmaster\\speedmaster\\fo\\fomaster.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "AbsoluteMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\speedmaster\\fo\\fomaster.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
       "RelativeMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|solutionrelative:speedmaster\\fo\\fomaster.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|c:\\users\\tomas\\documents\\github\\speedmasteronlineshop\\speedmaster\\speedmaster\\fo\\home.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\speedmaster\\fo\\home.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|solutionrelative:speedmaster\\fo\\home.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|c:\\users\\tomas\\documents\\github\\speedmasteronlineshop\\speedmaster\\speedmaster\\fo\\css\\shop.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\speedmaster\\fo\\css\\shop.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|solutionrelative:speedmaster\\fo\\css\\shop.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|c:\\users\\tomas\\documents\\github\\speedmasteronlineshop\\speedmaster\\speedmaster\\fo\\shopmotorcycle.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\speedmaster\\fo\\shopmotorcycle.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|solutionrelative:speedmaster\\fo\\shopmotorcycle.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
@@ -31,7 +55,7 @@
       "RelativeMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|solutionrelative:speedmaster\\bo\\dashboard.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|c:\\users\\tomas\\documents\\github\\speedmasteronlineshop\\speedmaster\\speedmaster\\bo\\bomaster.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "AbsoluteMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\speedmaster\\bo\\bomaster.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
       "RelativeMoniker": "D:0:0:{62FEA242-8156-4485-8F5F-BA000778E13F}|SpeedMaster\\SpeedMaster.csproj|solutionrelative:speedmaster\\bo\\bomaster.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
     },
     {
@@ -55,6 +79,84 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "SignUp.aspx",
+              "DocumentMoniker": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\SpeedMaster\\FO\\SignUp.aspx",
+              "RelativeDocumentMoniker": "SpeedMaster\\FO\\SignUp.aspx",
+              "ToolTip": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\SpeedMaster\\FO\\SignUp.aspx",
+              "RelativeToolTip": "SpeedMaster\\FO\\SignUp.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2023-12-11T04:17:48.656Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\SpeedMaster\\FO\\Login.aspx.cs",
+              "RelativeDocumentMoniker": "SpeedMaster\\FO\\Login.aspx.cs",
+              "ToolTip": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\SpeedMaster\\FO\\Login.aspx.cs",
+              "RelativeToolTip": "SpeedMaster\\FO\\Login.aspx.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAowDEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-11T04:04:07.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Login.aspx",
+              "DocumentMoniker": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\SpeedMaster\\FO\\Login.aspx",
+              "RelativeDocumentMoniker": "SpeedMaster\\FO\\Login.aspx",
+              "ToolTip": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\SpeedMaster\\FO\\Login.aspx",
+              "RelativeToolTip": "SpeedMaster\\FO\\Login.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2023-12-11T04:04:02.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\SpeedMaster\\Web.config",
+              "RelativeDocumentMoniker": "SpeedMaster\\Web.config",
+              "ToolTip": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\SpeedMaster\\Web.config",
+              "RelativeToolTip": "SpeedMaster\\Web.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2023-12-11T04:01:54.924Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "InsertReviewCustomer.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\SpeedMaster\\FO\\InsertReviewCustomer.aspx.cs",
+              "RelativeDocumentMoniker": "SpeedMaster\\FO\\InsertReviewCustomer.aspx.cs",
+              "ToolTip": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\SpeedMaster\\FO\\InsertReviewCustomer.aspx.cs",
+              "RelativeToolTip": "SpeedMaster\\FO\\InsertReviewCustomer.aspx.cs",
+              "ViewState": "AQIAADEAAAAAAAAAAAAcwDoAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-12-11T03:28:03.552Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "InsertReviewCustomer.aspx",
+              "DocumentMoniker": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\SpeedMaster\\FO\\InsertReviewCustomer.aspx",
+              "RelativeDocumentMoniker": "SpeedMaster\\FO\\InsertReviewCustomer.aspx",
+              "ToolTip": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\SpeedMaster\\FO\\InsertReviewCustomer.aspx",
+              "RelativeToolTip": "SpeedMaster\\FO\\InsertReviewCustomer.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2023-12-11T03:27:49.832Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "ShopAccessories.aspx",
               "DocumentMoniker": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\SpeedMaster\\FO\\ShopAccessories.aspx",
               "RelativeDocumentMoniker": "SpeedMaster\\FO\\ShopAccessories.aspx",
@@ -67,7 +169,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "ShopAccessoriesDetails.aspx",
               "DocumentMoniker": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\SpeedMaster\\FO\\ShopAccessoriesDetails.aspx",
               "RelativeDocumentMoniker": "SpeedMaster\\FO\\ShopAccessoriesDetails.aspx",
@@ -80,7 +182,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "shop.css",
               "DocumentMoniker": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\SpeedMaster\\FO\\css\\shop.css",
               "RelativeDocumentMoniker": "SpeedMaster\\FO\\css\\shop.css",
@@ -93,7 +195,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "ShopMotorcycle.aspx",
               "DocumentMoniker": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\SpeedMaster\\FO\\ShopMotorcycle.aspx",
               "RelativeDocumentMoniker": "SpeedMaster\\FO\\ShopMotorcycle.aspx",
@@ -106,7 +208,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "home.aspx",
               "DocumentMoniker": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\SpeedMaster\\FO\\home.aspx",
               "RelativeDocumentMoniker": "SpeedMaster\\FO\\home.aspx",
@@ -119,7 +221,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "FOMaster.Master",
               "DocumentMoniker": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\SpeedMaster\\FO\\FOMaster.Master",
               "RelativeDocumentMoniker": "SpeedMaster\\FO\\FOMaster.Master",
@@ -132,7 +234,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 14,
               "Title": "styles.css",
               "DocumentMoniker": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\SpeedMaster\\BO\\css\\styles.css",
               "RelativeDocumentMoniker": "SpeedMaster\\BO\\css\\styles.css",
@@ -140,11 +242,12 @@
               "RelativeToolTip": "SpeedMaster\\BO\\css\\styles.css",
               "ViewState": "AQIAAH4aAAAAAAAAAAAtwJcaAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2023-12-11T02:44:27.808Z"
+              "WhenOpened": "2023-12-11T02:44:27.808Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "BOMaster.Master",
               "DocumentMoniker": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\SpeedMaster\\BO\\BOMaster.Master",
               "RelativeDocumentMoniker": "SpeedMaster\\BO\\BOMaster.Master",
@@ -157,7 +260,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "Dashboard.aspx",
               "DocumentMoniker": "C:\\Users\\tomas\\Documents\\GitHub\\SpeedMasterOnlineShop\\SpeedMaster\\SpeedMaster\\BO\\Dashboard.aspx",
               "RelativeDocumentMoniker": "SpeedMaster\\BO\\Dashboard.aspx",

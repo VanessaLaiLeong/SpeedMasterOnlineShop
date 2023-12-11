@@ -26,13 +26,6 @@
         <div style="" class="tab-content LoginDiv">
             <div style="padding: 15px;" class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
                 <div>
-                    <div class="text-center mb-3">
-                        <p>Sign in with:</p>
-
-                        <button type="button" class="btn btn-link btn-floating mx-1">
-                            <i class="fab fa-google"></i>
-                        </button>
-                    </div>
 
                     <p class="text-center">or:</p>
 
@@ -91,6 +84,7 @@
                         <button type="button" class="btn btn-link btn-floating mx-1">
                             <i class="fab fa-twitter"></i>
                         </button>
+
 
                         <button type="button" class="btn btn-link btn-floating mx-1">
                             <i class="fab fa-github"></i>

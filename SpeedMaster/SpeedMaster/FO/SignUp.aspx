@@ -25,16 +25,6 @@
             <div style="margin-bottom: 90%;" class="tab-content LoginDiv">
                 <div style="padding: 15px;" class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
                     <div>
-                        <div class="text-center mb-3">
-                            <p>Register with:</p>
-
-                            <button type="button" class="btn btn-link btn-floating mx-1">
-                                <i class="fab fa-google"></i>
-                            </button>
-                        </div>
-
-                        <p class="text-center">or:</p>
-
                         <!-- Email input -->
                         <div class="form-outline mb-4">
                             <input type="email" id="loginEmail" class="form-control" />
