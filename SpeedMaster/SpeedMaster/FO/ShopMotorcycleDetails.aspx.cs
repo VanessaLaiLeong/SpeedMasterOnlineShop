@@ -31,6 +31,7 @@ namespace SpeedMaster.FO
                 lbl_condicao.Text = row["Condition"].ToString();
                 lbl_productDescription.Text = row["Description"].ToString();
                 byte[] imageData = row["MotorcycleImage"] as byte[];
+
                 if (imageData != null && imageData.Length > 0)
                 {
                     ImagemProduto.ImageUrl = "data:image/jpeg;base64," + Convert.ToBase64String(imageData);
@@ -62,6 +63,13 @@ namespace SpeedMaster.FO
             {
                 Response.Redirect("Login.aspx");
             }
+        }
+
+        protected void rp_reviews_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            DataRowView dr = (DataRowView)e.Item.DataItem;
+            ((Label)e.Item.FindControl("lbl_description")).Text = dr["Description"].ToString();
+            ((Label)e.Item.FindControl("lbl_username")).Text = dr["FirstName"].ToString() + dr["LastName"].ToString();
         }
     }
 }

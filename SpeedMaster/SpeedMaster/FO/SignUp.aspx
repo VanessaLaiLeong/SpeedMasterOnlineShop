@@ -33,13 +33,13 @@
 
                         <!-- Name input -->
                         <div class="form-outline mb-4">
-                            <input type="email" id="loginName" class="form-control" />
+                            <input type="text" id="loginName" class="form-control" />
                             <label class="form-label" for="loginEmail">Name</label>
                         </div>
                         
                         <!-- Surname input -->
                         <div class="form-outline mb-4">
-                            <input type="email" id="loginSurname" class="form-control" />
+                            <input type="text" id="loginSurname" class="form-control" />
                             <label class="form-label" for="loginEmail">Surname</label>
                         </div>
 
@@ -57,17 +57,17 @@
 
                                                 <!-- Address input -->
                         <div class="form-outline mb-4">
-                            <input type="password" id="Address" class="form-control" />
+                            <input type="text" id="Address" class="form-control" />
                             <label class="form-label" for="Address">Address</label>
                         </div>                        
                         
                         <div class="form-outline mb-4">
-                            <input type="password" id="Phone" class="form-control" />
+                            <input type="text" id="Phone" class="form-control" />
                             <label class="form-label" for="Phone Number">Phone Number</label>
                         </div>
                                                 
                         <div class="form-outline mb-4">
-                            <input type="password" id="NIF" class="form-control" />
+                            <input type="text" id="NIF" class="form-control" />
                             <label class="form-label" for="nif">NIF</label>
                         </div>
 

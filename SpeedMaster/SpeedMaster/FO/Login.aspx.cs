@@ -12,12 +12,6 @@ namespace SpeedMaster.FO
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Write(Services.DecryptString("mL4uefDJyC2Yb1LvMOw9vA=="));
-            //string res = doLogin("jerdebastu@gufum.com", pass);
-            
-            //Response.Write(res);
-            //Response.Write(((Customer)Session["customer"]).email);
-            //a logica funciona
         }
 
         private string doLogin(string email, string password)
@@ -37,10 +31,6 @@ namespace SpeedMaster.FO
                 return result.ToString();
             }
         }
-        //para teste
-        
-
-      
 
         protected void btn_signin_Click1(object sender, EventArgs e)
         {

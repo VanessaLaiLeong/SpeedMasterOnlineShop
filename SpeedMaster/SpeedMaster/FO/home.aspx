@@ -21,8 +21,6 @@
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <asp:Image ID="Image1" runat="server" ImageUrl="~/images/banner-1.jpg" class="d-block w-100" />
-
-
                                 </div>
                                 <div class="carousel-item">
                                     <asp:Image ID="Image2" runat="server" ImageUrl="~/images/banner-2.jpg" class="d-block w-100" />
@@ -40,10 +38,6 @@
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
-
-
-
-
                     </div>
 
                 </div>

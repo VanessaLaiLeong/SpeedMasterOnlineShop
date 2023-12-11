@@ -92,34 +92,36 @@
         <div class="ex1 row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
 
             <%-- Repeater starts here --%>
-
-            <div class="col">
-                <div class="card h-100 card-review">
-                    <div class="card-header pb-0 d-flex flex-row justify-content-between align-items-center">
-                        <div class="d-flex align-items-center">
-                            <img class="rounded-circle me-2 mb-2"
-                                src="../Images/user.jpg" />
-                            <div class="d-flex flex-column justify-content-center align-items-start fs-5 lh-sm">
-                                <b class="text-primary pb-3">Username</b>
+            <asp:Repeater ID="rp_reviews" runat="server" OnItemDataBound="rp_reviews_ItemDataBound">
+                <ItemTemplate>
+                    <div class="col">
+                        <div class="card h-100 card-review">
+                            <div class="card-header pb-0 d-flex flex-row justify-content-between align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle me-2 mb-2"
+                                        src="../Images/user.jpg" />
+                                    <div class="d-flex flex-column justify-content-center align-items-start fs-5 lh-sm">
+                                        <asp:Label class="text-primary pb-3" ID="lbl_username" runat="server" Text="N/A"></asp:Label>
+                                    </div>
+                                </div>
+                                <div class="text-center pb-2">
+                                    <div class="small-ratings">
+                                        <i class="fa fa-star rating-color"></i>
+                                        <i class="fa fa-star rating-color"></i>
+                                        <i class="fa fa-star rating-color"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="text-center pb-2">
-                            <div class="small-ratings">
-                                <i class="fa fa-star rating-color"></i>
-                                <i class="fa fa-star rating-color"></i>
-                                <i class="fa fa-star rating-color"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
+                            <div class="card-body py-2">
+                                <asp:Label clas="card-text" ID="lbl_description" runat="server" Text="N/A"></asp:Label>
                             </div>
                         </div>
                     </div>
-                    <div class="card-body py-2">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-            </div>
-
-
+                </ItemTemplate>
+            </asp:Repeater>
+            <asp:SqlDataSource ID="sql_reviews" runat="server" ConnectionString="<%$ ConnectionStrings:SpeedMasterConnectionString %>" SelectCommand="select Description, Customers.FirstName, Customers.LastName from Reviews left join Customers on Customers.ID_Customer = ID_Customer;"></asp:SqlDataSource>
         </div>
     </div>
 

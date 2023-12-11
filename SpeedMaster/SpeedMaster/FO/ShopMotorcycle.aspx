@@ -10,34 +10,6 @@
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-    <%--old filter--%>
-
-<%--        <div>
-        <asp:LinkButton ID="removeFilter" runat="server" OnClick="removeFilter_Click">Remover Filtros</asp:LinkButton>
-
-
-
-        <asp:TextBox ID="minPrice" runat="server"></asp:TextBox>
-        <asp:TextBox ID="maxPrice" runat="server"></asp:TextBox>
-        <asp:Button ID="filterPrice" runat="server" Text="Ir" OnClick="filterPrice_Click" />
-
-        <asp:DropDownList ID="filterColor" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource2" DataTextField="Color" DataValueField="Color" OnSelectedIndexChanged="filterColor_SelectedIndexChanged"></asp:DropDownList>
-
-        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:SpeedMasterConnectionString %>" SelectCommand="SELECT DISTINCT [Color] FROM [Motorcycles]"></asp:SqlDataSource>
-
-        <asp:DropDownList ID="brands" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="BrandName" DataValueField="ID_Brand" OnSelectedIndexChanged="brands_SelectedIndexChanged"></asp:DropDownList>
-
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SpeedMasterConnectionString %>" SelectCommand="SELECT [ID_Brand], [BrandName] FROM [Brands]"></asp:SqlDataSource>
-
-        <asp:DropDownList ID="filterEngineCapacity" runat="server" AutoPostBack="True" DataSourceID="SqlDataSource3" DataTextField="EngineCapacity" DataValueField="EngineCapacity" OnSelectedIndexChanged="filterEngineCapacity_SelectedIndexChanged"></asp:DropDownList>
-        <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:SpeedMasterConnectionString %>" SelectCommand="SELECT DISTINCT [EngineCapacity] FROM [Motorcycles]"></asp:SqlDataSource>
-
-        <asp:TextBox ID="searchKeyWord" runat="server"></asp:TextBox>
-        <asp:Button ID="btn_keyWord" runat="server" Text="Go" OnClick="btn_keyWord_Click" />
-
-    </div>--%>
-
     <div class="filter-container">
             <asp:LinkButton ID="removeFilter" runat="server" OnClick="removeFilter_Click" CssClass="filter-input">Remove Filters</asp:LinkButton>
 
