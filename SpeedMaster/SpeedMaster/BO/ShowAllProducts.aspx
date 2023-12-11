@@ -6,7 +6,7 @@
     <h1>Products</h1>
     <div class="row mb-4">
         <div class="col-md-3">
-            <asp:DropDownList ID="ddl_productType" class="form-select" runat="server">
+            <asp:DropDownList ID="ddl_productType" class="form-select" runat="server" AutoPostBack="True">
                 <asp:ListItem>Select a Filter</asp:ListItem>
                 <asp:ListItem>Motorcycles</asp:ListItem>
                 <asp:ListItem>Accessories</asp:ListItem>
@@ -43,7 +43,6 @@
                     <tbody>
                         <asp:Repeater ID="Repeater1" runat="server" OnItemDataBound="Repeater1_ItemDataBound">
                             <ItemTemplate>
-
                                 <tr>
                                     <td>
                                         <asp:Label ID="lbl_productName" runat="server" Text="Label"></asp:Label>

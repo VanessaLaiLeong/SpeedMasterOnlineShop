@@ -21,10 +21,10 @@ namespace SpeedMaster.BO
                 BindRepeater("select * from motorcycles");
                 BindRepeater2("select * from accessories");
             }
-            
+
             if (ddl_productType.SelectedValue == "Motorcycle")
             {
-                MultiView1.ActiveViewIndex = 0;                
+                MultiView1.ActiveViewIndex = 0;
             }
             else
             {
@@ -77,9 +77,9 @@ namespace SpeedMaster.BO
             }
 
             //Finally, set the datasource of the repeater
-            Repeater1.DataSource = pgitems;      
+            Repeater1.DataSource = pgitems;
             Repeater1.DataBind();
-          
+
         }
 
         //for resperter3 and repeater4
@@ -181,13 +181,8 @@ namespace SpeedMaster.BO
             {
                 DataRowView dr = (DataRowView)e.Item.DataItem;
                 ((Label)e.Item.FindControl("lbl_productName")).Text = dr["Model"].ToString();
-                //((Label)e.Item.FindControl("lbl_quantity")).Text = dr["Quantity"].ToString();
-                //((Label)e.Item.FindControl("lbl_price")).Text = dr["Price"].ToString();
-                if (dr["Active"].ToString() == "True")
-                {
-                    ((Label)e.Item.FindControl("lbl_status")).Text = "Active";
-                }
-                else ((Label)e.Item.FindControl("lbl_status")).Text = "Inactive";
+                //((Label)e.Item.FindControl("lbl_quantity")).Text = dr["Stock"].ToString();
+                ((Label)e.Item.FindControl("lbl_price")).Text = dr["Price"].ToString();
             }
         }
 
@@ -208,7 +203,7 @@ namespace SpeedMaster.BO
             }
         }
 
-        
+
 
         //from here logic for the buttons
         protected void viewDetail_Click(object sender, EventArgs e)
@@ -224,7 +219,7 @@ namespace SpeedMaster.BO
             LinkButton button = (LinkButton)sender;
             int customerId = Convert.ToInt32(button.CommandArgument);
             Connections.DeleteMotorcycleAndGlobalProductsIDsFromDB(customerId);
-        }     
+        }
 
         protected void accessoryDeatils_Click(object sender, EventArgs e)
         {

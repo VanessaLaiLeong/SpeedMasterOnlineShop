@@ -3,59 +3,46 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <%--string result = Connections.InsertMotorcycleIntoDB(
-                ID_Motorcycle: id,
-                ID_Brand: 1,
-                Model: "ModelX",
-                ManufactoringYear: 2023,
-                EngineType: "V-Twin",
-                EngineCapacity: 1500,
-                ColorBike: "Red",
-                Price: 20000.00,
-                Condition: "New",
-                Description: "Powerful motorcycle with great features",
-                MotorcycleImage: new byte[0x0],
-                MotorcycleImageType: "JPEG",
-                Active: 1
-
-            );--%>
-
     <div>
         <div class="form-group pb-2">
-            <label for="lbl_Brand">Motorcycle Brand</label>
-            <asp:TextBox runat="server" class="form-control" id="MotorcycleBrand" placeholder="ex. Kawasaki"/>
+            <asp:Label ID="lbl_Brand" runat="server">Motorcycle Brand</asp:Label>
+            <asp:TextBox ID="tb_brand" runat="server" class="form-control" placeholder="ex. Kawasaki"/>
         </div>
         <div class="form-group pb-2">
-            <label for="lbl_Brand">Motorcycle Model</label>
-            <asp:TextBox runat="server" class="form-control" id="Motorcycle" placeholder="ex. Ninja H2" />
+            <asp:label ID="lbl_model" runat="server">Motorcycle Model</asp:label>
+            <asp:TextBox ID="tb_model" runat="server" class="form-control" placeholder="ex. Ninja H2" />
         </div>
         <div class="form-group pb-2">
-            <label for="lbl_Model">Motorcycle Year</label>
-            <asp:TextBox runat="server" class="form-control" id="year" placeholder="ex. 2023"/>
+            <asp:Label ID="lbl_year" runat="server">Motorcycle Year</asp:Label>
+            <asp:TextBox ID="tb_year" runat="server" class="form-control" placeholder="ex. 2023"/>
         </div>
         <div class="form-group pb-2">
-            <label for="lbl_Engine">Motorcycle Engine</label>
-            <asp:TextBox runat="server" class="form-control" id="engine" placeholder="ex. V-Twin"/>
+            <asp:Label ID="lbl_Engine" runat="server">Motorcycle Engine</asp:Label>
+            <asp:TextBox ID="tb_engine" runat="server" class="form-control" placeholder="ex. V-Twin"/>
         </div>
         <div class="form-group pb-2">
-            <label for="lbl_CC">Motorcycle CC</label>
-            <asp:TextBox runat="server" class="form-control" id="cc" placeholder="ex. 1500"/>
+            <asp:Label runat="server">Engine Capacity</asp:Label>
+            <asp:TextBox ID="tb_engine_capacity" runat="server" class="form-control" placeholder="ex. V-Twin"/>
         </div>
         <div class="form-group pb-2">
-            <label for="lbl_Color">Motorcycle Color</label>
-            <asp:TextBox runat="server" class="form-control" id="color" placeholder="ex. Green"/>
+            <asp:Label ID="lbl_CC" runat="server">Motorcycle CC</asp:Label>
+            <asp:TextBox ID="tb_CC" runat="server" class="form-control" placeholder="ex. 1500"/>
         </div>
         <div class="form-group pb-2">
-            <label for="lbl_Price">Motorcycle Price</label>
-            <asp:TextBox runat="server" class="form-control" id="price" placeholder="ex. 20,000"/>
+            <asp:Label ID="lbl_Color" runat="server">Motorcycle Color</asp:Label>
+            <asp:TextBox ID="tb_color" runat="server" class="form-control" placeholder="ex. Green"/>
         </div>
         <div class="form-group pb-2">
-            <label for="lbl_Condition">Motorcycle Condition</label>
-            <asp:TextBox runat="server" class="form-control" id="condition" placeholder="ex. New"/>
+            <asp:Label ID="lbl_Price" runat="server">Motorcycle Price</asp:Label>
+            <asp:TextBox ID="tb_price" runat="server" class="form-control" placeholder="ex. 20,000"/>
         </div>
         <div class="form-group pb-2">
-            <label for="lbl_Description">Motorcycle Description</label>
-            <asp:TextBox runat="server" class="form-control" id="Description" placeholder="ex. Taking the exclusive Ninja H2 ownership experience to a new level..."/>
+            <asp:Label ID="lbl_Condition" runat="server">Motorcycle Condition</asp:Label>
+            <asp:TextBox ID="tb_condition" runat="server" class="form-control" placeholder="ex. New"/>
+        </div>
+        <div class="form-group pb-2">
+            <asp:Label ID="lbl_Description" runat="server">Motorcycle Description</asp:Label>
+            <asp:TextBox ID="tb_description" runat="server" class="form-control" placeholder="ex. Taking the exclusive Ninja H2 ownership experience to a new level..."/>
         </div>
 
         <asp:FileUpload ID="FileUpload1" runat="server" />

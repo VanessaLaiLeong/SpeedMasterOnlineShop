@@ -26,23 +26,34 @@ namespace SpeedMaster.BO
         protected void btn_add_Click(object sender, EventArgs e)
         {
 
-            byte[] img = Services.getImageInfo(FileUpload1);            
+            byte[] img = Services.getImageInfo(FileUpload1);
+
+            int id_brand = Convert.ToInt32(Connections.GetDataTableFromQuery($"SELECT ID_Brand FROM Motorcycles WHERE ID_Motorcycle = {Convert.ToInt32(Session["globalProductId"])}").Rows[0]["ID_Brand"]);
+            string model = tb_model.Text;
+            string brand_string = Connections.getBrandById(id_brand);
+            int manufactoringYear = Convert.ToInt32(tb_year.Text);
+            int engineCapacity = Convert.ToInt32(tb_engine_capacity);
+            string engineType = tb_engine.Text;
+            string bikeColor = tb_color.Text;
+            decimal price = Convert.ToDecimal(tb_price.Text);
+            string condition = tb_condition.Text;
+            string description = tb_description.Text;
+
 
             string result = Connections.InsertMotorcycleIntoDB(
                 ID_Motorcycle: Convert.ToInt32(Session["globalProductId"]),
-                ID_Brand: 1,
-                Model: "ModelX",
-                ManufactoringYear: 2023,
-                EngineType: "V-Twin",
-                EngineCapacity: 1500,
-                ColorBike: "Red",
-                Price: 20000.00,
-                Condition: "New",
-                Description: "Powerful motorcycle with great features",
+                ID_Brand: id_brand,
+                Model: model,
+                ManufactoringYear: manufactoringYear,
+                EngineType: engineType,
+                EngineCapacity: engineCapacity,
+                ColorBike: bikeColor,
+                Price: price,
+                Condition: condition,
+                Description: description,
                 MotorcycleImage: img,
                 MotorcycleImageType: "jpg",
                 Active: 1
-
             );
             Response.Redirect("InsertProducts.aspx");
         }

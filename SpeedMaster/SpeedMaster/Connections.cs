@@ -677,7 +677,7 @@ namespace SpeedMaster
             string EngineType,
             int EngineCapacity,
             string ColorBike,
-            double Price,
+            decimal Price,
             string Condition,
             string Description,
             byte[] MotorcycleImage,
