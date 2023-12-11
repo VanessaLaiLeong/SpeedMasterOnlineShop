@@ -27,12 +27,11 @@ namespace SpeedMaster.BO
         {
 
             byte[] img = Services.getImageInfo(FileUpload1);
-
-            int id_brand = Convert.ToInt32(Connections.GetDataTableFromQuery($"SELECT ID_Brand FROM Motorcycles WHERE ID_Motorcycle = {Convert.ToInt32(Session["globalProductId"])}").Rows[0]["ID_Brand"]);
-            string model = tb_model.Text;
-            string brand_string = Connections.getBrandById(id_brand);
+      
+            int id_brand = Convert.ToInt32(ddl_brnad.SelectedValue);
+            string model = tb_model.Text;            
             int manufactoringYear = Convert.ToInt32(tb_year.Text);
-            int engineCapacity = Convert.ToInt32(tb_engine_capacity);
+            int engineCapacity = Convert.ToInt32(tb_engine_capacity.Text);
             string engineType = tb_engine.Text;
             string bikeColor = tb_color.Text;
             decimal price = Convert.ToDecimal(tb_price.Text);
@@ -41,19 +40,19 @@ namespace SpeedMaster.BO
 
 
             string result = Connections.InsertMotorcycleIntoDB(
-                ID_Motorcycle: Convert.ToInt32(Session["globalProductId"]),
-                ID_Brand: id_brand,
-                Model: model,
-                ManufactoringYear: manufactoringYear,
-                EngineType: engineType,
-                EngineCapacity: engineCapacity,
-                ColorBike: bikeColor,
-                Price: price,
-                Condition: condition,
-                Description: description,
-                MotorcycleImage: img,
-                MotorcycleImageType: "jpg",
-                Active: 1
+                Convert.ToInt32(Session["globalProductId"]),
+                id_brand,
+                model,
+                manufactoringYear,
+                engineType,
+                engineCapacity,
+                bikeColor,
+                price,
+                condition,
+                description,
+                img,
+                "jpg",
+                1
             );
             Response.Redirect("InsertProducts.aspx");
         }
