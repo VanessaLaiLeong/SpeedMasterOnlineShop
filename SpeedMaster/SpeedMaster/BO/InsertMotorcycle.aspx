@@ -46,6 +46,14 @@
             <asp:Label ID="lbl_Description" runat="server">Motorcycle Description</asp:Label>
             <asp:TextBox ID="tb_description" runat="server" class="form-control" placeholder="ex. Taking the exclusive Ninja H2 ownership experience to a new level..."/>
         </div>
+        <div class="form-group pb-2">
+            <asp:Label ID="Label1" runat="server">Active</asp:Label>
+            <asp:RadioButtonList ID="rd_active" runat="server">
+                <asp:ListItem>yes</asp:ListItem>
+                <asp:ListItem>no</asp:ListItem>
+            </asp:RadioButtonList>
+            <asp:TextBox ID="tb_active" runat="server" class="form-control" placeholder="1"/>
+        </div>
 
         <asp:FileUpload ID="FileUpload1" runat="server" />
         <br />
