@@ -92,6 +92,7 @@
     <Content Include="FO\Activation.aspx" />
     <Content Include="FO\css\login.css" />
     <Content Include="FO\css\shoppingCart.css" />
+    <Content Include="FO\css\styles.css" />
     <Content Include="FO\home.aspx" />
     <Content Include="FO\InsertReviewCustomer.aspx" />
     <Content Include="FO\Login.aspx" />

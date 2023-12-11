@@ -351,3 +351,4 @@ D:\ATEC\Projeto Final\SpeedMaster\SpeedMaster\obj\Debug\SpeedMaster.csproj.CoreC
 D:\ATEC\Projeto Final\SpeedMaster\SpeedMaster\obj\Debug\SpeedMaster.csproj.CopyComplete
 D:\ATEC\Projeto Final\SpeedMaster\SpeedMaster\obj\Debug\SpeedMaster.dll
 D:\ATEC\Projeto Final\SpeedMaster\SpeedMaster\obj\Debug\SpeedMaster.pdb
+D:\ATEC\Projeto Final\SpeedMaster\SpeedMaster\bin\SpeedMaster.dll.config

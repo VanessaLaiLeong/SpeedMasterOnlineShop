@@ -240,5 +240,10 @@ namespace SpeedMaster.BO
             int customerId = Convert.ToInt32(button.CommandArgument);
             Connections.DeleteAccessoryAndGlobalProductsIdsDB(customerId);
         }
+
+        protected void btn_createProduct_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("InsertProducts.aspx");
+        }
     }
 }

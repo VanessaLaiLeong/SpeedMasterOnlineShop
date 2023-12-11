@@ -3,12 +3,21 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    helo
-
-    <asp:DropDownList ID="ddl_productType" runat="server" AutoPostBack="True">
-        <asp:ListItem>Motorcycle</asp:ListItem>
-        <asp:ListItem>Accessories</asp:ListItem>
-    </asp:DropDownList>
+    <h1>Products</h1>
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <asp:DropDownList ID="ddl_productType" class="form-select" runat="server">
+                <asp:ListItem>Select a Filter</asp:ListItem>
+                <asp:ListItem>Motorcycles</asp:ListItem>
+                <asp:ListItem>Accessories</asp:ListItem>
+            </asp:DropDownList>
+        </div>
+        <div class="col-md-6 d-flex justify-content-start">
+            <asp:Button ID="btn_createProduct" class="btn btn-success me-2" runat="server" Text="Create" OnClick="btn_createProduct_Click" />
+            <asp:Button ID="btn_modifyProduct" class="btn btn-primary me-2" runat="server" Text="Modify" />
+            <asp:Button ID="btn_deleteProduct" class="btn btn-danger me-2" runat="server" Text="Erase" />
+        </div>
+    </div>
 
     <asp:MultiView ID="MultiView1" runat="server">
         <asp:View ID="View1" runat="server">
@@ -57,8 +66,8 @@
                                     </td>
                                     <td>
                                         <%--este butao o icon esta um pouco desalinhado da um pouco de ocd, ja tentei alinhar mas nao estou a conseguir--%>
-                                        <asp:LinkButton ID="viewDetail" runat="server" class="btn btn-primary p-1 pb-2" Width="30px" Height="30px" CommandArgument='<%# Eval("ID_Motorcycle") %>' OnClick="viewDetail_Click"><i class="fa-solid fa-eye"></i></asp:LinkButton>
-                                        <asp:LinkButton ID="delete" runat="server" class="btn btn-warning p-1 pb-2" Width="30px" Height="30px" CommandArgument='<%# Eval("ID_Motorcycle") %>' OnClick="delete_Click"><i class="fa-solid fa-trash"></i></asp:LinkButton>
+                                        <asp:LinkButton ID="viewDetail" runat="server" class="btn btn-primary me-2" Width="30px" Height="30px" CommandArgument='<%# Eval("ID_Motorcycle") %>' OnClick="viewDetail_Click"><i class="fa-solid fa-eye"></i></asp:LinkButton>
+                                        <asp:LinkButton ID="delete" runat="server" class="btn btn-danger me-2" Width="30px" Height="30px" CommandArgument='<%# Eval("ID_Motorcycle") %>' OnClick="delete_Click"><i class="fa-solid fa-trash"></i></asp:LinkButton>
 
                                     </td>
                                 </tr>
@@ -87,7 +96,7 @@
                                     <td>
                                         <%--este butao o icon esta um pouco desalinhado da um pouco de ocd, ja tentei alinhar mas nao estou a conseguir--%>
                                         <asp:LinkButton ID="viewDetail" runat="server" class="btn btn-primary p-1 pb-2" Width="30px" Height="30px" CommandArgument='<%# Eval("ID_Motorcycle") %>' OnClick="viewDetail_Click"><i class="fa-solid fa-eye"></i></asp:LinkButton>
-                                        <asp:LinkButton ID="delete" runat="server" class="btn btn-warning p-1 pb-2" Width="30px" Height="30px" CommandArgument='<%# Eval("ID_Motorcycle") %>' OnClick="delete_Click"><i class="fa-solid fa-trash"></i></asp:LinkButton>
+                                        <asp:LinkButton ID="delete" runat="server" class="btn btn-danger me-2" Width="30px" Height="30px" CommandArgument='<%# Eval("ID_Motorcycle") %>' OnClick="delete_Click"><i class="fa-solid fa-trash"></i></asp:LinkButton>
 
                                     </td>
                                 </tr>
@@ -163,8 +172,8 @@
                                     </td>
                                     <td>
                                         <%--este butao o icon esta um pouco desalinhado da um pouco de ocd, ja tentei alinhar mas nao estou a conseguir--%>
-                                          <asp:LinkButton ID="accessoryDeatils" runat="server" class="btn btn-primary p-1 me-2" Width="30px" Height="30px" CommandArgument='<%# Eval("ID_Accessory") %>' OnClick="accessoryDeatils_Click"><i class="fa-solid fa-eye"></i></asp:LinkButton>
-                                       <asp:LinkButton ID="acessoryDelete" runat="server" class="btn btn-warning p-1 pb-2" Width="30px" Height="30px" CommandArgument='<%# Eval("ID_Accessory") %>' OnClick="acessoryDelete_Click"><i class="fa-solid fa-trash"></i></asp:LinkButton>
+                                        <asp:LinkButton ID="accessoryDeatils" runat="server" class="btn btn-primary p-1 me-2" Width="30px" Height="30px" CommandArgument='<%# Eval("ID_Accessory") %>' OnClick="accessoryDeatils_Click"><i class="fa-solid fa-eye"></i></asp:LinkButton>
+                                        <asp:LinkButton ID="acessoryDelete" runat="server" class="btn btn-warning p-1 pb-2" Width="30px" Height="30px" CommandArgument='<%# Eval("ID_Accessory") %>' OnClick="acessoryDelete_Click"><i class="fa-solid fa-trash"></i></asp:LinkButton>
 
                                     </td>
                                 </tr>
@@ -221,5 +230,4 @@
 
         </asp:View>
     </asp:MultiView>
-
 </asp:Content>
