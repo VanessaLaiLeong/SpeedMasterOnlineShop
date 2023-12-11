@@ -34,7 +34,7 @@ namespace SpeedMaster.BO
                 Convert.ToInt32(Session["globalProductId"]),
                 Name.Text,
                 Description.Text,
-                Convert.ToDouble(Price.Text),
+                double.Parse(Price.Text),
                 Convert.ToInt32(Stock.Text),
                 active,
                 Convert.ToInt32(ddl_category.SelectedValue),

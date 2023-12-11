@@ -24,15 +24,6 @@ namespace SpeedMaster.BO
         protected global::System.Web.UI.WebControls.DropDownList ddl_productType;
 
         /// <summary>
-        /// div_motor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_motor;
-
-        /// <summary>
         /// btn_insert_motorcycles control.
         /// </summary>
         /// <remarks>
@@ -40,6 +31,15 @@ namespace SpeedMaster.BO
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_insert_motorcycles;
+
+        /// <summary>
+        /// div_motor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_motor;
 
         /// <summary>
         /// rp_motocycles control.
@@ -58,15 +58,6 @@ namespace SpeedMaster.BO
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_access;
-
-        /// <summary>
-        /// btn_insert_accessories control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_insert_accessories;
 
         /// <summary>
         /// rp_accessories control.

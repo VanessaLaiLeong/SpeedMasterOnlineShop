@@ -12,18 +12,23 @@ namespace SpeedMaster.BO
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["ID_Motorcycle"] = Convert.ToInt32(Request.QueryString["motor_id"]);
-            int motor_id = Convert.ToInt32(Request.QueryString["motor_id"].ToString());
+            if (!IsPostBack)
+            {
+                Session["ID_Motorcycle"] = Convert.ToInt32(Request.QueryString["motor_id"]);
+                int motor_id = Convert.ToInt32(Request.QueryString["motor_id"].ToString());
 
-            DataTable dt = Connections.GetDataTableFromQuery($"select * from Motorcycles where ID_Motorcycle = {motor_id}");
-            tb_color.Text = dt.Rows[0]["Color"].ToString();
-            tb_model.Text = dt.Rows[0]["Model"].ToString();
-            tb_engCap.Text = dt.Rows[0]["EngineCapacity"].ToString();
-            tb_engType.Text = dt.Rows[0]["EngineType"].ToString();
-            tb_manuDate.Text = dt.Rows[0]["ManufactoringYear"].ToString();
-            tb_description.Text = dt.Rows[0]["Description"].ToString();
-            tb_condition.Text = dt.Rows[0]["Condition"].ToString();
-            tb_price.Text = dt.Rows[0]["Price"].ToString();
+                DataTable dt = Connections.GetDataTableFromQuery($"select * from Motorcycles where ID_Motorcycle = {motor_id}");
+                tb_color.Text = dt.Rows[0]["Color"].ToString();
+                tb_model.Text = dt.Rows[0]["Model"].ToString();
+                tb_engCap.Text = dt.Rows[0]["EngineCapacity"].ToString();
+                tb_engType.Text = dt.Rows[0]["EngineType"].ToString();
+                tb_manuDate.Text = dt.Rows[0]["ManufactoringYear"].ToString();
+                tb_description.Text = dt.Rows[0]["Description"].ToString();
+                tb_condition.Text = dt.Rows[0]["Condition"].ToString();
+                tb_price.Text = dt.Rows[0]["Price"].ToString();
+                ddl_Brand.SelectedValue = dt.Rows[0]["ID_Brand"].ToString();
+            }
+            
         }
 
         protected void bnt_update_Click(object sender, EventArgs e)
@@ -31,7 +36,7 @@ namespace SpeedMaster.BO
             byte[] img = Services.getImageInfo(fu_moto);
 
             int ID_Motorcycle = Convert.ToInt32(Request.QueryString["motor_id"]);
-            int ID_Brand = dp_brand.SelectedIndex;
+            int ID_Brand = Convert.ToInt32(ddl_Brand.SelectedValue);
             string Model = tb_model.Text;
             int ManufactoringYear = Convert.ToInt32(tb_manuDate.Text);
             string EngineType = tb_engType.Text;
