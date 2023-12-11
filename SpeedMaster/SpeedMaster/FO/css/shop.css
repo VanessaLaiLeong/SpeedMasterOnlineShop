@@ -45,8 +45,10 @@ body {
 /*styles for gridCardShop*/
 #GridCardShop {
     padding-top: 2%;
-    padding-bottom: 5%
+    padding-bottom: 5%;
+    padding-left: 9%;
 }
+
 /*----------------------------styles for hover images----------------------------*/
 div.show-image {
     position: relative;
