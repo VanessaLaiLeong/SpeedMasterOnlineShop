@@ -15,24 +15,6 @@ namespace SpeedMaster.BO
     {
 
         /// <summary>
-        /// lbl_name control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lbl_name;
-
-        /// <summary>
-        /// in_name control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox in_name;
-
-        /// <summary>
         /// lbl_model control.
         /// </summary>
         /// <remarks>

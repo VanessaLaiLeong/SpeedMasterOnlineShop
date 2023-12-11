@@ -4,9 +4,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h2>Motorcycle Details</h2>
     <div class="form-group container">
-        <label id="lbl_name" runat="server">Name</label>
-        <asp:TextBox ID="in_name" runat="server" class="form-control" placeholder="name" />
-        <br />
         <label id="lbl_model" runat="server">Model</label>
         <asp:TextBox ID="tb_model" runat="server" class="form-control" placeholder="model" />
         <br />
