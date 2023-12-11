@@ -49,6 +49,7 @@ namespace SpeedMaster.BO
             string shipping_date = dt.Rows[0]["ShippingDate"].ToString();
             int id_orderStatus = dp_orderStatus.SelectedIndex;
 
+
             tb_orderDate.Text = order_date.ToString();
             tb_ShippingDate.Text = shipping_date.ToString();
             tb_totalAmount.Text = totalAmount.ToString();
