@@ -6,9 +6,11 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
+using System.Security.Cryptography;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using static iTextSharp.text.pdf.XfaForm;
 
 namespace SpeedMaster.FO
 {
@@ -22,6 +24,7 @@ namespace SpeedMaster.FO
                 BindRepeater("");
 
             }
+            
         }
 
         private void PrintProductDetails(DataTable productDetails)
@@ -86,7 +89,52 @@ namespace SpeedMaster.FO
 
                 ((Label)e.Item.FindControl("lbl_description")).Text = dr["Description"].ToString();
                 ((Label)e.Item.FindControl("lbl_username")).Text = dr["FirstName"].ToString() + dr["LastName"].ToString();
+                Session["rating"] = dr["Rating"].ToString();
+                if (Convert.ToInt32(Session["rating"]) ==1)
+                {
+                    ((LinkButton)e.Item.FindControl("star1")).CssClass = "fa-solid fa-star";
+                    ((LinkButton)e.Item.FindControl("star2")).CssClass = "fa-regular fa-star";
+                    ((LinkButton)e.Item.FindControl("star3")).CssClass = "fa-regular fa-star";
+                    ((LinkButton)e.Item.FindControl("star4")).CssClass = "fa-regular fa-star";
+                    ((LinkButton)e.Item.FindControl("star5")).CssClass = "fa-regular fa-star";
+                   
+                }
+                if (Convert.ToInt32(Session["rating"]) == 2)
+                {
+                    ((LinkButton)e.Item.FindControl("star1")).CssClass = "fa-solid fa-star";
+                    ((LinkButton)e.Item.FindControl("star2")).CssClass = "fa-solid fa-star";
+                    ((LinkButton)e.Item.FindControl("star3")).CssClass = "fa-regular fa-star";
+                    ((LinkButton)e.Item.FindControl("star4")).CssClass = "fa-regular fa-star";
+                    ((LinkButton)e.Item.FindControl("star5")).CssClass = "fa-regular fa-star";
 
+                }
+                if (Convert.ToInt32(Session["rating"]) == 3)
+                {
+                    ((LinkButton)e.Item.FindControl("star1")).CssClass = "fa-solid fa-star";
+                    ((LinkButton)e.Item.FindControl("star2")).CssClass = "fa-solid fa-star";
+                    ((LinkButton)e.Item.FindControl("star3")).CssClass = "fa-solid fa-star";
+                    ((LinkButton)e.Item.FindControl("star4")).CssClass = "fa-regular fa-star";
+                    ((LinkButton)e.Item.FindControl("star5")).CssClass = "fa-regular fa-star";
+
+                }
+                if (Convert.ToInt32(Session["rating"]) == 4)
+                {
+                    ((LinkButton)e.Item.FindControl("star1")).CssClass = "fa-solid fa-star";
+                    ((LinkButton)e.Item.FindControl("star2")).CssClass = "fa-solid fa-star";
+                    ((LinkButton)e.Item.FindControl("star3")).CssClass = "fa-solid fa-star";
+                    ((LinkButton)e.Item.FindControl("star4")).CssClass = "fa-solid fa-star";
+                    ((LinkButton)e.Item.FindControl("star5")).CssClass = "fa-regular fa-star";
+
+                }
+                if (Convert.ToInt32(Session["rating"]) == 5)
+                {
+                    ((LinkButton)e.Item.FindControl("star1")).CssClass = "fa-solid fa-star";
+                    ((LinkButton)e.Item.FindControl("star2")).CssClass = "fa-solid fa-star";
+                    ((LinkButton)e.Item.FindControl("star3")).CssClass = "fa-solid fa-star";
+                    ((LinkButton)e.Item.FindControl("star4")).CssClass = "fa-solid fa-star";
+                    ((LinkButton)e.Item.FindControl("star5")).CssClass = "fa-solid fa-star";
+
+                }
 
 
             }
@@ -157,6 +205,33 @@ namespace SpeedMaster.FO
         {
             PageNumber = Convert.ToInt32(e.CommandArgument) - 1;
             BindRepeater("");
+        }
+
+     
+
+        protected void star1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void star2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void star3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void star4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void star5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

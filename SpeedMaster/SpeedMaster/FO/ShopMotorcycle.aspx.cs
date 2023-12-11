@@ -193,5 +193,30 @@ namespace SpeedMaster.FO
         {
             BindRepeater($" where Model = '{searchKeyWord.Text}' ");
         }
+
+        protected void star1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void star2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void star3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void star4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void star5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
