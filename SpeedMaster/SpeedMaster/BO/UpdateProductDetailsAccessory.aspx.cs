@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,33 +12,29 @@ namespace SpeedMaster.BO
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["ID_Accessory"] = Convert.ToInt32(Request.QueryString["productId"]);
-
-            if (!IsPostBack)
-            {
-                //tbox = Session["AccessoryName"].ToString()
-            }
+            Session["ID_Accessory"] = Convert.ToInt32(Request.QueryString["access_id"]);
         }
 
         protected void update_Click(object sender, EventArgs e)
         {
-            if (Convert.ToString(Session["productType"]) == "Accessory")
-            {
+            Response.Write(Connections.UpdateAccessoryInDB(
+                    ID_Accessory: Convert.ToInt32(Request.QueryString["access_id"]),
+                    AccessoryName: in_name.Text,
+                    Description: in_description.Text,
+                    Price: Convert.ToDouble(in_price.Text),
+                    Stock: Convert.ToInt32(in_stock.Text),
+                    Active: true,
+                    ID_Category: Convert.ToInt32(dp_category.SelectedValue),
+                    img: Services.getImageInfo(fu_access)
+                ));
 
-                Connections.UpdateAccessoryInDB(
-                    //aqui alterar tudo para tbox
-                        ID_Accessory: Convert.ToInt32(Session["ID_Accessory"]),
-                        AccessoryName: Session["AccessoryName"].ToString(),
-                        Description: Session["AccessoryDescription"].ToString(),
-                        Price: Convert.ToDouble(Session["AccessoryPrice"]),
-                        Stock: Convert.ToInt32(Session["AccessoryStock"]),
-                        Active: Convert.ToBoolean(Session["AccessoryActive"]),
-                        ID_Category: Convert.ToInt32(Session["ID_AccessoryCategory"]),
-                        img: (byte[])Session["AccessoryImage"]
-                    );
+            Response.Redirect("ShowAllProducts.aspx");
+        }
 
-                Response.Write("success!");
-            }
+        protected void btn_delete_Click(object sender, EventArgs e)
+        {
+            Connections.DeleteAccessoryAndGlobalProductsIdsDB(Convert.ToInt32(Request.QueryString["productId"]));
+            Response.Redirect("ShowAllProducts.aspx");
         }
     }
 }
