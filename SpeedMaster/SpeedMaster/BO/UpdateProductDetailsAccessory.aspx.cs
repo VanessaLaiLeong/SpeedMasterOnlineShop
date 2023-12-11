@@ -28,7 +28,7 @@ namespace SpeedMaster.BO
                     img: Services.getImageInfo(fu_access)
                 ));
 
-            //Response.Redirect("ShowAllProducts.aspx");
+            Response.Redirect("ShowAllProducts.aspx");
         }
 
         protected void btn_delete_Click(object sender, EventArgs e)

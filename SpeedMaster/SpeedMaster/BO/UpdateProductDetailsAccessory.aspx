@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h2 class="container">Accessory details</h2>
+    <h2>Accessory details</h2>
     <div class="form-group container">
         <label id="lbl_name" runat="server">Name</label>
         <asp:TextBox ID="in_name" runat="server" class="form-control" placeholder="name" />
