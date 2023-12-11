@@ -57,7 +57,7 @@
 
                                                 <!-- Address input -->
                         <div class="form-outline mb-4">
-                            <input type="password" id="Address" class="form-control" />
+                            <input type="email" id="Address" class="form-control" />
                             <label class="form-label" for="Address">Address</label>
                         </div>                        
                         
