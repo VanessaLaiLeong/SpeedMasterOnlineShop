@@ -10,15 +10,15 @@
 
 ### Loja online (motas, pecas e acessorios)
 - [X] Montra de motas a venda
-- [X] Montra de acessorios
+- [ ] Montra de acessorios
 
 #### Filtros de pesquisa para a montra de motas:
 - [X] marca,
-- [X] modelo,
-- [X] preco (range),
-- [X] cilindrada,
-- [X] cor,
-- [X] categoria.
+- [ ] modelo,
+- [ ] preco (range),
+- [ ] cilindrada,
+- [ ] cor,
+- [ ] categoria.
 
 #### Filtros de pesquisa para a montra de acessorios:
 - [ ] tipo de acessorio,
@@ -59,7 +59,7 @@
 - [ ] opcao para continuar para o pagamento dos produtos na lista
 
 * [ ] Simulador de pagamentos
-* [ ] Live Chat
+* [X] Live Chat
 
 
 #### Front end 
@@ -75,7 +75,7 @@
 - [ ] Fix transitions
 - [X] about page
 - [X] SendEmailresetPassoword
-- [ ] add reviews to shopMotorcycleDetails and  shopAccessoriesDetails
+- [X] add reviews to shopMotorcycleDetails and  shopAccessoriesDetails
 
 
 
@@ -85,10 +85,10 @@
 #### Gestao de encomendas
 Esta pagina tera uma lista com todas as encomendas. A lista sera usada e visualizada com
 apenas as seguintes funcionalidades:
-- [X] Pedidos com diferenciacao no estado da encomenda.
+- [ ] Pedidos com diferenciacao no estado da encomenda.
 - [ ] Notificacao de pedidos de encomendas novas.
 - [ ] Filtrar pedidos (id, cliente, marca, estado).
-- [X] Capacidade de cancelar encomendas.
+- [ ] Capacidade de cancelar encomendas.
 
 #### Numero de pedido / encomenda
 - [ ] Envio do pedido para o armazem (interno)/fornecedor (email)
@@ -100,12 +100,13 @@ apenas as seguintes funcionalidades:
 - [X] Criar, modificar, apagar produtos
 
 #### Operações e agendamentos
-* [X] Suporte ao cliente
-* [X] Agendamento de consultas
-* [X] Gestão de clientes:
-    - [X] Informacoes do cliente
-    - [X] Historico de compras
-    - [X] Contactos do cliente
+* [ ] Agendamento de test drives
+* [ ] Suporte ao cliente
+* [ ] Agendamento de consultas
+* [ ] Gestão de clientes:
+    - [ ] Informacoes do cliente
+    - [ ] Historico de compras
+    - [ ] Contactos do cliente
 * [ ] Registo de venda
     - [ ] Gestao de faturas
     - [ ] Gestao de pagamentos

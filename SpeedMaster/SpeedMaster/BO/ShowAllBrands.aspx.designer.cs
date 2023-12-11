@@ -33,24 +33,6 @@ namespace SpeedMaster.BO
         protected global::System.Web.UI.WebControls.Button btn_createProduct;
 
         /// <summary>
-        /// btn_modifyProduct control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_modifyProduct;
-
-        /// <summary>
-        /// btn_deleteProduct control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_deleteProduct;
-
-        /// <summary>
         /// rp_showBrands control.
         /// </summary>
         /// <remarks>
@@ -58,15 +40,6 @@ namespace SpeedMaster.BO
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rp_showBrands;
-
-        /// <summary>
-        /// btn_add_brand control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_add_brand;
 
         /// <summary>
         /// SqlDataSource1 control.
