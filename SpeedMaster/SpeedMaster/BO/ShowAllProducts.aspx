@@ -6,227 +6,85 @@
     <h1>Products</h1>
     <div class="row mb-4">
         <div class="col-md-3">
-            <asp:DropDownList ID="ddl_productType" class="form-select" runat="server" AutoPostBack="True">
+            <asp:DropDownList ID="ddl_productType" class="form-select" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddl_productType_SelectedIndexChanged">
                 <asp:ListItem>Select a Filter</asp:ListItem>
                 <asp:ListItem>Motorcycles</asp:ListItem>
                 <asp:ListItem>Accessories</asp:ListItem>
             </asp:DropDownList>
         </div>
-        <div class="col-md-6 d-flex justify-content-start">
-            <asp:Button ID="btn_createProduct" class="btn btn-success me-2" runat="server" Text="Create" OnClick="btn_createProduct_Click" />
-            <asp:Button ID="btn_modifyProduct" class="btn btn-primary me-2" runat="server" Text="Modify" />
-            <asp:Button ID="btn_deleteProduct" class="btn btn-danger me-2" runat="server" Text="Erase" />
-        </div>
     </div>
 
-    <asp:MultiView ID="MultiView1" runat="server">
-        <asp:View ID="View1" runat="server">
-            <div class="table-responsive">
-                <table class="table table-bordered">
-                    <thead class="thead-light">
+    <div id="div_motor" runat="server">
+        <h3>Motorcycles</h3>
+        <table id="table_motorcycles" class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Brand</th>
+                    <th scope="col">Model</th>
+                    <th scope="col">Manufacturing Year</th>
+                    <th scope="col">Engine Type</th>
+                    <th scope="col">Engine Capacity</th>
+                    <th scope="col">Color</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Condition</th>
+                    <th scope="col">Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <asp:Repeater ID="rp_motocycles" runat="server" DataSourceID="sql_motorcycles" OnItemDataBound="rp_motocycles_ItemDataBound">
+                    <ItemTemplate>
                         <tr>
-                            <th>Items
-                       <%-- <button class="sort-button">...</button></th>--%>
-                            <th>Category
-                        <%-- <button class="sort-button">...</button></th>--%>
-                            <th>Status
-                        <%-- <button class="sort-button">...</button></th>--%>
-                            <th>Sales
-                         <%-- <button class="sort-button">...</button></th>--%>
-                            <th>Quantity
-                        <%-- <button class="sort-button">...</button></th>--%>
-                            <th>Price
-                         <%-- <button class="sort-button">...</button></th>--%>
-                            <th>Action</th>
+                            <td><asp:Label ID="lbl_motorId" runat="server" Text="N/A"></asp:Label></td>
+                            <td><asp:Label ID="lbl_brand" runat="server" Text="N/A"></asp:Label></td>
+                            <td><asp:Label ID="lbl_model" runat="server" Text="N/A"></asp:Label></td>
+                            <td><asp:Label ID="lbl_manYear" runat="server" Text="N/A"></asp:Label></td>
+                            <td><asp:Label ID="lbl_engType" runat="server" Text="N/A"></asp:Label></td>
+                            <td><asp:Label ID="lbl_engCap" runat="server" Text="N/A"></asp:Label></td>
+                            <td><asp:Label ID="lbl_color" runat="server" Text="N/A"></asp:Label></td>
+                            <td><asp:Label ID="lbl_price" runat="server" Text="N/A"></asp:Label></td>
+                            <td><asp:Label ID="lbl_condition" runat="server" Text="N/A"></asp:Label></td>
+                            <td>
+                                <asp:Button ID="btn_motorDetails" runat="server" CommandArgument='<%# Eval("ID_Motorcycle") %>' Text="Details" OnClick="btn_motorDetails_Click" CssClass="btn btn-secondary"/>
+                            </td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <asp:Repeater ID="Repeater1" runat="server" OnItemDataBound="Repeater1_ItemDataBound">
-                            <ItemTemplate>
-                                <tr>
-                                    <td>
-                                        <asp:Label ID="lbl_productName" runat="server" Text="Label"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="lbl_status" runat="server" Text="Label" class="badge badge-success"></asp:Label>
-                                    </td>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </tbody>
+        </table>
+    </div>
 
-                                    <td>
-                                        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="lbl_quantity" runat="server" Text="Label"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="lbl_price" runat="server" Text="Label"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <%--este butao o icon esta um pouco desalinhado da um pouco de ocd, ja tentei alinhar mas nao estou a conseguir--%>
-                                        <asp:LinkButton ID="viewDetail" runat="server" class="btn btn-primary me-2" Width="30px" Height="30px" CommandArgument='<%# Eval("ID_Motorcycle") %>' OnClick="viewDetail_Click"><i class="fa-solid fa-eye"></i></asp:LinkButton>
-                                        <asp:LinkButton ID="delete" runat="server" class="btn btn-danger me-2" Width="30px" Height="30px" CommandArgument='<%# Eval("ID_Motorcycle") %>' OnClick="delete_Click"><i class="fa-solid fa-trash"></i></asp:LinkButton>
-
-                                    </td>
-                                </tr>
-                            </ItemTemplate>
-                            <AlternatingItemTemplate>
-                                <tr>
-                                    <td>
-                                        <asp:Label ID="lbl_productName" runat="server" Text="Label"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="lbl_status" runat="server" Text="Label" class="badge badge-success"></asp:Label>
-                                    </td>
-
-                                    <td>
-                                        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="lbl_quantity" runat="server" Text="Label"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="lbl_price" runat="server" Text="Label"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <%--este butao o icon esta um pouco desalinhado da um pouco de ocd, ja tentei alinhar mas nao estou a conseguir--%>
-                                        <asp:LinkButton ID="viewDetail" runat="server" class="btn btn-primary p-1 pb-2" Width="30px" Height="30px" CommandArgument='<%# Eval("ID_Motorcycle") %>' OnClick="viewDetail_Click"><i class="fa-solid fa-eye"></i></asp:LinkButton>
-                                        <asp:LinkButton ID="delete" runat="server" class="btn btn-danger me-2" Width="30px" Height="30px" CommandArgument='<%# Eval("ID_Motorcycle") %>' OnClick="delete_Click"><i class="fa-solid fa-trash"></i></asp:LinkButton>
-
-                                    </td>
-                                </tr>
-                            </AlternatingItemTemplate>
-                        </asp:Repeater>
-                    </tbody>
-
-                </table>
-            </div>
-            <asp:Repeater ID="Repeater2" runat="server" OnItemCommand="Repeater2_ItemCommand">
-                <ItemTemplate>
-                    <asp:LinkButton ID="btnPage"
-                        Style="padding: 8px; margin: 2px; background: #ffa100; border: solid 1px #666; font: 8pt tahoma;"
-                        CommandName="Page"
-                        CommandArgument='<%# Container.DataItem %>'
-                        runat="server" ForeColor="White" Font-Bold="True">
-                        <%# Container.DataItem %>
-                    </asp:LinkButton>
-
-                </ItemTemplate>
-            </asp:Repeater>
-
-
-        </asp:View>
-        <asp:View ID="View2" runat="server">
-            <div class="table-responsive">
-                <table class="table table-bordered">
-                    <thead class="thead-light">
+    <div id="div_access" runat="server">
+        <h3>Accessories</h3>
+        <table id="table_accessories" class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col"> Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <asp:Repeater ID="rp_accessories" runat="server" DataSourceID="sql_accessories" OnItemDataBound="rp_accessories_ItemDataBound">
+                    <ItemTemplate>
                         <tr>
-                            <th>Items
-                       <%-- <button class="sort-button">...</button></th>--%>
-                            <th>Category
-                        <%-- <button class="sort-button">...</button></th>--%>
-                            <th>Status
-                        <%-- <button class="sort-button">...</button></th>--%>
-
-                            <th>Sales
-                         <%-- <button class="sort-button">...</button></th>--%>
-                            <th>Quantity
-                        <%-- <button class="sort-button">...</button></th>--%>
-                            <th>Price
-                         <%-- <button class="sort-button">...</button></th>--%>
-                            <th>Action</th>
+                            <td><asp:Label ID="lbl_accessId" runat="server"></asp:Label></td>
+                            <td><asp:Label ID="lbl_accessName" runat="server"></asp:Label></td>
+                            <td><asp:Label ID="lbl_accessPrice" runat="server"></asp:Label></td>
+                            <td><asp:Label ID="lbl_accessStock" runat="server"></asp:Label></td>
+                            <td>
+                                <asp:Button ID="btn_accessDetails" runat="server" CommandArgument='<%# Eval("ID_Accessory") %>' Text="Details" OnClick="btn_accessDetails_Click" CssClass="btn btn-secondary"/>
+                            </td>
                         </tr>
-                    </thead>
-                    <tbody>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </tbody>
+        </table>
+    </div>
 
+    <asp:SqlDataSource ID="sql_motorcycles" runat="server" ConnectionString="<%$ ConnectionStrings:SpeedMasterConnectionString %>" SelectCommand="select ID_Motorcycle, Brands.BrandName, Model, ManufactoringYear, EngineType, EngineCapacity, Color, Price, Condition from Motorcycles as m inner join  Brands on Brands.ID_Brand = m.ID_Brand;"></asp:SqlDataSource>
 
-
-
-                        <asp:Repeater ID="Repeater3" runat="server" OnItemDataBound="Repeater3_ItemDataBound">
-                            <ItemTemplate>
-
-                                <tr>
-                                    <td>
-                                        <asp:Label ID="lbl_productName" runat="server" Text="Label"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="lbl_status" runat="server" Text="Label" class="badge badge-success"></asp:Label>
-                                    </td>
-
-                                    <td>
-                                        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="lbl_quantity" runat="server" Text="Label"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="lbl_price" runat="server" Text="Label"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <%--este butao o icon esta um pouco desalinhado da um pouco de ocd, ja tentei alinhar mas nao estou a conseguir--%>
-                                        <asp:LinkButton ID="accessoryDeatils" runat="server" class="btn btn-primary p-1 me-2" Width="30px" Height="30px" CommandArgument='<%# Eval("ID_Accessory") %>' OnClick="accessoryDeatils_Click"><i class="fa-solid fa-eye"></i></asp:LinkButton>
-                                        <asp:LinkButton ID="acessoryDelete" runat="server" class="btn btn-warning p-1 pb-2" Width="30px" Height="30px" CommandArgument='<%# Eval("ID_Accessory") %>' OnClick="acessoryDelete_Click"><i class="fa-solid fa-trash"></i></asp:LinkButton>
-
-                                    </td>
-                                </tr>
-                            </ItemTemplate>
-                            <AlternatingItemTemplate>
-                                <tr>
-                                    <td>
-                                        <asp:Label ID="lbl_productName" runat="server" Text="Label"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="lbl_status" runat="server" Text="Label" class="badge badge-success"></asp:Label>
-                                    </td>
-
-                                    <td>
-                                        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="lbl_quantity" runat="server" Text="Label"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:Label ID="lbl_price" runat="server" Text="Label"></asp:Label>
-                                    </td>
-                                    <td>
-                                        <asp:LinkButton ID="accessoryDeatils" runat="server" class="btn btn-primary p-1 me-2" Width="30px" Height="30px" CommandArgument='<%# Eval("ID_Accessory") %>' OnClick="accessoryDeatils_Click"><i class="fa-solid fa-eye"></i></asp:LinkButton>
-                                        <%--<asp:ImageButton ID="btn_viewDetail" runat="server" class="btn btn-primary p-1 me-2" ImageUrl="~/BO/img/eye-solid.svg"
-                        Width="30px" Height="30px" CommandArgument='<%# Eval("ProductID") %>' OnClick="btn_viewDetail_Click" />
-                    <asp:ImageButton ID="btn_delete" runat="server" ImageUrl="~/BO/img/trash-can-solid.svg" class="btn btn-danger p-1"
-                        Width="30px" Height="30px" OnClick="btn_delete_Click" />--%>
-
-                                    </td>
-                                </tr>
-                            </AlternatingItemTemplate>
-                        </asp:Repeater>
-                    </tbody>
-
-                </table>
-            </div>
-            <asp:Repeater ID="Repeater4" runat="server" OnItemCommand="Repeater4_ItemCommand">
-                <ItemTemplate>
-                    <asp:LinkButton ID="btnPage"
-                        Style="padding: 8px; margin: 2px; background: #ffa100; border: solid 1px #666; font: 8pt tahoma;"
-                        CommandName="Page"
-                        CommandArgument='<%# Container.DataItem %>'
-                        runat="server" ForeColor="White" Font-Bold="True">
-                        <%# Container.DataItem %>
-                    </asp:LinkButton>
-
-                </ItemTemplate>
-            </asp:Repeater>
-
-
-        </asp:View>
-    </asp:MultiView>
+    <asp:SqlDataSource ID="sql_accessories" runat="server" ConnectionString="<%$ ConnectionStrings:SpeedMasterConnectionString %>" SelectCommand="select * from Accessories;"></asp:SqlDataSource>
 </asp:Content>

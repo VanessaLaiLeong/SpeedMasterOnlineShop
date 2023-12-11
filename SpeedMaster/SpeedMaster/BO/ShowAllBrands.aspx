@@ -33,7 +33,8 @@
                         <td>
                             <asp:Label ID="lbl_countryOfOrigin" runat="server" Text="Not found"></asp:Label></td>
                         <td>
-                            <asp:Button ID="btn_brand" runat="server" CommandArgument='<%# Eval("ID_Brand") %>' Text="Details" OnClick="btn_brand_Click" CssClass="btn btn-secondary"/></td>
+                            <asp:Button ID="btn_brand" runat="server" CommandArgument='<%# Eval("ID_Brand") %>' Text="Details" OnClick="btn_brand_Click" CssClass="btn btn-secondary"/>
+                        </td>
                     </tr>
                 </ItemTemplate>
             </asp:Repeater>

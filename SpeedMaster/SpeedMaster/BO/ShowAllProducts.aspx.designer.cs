@@ -24,93 +24,57 @@ namespace SpeedMaster.BO
         protected global::System.Web.UI.WebControls.DropDownList ddl_productType;
 
         /// <summary>
-        /// btn_createProduct control.
+        /// div_motor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_createProduct;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_motor;
 
         /// <summary>
-        /// btn_modifyProduct control.
+        /// rp_motocycles control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_modifyProduct;
+        protected global::System.Web.UI.WebControls.Repeater rp_motocycles;
 
         /// <summary>
-        /// btn_deleteProduct control.
+        /// div_access control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_deleteProduct;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div_access;
 
         /// <summary>
-        /// MultiView1 control.
+        /// rp_accessories control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.MultiView MultiView1;
+        protected global::System.Web.UI.WebControls.Repeater rp_accessories;
 
         /// <summary>
-        /// View1 control.
+        /// sql_motorcycles control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.View View1;
+        protected global::System.Web.UI.WebControls.SqlDataSource sql_motorcycles;
 
         /// <summary>
-        /// Repeater1 control.
+        /// sql_accessories control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater1;
-
-        /// <summary>
-        /// Repeater2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater2;
-
-        /// <summary>
-        /// View2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View View2;
-
-        /// <summary>
-        /// Repeater3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater3;
-
-        /// <summary>
-        /// Repeater4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater Repeater4;
+        protected global::System.Web.UI.WebControls.SqlDataSource sql_accessories;
     }
 }

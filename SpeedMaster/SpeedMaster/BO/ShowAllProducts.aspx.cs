@@ -18,227 +18,66 @@ namespace SpeedMaster.BO
         {
             if (!IsPostBack)
             {
-                BindRepeater("select * from motorcycles");
-                BindRepeater2("select * from accessories");
+                div_motor.Visible = true;
+                div_access.Visible = false;
             }
+        }
 
-            if (ddl_productType.SelectedValue == "Motorcycle")
+        protected void rp_motocycles_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            DataRowView dr = (DataRowView)e.Item.DataItem;
+            ((Label)e.Item.FindControl("lbl_motorId")).Text = dr["ID_Motorcycle"].ToString();
+            ((Label)e.Item.FindControl("lbl_brand")).Text = dr["BrandName"].ToString();
+            ((Label)e.Item.FindControl("lbl_model")).Text = dr["Model"].ToString();
+            ((Label)e.Item.FindControl("lbl_manYear")).Text = dr["ManufactoringYear"].ToString();
+            ((Label)e.Item.FindControl("lbl_engType")).Text = dr["EngineType"].ToString();
+            ((Label)e.Item.FindControl("lbl_engCap")).Text = dr["EngineCapacity"].ToString();
+            ((Label)e.Item.FindControl("lbl_color")).Text = dr["Color"].ToString();
+            ((Label)e.Item.FindControl("lbl_price")).Text = dr["Price"].ToString();
+            ((Label)e.Item.FindControl("lbl_condition")).Text = dr["Condition"].ToString();
+
+        }
+
+        protected void rp_accessories_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+            DataRowView dr = (DataRowView)e.Item.DataItem;
+            ((Label)e.Item.FindControl("lbl_accessId")).Text = dr["ID_Accessory"].ToString();
+            ((Label)e.Item.FindControl("lbl_accessName")).Text = dr["AccessoryName"].ToString();
+            ((Label)e.Item.FindControl("lbl_accessPrice")).Text = dr["Price"].ToString();
+            ((Label)e.Item.FindControl("lbl_accessStock")).Text = dr["Stock"].ToString();
+        }
+
+        protected void btn_motorDetails_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            string motor_id = button.CommandArgument.ToString();
+            Response.Redirect($"UpdateProductDetailsMotorcycle.aspx?motor_id={motor_id}");
+        }
+
+        protected void btn_accessDetails_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            string access_id = button.CommandArgument.ToString();
+            Response.Redirect($"UpdateProductDetailsAccessory.aspx?access_id={access_id}");
+        }
+
+        protected void ddl_productType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DropDownList ddl = (DropDownList)sender;
+            if (ddl.SelectedIndex == 0)
             {
-                MultiView1.ActiveViewIndex = 0;
+                return;
             }
-            else
+            else if (ddl.SelectedIndex == 1)
             {
-                MultiView1.ActiveViewIndex = 1;
+                div_access.Visible = false;
+                div_motor.Visible = true;
             }
-        }
-
-        //for repeater1 and reapeater2
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="query"></param>
-        private void BindRepeater(string query)
-        {
-            //Do your database connection stuff and get your data
-            SqlConnection cn = new SqlConnection(ConfigurationManager.
-                 ConnectionStrings["SpeedMasterConnectionString"].ConnectionString);
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = cn;
-            SqlDataAdapter ad = new SqlDataAdapter(cmd);
-            cmd.CommandText = query;
-
-            //save the result in data table
-            DataTable dt = new DataTable();
-            ad.SelectCommand = cmd;
-            ad.Fill(dt);
-
-            //Create the PagedDataSource that will be used in paging
-            PagedDataSource pgitems = new PagedDataSource();
-            pgitems.DataSource = dt.DefaultView;
-            pgitems.AllowPaging = true;
-
-            //Control page size from here 
-            pgitems.PageSize = 8;
-            pgitems.CurrentPageIndex = PageNumber;
-            if (pgitems.PageCount > 1)
+            else if(ddl.SelectedIndex == 2)
             {
-                Repeater2.Visible = true;
-                ArrayList pages = new ArrayList();
-                for (int i = 0; i <= pgitems.PageCount - 1; i++)
-                {
-                    pages.Add((i + 1).ToString());
-                }
-                Repeater2.DataSource = pages;
-                Repeater2.DataBind();
+                div_access.Visible = true;
+                div_motor.Visible = false;
             }
-            else
-            {
-                Repeater2.Visible = false;
-            }
-
-            //Finally, set the datasource of the repeater
-            Repeater1.DataSource = pgitems;
-            Repeater1.DataBind();
-
-        }
-
-        //for resperter3 and repeater4
-        private void BindRepeater2(string query)
-        {
-            //Do your database connection stuff and get your data
-            SqlConnection cn = new SqlConnection(ConfigurationManager.
-                 ConnectionStrings["SpeedMasterConnectionString"].ConnectionString);
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = cn;
-            SqlDataAdapter ad = new SqlDataAdapter(cmd);
-            cmd.CommandText = query;
-
-            //save the result in data table
-            DataTable dt = new DataTable();
-            ad.SelectCommand = cmd;
-            ad.Fill(dt);
-
-            //Create the PagedDataSource that will be used in paging
-            PagedDataSource pgitems = new PagedDataSource();
-            pgitems.DataSource = dt.DefaultView;
-            pgitems.AllowPaging = true;
-
-            //Control page size from here 
-            pgitems.PageSize = 8;
-            pgitems.CurrentPageIndex = PageNumber2;
-            if (pgitems.PageCount > 1)
-            {
-                Repeater4.Visible = true;
-                ArrayList pages = new ArrayList();
-                for (int i = 0; i <= pgitems.PageCount - 1; i++)
-                {
-                    pages.Add((i + 1).ToString());
-                }
-                Repeater4.DataSource = pages;
-                Repeater4.DataBind();
-            }
-            else
-            {
-                Repeater2.Visible = false;
-            }
-
-            //Finally, set the datasource of the repeater
-
-            Repeater3.DataSource = pgitems;
-
-            Repeater3.DataBind();
-        }
-        private int PageNumber
-        {
-            get
-            {
-                if (ViewState["PageNumber"] != null)
-                {
-                    return Convert.ToInt32(ViewState["PageNumber"]);
-                }
-                else
-                {
-                    return 0;
-                }
-            }
-            set { ViewState["PageNumber"] = value; }
-        }
-
-        private int PageNumber2
-        {
-            get
-            {
-                if (ViewState["PageNumber"] != null)
-                {
-                    return Convert.ToInt32(ViewState["PageNumber"]);
-                }
-                else
-                {
-                    return 0;
-                }
-            }
-            set { ViewState["PageNumber"] = value; }
-        }
-
-        //paging repeater of repeater1 for motorcycle
-        protected void Repeater2_ItemCommand(object source, RepeaterCommandEventArgs e)
-        {
-            PageNumber = Convert.ToInt32(e.CommandArgument) - 1;
-            BindRepeater("select * from motorcycles");
-        }
-
-        //paging repeater of repeater3 for accessories
-        protected void Repeater4_ItemCommand(object source, RepeaterCommandEventArgs e)
-        {
-            PageNumber2 = Convert.ToInt32(e.CommandArgument) - 1;
-            BindRepeater2("select * from accessories");
-        }
-
-        //motorcycle item data boud
-        protected void Repeater1_ItemDataBound(object sender, RepeaterItemEventArgs e)
-        {
-            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
-            {
-                DataRowView dr = (DataRowView)e.Item.DataItem;
-                ((Label)e.Item.FindControl("lbl_productName")).Text = dr["Model"].ToString();
-                //((Label)e.Item.FindControl("lbl_quantity")).Text = dr["Stock"].ToString();
-                ((Label)e.Item.FindControl("lbl_price")).Text = dr["Price"].ToString();
-            }
-        }
-
-        //accessories item data bound
-        protected void Repeater3_ItemDataBound(object sender, RepeaterItemEventArgs e)
-        {
-            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
-            {
-                DataRowView dr = (DataRowView)e.Item.DataItem;
-                ((Label)e.Item.FindControl("lbl_productName")).Text = dr["AccessoryName"].ToString();
-                //((Label)e.Item.FindControl("lbl_quantity")).Text = dr["Quantity"].ToString();
-                //((Label)e.Item.FindControl("lbl_price")).Text = dr["Price"].ToString();
-                if (dr["Active"].ToString() == "True")
-                {
-                    ((Label)e.Item.FindControl("lbl_status")).Text = "Active";
-                }
-                else ((Label)e.Item.FindControl("lbl_status")).Text = "Inactive";
-            }
-        }
-
-
-
-        //from here logic for the buttons
-        protected void viewDetail_Click(object sender, EventArgs e)
-        {
-            LinkButton button = (LinkButton)sender;
-            string productId = button.CommandArgument;
-            Session["productType"] = "Motorcycle";
-            Response.Redirect($"ShowProductDetail.aspx?productId={productId}");
-        }
-
-        protected void delete_Click(object sender, EventArgs e)
-        {
-            LinkButton button = (LinkButton)sender;
-            int customerId = Convert.ToInt32(button.CommandArgument);
-            Connections.DeleteMotorcycleAndGlobalProductsIDsFromDB(customerId);
-        }
-
-        protected void accessoryDeatils_Click(object sender, EventArgs e)
-        {
-            LinkButton button = (LinkButton)sender;
-            string productId = button.CommandArgument;
-            Session["productType"] = "Accessory";
-            Response.Redirect($"ShowProductDetail.aspx?productId={productId}");
-        }
-
-        protected void acessoryDelete_Click(object sender, EventArgs e)
-        {
-            LinkButton button = (LinkButton)sender;
-            int customerId = Convert.ToInt32(button.CommandArgument);
-            Connections.DeleteAccessoryAndGlobalProductsIdsDB(customerId);
-        }
-
-        protected void btn_createProduct_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("InsertProducts.aspx");
         }
     }
 }
