@@ -56,13 +56,15 @@
 
 
                     <ul class="navbar-nav">
-                        <asp:Label ID="lbl_customer" runat="server" Text="Bem vindo, !"></asp:Label>
+                        
                         <li class="nav-item">
                             <asp:LinkButton ID="shoppingcartnav" runat="server" Visible="False" OnClick="shoppingcartnav_Click">
-                    <a class="nav-link" href="Login.aspx">
-                        <i class="fas fa-user"></i> Login
-                    </a>
+                    <i class="fa-solid fa-cart-shopping"></i>
                             </asp:LinkButton>
+                        </li>
+                        <li class="nav-item ps-3">
+                            <asp:Label ID="lbl_customer" runat="server" Text="Bem vindo, !"></asp:Label>
+                           
                         </li>
                         <li class="nav-item">
                             <asp:LinkButton ID="lkbtn_user" runat="server" OnClick="lkbtn_user_Click1">

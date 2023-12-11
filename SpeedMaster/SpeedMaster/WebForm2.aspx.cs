@@ -16,7 +16,9 @@ namespace SpeedMaster
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Services.getProductsForReview(6, 4);
+            byte[] img = Services.getImageInfo(FileUpload1);
+            Connections.UpdateAccessoryInDB(41, "123", "123", 13.90, 23, true, 1, img);
+            
         }
     }
 }

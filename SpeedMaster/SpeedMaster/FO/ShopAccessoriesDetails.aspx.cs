@@ -57,5 +57,10 @@ namespace SpeedMaster.FO
                 Response.Redirect("Login.aspx");
             }
         }
+
+        protected void Repeater1_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+
+        }
     }
 }

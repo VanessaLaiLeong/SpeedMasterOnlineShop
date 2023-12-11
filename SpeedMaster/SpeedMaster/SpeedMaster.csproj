@@ -107,6 +107,7 @@
     <Content Include="FO\about.aspx" />
     <Content Include="FO\Activation.aspx" />
     <Content Include="FO\Billing.aspx" />
+    <Content Include="FO\checkEmail.aspx" />
     <Content Include="FO\css\login.css" />
     <Content Include="FO\css\shoppingCart.css" />
     <Content Include="FO\css\styles.css" />
@@ -288,6 +289,13 @@
     </Compile>
     <Compile Include="FO\Billing.aspx.designer.cs">
       <DependentUpon>Billing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FO\checkEmail.aspx.cs">
+      <DependentUpon>checkEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FO\checkEmail.aspx.designer.cs">
+      <DependentUpon>checkEmail.aspx</DependentUpon>
     </Compile>
     <Compile Include="FO\FOMaster.Master.cs">
       <DependentUpon>FOMaster.Master</DependentUpon>
