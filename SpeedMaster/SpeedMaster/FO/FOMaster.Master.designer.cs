@@ -33,15 +33,6 @@ namespace SpeedMaster.FO
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// shoppingcartnav control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton shoppingcartnav;
-
-        /// <summary>
         /// lbl_customer control.
         /// </summary>
         /// <remarks>
@@ -51,6 +42,15 @@ namespace SpeedMaster.FO
         protected global::System.Web.UI.WebControls.Label lbl_customer;
 
         /// <summary>
+        /// shoppingcartnav control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton shoppingcartnav;
+
+        /// <summary>
         /// lkbtn_user control.
         /// </summary>
         /// <remarks>
@@ -58,6 +58,15 @@ namespace SpeedMaster.FO
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lkbtn_user;
+
+        /// <summary>
+        /// logout_button control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton logout_button;
 
         /// <summary>
         /// ContentPlaceHolder1 control.

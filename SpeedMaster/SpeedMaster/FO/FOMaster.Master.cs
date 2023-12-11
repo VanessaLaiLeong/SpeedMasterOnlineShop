@@ -17,6 +17,7 @@ namespace SpeedMaster.FO
                 lbl_customer.Visible = true;
                 lbl_customer.Text = $"Bem vindo, {name}";
                 shoppingcartnav.Visible = true;
+                logout_button.Visible = true;
             }
             else
             {
@@ -49,6 +50,12 @@ namespace SpeedMaster.FO
             {
                 Response.Redirect("userProfile.aspx");
             }
+        }
+
+        protected void logout_button_Click(object sender, EventArgs e)
+        {
+            Session["customer"] = null;
+            Response.Redirect("Home.aspx");
         }
     }
 }
