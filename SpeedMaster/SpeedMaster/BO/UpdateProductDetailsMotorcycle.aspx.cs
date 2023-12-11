@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,58 +12,19 @@ namespace SpeedMaster.BO
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["ID_Motorcycle"] = Convert.ToInt32(Request.QueryString["productId"]);
-            //Session["ID_Brand"] = ;
-            //Session["Model"] = "Novo modelo12";
-            //Response.Write(Convert.ToString(Request.QueryString["productId"]));
-            //Response.Write(Session["ID_Motorcycle"]);
-            //Response.Write(Session["ManufactoringYear"]);
-            //Session["ManufactoringYear"] = ;
-            //Session["EngineType"] = ;
-            //Session["EngineCapacity"] = ;
-            //Session["Color"] = "blue" ;
-            //Session["Price"] = ;
-            //Session["Condition"] = ;
-            //Session["Description"] = ;
-            //Session["MotorcycleImage"] = ;
-            //Session["MotorcycleImageType"] = ;
-            //Session["Active"] =;
+            Session["ID_Motorcycle"] = Convert.ToInt32(Request.QueryString["motor_id"]);
+            int motor_id = Convert.ToInt32(Request.QueryString["motor_id"].ToString());
 
-
-
+            DataTable dt = Connections.GetDataTableFromQuery($"select * from Motorcycles where ID_Motorcycle = {motor_id}");
+            tb_color.Text = dt.Rows[0]["Color"].ToString();
+            tb_model.Text = dt.Rows[0]["Model"].ToString();
+            tb_engCap.Text = dt.Rows[0]["EngineCapacity"].ToString();
+            tb_engType.Text = dt.Rows[0]["EngineType"].ToString();
+            tb_manuDate.Text = dt.Rows[0]["ManufactoringYear"].ToString();
+            tb_description.Text = dt.Rows[0]["Description"].ToString();
+            tb_condition.Text = dt.Rows[0]["Condition"].ToString();
+            tb_price.Text = dt.Rows[0]["Price"].ToString();
         }
-
-        
-        //protected void Button1_Click(object sender, EventArgs e)
-        //{
-        //    byte[] img = Services.getImageInfo(FileUpload1);  
-
-        //    if (Convert.ToString(Session["productType"]) == "Motorcycle")
-        //    {
-        //        int ID_Motorcycle = 16;
-        //        int ID_Brand = 1;
-        //        string Model = "SampleModel2";
-        //        int ManufactoringYear = 2022;
-        //        string EngineType = "V-Twin";
-        //        int EngineCapacity = 1500;
-        //        string Color = "amarelo";
-        //        decimal Price = 20000.00m;
-        //        string Condition = "New";
-        //        string Description = "Powerful motorcycle with great features";
-        //        byte[] MotorcycleImage = img; // Sample image bytes
-        //        string MotorcycleImageType = "jpg";
-        //        bool Active = true;
-
-        //        // Call the UpdateMotorcycleInDB method with the sample data
-        //        Connections.UpdateMotorcycleInDB(
-        //            ID_Motorcycle, ID_Brand, Model, ManufactoringYear, EngineType,
-        //            EngineCapacity, Color, Price, Condition, Description,
-        //            MotorcycleImage, MotorcycleImageType, Active);
-        //        Response.Write("sucess!");
-        //    }
-        //}
-
-     
 
         protected void bnt_update_Click(object sender, EventArgs e)
         {
@@ -91,7 +53,8 @@ namespace SpeedMaster.BO
 
         protected void btn_delete_Click(object sender, EventArgs e)
         {
-
+            Connections.DeleteMotorcycleAndGlobalProductsIDsFromDB(Convert.ToInt32(Request.QueryString["motor_id"]));
+            Response.Redirect("ShowAllProducts.aspx");
         }
     }
 
