@@ -27,47 +27,48 @@
                     <div>
                         <!-- Email input -->
                         <div class="form-outline mb-4">
-                            <input type="email" id="loginEmail" class="form-control" />
+                            <asp:TextBox ID="tb_email" runat="server" class="form-control" ></asp:TextBox>                      
                             <label class="form-label" for="loginEmail">Email</label>
                         </div>
 
                         <!-- Name input -->
                         <div class="form-outline mb-4">
-                            <input type="text" id="loginName" class="form-control" />
+                            <asp:TextBox ID="tb_name" runat="server" class="form-control"></asp:TextBox>                            
                             <label class="form-label" for="loginEmail">Name</label>
                         </div>
                         
                         <!-- Surname input -->
                         <div class="form-outline mb-4">
-                            <input type="text" id="loginSurname" class="form-control" />
+                            <asp:TextBox ID="tb_surname" runat="server" class="form-control"></asp:TextBox>                        
                             <label class="form-label" for="loginEmail">Surname</label>
                         </div>
 
                         <!-- Password input -->
                         <div class="form-outline mb-4">
-                            <input type="password" id="loginPassword" class="form-control" />
+                            <asp:TextBox ID="tb_password" runat="server" class="form-control" TextMode="Password"></asp:TextBox>                  
                             <label class="form-label" for="loginPassword">Password</label>
                         </div>
 
                         <!-- Confirm Password input -->
                         <div class="form-outline mb-4">
-                            <input type="password" id="ConfirmPassword" class="form-control" />
+                            <asp:TextBox ID="tb_otherPassword" runat="server" class="form-control" TextMode="Password"></asp:TextBox>                 
                             <label class="form-label" for="loginPassword">Confirm Password</label>
                         </div>
 
                                                 <!-- Address input -->
                         <div class="form-outline mb-4">
-                            <input type="text" id="Address" class="form-control" />
+                            <asp:TextBox ID="tb_address" runat="server"  class="form-control"></asp:TextBox>
+          
                             <label class="form-label" for="Address">Address</label>
                         </div>                        
                         
                         <div class="form-outline mb-4">
-                            <input type="text" id="Phone" class="form-control" />
+                            <asp:TextBox ID="tb_phone" runat="server" class="form-control" ></asp:TextBox>             
                             <label class="form-label" for="Phone Number">Phone Number</label>
                         </div>
                                                 
                         <div class="form-outline mb-4">
-                            <input type="text" id="NIF" class="form-control" />
+                            <asp:TextBox ID="tb_nif" runat="server" class="form-control" ></asp:TextBox>               
                             <label class="form-label" for="nif">NIF</label>
                         </div>
 
@@ -83,7 +84,9 @@
                             class="container">
                             <div style="margin: 0; position: absolute; top: 25%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"
                                 class="center">
-                                <button type="submit" class="btn btn-primary">Register</button>
+                                 <asp:Button ID="Button2" runat="server" Text="Register" OnClick="Button1_Click" class="btn btn-primary" />
+                                <asp:Label ID="lbl_result" runat="server" Text="Label" Visible="false" ForeColor="red"></asp:Label>
+                        
                             </div>
                         </div>
                         <!-- Register buttons -->

@@ -79,7 +79,7 @@
         </div>
     </div>
 
-        <%-- Reviews --%>
+    <%-- Reviews --%>
 
     <div class="d-flex align-items-center justify-content-center pb-5 pt-5">
         <h3 style="text-align: center;">Reviews</h3>
@@ -92,7 +92,7 @@
         <div class="ex1 row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
 
             <%-- Repeater starts here --%>
-            <asp:Repeater ID="rp_reviews" runat="server" OnItemDataBound="rp_reviews_ItemDataBound">
+            <asp:Repeater ID="Repeater1" runat="server" OnItemDataBound="rp_reviews_ItemDataBound">
                 <ItemTemplate>
                     <div class="col">
                         <div class="card h-100 card-review">
@@ -121,7 +121,20 @@
                     </div>
                 </ItemTemplate>
             </asp:Repeater>
-            <asp:SqlDataSource ID="sql_reviews" runat="server" ConnectionString="<%$ ConnectionStrings:SpeedMasterConnectionString %>" SelectCommand="select Description, Customers.FirstName, Customers.LastName from Reviews left join Customers on Customers.ID_Customer = ID_Customer;"></asp:SqlDataSource>
+
+
+            <asp:Repeater ID="Repeater2" runat="server" OnItemCommand="Repeater2_ItemCommand">
+                <ItemTemplate>
+                    <asp:LinkButton ID="btnPage"
+                        Style="padding: 8px; margin: 2px; background: #ffa100; border: solid 1px #666; font: 8pt tahoma;"
+                        CommandName="Page"
+                        CommandArgument='<%# Container.DataItem %>'
+                        runat="server" ForeColor="White" Font-Bold="True">
+                        <%# Container.DataItem %>
+                    </asp:LinkButton>
+
+                </ItemTemplate>
+            </asp:Repeater>
         </div>
     </div>
 
