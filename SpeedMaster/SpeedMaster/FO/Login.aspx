@@ -34,7 +34,7 @@
 
                     <!-- Password input -->
                     <div class="form-outline mb-4">
-                        <asp:TextBox ID="tb_password" runat="server" class="form-control"></asp:TextBox>                 
+                        <asp:TextBox ID="tb_password" runat="server" class="form-control" TextMode="Password"></asp:TextBox>                 
                         <label class="form-label" for="loginPassword">Password</label>
                     </div>
 
@@ -51,6 +51,9 @@
                         <div class="col-md-6 d-flex justify-content-center">
                             <!-- Simple link -->
                             <a href="SendEmailResetPassword.aspx">Forgot password?</a>
+                        </div>
+                        <div>
+                            <asp:Label ID="lbl_mensagem" CssClass="text-center mb-3" runat="server" Text="Label" Visible="False" ForeColor="Red"></asp:Label>
                         </div>
                     </div>
 

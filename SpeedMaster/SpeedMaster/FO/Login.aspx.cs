@@ -14,28 +14,28 @@ namespace SpeedMaster.FO
         {
         }
 
-        private string doLogin(string email, string password)
+        protected void btn_signin_Click1(object sender, EventArgs e)
         {
+            string email = tb_email.Text;
+            string password = tb_password.Text;
+
             int result = Connections.LoginCustomer(email, Services.EncryptString(password));
             if (result == -1)
             {
-                return "Account not active. Please check email to activate";
+                lbl_mensagem.Visible = true;
+                lbl_mensagem.Text = "Account not active. Please check email to activate";
             }
-            if (result == 0)
+            else if (result == 0)
             {
-                return "Wrong credentials!";
+                lbl_mensagem.Visible = true;
+                lbl_mensagem.Text = "Wrong credentials!";
             }
             else
             {
                 Session["customer"] = Services.getCustomer(result);
-                return result.ToString();
-            }
-        }
 
-        protected void btn_signin_Click1(object sender, EventArgs e)
-        {
-            doLogin(tb_email.Text, tb_password.Text);
-            Response.Redirect("ShopMotorcycle.aspx");
+                Response.Redirect("ShopMotorcycle.aspx");
+            }
         }
 
     }
