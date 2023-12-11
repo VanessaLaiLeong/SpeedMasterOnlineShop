@@ -168,7 +168,7 @@ namespace SpeedMaster.FO
             string smtpUtilizador = ConfigurationManager.AppSettings["SMTP_USER"];
 
             mail.From = new MailAddress(smtpUtilizador);
-            mail.To.Add(new MailAddress("vanessalaileong@gmail.com"));
+            mail.To.Add(new MailAddress(tb_email.Text));
             mail.Subject = $"Thank you for your purchase Speed Master 🏍️🔥";
             mail.IsBodyHtml = true;
 

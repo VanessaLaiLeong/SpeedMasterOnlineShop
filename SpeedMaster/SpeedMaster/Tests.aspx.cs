@@ -128,7 +128,7 @@ namespace SpeedMaster
 
 
 
-            Services.getProductsForReview(6,4);
+            Services.askReview(6,4);
             //Response.Write(result);
 
         }
