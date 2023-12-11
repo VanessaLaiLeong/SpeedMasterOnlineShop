@@ -16,6 +16,7 @@
 
     <div id="div_motor" runat="server">
         <h3>Motorcycles</h3>
+        <asp:Button ID="btn_insert_motorcycles" runat="server" OnClick="btn_insert_motorcycles_Click" class="btn btn-success" Text="Add Product" />
         <table id="table_motorcycles" class="table">
             <thead>
                 <tr>
@@ -56,6 +57,7 @@
 
     <div id="div_access" runat="server">
         <h3>Accessories</h3>
+        <asp:Button ID="btn_insert_accessories" runat="server" OnClick="btn_insert_accessories_Click" class="btn btn-success" Text="Add Product" />
         <table id="table_accessories" class="table">
             <thead>
                 <tr>

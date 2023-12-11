@@ -17,19 +17,12 @@ namespace SpeedMaster.BO
 
         protected void Repeater1_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
-            {
-                DataRowView dr = (DataRowView)e.Item.DataItem;
-                ((Label)e.Item.FindControl("lbl_customerName")).Text = dr["FirstName"].ToString();
-                //((Label)e.Item.FindControl("lbl_quantity")).Text = dr["Quantity"].ToString();
-                //((Label)e.Item.FindControl("lbl_price")).Text = dr["Price"].ToString();
-                //if (dr["Active"].ToString() == "True")
-                //{
-                //    ((Label)e.Item.FindControl("lbl_status")).Text = "Active";
-                //}
-                //else ((Label)e.Item.FindControl("lbl_status")).Text = "Inactive";
-            }
-            
+            DataRowView dr = (DataRowView)e.Item.DataItem;
+            ((Label)e.Item.FindControl("lbl_customerName")).Text = dr["FirstName"].ToString() + " " + dr["LastName"].ToString();
+            ((Label)e.Item.FindControl("lbl_email")).Text = dr["Email"].ToString();
+            ((Label)e.Item.FindControl("lbl_address")).Text = dr["Address"].ToString();
+            ((Label)e.Item.FindControl("lbl_phone")).Text = dr["Phone"].ToString();
+            ((Label)e.Item.FindControl("lbl_NIF")).Text = dr["NIF"].ToString();
         }
 
         protected void viewDetail_Click(object sender, EventArgs e)
