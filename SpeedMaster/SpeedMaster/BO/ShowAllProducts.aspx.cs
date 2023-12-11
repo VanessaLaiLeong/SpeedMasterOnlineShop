@@ -79,5 +79,15 @@ namespace SpeedMaster.BO
                 div_motor.Visible = false;
             }
         }
+
+        protected void btn_insert_accessories_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("InsertAccessory.aspx");
+        }
+
+        protected void btn_insert_motorcycles_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("InsertMotorcycle.aspx");
+        }
     }
 }
