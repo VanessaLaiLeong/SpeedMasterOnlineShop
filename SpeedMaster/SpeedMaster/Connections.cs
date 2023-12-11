@@ -315,7 +315,15 @@ namespace SpeedMaster
             }
         }
 
-        public static string UpdateAccessoryInDB(int ID_Accessory, string AccessoryName, string Description, double Price, int Stock, bool Active, int ID_Category, byte[] img)
+        public static string UpdateAccessoryInDB(
+            int ID_Accessory,
+            string AccessoryName,
+            string Description,
+            double Price,
+            int Stock,
+            bool Active,
+            int ID_Category,
+            byte[] img)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
 
@@ -832,19 +840,19 @@ namespace SpeedMaster
             {
                 using (SqlCommand command = new SqlCommand("insert_order", connection))
                 {
-                   
-                        command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("@ID_ShoppingCart", shoppingCartId);
-                        command.Parameters.AddWithValue("@OrderDate", orderDate);
-                        command.Parameters.AddWithValue("@ShippingDate", shippingDate);
-                        command.Parameters.AddWithValue("@TotalAmount", totalAmount);
-                        command.Parameters.AddWithValue("@ID_Status", statusId);
 
-                        connection.Open();
-                        command.ExecuteNonQuery();
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@ID_ShoppingCart", shoppingCartId);
+                    command.Parameters.AddWithValue("@OrderDate", orderDate);
+                    command.Parameters.AddWithValue("@ShippingDate", shippingDate);
+                    command.Parameters.AddWithValue("@TotalAmount", totalAmount);
+                    command.Parameters.AddWithValue("@ID_Status", statusId);
 
-                        return "Order inserted successfully.";
-                   
+                    connection.Open();
+                    command.ExecuteNonQuery();
+
+                    return "Order inserted successfully.";
+
                 }
             }
         }
@@ -1032,20 +1040,20 @@ namespace SpeedMaster
             {
                 using (SqlCommand command = new SqlCommand("insert_shopping_cart_manager", connection))
                 {
-                        command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("@ID_Customer", customerId);
-                        command.Parameters.AddWithValue("@CartStatus", cartStatus);
-                        command.Parameters.AddWithValue("@CreatedDate", createdDate);
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@ID_Customer", customerId);
+                    command.Parameters.AddWithValue("@CartStatus", cartStatus);
+                    command.Parameters.AddWithValue("@CreatedDate", createdDate);
 
-                        connection.Open();
-                        command.ExecuteNonQuery();
+                    connection.Open();
+                    command.ExecuteNonQuery();
 
-                        return "Shopping cart inserted successfully.";
-                    }
-   
+                    return "Shopping cart inserted successfully.";
                 }
+
+            }
         }
-        
+
 
         public static string UpdateShoppingCartInDB(int shoppingCartId, int customerId, int cartStatus, DateTime createdDate)
         {
@@ -1669,19 +1677,19 @@ namespace SpeedMaster
                 using (SqlCommand command = new SqlCommand($"update ShoppingCarts set Cartstatus = {status} where ID_ShoppingCart = {idShoppingCart}", connection))
                 {
 
-                    
-                        connection.Open();
-                        int rowsAffected = command.ExecuteNonQuery();
 
-                        if (rowsAffected > 0)
-                        {
-                            resultMessage = "ShoppingCarts status updated successfully.";
-                        }
-                        else
-                        {
-                            resultMessage = "No ShoppingCarts found for the specified ShoppingCarts ID.";
-                        }
-                    
+                    connection.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        resultMessage = "ShoppingCarts status updated successfully.";
+                    }
+                    else
+                    {
+                        resultMessage = "No ShoppingCarts found for the specified ShoppingCarts ID.";
+                    }
+
                 }
             }
 
@@ -1746,7 +1754,7 @@ namespace SpeedMaster
                 }
             }
 
-          
+
         }
 
         public static string CreateCustomerReview(int orderId, int productId, int rating, string description)
