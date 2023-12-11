@@ -41,7 +41,7 @@ namespace SpeedMaster.FO
 
         protected void lkbtn_user_Click1(object sender, EventArgs e)
         {
-            if (Session["customer"] != null)
+            if (Session["customer"] == null)
             {
                 Response.Redirect("Login.aspx");
             }
