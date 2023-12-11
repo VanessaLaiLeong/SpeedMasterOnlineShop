@@ -150,21 +150,21 @@ namespace SpeedMaster.FO
         protected global::System.Web.UI.WebControls.LinkButton btn_addToCart;
 
         /// <summary>
-        /// rp_reviews control.
+        /// Repeater1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rp_reviews;
+        protected global::System.Web.UI.WebControls.Repeater Repeater1;
 
         /// <summary>
-        /// sql_reviews control.
+        /// Repeater2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource sql_reviews;
+        protected global::System.Web.UI.WebControls.Repeater Repeater2;
     }
 }

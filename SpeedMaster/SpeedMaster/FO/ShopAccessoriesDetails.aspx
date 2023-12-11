@@ -77,35 +77,47 @@
     <div class="container py-4">
         <div class="ex1 row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
 
-            <%-- Repeater starts here --%>
-
-            <div class="col">
-                <div class="card h-100 card-review">
-                    <div class="card-header pb-0 d-flex flex-row justify-content-between align-items-center">
-                        <div class="d-flex align-items-center">
-                            <img class="rounded-circle me-2 mb-2"
-                                src="../Images/user.jpg" />
-                            <div class="d-flex flex-column justify-content-center align-items-start fs-5 lh-sm">
-                                <b class="text-primary pb-3">Username</b>
+            <asp:Repeater ID="Repeater1" runat="server" OnItemDataBound="Repeater1_ItemDataBound">
+                <ItemTemplate>
+                    <div class="col">
+                        <div class="card h-100 card-review">
+                            <div class="card-header pb-0 d-flex flex-row justify-content-between align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle me-2 mb-2"
+                                        src="../Images/user.jpg" />
+                                    <div class="d-flex flex-column justify-content-center align-items-start fs-5 lh-sm">
+                                        <b class="text-primary pb-3">Username</b>
+                                    </div>
+                                </div>
+                                <div class="text-center pb-2">
+                                    <div class="small-ratings">
+                                        <i class="fa fa-star rating-color"></i>
+                                        <i class="fa fa-star rating-color"></i>
+                                        <i class="fa fa-star rating-color"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="text-center pb-2">
-                            <div class="small-ratings">
-                                <i class="fa fa-star rating-color"></i>
-                                <i class="fa fa-star rating-color"></i>
-                                <i class="fa fa-star rating-color"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
+                            <div class="card-body py-2">
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="card-body py-2">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-            </div>
+                </ItemTemplate>
+            </asp:Repeater>
 
-
+            <asp:Repeater ID="Repeater2" runat="server" OnItemCommand="Repeater2_ItemCommand">
+                <ItemTemplate>
+                    <asp:LinkButton ID="btnPage"
+                        Style="padding: 8px; margin: 2px; background: #ffa100; border: solid 1px #666; font: 8pt tahoma;"
+                        CommandName="Page"
+                        CommandArgument='<%# Container.DataItem %>'
+                        runat="server" ForeColor="White" Font-Bold="True">
+                        <%# Container.DataItem %>
+                    </asp:LinkButton>
+                </ItemTemplate>
+            </asp:Repeater>
         </div>
     </div>
 

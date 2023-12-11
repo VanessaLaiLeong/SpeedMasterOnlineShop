@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -13,6 +17,11 @@ namespace SpeedMaster.FO
         protected void Page_Load(object sender, EventArgs e)
         {
             PrintProductDetails(Connections.GetProductDetails(Convert.ToInt32(Request.QueryString["productId"])));
+            if (!IsPostBack)
+            {
+                BindRepeater("");
+
+            }
         }
 
         private void PrintProductDetails(DataTable productDetails)
@@ -67,9 +76,87 @@ namespace SpeedMaster.FO
 
         protected void rp_reviews_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            DataRowView dr = (DataRowView)e.Item.DataItem;
-            ((Label)e.Item.FindControl("lbl_description")).Text = dr["Description"].ToString();
-            ((Label)e.Item.FindControl("lbl_username")).Text = dr["FirstName"].ToString() + dr["LastName"].ToString();
+            //DataRowView dr = (DataRowView)e.Item.DataItem;
+            //((Label)e.Item.FindControl("lbl_description")).Text = dr["Description"].ToString();
+            //((Label)e.Item.FindControl("lbl_username")).Text = dr["FirstName"].ToString() + dr["LastName"].ToString();
+
+            if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+            {
+                DataRowView dr = (DataRowView)e.Item.DataItem;
+
+                ((Label)e.Item.FindControl("lbl_description")).Text = dr["Description"].ToString();
+                ((Label)e.Item.FindControl("lbl_username")).Text = dr["FirstName"].ToString() + dr["LastName"].ToString();
+
+
+
+            }
+        }
+
+        private void BindRepeater(string query)
+        {
+            //Do your database connection stuff and get your data
+            SqlConnection cn = new SqlConnection(ConfigurationManager.
+                 ConnectionStrings["SpeedMasterConnectionString"].ConnectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = cn;
+            SqlDataAdapter ad = new SqlDataAdapter(cmd);
+            cmd.CommandText = $"select * from Reviews r inner join Customers c on r.ID_Customer = c.ID_Customer where ID_Product = {Session["ID_Motorcycle"]}";
+
+            //save the result in data table
+            DataTable dt = new DataTable();
+            ad.SelectCommand = cmd;
+            ad.Fill(dt);
+
+            //Create the PagedDataSource that will be used in paging
+            PagedDataSource pgitems = new PagedDataSource();
+            pgitems.DataSource = dt.DefaultView;
+            pgitems.AllowPaging = true;
+
+            //Control page size from here 
+            pgitems.PageSize = 8;
+            pgitems.CurrentPageIndex = PageNumber;
+            if (pgitems.PageCount > 1)
+            {
+                Repeater2.Visible = true;
+                ArrayList pages = new ArrayList();
+                for (int i = 0; i <= pgitems.PageCount - 1; i++)
+                {
+                    pages.Add((i + 1).ToString());
+                }
+                Repeater2.DataSource = pages;
+                Repeater2.DataBind();
+            }
+            else
+            {
+                Repeater2.Visible = false;
+            }
+
+            //Finally, set the datasource of the repeater
+            Repeater1.DataSource = pgitems;
+            Repeater1.DataBind();
+
+        }
+
+        private int PageNumber
+        {
+            get
+            {
+                if (ViewState["PageNumber"] != null)
+                {
+                    return Convert.ToInt32(ViewState["PageNumber"]);
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            set { ViewState["PageNumber"] = value; }
+        }
+
+        protected void Repeater2_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            PageNumber = Convert.ToInt32(e.CommandArgument) - 1;
+            BindRepeater("");
         }
     }
 }
