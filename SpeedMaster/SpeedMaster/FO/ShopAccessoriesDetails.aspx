@@ -22,7 +22,7 @@
                             <!-- Product Information -->
                             <div class="product-info" style="padding-left: 25%;">
                                 <p>
-                                    <asp:Label ID="lbl_marca" runat="server" Text="Marca do produto" class="lead"></asp:Label>
+                                    <asp:Label ID="lbl_categoria" runat="server" Text="Categoria do produto" class="lead"></asp:Label>
                                 </p>
                                 <p>
                                     <asp:Label ID="lbl_nome" runat="server" Text="Nome do produto" class="lead"></asp:Label>

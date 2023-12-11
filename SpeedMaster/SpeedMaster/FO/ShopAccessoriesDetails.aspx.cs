@@ -14,46 +14,48 @@ namespace SpeedMaster.FO
         {
             DataTable productDetails = Connections.GetProductDetails(Convert.ToInt32(Request.QueryString["productId"]));
             PrintProductDetails(productDetails);
-            Response.Write(Session["Model"]);
         }
         private void PrintProductDetails(DataTable productDetails)
         {
             foreach (DataRow row in productDetails.Rows)
             {
-
-                Session["ID_Motorcycle"] = row["ID_Motorcycle"];
-                Session["ID_Brand"] = row["ID_Brand"];
-                Session["Model"] = row["Model"];
-                Session["ManufactoringYear"] = row["ManufactoringYear"];
-                Session["EngineType"] = row["EngineType"];
-                Session["EngineCapacity"] = row["EngineCapacity"];
-                Session["Color"] = row["Color"];
-                Session["Price"] = row["Price"];
-                Session["Condition"] = row["Condition"];
-                Session["Description"] = row["Description"];
-                Session["MotorcycleImage"] = row["MotorcycleImage"];
-                Session["MotorcycleImageType"] = row["MotorcycleImageType"];
-                Session["Active"] = row["Active"];
-
-
-
+                Session["ID_Accessory"] = row["ID_Accessory"];
+                lbl_categoria.Text = row["CategoryName"].ToString();
+                lbl_nome.Text = row["AccessoryName"].ToString();
+                lbl_preco.Text = row["Price"].ToString();
+                lbl_productDescription.Text = row["Description"].ToString();
+                byte[] imageData = row["Image"] as byte[];
+                if (imageData != null && imageData.Length > 0)
+                {
+                    ImagemProduto.ImageUrl = "data:image/jpeg;base64," + Convert.ToBase64String(imageData);
+                }
 
             }
         }
 
         protected void btn_minus_Click(object sender, EventArgs e)
         {
-
+            tb_quantiity.Text = (Convert.ToInt32(tb_quantiity.Text) - 1).ToString();
         }
 
         protected void btn_plus_Click(object sender, EventArgs e)
         {
-
+            tb_quantiity.Text = (Convert.ToInt32(tb_quantiity.Text) + 1).ToString();
         }
 
         protected void btn_addToCart_Click(object sender, EventArgs e)
         {
-
+            if (Session["customer"] != null)
+            {
+                for (int i = 0; i < int.Parse(tb_quantiity.Text); i++)
+                {
+                    Connections.AddToCart(((Customer)Session["customer"]).email, int.Parse(Session["ID_Accessory"].ToString()));
+                }
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
         }
     }
 }
