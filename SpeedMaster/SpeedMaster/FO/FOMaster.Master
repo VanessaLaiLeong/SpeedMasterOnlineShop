@@ -39,7 +39,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mx-auto">
+                    <ul class="navbar-nav mx-auto navbarmenu">
                         <!-- 'mx-auto' centraliza os itens -->
                         <li class="nav-item">
                             <a class="nav-link" href="ShopMotorcycle.aspx">Motorcycles</a>
@@ -178,6 +178,10 @@
                     width: 100%;
                     bottom: 0;
                 }
+                .navbarmenu {
+                    margin-left:36% !important;
+                }
+
             </style>
         </div>
     </form>
