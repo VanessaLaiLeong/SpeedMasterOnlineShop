@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="ps-5 pe-5" style="height: 72.5vh;">
+    <div class="ps-5 pe-5" style="height: 90.5vh;">
         <div class="ps-5 pe-5">
             <div class="ps-5 pe-5">
                 <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
@@ -51,7 +51,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row" style="">
 
                             <div class="col-12 col-md-4 mb-4">
                                 <div class="card" style="width: 18rem;">
@@ -72,7 +72,6 @@
                                         <p class="card-text">
                                             <asp:Label ID="lbl_productDescription" runat="server" Text="Label"></asp:Label>
                                         </p>
-                                        <asp:Button ID="Button1" runat="server" Text="Check" class="btn btn-success" OnClick="Button1_Click" />
                                     </div>
                                 </div>
                             </div>
@@ -95,7 +94,6 @@
                                         <p class="card-text">
                                             <asp:Label ID="lbl_productDescription2" runat="server" Text="Label"></asp:Label>
                                         </p>
-                                        <asp:Button ID="Button2" runat="server" Text="Check" class="btn btn-success" OnClick="Button2_Click"/>
                                     </div>
                                 </div>
                             </div>
@@ -118,7 +116,7 @@
                                         <p class="card-text">
                                             <asp:Label ID="lbl_productDescription3" runat="server" Text="Label"></asp:Label>
                                         </p>
-                                        <asp:Button ID="Button3" runat="server" Text="Check" class="btn btn-success" OnClick="Button3_Click" />
+                                        
                                     </div>
                                 </div>
                             </div>
