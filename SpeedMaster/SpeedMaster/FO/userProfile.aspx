@@ -15,8 +15,6 @@
                     <div class="row">
                         <div class="col-md-6 text-end pe-5">
                             <!-- Product Image -->
-
-                            
                                 <asp:Image ID="ImagemProduto" CssClass="ImagemProduto" runat="server" ImageUrl="~\Images\user.jpg" Height="300px" Width="300px" />
 
                         </div>

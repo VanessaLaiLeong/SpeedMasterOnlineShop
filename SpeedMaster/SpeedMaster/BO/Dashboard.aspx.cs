@@ -19,7 +19,7 @@ namespace SpeedMaster.BO
         private int getSalesCount()
         {
             int count = 0;
-            DataTable dt = Connections.GetDataTableFromQuery("SELECT * FROM Payments;");
+            DataTable dt = Connections.GetDataTableFromQuery("SELECT * FROM Orders;");
 
             foreach (DataRow dr in dt.Rows)
             {
@@ -33,13 +33,10 @@ namespace SpeedMaster.BO
         {
             decimal total = 0;
             DataTable dt = Connections.GetDataTableFromQuery(@"SELECT Orders.TotalAmount
-                                                               FROM Payments 
-                                                               INNER JOIN Orders on
-                                                               Payments.ID_Order = Orders.ID_Order;");
+                                                               FROM Orders;");
 
             foreach (DataRow dr in dt.Rows)
             {
-                Response.Write(dr[0]);
                 total += Convert.ToDecimal(dr[0].ToString());
             }
             return total;
