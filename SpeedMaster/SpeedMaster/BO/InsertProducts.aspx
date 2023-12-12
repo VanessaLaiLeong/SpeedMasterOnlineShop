@@ -6,5 +6,5 @@
         <asp:ListItem>Motorcycle</asp:ListItem>
         <asp:ListItem>Accessories</asp:ListItem>
     </asp:DropDownList>
-    <asp:Button ID="btn_next" runat="server" Text="Button" OnClick="btn_next_Click" class="btn btn-success"/>
+    <asp:Button ID="btn_next" runat="server" Text="Select" OnClick="btn_next_Click" class="btn btn-success"/>
 </asp:Content>
