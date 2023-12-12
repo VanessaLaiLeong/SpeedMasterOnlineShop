@@ -10,7 +10,7 @@
         <br />
 
         <label id="lbl_OrderDate" runat="server">Order Date</label>
-        <asp:TextBox ID="tb_OrderDate" runat="server" class="form-control" placeholder="Order Date" />
+        <asp:Label ID="lb_OrderDate" runat="server" Text="Label" class="form-control"></asp:Label>       
         <br />
 
         <label id="lbl_ShippingDate" runat="server">Shipping Date</label>
@@ -22,8 +22,10 @@
         <br />
 
         <label id="lbl_ID_OrderStatus" runat="server">Order Status ID</label>
-        <asp:TextBox ID="tb_ID_OrderStatus" runat="server" class="form-control" placeholder="Order Status ID" />
+        <asp:DropDownList ID="ddl_orderStatus" runat="server" DataSourceID="SqlDataSource2" DataTextField="StatusName" DataValueField="ID_OrderStatus"></asp:DropDownList>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:SpeedMasterConnectionString %>" SelectCommand="SELECT * FROM [OrderStatus]"></asp:SqlDataSource>
         <br />
+        <asp:Button ID="btn_submit" runat="server" Text="Submit" CssClass="btn btn-primary" OnClick="btn_submit_Click1" />
 
         <asp:Button ID="btn_enviarMail" runat="server" Text="Enviar mail de Review" CssClass="btn btn-primary" OnClick="btn_enviarMail_Click" />
     </div>

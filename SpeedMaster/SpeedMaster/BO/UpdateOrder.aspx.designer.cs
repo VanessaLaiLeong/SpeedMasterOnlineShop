@@ -42,13 +42,13 @@ namespace SpeedMaster.BO
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lbl_OrderDate;
 
         /// <summary>
-        /// tb_OrderDate control.
+        /// lb_OrderDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_OrderDate;
+        protected global::System.Web.UI.WebControls.Label lb_OrderDate;
 
         /// <summary>
         /// lbl_ShippingDate control.
@@ -96,13 +96,31 @@ namespace SpeedMaster.BO
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl lbl_ID_OrderStatus;
 
         /// <summary>
-        /// tb_ID_OrderStatus control.
+        /// ddl_orderStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_ID_OrderStatus;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_orderStatus;
+
+        /// <summary>
+        /// SqlDataSource2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
+
+        /// <summary>
+        /// btn_submit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_submit;
 
         /// <summary>
         /// btn_enviarMail control.
