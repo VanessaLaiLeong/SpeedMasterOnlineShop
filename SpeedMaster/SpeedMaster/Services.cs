@@ -225,7 +225,7 @@ namespace SpeedMaster
 
         }
 
-        public static string doUpdateCustomer(int ID_Customer, string email, string password, string firstName, string lastName, string phone, string address, bool active, string nif, string otherPassowrd)
+        public static string doUpdateCustomer(int ID_Customer, string email, string password, string firstName, string lastName, string phone, string address, int active, string nif, string otherPassowrd)
         {
             if (password != otherPassowrd)
             {

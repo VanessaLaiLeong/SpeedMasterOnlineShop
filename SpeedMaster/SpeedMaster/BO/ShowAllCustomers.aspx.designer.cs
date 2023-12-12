@@ -24,33 +24,6 @@ namespace SpeedMaster.BO
         protected global::System.Web.UI.WebControls.DropDownList ddl_productType;
 
         /// <summary>
-        /// btn_createProduct control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_createProduct;
-
-        /// <summary>
-        /// btn_modifyProduct control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_modifyProduct;
-
-        /// <summary>
-        /// btn_deleteProduct control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_deleteProduct;
-
-        /// <summary>
         /// Repeater1 control.
         /// </summary>
         /// <remarks>

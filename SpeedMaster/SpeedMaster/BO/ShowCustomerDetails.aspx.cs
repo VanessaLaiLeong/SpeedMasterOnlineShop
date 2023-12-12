@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,36 +12,69 @@ namespace SpeedMaster.BO
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["ID_Customer"] = (Convert.ToInt32(Request.QueryString["customerId"]));
-            printCustomer();
-            Response.Write(Convert.ToString(Session["customerFirstName"]));
+            if (!IsPostBack)
+            {
+                Session["ID_Customer"] = (Convert.ToInt32(Request.QueryString["ID_Customer"]));
+                int ID_Customer = Convert.ToInt32(Request.QueryString["ID_Customer"]);
+                
+                DataTable dt = Connections.GetDataTableFromQuery($"select * from customers where ID_customer = {ID_Customer}");
+                tb_Email.Text = dt.Rows[0]["Email"].ToString();
+                tb_FirstName.Text = dt.Rows[0]["firstName"].ToString();
+                tb_LastName.Text = dt.Rows[0]["lastName"].ToString();
+                tb_Address.Text = dt.Rows[0]["Address"].ToString();
+                tb_Phone.Text = dt.Rows[0]["Phone"].ToString();
+                tb_NIF.Text = dt.Rows[0]["nif"].ToString();
+
+                if (dt.Rows[0]["Active"].ToString() == "True")
+                {
+                    rd_active.SelectedValue = "yes";
+                }
+                else rd_active.SelectedValue = "no";
+            }
+            
+           
             
         }
 
-        private void printCustomer()
+     
+       
+
+        protected void btn_submit_Click(object sender, EventArgs e)
         {
-            Customer customer = new Customer();
+            int ID_Customer = Convert.ToInt32(Request.QueryString["ID_Customer"]);
+            string Email = tb_Email.Text;
+            string FirstName = tb_FirstName.Text;
+            string LastName = tb_FirstName.Text;
+            string Password = tb_LastName.Text;
+            string Address = tb_Address.Text;
+            string Phone = tb_Phone.Text;         
+            string NIF = tb_NIF.Text;
+            int active;
 
-            customer = Services.getCustomer(Convert.ToInt32(Session["ID_Customer"]));
-            Session["customerEmail"] = customer.email;
-            Session["customerFirstName"] = customer.firstName;
-            Session["customerLastName"] = customer.lastName;
-            Session["customerPassword"] = customer.password;
-            Session["customerAddress"] = customer.address;
-            Session["customerPhone"] = customer.phone;
-            Session["customerActive"] = customer.active;
-            Session["customerNIF"] = customer.nif;
+            if (rd_active.SelectedValue == "yes")
+            {
+                active = 1;
+            }
+            else active = 0;
 
+
+            Response.Write(Connections.UpdateCustomerDB(
+                ID_Customer,
+                Email, 
+                FirstName,
+                LastName,
+                Password,
+                Address,
+                Phone,
+                active,
+                NIF
+                ));
+           
         }
 
-        private void codigoBotaoEdit()
+        protected void btn_delete_Click(object sender, EventArgs e)
         {
-            Response.Redirect($"UpdateCustomerDetails.aspx?customerId={Session["ID_Customer"]}");
-        }
 
-        protected void Edit_Click(object sender, EventArgs e)
-        {
-            Response.Redirect($"UpdateCustomerDetails.aspx?customerId={Session["ID_Customer"]}");
         }
     }
 }

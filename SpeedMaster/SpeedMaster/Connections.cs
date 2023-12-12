@@ -198,7 +198,7 @@ namespace SpeedMaster
         }
 
         public static string UpdateCustomerDB(int ID_Customer, string Email, string FirstName, string LastName,
-                string Password, string Address, string Phone, bool Active, string NIF)
+                string Password, string Address, string Phone, int Active, string NIF)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
 
