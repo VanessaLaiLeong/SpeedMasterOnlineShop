@@ -81,7 +81,7 @@ namespace SpeedMaster.FO
                             row["name"],  // Adjust column names as needed
                             row["price"],
                             row["quantity"],
-                            row["totalPrice"]
+                            row["ItemTotalPrice"]
                         );
 
                 // Update totalPrice within the loop

@@ -32,9 +32,6 @@
                             <asp:TextBox ID="tb_otherPassword" runat="server" class="form-control" type="password"></asp:TextBox>                        
                             <label class="form-label" for="loginPassword">Confirm New Password</label>
                         </div>
-                        <div class="form-outline mb-4">
-                             <asp:Label ID="lbl_message" runat="server" Text="Label" Visible="False"></asp:Label>
-                        </div>
 
                         <!-- 2 column grid layout -->
                         <div class="row mb-4">
@@ -48,7 +45,7 @@
                             <div style="margin: 0; position: absolute; top: 25%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"
                                 class="center">
                                 <asp:Button ID="btn_submit" runat="server" Text="Submit" type="submit" class="btn btn-primary" OnClick="btn_submit_Click"/>
-                               
+                                <asp:Label ID="lbl_message" runat="server" Text="Label" Visible="False"></asp:Label>
                             </div>
                         </div>
                         <!-- Register buttons -->

@@ -87,7 +87,7 @@ namespace SpeedMaster.FO
 
             if (Session["customer"] != null)
             {
-                Button btn = (Button)sender;
+                LinkButton btn = (LinkButton)sender;
                 int productId = Convert.ToInt32(btn.CommandArgument);
                 Connections.AddToCart(((Customer)Session["customer"]).email, productId);
             }

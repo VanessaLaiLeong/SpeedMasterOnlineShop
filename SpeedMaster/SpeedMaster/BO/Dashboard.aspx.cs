@@ -13,7 +13,7 @@ namespace SpeedMaster.BO
         protected void Page_Load(object sender, EventArgs e)
         {
             lbl_quantSales.Text = getSalesCount().ToString();
-            lbl_moneySales.Text = getSalesValueTotal().ToString();
+            lbl_moneySales.Text = getSalesValueTotal().ToString() + "€";
         }
 
         private int getSalesCount()

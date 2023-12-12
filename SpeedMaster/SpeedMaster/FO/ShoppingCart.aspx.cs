@@ -12,7 +12,7 @@ namespace SpeedMaster.FO
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Write(((Customer)Session["customer"]).email);
+            // Response.Write(((Customer)Session["customer"]).email);
 
             if (Session["customer"] == null)
             {
@@ -51,8 +51,6 @@ namespace SpeedMaster.FO
                 ((Label)e.Item.FindControl("lbl_productPriceSingle")).Text = dr["price"].ToString();
                 ((Label)e.Item.FindControl("lbl_productPrice")).Text = dr["ItemTotalPrice"].ToString();
 
-
-
                 byte[] imageData = dr["Image"] as byte[];
                 if (imageData != null && imageData.Length > 0)
                 {
@@ -60,8 +58,6 @@ namespace SpeedMaster.FO
                     // Set the image URL to the Image control
                     ((System.Web.UI.WebControls.Image)e.Item.FindControl("productImg")).ImageUrl = imageUrl;
                 }
-
-              
             }
         }
 
@@ -90,7 +86,7 @@ namespace SpeedMaster.FO
         {
             decimal totalprice = Convert.ToDecimal(lbl_totalPriceFinish.Text);
             Session["totalprice"] = totalprice;
-            Response.Redirect("biling.aspx");
+            Response.Redirect("Billing.aspx");
         }
     }
 }

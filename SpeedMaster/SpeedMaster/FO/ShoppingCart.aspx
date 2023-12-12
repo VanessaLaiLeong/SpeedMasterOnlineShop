@@ -13,7 +13,6 @@
                             <div class="col">
                                 <h4><b>Shopping Cart</b></h4>
                             </div>
-
                         </div>
                     </div>
 

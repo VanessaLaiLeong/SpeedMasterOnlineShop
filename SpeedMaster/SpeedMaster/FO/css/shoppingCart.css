@@ -1,5 +1,4 @@
 ﻿#shoppingCart {
-    
     min-height: 100vh;
     vertical-align: middle;
     display: flex;
@@ -13,7 +12,8 @@
     }
 
     #shoppingCart .card {
-        margin: auto;
+        margin-inline: auto;
+        margin-bottom: auto;
         max-width: 950px;
         width: 90%;
         box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -175,5 +175,3 @@
     background-position-x: 95%;
     background-position-y: center;
 }
-
-

@@ -71,9 +71,7 @@
                             <asp:TextBox ID="tb_nif" runat="server" class="form-control" ></asp:TextBox>               
                             <label class="form-label" for="nif">NIF</label>
                         </div>
-                        <div class="form-outline mb-4">
-                             <asp:Label ID="lbl_result" runat="server" Text="Label" Visible="false" ForeColor="red"></asp:Label>
-                        </div>
+
                         <!-- 2 column grid layout -->
                         <div class="row mb-4">
                             <div class="col-md-6 d-flex justify-content-center">
@@ -87,7 +85,7 @@
                             <div style="margin: 0; position: absolute; top: 25%; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);"
                                 class="center">
                                  <asp:Button ID="Button2" runat="server" Text="Register" OnClick="Button1_Click" class="btn btn-primary" />
-                               
+                                <asp:Label ID="lbl_result" runat="server" Text="Label" Visible="false" ForeColor="red"></asp:Label>
                         
                             </div>
                         </div>
