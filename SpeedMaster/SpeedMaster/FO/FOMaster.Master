@@ -69,12 +69,12 @@
                             <asp:LinkButton ID="lkbtn_user" runat="server" OnClick="lkbtn_user_Click1">
             <i class="fa-solid fa-user px-3 text-right navbar-right"></i>
                             </asp:LinkButton>
-                            </li>
+                        </li>
                         <li class="nav-item pe-3">
                             <asp:LinkButton ID="logout_button" runat="server" Visible="False" OnClick="logout_button_Click">
                     <i class="fa-solid fa-right-to-bracket text-right navbar-right"></i>
                             </asp:LinkButton>
-                            </li>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -88,7 +88,7 @@
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="..." crossorigin="anonymous"></script>
 
 
-            <footer class="text-center text-white mt-auto" style="background-color: #f1f1f1; margin-bottom: -30%;">
+            <footer id="footer" class="text-center text-white mt-auto" style="background-color: #f1f1f1; margin-bottom: -30%;">
                 <!-- Grid container -->
                 <div class="container pt-4">
                     <!-- Section: Social media -->
@@ -141,28 +141,11 @@
                 <!-- Copyright -->
                 <div class="text-center text-dark p-3" style="background-color: rgb(220 220 220);">
                     SpeedMaster© 2023 - TSPI CAS 1022
-    <a class="text-dark" href="https://www.speedmaster.pt/">Speedmaster.pt</a>
+   
+                    <a class="text-dark" href="https://www.speedmaster.pt/">Speedmaster.pt</a>
                 </div>
-                <!-- Copyright -->
-                <script>
-                    $(document).ready(function () {
-                        function updateFooterPosition() {
-                            var bodyHeight = $('body').height();
-                            var contentThreshold = 300; // Adjust this threshold as needed
-
-                            if (bodyHeight < contentThreshold) {
-                                $('footer').addClass('fixed-footer');
-                            } else {
-                                $('footer').removeClass('fixed-footer');
-                            }
-                        }
-
-                        // Call the function on document ready and window resize
-                        updateFooterPosition();
-                        $(window).resize(updateFooterPosition);
-                    });
-                </script>
             </footer>
+
             <style>
                 body {
                     display: flex;
@@ -189,6 +172,22 @@
                     margin-left: 36% !important;
                 }
             </style>
+            <script>
+                $(document).ready(function () {
+                    setInterval(function () {
+                        var docHeight = $(window).height();
+                        var footerHeight = $('#footer').height();
+                        var footerTop = $('#footer').position().top + footerHeight;
+                        var marginTop = (docHeight - footerTop + 10);
+
+                        if (footerTop < docHeight)
+                            $('#footer').css('margin-top', marginTop + 'px'); // padding of 30 on footer
+                        else
+                            $('#footer').css('margin-top', '0px');
+                        // console.log("docheight: " + docHeight + "\n" + "footerheight: " + footerHeight + "\n" + "footertop: " + footerTop + "\n" + "new docheight: " + $(window).height() + "\n" + "margintop: " + marginTop);
+                    }, 250);
+                });
+            </script>
         </div>
     </form>
 </body>
