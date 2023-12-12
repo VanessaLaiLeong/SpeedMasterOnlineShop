@@ -12,7 +12,7 @@
                 <h4>Quantity of Sales</h4>
                 <div class="card bg-primary text-white mb-4">
                     <div class="card-body">
-                        <h1>123</h1>
+                        <h1><asp:Label ID="lbl_quantSales" runat="server"></asp:Label></h1>
                         <!-- Valor Exemplo -->
                     </div>
                 </div>
@@ -21,7 +21,7 @@
                 <h4>Sales Total in Euros</h4>
                 <div class="card bg-success text-white mb-4">
                     <div class="card-body">
-                        <h1>€15,000</h1>
+                        <h1><asp:Label ID="lbl_moneySales" runat="server"></asp:Label></h1>
                         <!-- Valor Exemplo -->
                     </div>
                 </div>
