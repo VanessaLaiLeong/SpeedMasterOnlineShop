@@ -417,7 +417,7 @@ namespace SpeedMaster
                 Connections.UpdateStatusInOrder(orderId, orderStatus);
 
                
-                string email ="vanessalaileong@gmail.com";
+                string email =Connections.getEmailFromOrder(orderId);
                 string subject = "Speed Master -  🏍️🔥";            
                 string body = "<html>" +
                  "<head>" +
