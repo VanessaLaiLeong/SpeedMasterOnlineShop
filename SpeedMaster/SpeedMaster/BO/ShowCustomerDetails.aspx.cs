@@ -24,6 +24,7 @@ namespace SpeedMaster.BO
                 tb_Address.Text = dt.Rows[0]["Address"].ToString();
                 tb_Phone.Text = dt.Rows[0]["Phone"].ToString();
                 tb_NIF.Text = dt.Rows[0]["nif"].ToString();
+                Session["password"] = dt.Rows[0]["Password"].ToString();
 
                 if (dt.Rows[0]["Active"].ToString() == "True")
                 {
@@ -45,7 +46,7 @@ namespace SpeedMaster.BO
             string Email = tb_Email.Text;
             string FirstName = tb_FirstName.Text;
             string LastName = tb_FirstName.Text;
-            string Password = tb_LastName.Text;
+            string Password = Session["password"].ToString();
             string Address = tb_Address.Text;
             string Phone = tb_Phone.Text;         
             string NIF = tb_NIF.Text;

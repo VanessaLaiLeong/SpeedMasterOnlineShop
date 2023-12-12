@@ -11,7 +11,7 @@ namespace SpeedMaster
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            Response.Redirect("~/BO/ShowAllOrders.apsx");
         }
 
         protected void Button1_Click(object sender, EventArgs e)

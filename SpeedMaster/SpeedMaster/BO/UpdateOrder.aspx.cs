@@ -12,8 +12,10 @@ namespace SpeedMaster.BO
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (!IsPostBack)
             {
+                
                 int id_order = Convert.ToInt32(Request.QueryString["id_order"]);
 
                 DataTable dt = Connections.GetDataTableFromQuery($"Select ID_Order, o.ID_ShoppingCart, OrderDate, ShippingDate, TotalAmount, ID_OrderStatus, Email " +
@@ -21,7 +23,7 @@ namespace SpeedMaster.BO
                     $"                                              inner join ShoppingCarts sc on o.ID_ShoppingCart = sc.ID_ShoppingCart " +
                     $"                                              inner join Customers c on sc.ID_Customer = c.ID_Customer " +
                     $"                                              where ID_Order = {id_order}");
-
+               
                 Session["ID_shoppingcart"] = Convert.ToInt32(dt.Rows[0]["ID_ShoppingCart"]);
                 tb_email.Text = dt.Rows[0]["Email"].ToString();
                 lb_OrderDate.Text = dt.Rows[0]["OrderDate"].ToString();
