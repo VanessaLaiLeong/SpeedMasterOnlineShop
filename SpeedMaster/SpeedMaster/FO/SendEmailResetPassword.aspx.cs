@@ -16,7 +16,7 @@ namespace SpeedMaster.FO
 
         protected void btn_sendEmail_Click(object sender, EventArgs e)
         {
-            string email = ((Customer)Session["customer"]).email;
+            string email = tb_email.Text;
             string subject = "Speed Master - Reset your password 🏍️🔥";
             string body = "<html>" +
              "<head>" +
