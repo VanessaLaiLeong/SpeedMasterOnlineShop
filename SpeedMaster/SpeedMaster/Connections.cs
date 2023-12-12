@@ -744,7 +744,7 @@ namespace SpeedMaster
             string Description,
             byte[] MotorcycleImage,
             string MotorcycleImageType,
-            bool Active)
+            int Active)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["SpeedMasterConnectionString"].ConnectionString;
 

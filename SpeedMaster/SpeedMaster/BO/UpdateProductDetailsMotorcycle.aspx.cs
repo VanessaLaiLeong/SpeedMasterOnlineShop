@@ -27,6 +27,11 @@ namespace SpeedMaster.BO
                 tb_condition.Text = dt.Rows[0]["Condition"].ToString();
                 tb_price.Text = dt.Rows[0]["Price"].ToString();
                 ddl_Brand.SelectedValue = dt.Rows[0]["ID_Brand"].ToString();
+                if (dt.Rows[0]["Active"].ToString() == "True")
+                {
+                    rd_active.SelectedValue = "yes";
+                }
+                else rd_active.SelectedValue = "no";
             }
             
         }
@@ -34,6 +39,13 @@ namespace SpeedMaster.BO
         protected void bnt_update_Click(object sender, EventArgs e)
         {
             byte[] img = Services.getImageInfo(fu_moto);
+            int active;
+
+            if (rd_active.SelectedValue == "yes")
+            {
+                active = 1;
+            }
+            else active = 0;
 
             int ID_Motorcycle = Convert.ToInt32(Request.QueryString["motor_id"]);
             int ID_Brand = Convert.ToInt32(ddl_Brand.SelectedValue);
@@ -47,13 +59,13 @@ namespace SpeedMaster.BO
             string Description = tb_description.Text;
             byte[] MotorcycleImage = img; // Sample image bytes
             string MotorcycleImageType = "jpg";
-            bool Active = true;
+           
 
             // Call the UpdateMotorcycleInDB method with the sample data
             Response.Write(Connections.UpdateMotorcycleInDB(
                 ID_Motorcycle, ID_Brand, Model, ManufactoringYear, EngineType,
                 EngineCapacity, Color, Price, Condition, Description,
-                MotorcycleImage, MotorcycleImageType, Active));
+                MotorcycleImage, MotorcycleImageType, active));
         }
 
         protected void btn_delete_Click(object sender, EventArgs e)

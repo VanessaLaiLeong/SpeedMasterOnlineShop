@@ -28,6 +28,12 @@
         <label id="lbl_price" runat="server">Price</label>
         <asp:TextBox ID="tb_price" runat="server" class="form-control" placeholder="Price" />
         <br />
+        <label id="Label1" runat="server">Active</label>
+        <asp:RadioButtonList ID="rd_active" runat="server">
+            <asp:ListItem>yes</asp:ListItem>
+            <asp:ListItem>no</asp:ListItem>
+        </asp:RadioButtonList>
+        <br />
         <asp:DropDownList ID="ddl_Brand" runat="server" DataSourceID="SqlDataSource1" DataTextField="BrandName" DataValueField="ID_Brand"></asp:DropDownList>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SpeedMasterConnectionString %>" SelectCommand="SELECT * FROM [Brands]"></asp:SqlDataSource>
         <br />
