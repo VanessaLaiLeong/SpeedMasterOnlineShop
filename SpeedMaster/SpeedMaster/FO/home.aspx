@@ -3,8 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-    <div class="ps-5 pe-5" style="height: 90.5vh;">
+    <div class="ps-5 pe-5" style="height: 110.5vh;">
         <div class="ps-5 pe-5">
             <div class="ps-5 pe-5">
                 <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
@@ -42,7 +41,7 @@
 
                 </div>
                 <section class="bg-light">
-                    <div class="container py-5">
+                    <div class="container">
                         <div class="row text-center py-3">
                             <div class="col-lg-6 m-auto">
                                 <h1 class="h1">Welcome to SpeedMaster</h1>
@@ -51,10 +50,10 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="row" style="">
+                        <div class="row p-5 pe-2" style="margin-bottom: 10%;">
 
-                            <div class="col-12 col-md-4 mb-4">
-                                <div class="card" style="width: 18rem;">
+                            <div class="col-12 col-md-4">
+                                <div class="card" style="width: 18rem; height: 30rem;">
                                     <asp:Image ID="Image3" runat="server" class="card-img-top" ImageUrl="~/img/logo.jpg" />
                                     <div class="card-body">
                                         <div class="row">
@@ -75,8 +74,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-4 mb-4">
-                                <div class="card" style="width: 18rem;">
+                            <div class="col-12 col-md-4">
+                                <div class="card" style="width: 18rem; height: 30rem;">
                                     <asp:Image ID="Image4" runat="server" class="card-img-top" ImageUrl="~/FO/img/logo.jpeg" />
                                     <div class="card-body">
                                         <div class="row">
@@ -97,7 +96,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-4 mb-4">
+                            <div class="col-12 col-md-4">
                                 <div class="card rounded-0 h-100" style="width: 18rem;">
                                     <asp:Image ID="Image5" runat="server" class="card-img-top" ImageUrl="~/FO/img/logo.jpeg" />
                                     <div class="card-body">
