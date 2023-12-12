@@ -26,10 +26,10 @@ namespace SpeedMaster.FO
              "<title>Reset Your Speed Master Account Password</title>" +
              "</head>" +
              "<body style='font-family: Arial, sans-serif;'>" +
-             "<p>Dear [Customer's Name],</p>" +
+             "<p>Dear" + ((Customer)Session["customer"]).firstName + " " + ((Customer)Session["customer"]).lastName + ",</p>" +
              "<p>We trust that you're having an exhilarating day! It seems that you've requested to reset your password for your Speed Master account. No worries, we're here to assist you in revving up your motorcycle journey!</p>" +
              "<p>To reset your password, simply click on the link below:</p>" +
-             "<p><a href='https://localhost:44389/FO/Activation.aspx?email=" + Services.EncryptString(tb_email.Text) + "'>here</a><br><br>" +
+             "<p><a href='https://localhost:44389/FO/ResetPassword.aspx?email=" + Services.EncryptString(tb_email.Text) + "'>here</a><br><br>" +
              "<p>Please be aware that this link is valid for the next 24 hours. If you did not initiate this password reset, or if you've changed your mind, you can ignore this email.</p>" +
              "<p>If you encounter any difficulties or have inquiries, feel free to respond to this email, and our team will assist you promptly.</p>" +
              "<p>Thank you for being a part of Speed Master. We're dedicated to ensuring your motorcycle experience is as thrilling as it can be!</p>" +
@@ -37,6 +37,7 @@ namespace SpeedMaster.FO
              "<p>The Speed Master Team</p>" +
              "</body>" +
              "</html>";
+            lbl_Mensagem.Visible = true;
 
             Services.sendEmail(email, subject, body);
         }
