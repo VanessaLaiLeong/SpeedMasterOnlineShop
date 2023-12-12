@@ -163,6 +163,8 @@ namespace SpeedMaster.FO
 
         protected void removeFilter_Click(object sender, EventArgs e)
         {
+            minPrice.Text = "";
+            maxPrice.Text = "";
             BindRepeater("");
         }      
 
