@@ -35,7 +35,7 @@
                                 <p>
                                     <asp:Label ID="lbl_Phone" runat="server" Text="Phone"></asp:Label>
                                 </p>
-                                <asp:Button ID="Change_Password" runat="server" Text="Change password" CssClass="filter-input" />
+                                <asp:Button ID="Change_Password" runat="server" Text="Change password" CssClass="filter-input" OnClick="Change_Password_Click" />
                             </div>
                         </div>
                     </div>

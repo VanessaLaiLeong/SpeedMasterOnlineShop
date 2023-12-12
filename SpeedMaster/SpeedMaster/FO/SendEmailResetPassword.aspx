@@ -8,7 +8,7 @@
         <asp:TextBox ID="tb_email" runat="server" PlaceHolder="Email" CssClass="filter-input"></asp:TextBox>
         <asp:Button ID="btn_sendEmail" runat="server" CssClass="filter-input" Text="Send" OnClick="btn_sendEmail_Click" />
     <div class="pt-5 mensagem">
-        <asp:Label ID="lbl_Mensagem" runat="server" Text="Email sent!" ForeColor="#027148"></asp:Label>
+        <asp:Label ID="lbl_Mensagem" runat="server" Text="Email sent!" Visible="False" ForeColor="#027148"></asp:Label>
     </div>
     </div>
     </div>
