@@ -159,13 +159,13 @@ namespace SpeedMaster.BO
         protected global::System.Web.UI.WebControls.TextBox tb_price;
 
         /// <summary>
-        /// dp_brand control.
+        /// ddl_Brand control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dp_brand;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_Brand;
 
         /// <summary>
         /// SqlDataSource1 control.

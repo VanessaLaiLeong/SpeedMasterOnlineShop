@@ -28,7 +28,7 @@
         <label id="lbl_price" runat="server">Price</label>
         <asp:TextBox ID="tb_price" runat="server" class="form-control" placeholder="Price" />
         <br />
-        <asp:DropDownList ID="dp_brand" runat="server" DataSourceID="SqlDataSource1" DataTextField="BrandName" DataValueField="ID_Brand"></asp:DropDownList>
+        <asp:DropDownList ID="ddl_Brand" runat="server" DataSourceID="SqlDataSource1" DataTextField="BrandName" DataValueField="ID_Brand"></asp:DropDownList>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:SpeedMasterConnectionString %>" SelectCommand="SELECT * FROM [Brands]"></asp:SqlDataSource>
         <br />
         <asp:FileUpload ID="fu_moto" runat="server" />

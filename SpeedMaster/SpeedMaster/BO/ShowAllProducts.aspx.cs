@@ -80,14 +80,11 @@ namespace SpeedMaster.BO
             }
         }
 
-        protected void btn_insert_accessories_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("InsertProducts.aspx");
-        }
+       
 
         protected void btn_insert_motorcycles_Click(object sender, EventArgs e)
         {
-            Response.Redirect("InsertProducts..aspx");
+            Response.Redirect("InsertProducts.aspx");
         }
     }
 }

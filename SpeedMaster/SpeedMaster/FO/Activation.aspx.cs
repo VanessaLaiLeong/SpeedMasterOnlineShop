@@ -14,7 +14,7 @@ namespace SpeedMaster.FO
 
             string email = Services.DecryptString(Request.QueryString["email"]);
             Connections.activateCustomerAccount(email);
-            Response.Write("Success!");
+            //Response.Write("Success!");
         }
     }
 }
