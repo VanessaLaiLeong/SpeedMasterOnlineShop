@@ -321,7 +321,7 @@ namespace SpeedMaster
             string Description,
             double Price,
             int Stock,
-            bool Active,
+            int Active,
             int ID_Category,
             byte[] img)
         {

@@ -12,20 +12,52 @@ namespace SpeedMaster.BO
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["ID_Accessory"] = Convert.ToInt32(Request.QueryString["access_id"]);
+            if (!IsPostBack)
+            {
+                Session["ID_Accessory"] = Convert.ToInt32(Request.QueryString["access_id"]);
+                int access_id = Convert.ToInt32(Request.QueryString["access_id"].ToString());
+                DataTable dt = Connections.GetDataTableFromQuery($"select * from Accessories where ID_Accessory = {access_id}");
+                in_name.Text = dt.Rows[0]["AccessoryName"].ToString();
+                in_description.Text = dt.Rows[0]["Description"].ToString();
+                in_price.Text = dt.Rows[0]["Price"].ToString();
+                in_stock.Text = Convert.ToInt32(dt.Rows[0]["Price"]).ToString();
+                if (dt.Rows[0]["Active"].ToString() == "True")
+                {
+                    rd_active.SelectedValue = "yes";
+                }
+                else rd_active.SelectedValue = "no";
+
+            }
+
         }
 
         protected void update_Click(object sender, EventArgs e)
         {
+            byte[] img = Services.getImageInfo(fu_access);
+            int active;
+
+            if (rd_active.SelectedValue == "yes")
+            {
+                active = 1;
+            }
+            else active = 0;
+
+            int ID_Accessory = Convert.ToInt32(Request.QueryString["access_id"]);
+            string name = in_name.Text;
+            string description = in_description.Text;
+            double price = Convert.ToDouble(in_price.Text);
+            int stock = int.Parse(in_stock.Text);
+            int category = Convert.ToInt32(dp_category.SelectedValue);
+
             Response.Write(Connections.UpdateAccessoryInDB(
-                    ID_Accessory: Convert.ToInt32(Request.QueryString["access_id"]),
-                    AccessoryName: in_name.Text,
-                    Description: in_description.Text,
-                    Price: Convert.ToDouble(in_price.Text),
-                    Stock: Convert.ToInt32(in_stock.Text),
-                    Active: true,
-                    ID_Category: Convert.ToInt32(dp_category.SelectedValue),
-                    img: Services.getImageInfo(fu_access)
+                    ID_Accessory,
+                    name,
+                    description,
+                    price,
+                    stock,
+                    active,
+                    category,
+                    img
                 ));
 
             Response.Redirect("ShowAllProducts.aspx");

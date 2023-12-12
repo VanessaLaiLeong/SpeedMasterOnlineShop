@@ -16,6 +16,13 @@
         <label id="lbl_stock" runat="server">Stock</label>
         <asp:TextBox ID="in_stock" type="number" runat="server" class="form-control" placeholder="Stock" />
         <br />
+        <label id="Label1" runat="server">active</label>
+        <asp:RadioButtonList ID="rd_active" runat="server">
+            <asp:ListItem>yes</asp:ListItem>
+            <asp:ListItem>no</asp:ListItem>
+        </asp:RadioButtonList>
+        <asp:TextBox ID="tb_active" type="number" runat="server" class="form-control" placeholder="Stock" />
+        <br />
         <label id="lbl_category" runat="server">Category</label>
         <asp:DropDownList ID="dp_category" runat="server" DataSourceID="SqlDataSource2" DataTextField="CategoryName" DataValueField="ID_Category"></asp:DropDownList>
         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:SpeedMasterConnectionString %>" SelectCommand="SELECT * FROM [Categories]"></asp:SqlDataSource>
