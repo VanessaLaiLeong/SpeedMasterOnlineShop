@@ -29,7 +29,7 @@ namespace SpeedMaster.BO
         {
             LinkButton button = (LinkButton)sender;
             string customerId = button.CommandArgument;            
-            Response.Redirect($"ShowCustomerDetails.aspx?customerId={customerId}");
+            Response.Redirect($"ShowCustomerDetails.aspx?ID_Customer={customerId}");
         }
 
         protected void delete_Click(object sender, EventArgs e)
@@ -37,8 +37,12 @@ namespace SpeedMaster.BO
             LinkButton button = (LinkButton)sender;
             int customerId = Convert.ToInt32(button.CommandArgument);
             Connections.DeleteCustomerDB(customerId);
+            Response.Redirect("ShowAllCustomers.aspx");
         }
 
-        
+        protected void btn_createProduct_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

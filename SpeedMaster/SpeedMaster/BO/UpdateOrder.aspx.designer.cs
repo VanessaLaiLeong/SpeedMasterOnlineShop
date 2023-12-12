@@ -15,13 +15,49 @@ namespace SpeedMaster.BO
     {
 
         /// <summary>
-        /// tb_orderDate control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_orderDate;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Label1;
+
+        /// <summary>
+        /// tb_email control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_email;
+
+        /// <summary>
+        /// lbl_OrderDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lbl_OrderDate;
+
+        /// <summary>
+        /// tb_OrderDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_OrderDate;
+
+        /// <summary>
+        /// lbl_ShippingDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lbl_ShippingDate;
 
         /// <summary>
         /// tb_ShippingDate control.
@@ -33,40 +69,40 @@ namespace SpeedMaster.BO
         protected global::System.Web.UI.WebControls.TextBox tb_ShippingDate;
 
         /// <summary>
-        /// tb_totalAmount control.
+        /// lbl_TotalAmount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_totalAmount;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lbl_TotalAmount;
 
         /// <summary>
-        /// dp_orderStatus control.
+        /// tb_TotalAmount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dp_orderStatus;
+        protected global::System.Web.UI.WebControls.TextBox tb_TotalAmount;
 
         /// <summary>
-        /// btn_submit control.
+        /// lbl_ID_OrderStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_submit;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lbl_ID_OrderStatus;
 
         /// <summary>
-        /// lbl_debug control.
+        /// tb_ID_OrderStatus control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_debug;
+        protected global::System.Web.UI.WebControls.TextBox tb_ID_OrderStatus;
 
         /// <summary>
         /// btn_enviarMail control.

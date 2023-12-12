@@ -1,19 +1,29 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="BOMaster.Master" AutoEventWireup="true" CodeBehind="UpdateOrder.aspx.cs" Inherits="SpeedMaster.BO.UpdateOrder" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
-        <asp:TextBox ID="tb_orderDate" runat="server" Text=""></asp:TextBox>
+        
+        <label id="Label1" runat="server">Customer Email</label>
+        <asp:TextBox ID="tb_email" runat="server" class="form-control" placeholder="Shopping Cart ID" />
         <br />
-        <asp:TextBox ID="tb_ShippingDate" runat="server" Text=""></asp:TextBox>
+
+        <label id="lbl_OrderDate" runat="server">Order Date</label>
+        <asp:TextBox ID="tb_OrderDate" runat="server" class="form-control" placeholder="Order Date" />
         <br />
-        <asp:TextBox ID="tb_totalAmount" runat="server" Text=""></asp:TextBox>
+
+        <label id="lbl_ShippingDate" runat="server">Shipping Date</label>
+        <asp:TextBox ID="tb_ShippingDate" runat="server" class="form-control" placeholder="Shipping Date" />
         <br />
-        <asp:DropDownList ID="dp_orderStatus" runat="server" DataSourceID="SqlDataSource1" DataTextField="StatusName" DataValueField="StatusName"></asp:DropDownList>
+
+        <label id="lbl_TotalAmount" runat="server">Total Amount</label>
+        <asp:TextBox ID="tb_TotalAmount" runat="server" class="form-control" placeholder="Total Amount" />
         <br />
-        <asp:Button ID="btn_submit" runat="server" OnClick="btn_submit_Click" Text="submit" />
+
+        <label id="lbl_ID_OrderStatus" runat="server">Order Status ID</label>
+        <asp:TextBox ID="tb_ID_OrderStatus" runat="server" class="form-control" placeholder="Order Status ID" />
         <br />
-        <asp:Label ID="lbl_debug" runat="server" Text="debug"></asp:Label>
 
         <asp:Button ID="btn_enviarMail" runat="server" Text="Enviar mail de Review" CssClass="btn btn-primary" OnClick="btn_enviarMail_Click" />
     </div>
