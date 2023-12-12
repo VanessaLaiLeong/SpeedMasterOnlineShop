@@ -14,6 +14,8 @@ namespace SpeedMaster.BO
         {
             lbl_quantSales.Text = getSalesCount().ToString();
             lbl_moneySales.Text = getSalesValueTotal().ToString() + "€";
+            lbl_bikesSold.Text = getSalesMotorcyclesTotal().ToString();
+            lbl_accessNumber.Text = getAccessTotal().ToString();
         }
 
         private int getSalesCount()
@@ -40,6 +42,43 @@ namespace SpeedMaster.BO
                 total += Convert.ToDecimal(dr[0].ToString());
             }
             return total;
+        }
+
+        private int getSalesMotorcyclesTotal()
+        {
+            int total = 0;
+            DataTable dt = Connections.GetDataTableFromQuery(@"select COUNT(*)
+                                                               from Orders as ord
+                                                               inner join ShoppingCarts    sc on sc.ID_ShoppingCart = ord.ID_ShoppingCart
+                                                               inner join CartItems        ci on sc.ID_ShoppingCart = ci.ID_ShoppingCart
+                                                               inner join GlobalProductIds gp on ci.ID_GlobalproductID = gp.ID_Product
+                                                               where gp.ProductType = 'motorcycle'");
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                total += Convert.ToInt32(dr[0].ToString());
+            }
+
+            return total;
+        }
+
+        private int getAccessTotal()
+        {
+            int total = 0;
+            DataTable dt = Connections.GetDataTableFromQuery(@"select  COUNT(*)
+                                                               from Orders as ord
+                                                               inner join ShoppingCarts    sc on sc.ID_ShoppingCart = ord.ID_ShoppingCart
+                                                               inner join CartItems        ci on sc.ID_ShoppingCart = ci.ID_ShoppingCart
+                                                               inner join GlobalProductIds gp on ci.ID_GlobalproductID = gp.ID_Product
+                                                               where gp.ProductType = 'accessories'");
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                total += Convert.ToInt32(dr[0].ToString());
+            }
+
+            return total;
+
         }
     }
 }

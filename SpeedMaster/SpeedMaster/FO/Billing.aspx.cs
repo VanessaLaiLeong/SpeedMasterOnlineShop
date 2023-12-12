@@ -42,8 +42,8 @@ namespace SpeedMaster.FO
                 <body>
                     <h1>Proforma Invoice</h1>
                         <div class='company-details'>
-                        <p><b>Name:</b> " + "Blossom Brews ® " + @" </p>
-                        <p><b>Adress:</b> " + "221B Baker Street, London " + @" </p>
+                        <p><b>Name:</b> " + "SpeedMaster ® " + @" </p>
+                        <p><b>Adress:</b> " + "São Domingos de Rana, n420 " + @" </p>
                         <!-- Add more details as needed -->
                     </div>
                     <br/><br/>

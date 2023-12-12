@@ -3,14 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>Products</h1>
+    <h1>Brands</h1>
     <div class="row mb-4">
         <div class="col-md-3">
-            <asp:DropDownList ID="ddl_productType" class="form-select" runat="server">
-                <asp:ListItem>Select a Filter</asp:ListItem>
-                <asp:ListItem>Motorcycles</asp:ListItem>
-                <asp:ListItem>Accessories</asp:ListItem>
-            </asp:DropDownList>
         </div>
         <div class="col-md-6 d-flex justify-content-start">
             <asp:Button ID="btn_createProduct" class="btn btn-success me-2" runat="server" Text="Create" OnClick="btn_createProduct_Click" />
